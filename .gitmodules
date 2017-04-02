@@ -1,0 +1,3 @@
+[submodule "doti3/i3_kde_KLI"]
+	path = doti3/i3_kde_KLI
+	url = git@github.com:ViktorWalter/i3_kde_KLI.git
