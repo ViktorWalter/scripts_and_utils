@@ -114,7 +114,7 @@ bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
+bindsym $mod+8 workspace $workspace8; exec ~/.i3/send2secondary.sh 
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
@@ -246,9 +246,10 @@ exec google-chrome
 # setup monitors, generete the file with "arandr" utility
 exec ~/.monitor.sh
 
-# swapping keyboard layouts? the same as in unity, win+space
-exec --no-startup-id "setxkbmap us"
-bindsym $mod2+space exec ~/.i3/toggle_keyboard_layout.sh
+## swapping keyboard layouts? the same as in classic windows
+exec --no-startup-id "setxkbmap -model pc105 -layout us,sk -variant ,qwerty -option grp:alt_shift_toggle"
+#exec --no-startup-id "setxkbmap us"
+#bindsym $mod+Shift exec ~/.i3/toggle_keyboard_layout.sh
 
 # no title bar for chrome please
 for_window [class="^Google-chrome$"] border none
@@ -269,13 +270,12 @@ for_window [class="^Thunar$"] floating enable
 for_window [class="^Tk$"] floating enable
 
 # imshow windows to window n.8
-exec --no-startup-id ~/.i3/send2secondary.sh $workspace8
 assign [title="cv_*"] $workspace8
 for_window [title="cv_*"] floating disable
 for_window [title="cv_*"] border none
-for_window [title="cv_*"] fullscreen
+for_window [title="cv_*"] fullscreen enable
 for_window [title="cv_fl_*"] floating enable
-for_window [title="cv_fl_*"] fullscreen
+for_window [title="cv_fl_*"] fullscreen disable
 
 # lock session
 bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi \ -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
@@ -285,3 +285,5 @@ exec --no-startup-id compton -f -D 3
 
 # show background wallpaper
 #exec_always --no-startup-id feh --bg-fill /usr/share/wallpapers/Next/contents/images/1920x1080.png
+#
+
