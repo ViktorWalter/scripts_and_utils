@@ -2,7 +2,7 @@
 scr=$( xrandr -q | awk '/ connected/ {print $1}' )
 scr="${scr//$'\n'/ }"
 scrlst=($scr)
-if [ -z "$PRIMARY_SCREEN" ]; then
+if [ -z "$scr" ]; then
   i3-nagbar -m 'No screen defined' -t warning;
 else
   for output in ${scr}; do

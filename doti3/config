@@ -287,3 +287,5 @@ exec --no-startup-id compton -f -D 3
 #exec_always --no-startup-id feh --bg-fill /usr/share/wallpapers/Next/contents/images/1920x1080.png
 #
 
+#Invert screen color
+bindsym $mod+Ctrl+i exec ~/.i3/invertOutputs.sh 
