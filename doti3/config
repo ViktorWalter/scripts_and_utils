@@ -191,6 +191,8 @@ for_window [class="dock"] floating enable
 for_window [class="desktop"] floating enable
 for_window [class="plasma"] floating enable
 for_window [class="plasma-desktop"] floating enable
+for_window [class="Yakuake"] floating enable
+for_window [class="Yakuake"] border 0pixel
 exec plasmashell
 
 # Start i3bar to display a workspace bar (plus the system information i3status
