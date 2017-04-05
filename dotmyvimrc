@@ -11,14 +11,17 @@ set tags+=~/tags,~/tags-once
 let mapleader = ","
 " key bindings for vimmux
 "
+set shell=bash
+"set makeprg=cd\ ~/ros_workspace\ &&\ catkin_make\ --pkg\ zedhack
 " build 1
-map <Leader>m :w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
+map <Leader>m :w\|silent make\|redraw!\|cc<CR>
+":w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
 " jump to build split
-map <Leader>M :call VimuxInspectRunner()<CR>
+"map <Leader>M :call VimuxInspectRunner()<CR>
 " close the vimmux window
-map <Leader>l :VimuxCloseRunner<CR>
+"map <Leader>l :VimuxCloseRunner<CR>
 " building ctags
-command! MakeTags :call VimuxRunCommand("generateTags; :q")<CR>
+"command! MakeTags :call VimuxRunCommand("generateTags; :q")<CR>
 "
 """""""""""""""""""""""""""""""
 
