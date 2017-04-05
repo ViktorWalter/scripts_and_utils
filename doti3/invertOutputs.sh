@@ -4,10 +4,8 @@ scr="${scr//$'\n'/ }"
 scrlst=($scr)
 brt=$( xrandr --verbose | awk '/Brightness: / {print $2}')
 brtls=($brt)
-brt=${brtls[1]}
-echo $brt
-brt=$((-${brt%.*}))
-echo $brt
+brt=${brtls[0]}
+brt=$((0-${brt%.*}))
 if [ "$brt" -eq 0 ]; then
   brt=1;
 fi

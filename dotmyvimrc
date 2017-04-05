@@ -37,3 +37,5 @@ au BufNewFile,BufRead *.cl setlocal ft=c
 set nowrap
 
 set nocompatible
+set path+=**
+set wildmenu
