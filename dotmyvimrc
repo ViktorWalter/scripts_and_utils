@@ -12,7 +12,7 @@ let mapleader = ","
 " key bindings for vimmux
 "
 " build 1
-map <Leader>m :w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg drone_detector")<CR>
+map <Leader>m :w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
 " jump to build split
 map <Leader>M :call VimuxInspectRunner()<CR>
 " close the vimmux window
@@ -35,3 +35,5 @@ hi Normal guibg=NONE ctermbg=NONE
 hi NonText ctermbg=NONE
 au BufNewFile,BufRead *.cl setlocal ft=c
 set nowrap
+
+set nocompatible
