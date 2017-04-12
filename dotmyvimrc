@@ -42,3 +42,6 @@ set nowrap
 set nocompatible
 set path+=**
 set wildmenu
+unmap <S-J>
+unmap <S-K>
+map <C-A> normal! /<C-A>
