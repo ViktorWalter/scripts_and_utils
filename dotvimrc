@@ -329,7 +329,7 @@ map <Leader>m :w\|silent make\|redraw!\|cc<CR>
 " jump to build split
 "map <Leader>M :call VimuxInspectRunner()<CR>
 " close the vimmux window
-"map <Leader>l :VimuxCloseRunner<CR>
+map <Leader>l :ccl<CR>
 " building ctags
 "command! MakeTags :call VimuxRunCommand("generateTags; :q")<CR>
 "
@@ -347,8 +347,9 @@ set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText ctermbg=NONE
 au BufNewFile,BufRead *.cl setlocal ft=c
-au BufNewFile,BufRead *.tex map <Leader>m :w\|VimtexCompile<cr>
+au BufNewFile,BufRead *.tex map <Leader>m :w<CR>:VimtexCompile<CR>
 au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.tex map <Leader>. :w<CR>:VimtexView<CR>
 let g:tex_comment_nospell= 1
 set nowrap
 
