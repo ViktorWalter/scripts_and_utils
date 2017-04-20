@@ -102,6 +102,9 @@ Plugin 'edkolev/tmuxline.vim'
 " latex editing plugin
 Plugin 'lervag/vimtex'
 
+" to unify tmux and vim navigation
+Plugin 'christoomey/vim-tmux-navigator'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required by Vundle
@@ -348,8 +351,10 @@ hi Normal guibg=NONE ctermbg=NONE
 hi NonText ctermbg=NONE
 au BufNewFile,BufRead *.cl setlocal ft=c
 au BufNewFile,BufRead *.tex map <Leader>m :w<CR>:VimtexCompile<CR>
-au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
 au BufNewFile,BufRead *.tex map <Leader>. :w<CR>:VimtexView<CR>
+au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.tex setlocal fdm=expr
+au BufNewFile,BufRead *.tex setlocal foldexpr=vimtex#fold#level(v:lnum)
 let g:tex_comment_nospell= 1
 set nowrap
 
