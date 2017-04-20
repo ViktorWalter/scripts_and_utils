@@ -362,7 +362,7 @@ set path+=**
 set wildmenu
 unmap <S-J>
 unmap <S-K>
-map <C-A> normal! /<C-A>
+map <C-a> normal! /<C-a>
 
 " Write into protected file without prior sudo
 cmap w!! w !sudo tee >dev/null %
