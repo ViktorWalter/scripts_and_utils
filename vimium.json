@@ -1,0 +1,63 @@
+{
+	"name": "Vimium++",
+	"time": 1492555600075,
+	"environment": {
+		"chrome": 57,
+		"extension": "1.59.1",
+		"platform": "linux"
+	},
+	"exclusionRules": [
+		{
+			"pattern": "^https?://mail.google.com/",
+			"passKeys": ""
+		},
+		{
+			"pattern": "^https://feedly.com/*",
+			"passKeys": "? J K j k n o p v "
+		}
+	],
+	"extWhiteList": [
+		"# modified { Vomnibar Page, X New Tab, PDF Viewer }",
+		"ekohaelnhhdhbccgefjmjpdjoijhojgd",
+		"hdnehngglnbnehkfcidabjckinphnief",
+		"nacjakoppgmdcpemlfnfegmlhipddanj",
+		"lcopgfbpbmionefhhgbamgmejggljpbb",
+		""
+	],
+	"keyMappings": [
+		"# Insert your preferred key mappings here.",
+		"map <c-e> Vomnibar.activate",
+		"map ;f LinkHints.activateHoverEffectMode",
+		"map <a-F> LinkHints.activateModeWithQueue",
+		""
+	],
+	"nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+	"searchEngines": [
+		"g|go|gg|google: https://www.google.com/search?q=$s Google",
+		"js\\:|Js: javascript:\\ $S; Javascript",
+		"w|wiki:\\",
+		"  https://en.wikipedia.org/w/index.php?search=$s Wikipedia",
+		"t|tr|translate:\\",
+		"  https://translate.google.com/?hl=en&tab=wT#auto/sk/$s Google Translate",
+		"te|tre|translateenglish:\\",
+		"  https://translate.google.com/?hl=en&tab=wT#auto/en/$s Google Translate En",
+		"",
+		"# More examples.",
+		"#",
+		"# (Vimium++ supports search completion Google, Wikipedia,",
+		"# and so on, as above, and for these.)",
+		"#",
+		"# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky",
+		"# y: https://www.youtube.com/results?search_query=%s Youtube",
+		"# gm: https://www.google.com/maps?q=%s Google maps",
+		"# d: https://duckduckgo.com/?q=%s DuckDuckGo",
+		"# az: https://www.amazon.com/s/?field-keywords=%s Amazon",
+		"# qw: https://www.qwant.com/?q=%s Qwant",
+		""
+	],
+	"searchUrl": "https://www.google.com/search?q=$s Google",
+	"showAdvancedCommands": true,
+	"showAdvancedOptions": true,
+	"vomnibarPage": "chrome-extension://ekohaelnhhdhbccgefjmjpdjoijhojgd/vomnibar.html"
+}

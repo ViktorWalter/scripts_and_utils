@@ -366,3 +366,4 @@ map <C-a> normal! /<C-a>
 
 " Write into protected file without prior sudo
 cmap w!! w !sudo tee >dev/null %
+let @t = '!!toilet -f big'
