@@ -63,8 +63,8 @@ bindsym $mod+Shift+l move right
 bindsym $mod+x move workspace to output right
 
 # cycle through workspaces on current monitor
-bindsym $mod+n workspace next_on_output
-bindsym $mod+m workspace prev_on_output
+#bindsym $mod+n workspace next_on_output
+#bindsym $mod+m workspace prev_on_output
 
 # cycle through containers on the current workspace in a similar ways as on windows
 bindsym Mod1+Tab focus right
@@ -270,7 +270,7 @@ exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 # assing windows to particular workspaces
 # find the class name by running "xprop" in bash and then click on th window
 # copy the last item in the classname list
-assign [class="Google-chrome"] $workspace5
+#jassign [class="Google-chrome"] $workspace5
 assign [class="Rviz"] $workspace4
 
 # name = File Operation Progress == float
@@ -286,7 +286,7 @@ for_window [title="cv_fl_*"] floating enable
 for_window [title="cv_fl_*"] fullscreen disable
 
 # lock session
-bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi \ -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi \ -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Liberation Mono 18"
 
 # enables transparency
 exec --no-startup-id compton -f -D 3
