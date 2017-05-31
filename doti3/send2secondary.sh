@@ -6,7 +6,8 @@ scrlst=($scr)
 if [ -z "$scr" ]; then
   i3-nagbar -m 'No screen defined' -t warning;
 elif [ ${#scrlst[@]} -lt 2 ]; then
-  i3-nagbar -m 'No secondary screen defined' -t warning;
+  echo "No secondary screen defined"
+#  i3-nagbar -m 'No secondary screen defined' -t warning;
 else
   for output in ${scr}; do
     if [[ "$output" != *LVDS* ]]; then
