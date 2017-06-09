@@ -315,5 +315,5 @@ bindsym $mod2+shift++j exec --no-startup-id xdotool mousemove_relative --sync --
 bindsym $mod2+shift++k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -100
 bindsym $mod2+space exec --no-startup-id xdotool click 1
 bindsym $mod2+i exec --no-startup-id  xdotool click 3
-#Banish the mouse pointer to the corner
+#Banish the mouse pointer to the corner of the current window - removes the distracting cursor or summons it closer for specific tasks
 bindsym $mod2+b exec --no-startup-id ~/.i3/banishMouse.sh
