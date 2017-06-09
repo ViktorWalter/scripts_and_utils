@@ -300,8 +300,6 @@ exec --no-startup-id compton -f -D 3
 #Invert screen color
 bindsym $mod+Ctrl+i exec ~/.i3/invertOutputs.sh 
 
-#Banish the mouse pointer to the corner
-bindsym $mod+b exec ~/.i3/banishMouse.sh 
 
 #Printscreen
 bindsym Print exec scrot -e 'mv $f ~/Pictures/'
@@ -317,3 +315,5 @@ bindsym $mod2+shift++j exec --no-startup-id xdotool mousemove_relative --sync --
 bindsym $mod2+shift++k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -100
 bindsym $mod2+space exec --no-startup-id xdotool click 1
 bindsym $mod2+i exec --no-startup-id  xdotool click 3
+#Banish the mouse pointer to the corner
+bindsym $mod2+b exec --no-startup-id ~/.i3/banishMouse.sh
