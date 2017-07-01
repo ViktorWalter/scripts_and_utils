@@ -255,8 +255,8 @@ exec --no-startup-id ~/.i3/swapLayout.sh
 bindsym $mod+Shift+p exec ~/.i3/swapLayout.sh
 
 ## swapping keyboard layouts? the same as in classic windows
-exec_always --no-startup-id "setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:alt_shift_toggl\"e"
-exec_always --no-startup-id "setxkbmap -option \"caps:escape\""
+exec_always --no-startup-id "sleep 2; setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:alt_shift_toggl\"e"
+exec_always --no-startup-id "sleep 3; setxkbmap -option \"caps:escape\""
 exec_always --no-startup-id "xmodmap -e \"keycode 105 = Menu NoSymbol Control_R\""
 #exec --no-startup-id "setxkbmap us"
 #bindsym $mod+Shift exec ~/.i3/toggle_keyboard_layout.sh
