@@ -27,7 +27,7 @@ font pango:System San Francisco Display 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -162,30 +162,38 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# define variables with colors of the current sheme
-set $bg-color 	         #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-set $focused-bg-color    #677E7D
-set $focused-text-color  #101010
+# LIGHT COLOR_SCHEME {
+# set $inactive_text_color         #1d2021
+# set $active_text_color           #1d2021
+# set $active_border               #aaaaaa
+# set $inactive_background         #dddddd
+# set $active_background           #888888
+# set $focused_ws_bg               #aaaaaa
+# set $background_color            #ffffff
+# set $split_indicator             #aaaaaa
+# exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/white.jpg
+# for_window [class="^.*"] border pixel 3
+# # }
 
-# light colors
-#set $bg-color 	         #ffffff
-#set $inactive-bg-color   #ffffff
-#set $text-color          #000000
-#set $inactive-text-color #ffffff
-#set $urgent-bg-color     #ffffff
-#set $focused-bg-color    #bbbbbb
-#set $focused-text-color  #000000
+# JELLYBEANS COLOR_SCHEME ACTIVE {
+set $focused_ws_bg            #005faf
+set $active_text_color        #ffffff
+set $inactive_text_color      #eeeeee
+set $inactive_background      #333333
+set $active_background        #005faf
+set $background_color         #151515
+set $active_border            #005faf
+set $split_indicator          #B85335
+exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/151515.jpg
+for_window [class="^.*"] border pixel 2
+# }
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $focused-bg-color   $focused-bg-color  $text-color          #001000
-client.unfocused        $focused-bg-color  $inactive-bg-color $text-color  #001000
-client.focused_inactive $focused-bg-color   $inactive-bg-color  $text-color #001000
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #001000
+#                       border                    background            text                  indicator
+client.focused          $active_border            $active_background    $active_text_color    $split_indicator
+client.unfocused        $inactive_background      $inactive_background  $inactive_text_color  $split_indicator
+client.focused_inactive $active_background        $inactive_background  $inactive_text_color  $split_indicator
+client.urgent           $inactive_background      $inactive_background  $inactive_text_color  $split_indicator
 
 # Start plasma
 for_window [class="dock"] floating enable
@@ -255,20 +263,17 @@ exec --no-startup-id ~/.i3/swapLayout.sh
 bindsym $mod+Shift+p exec ~/.i3/swapLayout.sh
 
 # turn off monitor for nightly processing
-bindsym $mod+Shift+o exec "sleep 0.5; i3lock -d"
+bindsym $mod+Shift+o exec ~/.i3/rotateScreen.sh
 
 
 
 ## swapping keyboard layouts? the same as in classic windows
-exec_always --no-startup-id "sleep 2; setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:alt_shift_toggl\"e"
+exec_always --no-startup-id "sleep 2; setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:sclk_toggle\""
 exec_always --no-startup-id "sleep 3; setxkbmap -option \"caps:escape\""
 exec_always --no-startup-id "xmodmap -e \"keycode 105 = Menu NoSymbol Control_R\""
 #exec --no-startup-id "setxkbmap us"
 #bindsym $mod+Shift exec ~/.i3/toggle_keyboard_layout.sh
 
-# no title bar for chrome please
-for_window [class="^Google-chrome$"] border none
-# for_window [class="^Gnome-terminal$"] border pixel 1
 
 # oh my God disable caps lock and set is as escape!!!
 # exec_always xmodmap -e "clear lock" #disable caps lock switch
@@ -281,7 +286,7 @@ for_window [class="^Google-chrome$"] border none
 assign [class="Rviz"] $workspace4
 
 # name = File Operation Progress == float
-for_window [class="^Thunar$"] floating enable
+# for_window [class="^Thunar$"] floating enable
 for_window [class="^Tk$"] floating enable
 
 # imshow windows to window n.8
@@ -303,7 +308,8 @@ exec --no-startup-id compton -f -D 3
 #
 
 #Invert screen color
-bindsym $mod+Ctrl+i exec ~/.i3/invertOutputs.sh 
+# bindsym $mod+Ctrl+i exec ~/.i3/invertOutputs.sh 
+bindsym $mod+Ctrl+i exec urxvt -e ~/.i3/setColorScheme.sh 
 
 
 #Printscreen
@@ -318,7 +324,7 @@ bindsym $mod2++shift+h exec --no-startup-id xdotool mousemove_relative --sync --
 bindsym $mod2+shift++l exec --no-startup-id xdotool mousemove_relative --sync -- 100 0
 bindsym $mod2+shift++j exec --no-startup-id xdotool mousemove_relative --sync -- 0 100
 bindsym $mod2+shift++k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -100
-bindsym $mod2+space exec --no-startup-id xdotool click 1
+bindsym $mod2+u exec --no-startup-id xdotool click 1
 bindsym $mod2+i exec --no-startup-id  xdotool click 3
 #Banish the mouse pointer to the corner of the current window - removes the distracting cursor or summons it closer for specific tasks
 bindsym $mod2+b exec --no-startup-id ~/.i3/banishMouse.sh
