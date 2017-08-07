@@ -17,15 +17,17 @@ let g:startify_bookmarks = [
             \ { 'p': '~/git/linux-setup/appconfig/vim/startify_quotes.txt' },
             \ ]
 
-colorscheme jellybeans
-set background=dark
-hi Normal guibg=NONE ctermbg=NONE
-hi NonText ctermbg=NONE
+if g:user_mode == "1"
+  colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
+  " colorscheme raggi " LIGHT COLOR_SCHEME 
+endif
+
 au BufNewFile,BufRead *.cl setlocal ft=c
 
 au BufNewFile,BufRead *.tex map <Leader>m :w<CR>:VimtexCompile<CR>
 au BufNewFile,BufRead *.tex map <Leader>. :w<CR>:VimtexView<CR>
 au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.tex setlocal wrap
 let g:tex_comment_nospell= 1
 au BufNewFile,BufRead *.tex setlocal fdm=expr
 au BufNewFile,BufRead *.tex setlocal foldexpr=vimtex#fold#level(v:lnum)

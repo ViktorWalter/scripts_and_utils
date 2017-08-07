@@ -1,21 +1,12 @@
 {
 	"name": "Vimium++",
-	"time": 1492555600075,
+	"time": 1501754125027,
 	"environment": {
-		"chrome": 57,
-		"extension": "1.59.1",
+		"chrome": 60,
+		"extension": "1.60.1",
 		"platform": "linux"
 	},
-	"exclusionRules": [
-		{
-			"pattern": "^https?://mail.google.com/",
-			"passKeys": ""
-		},
-		{
-			"pattern": "^https://feedly.com/*",
-			"passKeys": "? J K j k n o p v "
-		}
-	],
+	"exclusionRules": [],
 	"extWhiteList": [
 		"# modified { Vomnibar Page, X New Tab, PDF Viewer }",
 		"ekohaelnhhdhbccgefjmjpdjoijhojgd",
@@ -24,6 +15,7 @@
 		"lcopgfbpbmionefhhgbamgmejggljpbb",
 		""
 	],
+	"grabBackFocus": true,
 	"keyMappings": [
 		"# Insert your preferred key mappings here.",
 		"map <c-e> Vomnibar.activate",

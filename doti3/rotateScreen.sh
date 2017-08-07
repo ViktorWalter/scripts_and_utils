@@ -19,4 +19,5 @@ else
     fi
   done;
 fi
+cd ~/.i3/
 ./swapLayout.sh

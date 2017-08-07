@@ -4,3 +4,6 @@
 [submodule "doti3/i3"]
 	path = doti3/i3
 	url = git@github.com:sLite/i3.git
+[submodule "doti3/i3_kde_NVI"]
+	path = doti3/i3_kde_NVI
+	url = git@github.com:ViktorWalter/i3_kde_NVI.git
