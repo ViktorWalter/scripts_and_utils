@@ -14,7 +14,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id redshift-gtk
-exec --no-startup-id python3.5 ~/.i3/i3scripts/autoname_workspaces.py
+exec --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py
 
 set $mod Mod1
 set $mod2 Mod4
