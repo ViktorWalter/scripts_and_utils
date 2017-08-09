@@ -7,3 +7,6 @@
 [submodule "doti3/i3_kde_NVI"]
 	path = doti3/i3_kde_NVI
 	url = git@github.com:ViktorWalter/i3_kde_NVI.git
+[submodule "doti3/i3scripts"]
+	path = doti3/i3scripts
+	url = git@github.com:justbuchanan/i3scripts.git

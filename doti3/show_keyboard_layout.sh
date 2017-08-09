@@ -2,6 +2,6 @@
 # author: Tomas Baca
 # is supposed to switch between two keyboard layouts
 
-CURRENT_LAYOUT=$(setxkbmap -query | awk '/layout/{print $2}') 
+CURRENT_LAYOUT=$(xkblayout-state print "%s" | awk '{printf "%s",toupper(substr($1,1,1))tolower(substr($1,2,1))}') 
 
-echo $CURRENT_LAYOUT | sed 's/.*/\U&/'
+echo $CURRENT_LAYOUT

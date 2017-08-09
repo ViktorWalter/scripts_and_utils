@@ -10,6 +10,11 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id yakuake
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id pa-applet
+exec --no-startup-id redshift-gtk
+exec --no-startup-id python3.5 ~/.i3/autoname_workspaces.py
 
 set $mod Mod1
 set $mod2 Mod4
@@ -21,7 +26,6 @@ set $mod2 Mod4
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:System San Francisco Display 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -204,39 +208,43 @@ for_window [class="plasma"] floating enable
 for_window [class="plasma-desktop"] floating enable
 for_window [class="Yakuake"] floating enable
 for_window [class="Yakuake"] border 0pixel
-exec plasmashell
-exec kdeinit5 kded5
+# exec "true /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit_wrapper --kded && kwrapper5 /usr/bin/ksmserver"
 
 # exec wmsystemtray --bgcolor grey --fgcolor white --non-wmaker
 
 for_window [class="lazarus"] floating enable
 for_window [class="Lazarus"] floating enable
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
+ # Start i3bar to display a workspace bar (plus the system information i3status
+ # finds out, if available)
+bar {
 
-#   status_command i3blocks -c ~/.i3/i3blocks.conf
-#   i3bar_command i3bar 
+  status_command i3blocks -c ~/.i3/i3blocks.conf
+    i3bar_command i3bar 
+    font pango:Liberation Sans,FontAwesome 10
 
-#   colors {
+    # font pango:DejaVu Sans Mono, Awesome 8
 
-#     statusline $text_color
-#     background $background_color
-#     separator  $inactive_text_color
+    colors {
 
-#     #                  border             background           text
-#     focused_workspace  $focused_ws_bg     $focused_ws_bg       $active_text_color
-#     active_workspace   $transparent       $transparent         $active_text_color
-#     inactive_workspace $transparent       $transparent         $active_text_color
-#     binding_mode       $transparent       $transparent         $active_text_color
-#     urgent_workspace   $transparent       $transparent         $active_text_color
-#   }
+      statusline $text_color
+        background $background_color
+        separator  $inactive_text_color
 
-#   # i3bar position
-#   position bottom
-# }
-#
+#                  border             background           text
+        focused_workspace  $focused_ws_bg     $focused_ws_bg       $active_text_color
+        active_workspace   $transparent       $transparent         $active_text_color
+        inactive_workspace $transparent       $transparent         $active_text_color
+        binding_mode       $transparent       $transparent         $active_text_color
+        urgent_workspace   $transparent       $transparent         $active_text_color
+    }
+
+# i3bar position
+  position bottom
+  tray_output primary
+
+}
+
 # kde runner
 bindsym $mod+F2 exec krunner
 bindsym $mod+d exec krunner
