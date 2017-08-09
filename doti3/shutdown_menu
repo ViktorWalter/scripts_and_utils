@@ -119,7 +119,7 @@ menu=(
   [Suspend]="systemctl suspend"
   [Halt]="systemctl halt"
   [Lock]="${LOCKSCRIPT:-i3lock -de  --color=${BG_COLOR#"#"}}"
-  [Logout]="killall plasmashell && killall ksmserver"
+  [Logout]="i3-msg exit"
   [Cancel]=""
 )
 menu_nrows=${#menu[@]}
