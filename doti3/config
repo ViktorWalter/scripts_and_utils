@@ -10,11 +10,13 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id yakuake
+# exec "sleep 4; launchy"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py
+exec_always --no-startup-id ~/.i3/conky_start
 
 set $mod Mod1
 set $mod2 Mod4
@@ -207,7 +209,9 @@ for_window [class="desktop"] floating enable
 for_window [class="plasma"] floating enable
 for_window [class="plasma-desktop"] floating enable
 for_window [class="Yakuake"] floating enable
-for_window [class="Yakuake"] border 0pixel
+for_window [class="Yakuake"] border none
+for_window [class="conky"] floating enable
+for_window [class="conky"] border none
 # exec "true /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit_wrapper --kded && kwrapper5 /usr/bin/ksmserver"
 
 # exec wmsystemtray --bgcolor grey --fgcolor white --non-wmaker
@@ -246,7 +250,7 @@ bar {
 }
 
 # kde runner
-bindsym $mod+F2 exec krunner
+# bindsym $mod+F2 exec krunner
 bindsym $mod+d exec krunner
 
 # calculator

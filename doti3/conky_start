@@ -1,0 +1,9 @@
+#!/bin/bash
+killall conky
+conky -c ~/.i3/conky_cpu_load &
+conky -p 1 -c ~/.i3/conky_cpu_stats &
+conky -p 2 -c ~/.i3/conky_memory &
+conky -p 3 -c ~/.i3/conky_swap &
+conky -p 4 -c ~/.i3/conky_gpu_stats &
+# conky -p 5 -c ~/.i3/conky_gpu_freq &
+exit
