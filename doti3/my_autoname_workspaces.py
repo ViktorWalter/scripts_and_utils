@@ -104,9 +104,9 @@ def rename_workspaces(i3):
             n += 1
         prev_output = ws_info.output
 
-        # renumber workspace
-        name_parts['num'] = n
-        n += 1
+        # # renumber workspace
+        # name_parts['num'] = n
+        # n += 1
 
         new_name = construct_workspace_name(name_parts)
         i3.command('rename workspace "%s" to "%s"' % (workspace.name, new_name))
