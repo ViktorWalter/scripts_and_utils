@@ -193,7 +193,7 @@ set $background_color         #151515
 set $active_border            #005faf
 set $split_indicator          #B85335
 set $transparent #000000aa
-exec_always --no-startup-id feh --bg-scale ~/pictures/incipisphere.jpg
+exec_always --no-startup-id feh --bg-scale ~/pictures/web.jpg
 for_window [class="^.*"] border pixel 1
 # }
 
