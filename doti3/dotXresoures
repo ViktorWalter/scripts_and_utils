@@ -20,106 +20,106 @@ URxvt.perl-ext-common: default,clipboard
 ! to match gnome-terminal "Linux console" scheme
 ! foreground/background
 
-! JELLYBEANS COLOR_SCHEME {
-! ! vim: ft=xdefaults
-! ! URxvt.transparent: true
-! ! URxvt.depth: 32
-! ! URxvt.shading: 10
-! URxvt.background: rgba:0000/0000/0000/cccc
-! URxvt.foreground: #dddddd
-! ! black
-! URxvt.color0: #1C1C1C
-! URxvt.color8: #404040
-! ! red
-! URxvt.color1: #B85335
-! URxvt.color9: #CF6A4C
-! ! green
-! URxvt.color2: #79AD6A
-! URxvt.color10: #99DD6A
-! ! yellow
-! URxvt.color3: #FFB964
-! URxvt.color11: #FAD07A
-! ! blue
-! URxvt.color4: #667899
-! URxvt.color12: #8197BF
-! ! magenta
-! URxvt.color5: #8787AF
-! URxvt.color13: #C6B6EE
-! ! cyan
-! URxvt.color6: #668799
-! URxvt.color14: #8FBFDC
-! ! white
-! URxvt.color7: #888888
-! URxvt.color15: #E8E8D3
+! JELLYBEANS COLOR_SCHEME ACTIVE {
+! vim: ft=xdefaults
+! URxvt.transparent: true
+! URxvt.depth: 32
+! URxvt.shading: 10
+URxvt.background: rgba:0000/0000/0000/cccc
+URxvt.foreground: #dddddd
+! black
+URxvt.color0: #1C1C1C
+URxvt.color8: #404040
+! red
+URxvt.color1: #B85335
+URxvt.color9: #CF6A4C
+! green
+URxvt.color2: #79AD6A
+URxvt.color10: #99DD6A
+! yellow
+URxvt.color3: #FFB964
+URxvt.color11: #FAD07A
+! blue
+URxvt.color4: #667899
+URxvt.color12: #8197BF
+! magenta
+URxvt.color5: #8787AF
+URxvt.color13: #C6B6EE
+! cyan
+URxvt.color6: #668799
+URxvt.color14: #8FBFDC
+! white
+URxvt.color7: #888888
+URxvt.color15: #E8E8D3
 
-! !! URxvt COLORS --------------------------------------------------------
-! URxvt*depth                   : 32
-! ! URxvt.fading                  : 25
-! ! URxvt.fadeColor               : #101010
-! URxvt*visualBell              : false
-
-! ! ------------------------------------------------------------------------------
-! ! ROFI Color theme
-! ! ------------------------------------------------------------------------------
-! rofi.color-enabled: true
-! rofi.color-window: #273238, #273238, #1e2529
-! rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
-! rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
-! rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
-! ! }
-
-! LIGHT COLOR_SCHEME ACTIVE {
-
-! PaperColour Theme
-URxvt.foreground: #000000
-URxvt.background: rgba:ffff/ffff/ffff/cccc
+!! URxvt COLORS --------------------------------------------------------
 URxvt*depth                   : 32
+! URxvt.fading                  : 25
+! URxvt.fadeColor               : #101010
+URxvt*visualBell              : false
 
-!! black dark/light
-*color0: #000000
-*color8: #000000
-
-!! red dark/light
-*color1: #550000
-*color9: #660000
-
-!! green dark/light
-*color2: #008800
-*color10: #008800
-
-!! yellow dark/light
-*color3: #555500
-*color11: #666600
-
-!! blue dark/light
-*color4: #000055
-*color12: #000066
-
-!! magenta dark/light
-*color5: #550055
-*color13: #660066
-
-!! cyan dark/light
-*color6: #00a9a9
-*color14: #006666
-
-!! white dark/light
-*color7: #ffffff
-*color15: #ffffff
-
-!! ------------------------------------------------------------------------------
+! ------------------------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
-! Use extended color scheme
-rofi.color-enabled:                  true
-! Color scheme for normal row
-rofi.color-normal:                   #ffffff,#525d76,#f5f5f5,#5294e2,#ffffff
-! Color scheme for urgent row
-rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
-! Color scheme for active row
-rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
-! Color scheme window
-rofi.color-window:                   #ffffff,#f5f5f5
-! Separator style (none, dash, solid)
-rofi.separator-style:                solid
+rofi.color-enabled: true
+rofi.color-window: #273238, #273238, #1e2529
+rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 ! }
+
+! LIGHT COLOR_SCHEME {
+
+! ! PaperColour Theme
+! URxvt.foreground: #000000
+! URxvt.background: rgba:ffff/ffff/ffff/cccc
+! URxvt*depth                   : 32
+
+! !! black dark/light
+! *color0: #000000
+! *color8: #000000
+
+! !! red dark/light
+! *color1: #550000
+! *color9: #660000
+
+! !! green dark/light
+! *color2: #008800
+! *color10: #008800
+
+! !! yellow dark/light
+! *color3: #555500
+! *color11: #666600
+
+! !! blue dark/light
+! *color4: #000055
+! *color12: #000066
+
+! !! magenta dark/light
+! *color5: #550055
+! *color13: #660066
+
+! !! cyan dark/light
+! *color6: #00a9a9
+! *color14: #006666
+
+! !! white dark/light
+! *color7: #ffffff
+! *color15: #ffffff
+
+! !! ------------------------------------------------------------------------------
+! ! ROFI Color theme
+! ! ------------------------------------------------------------------------------
+! ! Use extended color scheme
+! rofi.color-enabled:                  true
+! ! Color scheme for normal row
+! rofi.color-normal:                   #ffffff,#525d76,#f5f5f5,#5294e2,#ffffff
+! ! Color scheme for urgent row
+! rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
+! ! Color scheme for active row
+! rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
+! ! Color scheme window
+! rofi.color-window:                   #ffffff,#f5f5f5
+! ! Separator style (none, dash, solid)
+! rofi.separator-style:                solid
+! ! }
