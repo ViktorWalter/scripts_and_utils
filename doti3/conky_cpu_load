@@ -1,5 +1,6 @@
 alignment bottom_middle
 background true
+out_to_console yes
 border_width 0
 cpu_avg_samples 2
 default_color grey

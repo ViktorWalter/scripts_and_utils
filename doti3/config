@@ -15,7 +15,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id redshift-gtk
-exec --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py
+exec_always --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py &
 exec_always --no-startup-id ~/.i3/conky_start
 
 set $mod Mod1
@@ -203,6 +203,9 @@ client.unfocused        $inactive_background      $inactive_background  $inactiv
 client.focused_inactive $active_background        $inactive_background  $inactive_text_color  $split_indicator
 client.urgent           $inactive_background      $inactive_background  $inactive_text_color  $split_indicator
 
+#show popups belongign to current fullscreen window
+popup_during_fullscreen smart
+
 # Start plasma
 for_window [class="dock"] floating enable
 for_window [class="desktop"] floating enable
@@ -212,6 +215,8 @@ for_window [class="Yakuake"] floating enable
 for_window [class="Yakuake"] border none
 for_window [class="conky"] floating enable
 for_window [class="conky"] border none
+for_window [class="conky"] sticky enable
+no_focus [class="conky-up"]
 # exec "true /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit_wrapper --kded && kwrapper5 /usr/bin/ksmserver"
 
 # exec wmsystemtray --bgcolor grey --fgcolor white --non-wmaker
@@ -224,6 +229,7 @@ for_window [class="Lazarus"] floating enable
 bar {
 
   status_command i3blocks -c ~/.i3/i3blocks.conf
+  # status_command ~/.i3/dzen2.sh
     i3bar_command i3bar 
     font pango:Liberation Sans,FontAwesome 10
 
@@ -246,6 +252,7 @@ bar {
 # i3bar position
   position bottom
   tray_output primary
+  # status_command i3status ~/.i3/my_i3status.sh
 
 }
 
