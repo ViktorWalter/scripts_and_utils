@@ -169,33 +169,33 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-# LIGHT COLOR_SCHEME {
-# set $inactive_text_color         #1d2021
-# set $active_text_color           #1d2021
-# set $active_border               #aaaaaa
-# set $inactive_background         #dddddd
-# set $active_background           #888888
-# set $focused_ws_bg               #aaaaaa
-# set $background_color            #ffffff
-# set $split_indicator             #aaaaaa
-# set $transparent #ffffffaa
-# exec_always --no-startup-id feh --bg-scale ~/pictures/zone.jpg
-# for_window [class="^.*"] border pixel 1
-# # }
-
-# JELLYBEANS COLOR_SCHEME ACTIVE {
-set $focused_ws_bg            #005faf
-set $active_text_color        #ffffff
-set $inactive_text_color      #eeeeee
-set $inactive_background      #333333
-set $active_background        #005faf
-set $background_color         #151515
-set $active_border            #005faf
-set $split_indicator          #B85335
-set $transparent #000000aa
-exec_always --no-startup-id feh --bg-scale ~/pictures/web.jpg
+# LIGHT COLOR_SCHEME ACTIVE {
+set $inactive_text_color         #1d2021
+set $active_text_color           #1d2021
+set $active_border               #aaaaaa
+set $inactive_background         #dddddd
+set $active_background           #888888
+set $focused_ws_bg               #aaaaaa
+set $background_color            #ffffff
+set $split_indicator             #aaaaaa
+set $transparent #ffffffaa
+exec_always --no-startup-id feh --bg-scale ~/pictures/pale.jpg
 for_window [class="^.*"] border pixel 1
 # }
+
+# JELLYBEANS COLOR_SCHEME {
+# set $focused_ws_bg            #005faf
+# set $active_text_color        #ffffff
+# set $inactive_text_color      #eeeeee
+# set $inactive_background      #333333
+# set $active_background        #005faf
+# set $background_color         #151515
+# set $active_border            #005faf
+# set $split_indicator          #B85335
+# set $transparent #000000dd
+# exec_always --no-startup-id feh --bg-fill ~/pictures/web.jpg
+# for_window [class="^.*"] border pixel 1
+# # }
 
 # window colors
 #                       border                    background            text                  indicator
