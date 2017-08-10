@@ -246,7 +246,7 @@ bar {
         active_workspace   $transparent       $transparent         $active_text_color
         inactive_workspace $transparent       $transparent         $active_text_color
         binding_mode       $transparent       $transparent         $active_text_color
-        urgent_workspace   $transparent       $transparent         $active_text_color
+        urgent_workspace   $transparent       $transparent         #ff0000
     }
 
 # i3bar position
