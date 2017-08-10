@@ -170,31 +170,31 @@ bindsym $mod+r mode "resize"
 
 set $transparent #00000000
 
-# LIGHT COLOR_SCHEME ACTIVE {
-set $inactive_text_color         #1d2021
-set $active_text_color           #1d2021
-set $active_border               #aaaaaa
-set $inactive_background         #dddddd
-set $active_background           #888888
-set $focused_ws_bg               #aaaaaa
-set $background_color            #ffffff
-set $split_indicator             #aaaaaa
-exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/white.jpg
-for_window [class="^.*"] border pixel 3
-# }
-
-# JELLYBEANS COLOR_SCHEME {
-# set $focused_ws_bg            #005faf
-# set $active_text_color        #ffffff
-# set $inactive_text_color      #eeeeee
-# set $inactive_background      #333333
-# set $active_background        #005faf
-# set $background_color         #151515
-# set $active_border            #005faf
-# set $split_indicator          #B85335
-# exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/151515.jpg
-# for_window [class="^.*"] border pixel 2
+# LIGHT COLOR_SCHEME {
+# set $inactive_text_color         #1d2021
+# set $active_text_color           #1d2021
+# set $active_border               #aaaaaa
+# set $inactive_background         #dddddd
+# set $active_background           #888888
+# set $focused_ws_bg               #aaaaaa
+# set $background_color            #ffffff
+# set $split_indicator             #aaaaaa
+# exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/white.jpg
+# for_window [class="^.*"] border pixel 3
 # # }
+
+# JELLYBEANS COLOR_SCHEME ACTIVE {
+set $focused_ws_bg            #005faf
+set $active_text_color        #ffffff
+set $inactive_text_color      #eeeeee
+set $inactive_background      #333333
+set $active_background        #005faf
+set $background_color         #151515
+set $active_border            #005faf
+set $split_indicator          #B85335
+exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/151515.jpg
+for_window [class="^.*"] border pixel 2
+# }
 
 # window colors
 #                       border                    background            text                  indicator
@@ -229,9 +229,9 @@ for_window [class="Lazarus"] floating enable
 bar {
 
   status_command i3blocks -c ~/.i3/i3blocks.conf
-  # status_command ~/.i3/dzen2.sh
     i3bar_command i3bar 
     font pango:lode ,FontAwesome 10
+    height 28
 
     # font pango:DejaVu Sans Mono, Awesome 8
 

@@ -54,20 +54,22 @@ WINDOW_ICONS = {
     'firefox': fa.icons['firefox'],
     'google-chrome': fa.icons['chrome'],
     'gpick': fa.icons['eyedropper'],
-    'libreoffice': fa.icons['file-text-o'],
-    'kate': fa.icons['file-text-o'],
+    'libreoffice': fa.icons['file-text'],
+    'kate': fa.icons['file-text'],
     'mupdf': fa.icons['file-pdf-o'],
     'zathura': fa.icons['file-pdf-o'],
     'spotify': fa.icons['music'],  # could also use the 'spotify' icon
     'vlc': fa.icons['play'],
     'steam': fa.icons['steam'],
-    'subl': fa.icons['file-text-o'],
-    'subl3': fa.icons['file-text-o'],
-    'thunar': fa.icons['files-o'],
+    'subl': fa.icons['file-text'],
+    'subl3': fa.icons['file-text'],
+    'thunar': fa.icons['folder'],
     'urxvt': fa.icons['terminal'],
     'zenity': fa.icons['window-maximize'],
+    'kmail': fa.icons['envelope'],
+    'iptux': fa.icons['weixin'],
+    'messenger for desktop': fa.icons['facebook-official'],
 }
-
 # This icon is used for any application not in the list above
 DEFAULT_ICON = fa.icons['window-maximize']
 
