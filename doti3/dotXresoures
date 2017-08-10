@@ -1,6 +1,6 @@
 ! EXTENSIONS are stored at /usr/lib/urxvt/perl
 
-URxvt.font: xft:Liberation Mono:size=12
+URxvt.font: xft:Raize:size=10
 URxvt.letterspace: -2
 URxvt.scrollBar: false
 
@@ -22,7 +22,10 @@ URxvt.perl-ext-common: default,clipboard
 
 ! JELLYBEANS COLOR_SCHEME ACTIVE {
 ! vim: ft=xdefaults
-URxvt.background: #151515
+! URxvt.transparent: true
+! URxvt.depth: 32
+! URxvt.shading: 10
+URxvt.background: rgba:0000/0000/0000/cccc
 URxvt.foreground: #dddddd
 ! black
 URxvt.color0: #1C1C1C
@@ -69,7 +72,8 @@ rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
 
 ! ! PaperColour Theme
 ! URxvt.foreground: #000000
-! URxvt.background: #FFFFFF
+! URxvt.background: rgba:ffff/ffff/ffff/cccc
+! URxvt*depth                   : 32
 
 ! !! black dark/light
 ! *color0: #000000

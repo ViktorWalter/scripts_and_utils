@@ -168,7 +168,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-set $transparent #00000000
 
 # LIGHT COLOR_SCHEME {
 # set $inactive_text_color         #1d2021
@@ -179,8 +178,9 @@ set $transparent #00000000
 # set $focused_ws_bg               #aaaaaa
 # set $background_color            #ffffff
 # set $split_indicator             #aaaaaa
-# exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/white.jpg
-# for_window [class="^.*"] border pixel 3
+# set $transparent #ffffffaa
+# exec_always --no-startup-id feh --bg-scale ~/pictures/zone.jpg
+# for_window [class="^.*"] border pixel 1
 # # }
 
 # JELLYBEANS COLOR_SCHEME ACTIVE {
@@ -192,8 +192,9 @@ set $active_background        #005faf
 set $background_color         #151515
 set $active_border            #005faf
 set $split_indicator          #B85335
-exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/151515.jpg
-for_window [class="^.*"] border pixel 2
+set $transparent #000000aa
+exec_always --no-startup-id feh --bg-scale ~/pictures/incipisphere.jpg
+for_window [class="^.*"] border pixel 1
 # }
 
 # window colors
@@ -229,7 +230,7 @@ for_window [class="Lazarus"] floating enable
 bar {
 
   status_command i3blocks -c ~/.i3/i3blocks.conf
-    i3bar_command i3bar 
+    i3bar_command i3bar -t 
     font pango:lode ,FontAwesome 10
     height 28
 
@@ -238,7 +239,7 @@ bar {
     colors {
 
       statusline $text_color
-        background $background_color
+        background $transparent
         separator  $inactive_text_color
 
 #                  border             background           text
@@ -255,6 +256,13 @@ bar {
   # status_command i3status ~/.i3/my_i3status.sh
 
 }
+
+#set up gaps
+gaps inner 5
+gaps outer 1
+smart_gaps on
+
+smart_borders on
 
 # kde runner
 # bindsym $mod+F2 exec krunner
