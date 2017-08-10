@@ -170,31 +170,31 @@ bindsym $mod+r mode "resize"
 
 set $transparent #00000000
 
-# LIGHT COLOR_SCHEME {
-# set $inactive_text_color         #1d2021
-# set $active_text_color           #1d2021
-# set $active_border               #aaaaaa
-# set $inactive_background         #dddddd
-# set $active_background           #888888
-# set $focused_ws_bg               #aaaaaa
-# set $background_color            #ffffff
-# set $split_indicator             #aaaaaa
-# exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/white.jpg
-# for_window [class="^.*"] border pixel 3
-# # }
-
-# JELLYBEANS COLOR_SCHEME ACTIVE {
-set $focused_ws_bg            #005faf
-set $active_text_color        #ffffff
-set $inactive_text_color      #eeeeee
-set $inactive_background      #333333
-set $active_background        #005faf
-set $background_color         #151515
-set $active_border            #005faf
-set $split_indicator          #B85335
-exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/151515.jpg
-for_window [class="^.*"] border pixel 2
+# LIGHT COLOR_SCHEME ACTIVE {
+set $inactive_text_color         #1d2021
+set $active_text_color           #1d2021
+set $active_border               #aaaaaa
+set $inactive_background         #dddddd
+set $active_background           #888888
+set $focused_ws_bg               #aaaaaa
+set $background_color            #ffffff
+set $split_indicator             #aaaaaa
+exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/white.jpg
+for_window [class="^.*"] border pixel 3
 # }
+
+# JELLYBEANS COLOR_SCHEME {
+# set $focused_ws_bg            #005faf
+# set $active_text_color        #ffffff
+# set $inactive_text_color      #eeeeee
+# set $inactive_background      #333333
+# set $active_background        #005faf
+# set $background_color         #151515
+# set $active_border            #005faf
+# set $split_indicator          #B85335
+# exec_always --no-startup-id feh --bg-fill ~/git/linux-setup/miscellaneous/wallpapers/151515.jpg
+# for_window [class="^.*"] border pixel 2
+# # }
 
 # window colors
 #                       border                    background            text                  indicator
@@ -216,7 +216,7 @@ for_window [class="Yakuake"] border none
 for_window [class="conky"] floating enable
 for_window [class="conky"] border none
 for_window [class="conky"] sticky enable
-no_focus [class="conky-up"]
+no_focus [class="conky"]
 # exec "true /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit_wrapper --kded && kwrapper5 /usr/bin/ksmserver"
 
 # exec wmsystemtray --bgcolor grey --fgcolor white --non-wmaker
@@ -231,7 +231,7 @@ bar {
   status_command i3blocks -c ~/.i3/i3blocks.conf
   # status_command ~/.i3/dzen2.sh
     i3bar_command i3bar 
-    font pango:Liberation Sans,FontAwesome 10
+    font pango:lode ,FontAwesome 10
 
     # font pango:DejaVu Sans Mono, Awesome 8
 
@@ -243,8 +243,8 @@ bar {
 
 #                  border             background           text
         focused_workspace  $focused_ws_bg     $focused_ws_bg       $active_text_color
-        active_workspace   $transparent       $transparent         $active_text_color
-        inactive_workspace $transparent       $transparent         $active_text_color
+        active_workspace   $transparent       $active_background   $active_text_color
+        inactive_workspace $transparent       $inactive_background $inactive_text_color
         binding_mode       $transparent       $transparent         $active_text_color
         urgent_workspace   $transparent       $transparent         #ff0000
     }
