@@ -16,7 +16,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id redshift-gtk
 exec_always --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py &
-exec_always --no-startup-id ~/.i3/conky_start
+exec_always --no-startup-id "sleep 5; ~/.i3/conky_start"
 
 set $mod Mod1
 set $mod2 Mod4
@@ -217,8 +217,7 @@ for_window [class="Yakuake"] border none
 for_window [class="conky"] floating enable
 for_window [class="conky"] border none
 for_window [class="conky"] sticky enable
-for_window [class="conky"] focus mode_toggle
-for_window [class="conky"] focus mode_toggle
+for_window [class="conky"] no_focus
 # exec "true /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit_wrapper --kded && kwrapper5 /usr/bin/ksmserver"
 
 # exec wmsystemtray --bgcolor grey --fgcolor white --non-wmaker
