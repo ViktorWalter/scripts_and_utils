@@ -69,6 +69,7 @@ WINDOW_ICONS = {
     'kmail': fa.icons['envelope'],
     'iptux': fa.icons['weixin'],
     'messenger for desktop': fa.icons['facebook-official'],
+    'conky': "",
 }
 # This icon is used for any application not in the list above
 DEFAULT_ICON = fa.icons['window-maximize']

@@ -217,7 +217,8 @@ for_window [class="Yakuake"] border none
 for_window [class="conky"] floating enable
 for_window [class="conky"] border none
 for_window [class="conky"] sticky enable
-no_focus [class="conky"]
+for_window [class="conky"] focus mode_toggle
+for_window [class="conky"] focus mode_toggle
 # exec "true /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit_wrapper --kded && kwrapper5 /usr/bin/ksmserver"
 
 # exec wmsystemtray --bgcolor grey --fgcolor white --non-wmaker
