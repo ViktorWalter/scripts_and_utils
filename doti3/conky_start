@@ -1,10 +1,13 @@
 #!/bin/bash
 killall conky
+killall perl
 cd ~/.i3/
 conky -c dotconkyrc &>/dev/null &
 echo "conky running, now to prepare the focus protection"
-./i3subscribe workspace | while read -r event; do
+./i3subscribe window | while read -r event; do
 xdotool search --class "conky" | grep `xdotool getwindowfocus`;
-if [ "$?" -eq "0" ]; then i3-msg focus mode_toggle; fi
+if [ "$?" -eq "0" ]; then i3-msg focus mode_toggle; fi;
+echo "again"
+
 done
 exit

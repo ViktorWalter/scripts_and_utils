@@ -121,7 +121,8 @@ bindsym $mod+4 workspace number 4
 bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8; exec ~/.i3/send2secondary.sh 
+bindsym $mod+8 workspace number 8
+# ; exec ~/.i3/send2secondary.sh 
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
@@ -266,7 +267,7 @@ smart_borders on
 
 # kde runner
 # bindsym $mod+F2 exec krunner
-bindsym $mod+d exec krunner
+# bindsym $mod+d exec krunner
 
 # calculator
 bindsym XF86Calculator exec kcalc
@@ -276,9 +277,8 @@ for_window [class="kcalc"] floating enable
 bindsym Ctrl+Escape exec ksysguard
 
 # rofi launcher
-#bindsym $mod+d exec rofi -show run -lines 6 -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
-# -eh 2 -width 100 -padding 250 -opacity "85" 
-#
+bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -font 'Raize 15'"
+
 # Pulse Audio controls
 bindsym $mod+F6 exec --no-startup-id pactl -- set-sink-volume 0 +10% #increase sound volume
 bindsym $mod+F5 exec --no-startup-id pactl -- set-sink-volume 0 -10% #decrease sound volume
@@ -335,7 +335,8 @@ for_window [title="cv_fl_*"] floating enable
 for_window [title="cv_fl_*"] fullscreen disable
 
 # lock session
-bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi \ -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Liberation Mono 18"
+bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi
+# \ -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Liberation Mono 18"
 
 # enables transparency
 exec --no-startup-id compton -f -D 3
