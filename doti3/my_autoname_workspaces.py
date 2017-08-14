@@ -67,8 +67,10 @@ WINDOW_ICONS = {
     'urxvt': fa.icons['terminal'],
     'zenity': fa.icons['window-maximize'],
     'kmail': fa.icons['envelope'],
+    'nylas mail': fa.icons['envelope'],
     'iptux': fa.icons['weixin'],
     'messenger for desktop': fa.icons['facebook-official'],
+    'gimp-2.8': fa.icons['paint-brush'],
     'conky': "",
 }
 # This icon is used for any application not in the list above
