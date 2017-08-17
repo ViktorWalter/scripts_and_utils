@@ -1,6 +1,5 @@
 #!/bin/bash
 killall conky
-killall perl
 cd ~/.i3/
 conky -c dotconkyrc &>/dev/null &
 echo "conky running, now to prepare the focus protection"

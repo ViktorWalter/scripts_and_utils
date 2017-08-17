@@ -71,6 +71,7 @@ WINDOW_ICONS = {
     'iptux': fa.icons['weixin'],
     'messenger for desktop': fa.icons['facebook-official'],
     'gimp-2.8': fa.icons['paint-brush'],
+    'kcalc': fa.icons['calculator'],
     'conky': "",
 }
 # This icon is used for any application not in the list above
