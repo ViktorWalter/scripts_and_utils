@@ -15,6 +15,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
 exec --no-startup-id redshift-gtk
+exec --no-startup-id cbatticon
 exec_always  --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py &
 exec_always  --no-startup-id "killall perl"
 exec_always  --no-startup-id "sleep 2; ~/.i3/conky_start"
@@ -277,8 +278,11 @@ smart_gaps on
 # bindsym $mod+d exec krunner
 
 # calculator
-bindsym XF86Calculator exec kcalc
+bindsym XF86Calculator exec galculator
 for_window [class="kcalc"] floating enable
+for_window [class="galculator"] floating enable
+for_window [class="Galculator"] floating enable
+for_window [class="gnome-calculator"] floating enable
 
 # system monitor
 bindsym Ctrl+Escape exec ksysguard
