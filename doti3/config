@@ -203,7 +203,7 @@ set $active_background        #005faf
 set $background_color         #151515
 set $active_border            #005faf
 set $split_indicator          #B85335
-set $transparent #000000dd
+set $transparent              #000000dd
 exec_always --no-startup-id feh --bg-scale ~/pictures/web.jpg
 for_window [class="^.*"] border pixel 1
 # }
@@ -239,8 +239,8 @@ for_window [class="Lazarus"] floating enable
 bar {
 
   status_command i3blocks -c ~/.i3/i3blocks.conf
-    i3bar_command i3bar -t 
-    font pango:lode ,FontAwesome 10
+    i3bar_command i3bar  
+    font pango:lode ,FontAwesome 9
     height 25
 
     # font pango:DejaVu Sans Mono, Awesome 8
@@ -341,7 +341,7 @@ for_window [class="^Tk$"] floating enable
 assign [title="cv_*"] $workspace8
 for_window [title="cv_*"] floating disable
 for_window [title="cv_*"] border none
-for_window [title="cv_*"] fullscreen enable
+# for_window [title="cv_*"] fullscreen enable
 for_window [title="cv_fl_*"] floating enable
 for_window [title="cv_fl_*"] fullscreen disable
 

@@ -11,8 +11,10 @@ elif [ ${#scrlst[@]} -lt 2 ]; then
 else
   for output in ${scr}; do
     if [[ "$output" != *LVDS* ]]; then
-      i3-msg "move workspace to output $output"
-      exit
+      if [[ "$output" != *DP* ]]; then
+        i3-msg "move workspace to output $output"
+        exit
+      fi;
     fi;
   done;
 fi
