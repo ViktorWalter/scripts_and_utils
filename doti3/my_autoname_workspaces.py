@@ -72,6 +72,8 @@ WINDOW_ICONS = {
     'messenger for desktop': fa.icons['facebook-official'],
     'gimp-2.8': fa.icons['paint-brush'],
     'kcalc': fa.icons['calculator'],
+    'galculator': fa.icons['calculator'],
+    'gnome-calculator': fa.icons['calculator'],
     'conky': "",
 }
 # This icon is used for any application not in the list above
@@ -100,21 +102,22 @@ def rename_workspaces(i3):
     for ws_index, workspace in enumerate(i3.get_tree().workspaces()):
         ws_info = ws_infos[ws_index]
 
-        name_parts = parse_workspace_name(workspace.name)
-        name_parts['icons'] = ' '.join([icon_for_window(w)
-                                        for w in workspace.leaves()])
+        # name_parts = parse_workspace_name(workspace.name)
+        # name_parts['icons'] = ' '.join([icon_for_window(w)
+        #                                 for w in workspace.leaves()])
 
         # As we enumerate, leave one gap in workspace numbers between each monitor.
         # This leaves a space to insert a new one later.
-        if ws_info.output != prev_output and prev_output != None:
-            n += 1
-        prev_output = ws_info.output
+        # if (ws_info.output != prev_output) and (prev_output != None):
+        #     n += 1
+        # prev_output = ws_info.output
 
         # # renumber workspace
         # name_parts['num'] = n
         # n += 1
-
-        new_name = construct_workspace_name(name_parts)
+        icons = [icon_for_window(w) for w in workspace.leaves()]
+        icon_str = ' ' + ''.join(set(icons)) if len(icons) else ''
+        new_name = str(workspace.num) + icon_str
         i3.command('rename workspace "%s" to "%s"' % (workspace.name, new_name))
 
 
