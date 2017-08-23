@@ -13,3 +13,6 @@
 [submodule "doti3/conky-draw"]
 	path = doti3/conky-draw
 	url = https://github.com/fisadev/conky-draw.git
+[submodule "doti3/bitmap-fonts"]
+	path = doti3/bitmap-fonts
+	url = https://github.com/Tecate/bitmap-fonts

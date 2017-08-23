@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id yakuake
+# exec --no-startup-id yakuake
 # exec "sleep 4; launchy"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
@@ -18,8 +18,8 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id cbatticon
 exec_always  --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py &
 exec_always  --no-startup-id "killall perl"
-exec_always  --no-startup-id "sleep 2; ~/.i3/conky_start"
-exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
+# exec_always  --no-startup-id "sleep 2; ~/.i3/conky_start"
+# exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
 set $mod Mod1
 set $mod2 Mod4
@@ -267,9 +267,9 @@ bar {
 }
 
 #set up gaps
-gaps inner 5
-gaps outer 1
-smart_gaps on
+# gaps inner 5
+# gaps outer 1
+# smart_gaps on
 
 # smart_borders on
 
@@ -283,6 +283,9 @@ for_window [class="kcalc"] floating enable
 for_window [class="galculator"] floating enable
 for_window [class="Galculator"] floating enable
 for_window [class="gnome-calculator"] floating enable
+
+for_window [title="UNDERTALE"] floating enable
+for_window [title="UNDERTALE"] border none
 
 # system monitor
 bindsym Ctrl+Escape exec ksysguard
@@ -316,7 +319,7 @@ bindsym $mod+Shift+o exec ~/.i3/rotateScreen.sh
 
 
 ## swapping keyboard layouts? the same as in classic windows
-exec_always --no-startup-id "sleep 4; setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:sclk_toggle\""
+exec_always --no-startup-id "sleep 4; setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:rctrl_toggle\""
 exec_always --no-startup-id "sleep 5; setxkbmap -option \"caps:escape\""
 exec_always --no-startup-id "xmodmap -e \"keycode 105 = Menu NoSymbol Control_R\""
 #exec --no-startup-id "setxkbmap us"
@@ -377,3 +380,6 @@ bindsym $mod2+u exec --no-startup-id xdotool click 1
 bindsym $mod2+i exec --no-startup-id  xdotool click 3
 #Banish the mouse pointer to the corner of the current window - removes the distracting cursor or summons it closer for specific tasks
 bindsym $mod2+b exec --no-startup-id ~/.i3/banishMouse.sh
+#enable and disable the touchpad
+bindsym $mod2+q exec --no-startup-id xinput set-prop 11 "Device Enabled" 0
+bindsym $mod2+a exec --no-startup-id xinput set-prop 11 "Device Enabled" 1
