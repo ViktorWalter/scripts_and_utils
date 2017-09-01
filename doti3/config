@@ -14,10 +14,8 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pa-applet
-exec --no-startup-id redshift-gtk
 exec --no-startup-id cbatticon
-exec_always  --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py &
-exec_always  --no-startup-id "killall perl"
+exec_always killall python3.5; python3.5 ~/.i3/my_autoname_workspaces.py &
 # exec_always  --no-startup-id "sleep 2; ~/.i3/conky_start"
 # exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
@@ -204,7 +202,7 @@ set $background_color         #151515
 set $active_border            #005faf
 set $split_indicator          #B85335
 set $transparent              #000000dd
-exec_always --no-startup-id feh --bg-scale ~/pictures/web.jpg
+exec_always feh --bg-scale ~/Pictures/276565.jpg
 for_window [class="^.*"] border pixel 1
 # }
 
@@ -309,7 +307,7 @@ bindsym $mod+F4 exec xbacklight -set 100 # INCREASE Screen brightness
 #exec google-chrome
 
 # setup monitors, generete the file with "arandr" utility
-exec --no-startup-id ~/.i3/swapLayout.sh
+# exec --no-startup-id ~/.i3/swapLayout.sh
 #~/.screenlayout/Single.sh
 bindsym $mod+Shift+p exec ~/.i3/swapLayout.sh
 
@@ -321,7 +319,7 @@ bindsym $mod+Shift+o exec ~/.i3/rotateScreen.sh
 ## swapping keyboard layouts? the same as in classic windows
 exec_always --no-startup-id "sleep 4; setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:rctrl_toggle\""
 exec_always --no-startup-id "sleep 5; setxkbmap -option \"caps:escape\""
-exec_always --no-startup-id "xmodmap -e \"keycode 105 = Menu NoSymbol Control_R\""
+# exec_always --no-startup-id "xmodmap -e \"keycode 105 = Menu NoSymbol Control_R\""
 #exec --no-startup-id "setxkbmap us"
 #bindsym $mod+Shift exec ~/.i3/toggle_keyboard_layout.sh
 
@@ -353,7 +351,7 @@ bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi
 # \ -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Liberation Mono 18"
 
 # enables transparency
-exec --no-startup-id compton -f -D 3
+# exec --no-startup-id compton -f -D 3
 
 # show background wallpaper
 #exec_always --no-startup-id feh --bg-fill /usr/share/wallpapers/Next/contents/images/1920x1080.png

@@ -1,4 +1,4 @@
-colorscheme jellybeans
+" colorscheme jellybeans
 map <Leader>m :w\|silent make\|redraw!\|cc<CR>
 ":w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
 " jump to build split

@@ -74,6 +74,8 @@ WINDOW_ICONS = {
     'kcalc': fa.icons['calculator'],
     'galculator': fa.icons['calculator'],
     'gnome-calculator': fa.icons['calculator'],
+    'iridium-browser': fa.icons['chrome'],
+    'slimjet': fa.icons['chrome'],
     'conky': "",
 }
 # This icon is used for any application not in the list above
@@ -116,7 +118,7 @@ def rename_workspaces(i3):
         # name_parts['num'] = n
         # n += 1
         icons = [icon_for_window(w) for w in workspace.leaves()]
-        icon_str = ' ' + ''.join(set(icons)) if len(icons) else ''
+        icon_str = ' ' + ' '.join(set(icons)) if len(icons) else ''
         new_name = str(workspace.num) + icon_str
         i3.command('rename workspace "%s" to "%s"' % (workspace.name, new_name))
 
