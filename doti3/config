@@ -283,6 +283,7 @@ for_window [class="kcalc"] floating enable
 for_window [class="galculator"] floating enable
 for_window [class="Galculator"] floating enable
 for_window [class="gnome-calculator"] floating enable
+for_window [class="gnome-calendar"] floating enable
 
 # system monitor
 bindsym Ctrl+Escape exec ksysguard
@@ -316,9 +317,7 @@ bindsym $mod+Shift+o exec ~/.i3/rotateScreen.sh
 
 
 ## swapping keyboard layouts? the same as in classic windows
-exec_always --no-startup-id "sleep 4; setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:sclk_toggle\""
-exec_always --no-startup-id "sleep 5; setxkbmap -option \"caps:escape\""
-exec_always --no-startup-id "xmodmap -e \"keycode 105 = Menu NoSymbol Control_R\""
+exec_always --no-startup-id ~/.i3/setKeyboard.sh
 #exec --no-startup-id "setxkbmap us"
 #bindsym $mod+Shift exec ~/.i3/toggle_keyboard_layout.sh
 

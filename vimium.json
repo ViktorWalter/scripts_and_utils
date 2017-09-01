@@ -1,9 +1,9 @@
 {
 	"name": "Vimium++",
-	"time": 1501754125027,
+	"time": 1504043440025,
 	"environment": {
 		"chrome": 60,
-		"extension": "1.60.1",
+		"extension": "1.61",
 		"platform": "linux"
 	},
 	"exclusionRules": [],
@@ -16,6 +16,7 @@
 		""
 	],
 	"grabBackFocus": true,
+	"hideHud": true,
 	"keyMappings": [
 		"# Insert your preferred key mappings here.",
 		"map <c-e> Vomnibar.activate",
@@ -23,8 +24,8 @@
 		"map <a-F> LinkHints.activateModeWithQueue",
 		""
 	],
-	"nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
-	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+	"nextPatterns": "next,more,newer,>,›,→,»,≫",
+	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪",
 	"searchEngines": [
 		"g|go|gg|google: https://www.google.com/search?q=$s Google",
 		"js\\:|Js: javascript:\\ $S; Javascript",

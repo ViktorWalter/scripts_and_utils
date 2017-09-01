@@ -26,9 +26,6 @@
 #                            BEGIN CONFIG                             #
 #######################################################################
 
-# Use a custom lock script
-#LOCKSCRIPT="i3lock-extra -m pixelize"
-
 # Colors: FG (foreground), BG (background), HL (highlighted)
 FG_COLOR="#bbbbbb"
 BG_COLOR="#111111"
@@ -111,6 +108,9 @@ fi
 # menu defined as an associative array
 typeset -A menu
 
+# Use a custom lock script
+LOCKSCRIPT="sleep 3 && i3lock -de --color=000000"
+
 # Menu with keys/commands
 menu=(
   [Shutdown]="systemctl poweroff"
@@ -118,7 +118,8 @@ menu=(
   [Hibernate]="systemctl hibernate"
   [Suspend]="systemctl suspend"
   [Halt]="systemctl halt"
-  [Lock]="${LOCKSCRIPT:-i3lock -de  --color=${BG_COLOR#"#"}}"
+  [Lock]="${LOCKSCRIPT}"
+  # [Lock]="sleep 1 && ${LOCKSCRIPT}:-i3lock -de  --color=${BG_COLOR#\"#\"}}"
   [Logout]="i3-msg exit"
   [Cancel]=""
 )
