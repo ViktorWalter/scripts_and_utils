@@ -1,0 +1,73 @@
+" colorscheme jellybeans
+map <Leader>m :w\|silent make\|redraw!\|cc<CR>
+":w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
+" jump to build split
+"map <Leader>M :call VimuxInspectRunner()<CR>
+" close the vimmux window
+map <Leader>l :ccl<CR>
+" building ctags
+"command! MakeTags :call VimuxRunCommand("generateTags; :q")<CR>
+"
+"""""""""""""""""""""""""""""""
+
+" customize bookmarks in startify
+let g:startify_bookmarks = [
+            \ { 'b': '~/.bashrc' },
+            \ { 'v': '~/.vimrc' },
+            \ { 'p': '~/git/linux-setup/appconfig/vim/startify_quotes.txt' },
+            \ ]
+
+if g:user_mode == "1"
+  colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
+  " colorscheme raggi " LIGHT COLOR_SCHEME 
+endif
+
+au BufNewFile,BufRead *.cl setlocal ft=c
+
+au BufNewFile,BufRead *.tex map <Leader>m :w<CR>:VimtexCompile<CR>
+au BufNewFile,BufRead *.tex map <Leader>. :w<CR>:VimtexView<CR>
+au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.tex setlocal wrap
+au BufNewFile,BufRead *.tex setlocal ft=tex
+let g:tex_comment_nospell= 1
+au BufNewFile,BufRead *.tex setlocal fdm=expr
+au BufNewFile,BufRead *.tex setlocal foldexpr=vimtex#fold#level(2)
+set nowrap
+
+set path+=**
+set wildmenu
+unmap <S-J>
+unmap <S-K>
+
+" Write into protected file without prior sudo
+cmap w!! w !sudo tee >dev/null %
+let @t = '!!toilet -f big'
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v',100)
+hi Normal guibg=NONE ctermbg=NONE
+hi NonText guibg=NONE ctermbg=NONE
+
+
+" which plugins should not be loaded outside of normal session (not in athame)
+if g:user_mode == "1"
+
+  "OpenCL syntax
+  Plug 'int3h/vim-opencl', {'for': 'cl'}
+
+endif
+
+python << EOS
+try:
+     import rospkg
+     import vim
+except ImportError:
+     vim.command("let is_ros='N/A'")
+if rospkg.get_package_name(vim.eval("expand('%:p')")):
+    vim.command("let is_ros='true'")
+else:
+    vim.command("let is_ros='false'")
+EOS
+if is_ros == "true"
+  setlocal efm=%f:%l:%c:\ error:%m
+endif
+

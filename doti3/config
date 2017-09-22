@@ -305,7 +305,6 @@ exec --no-startup-id ~/.i3/swapLayout.sh
 #~/.screenlayout/Single.sh
 bindsym $mod+Shift+p exec ~/.i3/swapLayout.sh
 
-# turn off monitor for nightly processing
 bindsym $mod+Shift+o exec ~/.i3/rotateScreen.sh
 
 
