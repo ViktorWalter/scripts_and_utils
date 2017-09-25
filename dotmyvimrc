@@ -54,8 +54,6 @@ if g:user_mode == "1"
   "OpenCL syntax
   Plug 'int3h/vim-opencl', {'for': 'cl'}
 
-endif
-
 python << EOS
 try:
      import rospkg
@@ -70,4 +68,7 @@ EOS
 if is_ros == "true"
   setlocal efm=%f:%l:%c:\ error:%m
 endif
+
+endif
+
 
