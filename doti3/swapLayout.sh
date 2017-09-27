@@ -27,3 +27,4 @@ else
     fi;
   done;
 fi
+xrandr --dpi 100

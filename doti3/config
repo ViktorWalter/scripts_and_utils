@@ -13,6 +13,8 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 # exec "sleep 4; launchy"
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
+exec --no-startup-id pulseaudio
+exec --no-startup-id cadence
 exec --no-startup-id pa-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id cbatticon
@@ -234,7 +236,7 @@ bar {
 
   status_command i3blocks -c ~/.i3/i3blocks.conf
     i3bar_command i3bar  
-    font pango:lode ,FontAwesome 9
+    font pango:lode ,FontAwesome 10
     height 25
 
     # font pango:DejaVu Sans Mono, Awesome 8
