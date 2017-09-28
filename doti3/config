@@ -315,7 +315,7 @@ bindsym $mod+Shift+p exec ~/.i3/swapLayout.sh
 bindsym $mod+Shift+o exec ~/.i3/rotateScreen.sh
 
 
-exec_always --no-startup-id "sleep 1; xrandr --output LVDS1 --primary"
+exec_always --no-startup-id "sleep 6; xrandr --output LVDS1 --primary"
 
 ## swapping keyboard layouts? the same as in classic windows
 exec_always --no-startup-id "sleep 4; setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option \"grp:rctrl_toggle\""
