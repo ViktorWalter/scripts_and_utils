@@ -1,10 +1,12 @@
-local ret_status="%(?:%{$fg_bold[lime]%}>:%{$fg_bold[red]%}>>)"
+#vrisk zsh theme
+local ret_status_prompt="%(?:%{$fg_bold[lime]%}>:%{$fg_bold[red]%}>>)"
+local ret_status_separator="%(?:%{$fg_bold[lime]%}------------------------------------:%{$fg_bold[red]%}------------------------------------)"
+#local ret_status_separator="---------------------------------------------------------"
 
-PROMPT=$'
-%{$fg[blue]%}%/%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}[%n@%m]%{$reset_color%} %{$fg[white]%}[%T]%{$reset_color%}
-${ret_status}%{$reset_color%}'
+PROMPT=$'%{$fg_bold[blue]%}%3~%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}[%n@%m]%{$reset_color%}%{$fg[white]%}[%T]%{$reset_color%}
+${ret_status_prompt}%{$reset_color%}'
 
-PROMPT2="%{$fg_bold[black]%}%_> %{$reset_color%}"
+RPROMPT='${ret_status_separator}'
 
 GIT_CB="git::"
 ZSH_THEME_SCM_PROMPT_PREFIX="%{$fg[green]%}["
