@@ -380,5 +380,8 @@ bindsym $mod2+i exec --no-startup-id  xdotool click 3
 #Banish the mouse pointer to the corner of the current window - removes the distracting cursor or summons it closer for specific tasks
 bindsym $mod2+b exec --no-startup-id ~/.i3/banishMouse.sh
 #enable and disable the touchpad
-bindsym $mod2+q exec --no-startup-id xinput set-prop 11 "Device Enabled" 0
-bindsym $mod2+a exec --no-startup-id xinput set-prop 11 "Device Enabled" 1
+set $touchpad `xinput list | grep -i touchpad | cut -f2 | cut -d'=' -f2`
+exec-always "echo $touchpad > ~/test.txt"
+
+bindsym $mod2+q exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 0
+bindsym $mod2+a exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 1
