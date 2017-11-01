@@ -66,7 +66,7 @@ else:
     vim.command("let is_ros='false'")
 EOS
 if is_ros == "true"
-  setlocal efm=%f:%l:%c:\ error:%m
+  set efm=%f:%l:%c:\ error:%m
 endif
 
 endif
