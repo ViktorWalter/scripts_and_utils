@@ -1,0 +1,14 @@
+keymap ? HELP
+keymap L NEXT
+keymap H PREV
+keymap f MOVE_LIST_MENU
+keymap x CLOSE_TAB
+keymap t NEW_TAB
+keymap T TAB_MENU
+keymap K NEXT_TAB
+keymap J PREV_TAB
+keymap b VIEW_BOOKMARK
+keymap O TAB_LINK
+keymap d NEXT_PAGE
+
+

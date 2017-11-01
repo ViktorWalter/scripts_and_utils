@@ -142,3 +142,5 @@ alias -s cpp=vim
 
 source /usr/share/gazebo-7/setup.sh
 source ~/git/simulation/install/share/simulation/setup.sh
+
+function w3g { w3m "google.com/search?q=$1" ;}
