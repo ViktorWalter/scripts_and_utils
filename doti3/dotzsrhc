@@ -61,9 +61,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
+# Preferred editor for local and remote sessions # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
@@ -144,3 +142,16 @@ source /usr/share/gazebo-7/setup.sh
 source ~/git/simulation/install/share/simulation/setup.sh
 
 function w3g { w3m "google.com/search?q=$1" ;}
+function w3w { w3m "https://en.wikipedia.org/w/index.php?search=$1" ;}
+
+camid=25001879
+mvcamid=mv_25001879
+
+# export PATH=${PATH}:${HOME}/toulouse/openrobots/sbin
+
+############### Robot Package stuff
+export ROBOTPKG_BASE=${HOME}/toulouse/openrobots
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${ROBOTPKG_BASE}/lib/pkgconfig
+export PATH=${ROBOTPKG_BASE}/bin:${ROBOTPKG_BASE}/sbin:${ROBOTPKG_BASE}/lib:$PATH
+export ROS_PACKAGE_PATH=${ROBOTPKG_BASE}/share:${ROS_PACKAGE_PATH}
+export PYTHONPATH=$PYTHONPATH:${ROBOTPKG_BASE}/lib/python2.7/site-packages

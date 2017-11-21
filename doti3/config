@@ -285,7 +285,7 @@ for_window [class="gnome-calendar"] floating enable
 bindsym Ctrl+Escape exec ksysguard
 
 # rofi launcher
-bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -font 'Raize 15'"
+bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -font 'Raize 15' -show-icons True"
 
 # Pulse Audio controls
 bindsym $mod+F6 exec --no-startup-id pactl -- set-sink-volume 0 +10% #increase sound volume
@@ -332,8 +332,8 @@ assign [class="Rviz"] $workspace4
 for_window [class="^Tk$"] floating enable
 
 # imshow windows to window n.8
-assign [title="cv_*"] 8
-for_window [title="cv_*"] floating disable
+for_window [title="OCV_*"] move to scratchpad
+# for_window [title="cv_*"] floating disable
 for_window [title="cv_*"] border none
 for_window [title="cv_*"] fullscreen enable
 for_window [title="cv_fl_*"] floating enable
@@ -356,7 +356,7 @@ bindsym $mod+Ctrl+i exec urxvt -e ~/.i3/setColorScheme.sh
 
 
 #Printscreen
-bindsym Print exec scrot -e 'mv $f ~/Pictures/'
+bindsym Print exec scrot -e 'mv $f ~/pictures/'
 #{ Control the mouse with keyboard
 
 mode "longpress" {
@@ -428,3 +428,8 @@ bindsym $mod+c mode "mouse"
 # bindsym $mod2+i exec --no-startup-id  xdotool click 3
 # #Banish the mouse pointer to the corner of the current window - removes the distracting cursor or summons it closer for specific tasks
 bindsym $mod2+b exec --no-startup-id ~/.i3/banishMouse.sh
+
+
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
