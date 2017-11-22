@@ -47,6 +47,11 @@ call matchadd('ColorColumn', '\%81v',100)
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 
+" au BufNewFile,BufRead *.m setlocal makeprg=system('tmux send-keys -t \$\(tmux list-panes -F \'#{pane_current_command} #{pane_id}\' |awk \'/MATLAB/ {print $2}\'\) \'run %\'')
+let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
+")
+let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
+au BufNewFile,BufRead *.m let &makeprg=b:matlabRun
 
 " which plugins should not be loaded outside of normal session (not in athame)
 if g:user_mode == "1"

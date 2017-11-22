@@ -285,7 +285,7 @@ for_window [class="gnome-calendar"] floating enable
 bindsym Ctrl+Escape exec ksysguard
 
 # rofi launcher
-bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -font 'Raize 15' -show-icons True"
+bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -run-list-command ~/.i3/rofi_commands -font 'Raize 15' -show-icons True"
 
 # Pulse Audio controls
 bindsym $mod+F6 exec --no-startup-id pactl -- set-sink-volume 0 +10% #increase sound volume
