@@ -1,8 +1,7 @@
 keycode   8 =
-keycode   9 = Escape NoSymbol Escape
-keycode  10 = 1 exclam plus 1 exclam dead_tilde
+keycode   9 = ISO_Next_Group NoSymbol ISO_Prev_Group 
 keycode  11 = 2 at lcaron 2 at dead_caron
-keycode  12 = 3 numbersign scaron 3 numbersign dead_circumflex
+keycode  12 = 3 numbersign scaron 3 dead_circumflex
 keycode  13 = 4 dollar ccaron 4 dollar dead_breve
 keycode  14 = 5 percent tcaron 5 percent dead_abovering
 keycode  15 = 6 asciicircum zcaron 6 asciicircum dead_ogonek
@@ -33,10 +32,10 @@ keycode  39 = s S s S dstroke section
 keycode  40 = d D d D Dstroke ETH
 keycode  41 = f F f F bracketleft ordfeminine
 keycode  42 = g G g G bracketright ENG
-keycode  43 = h H Left   Left   Left   Left   
-keycode  44 = j J Down   Down   Down   Down
-keycode  45 = k K Up     Up     Up     Up
-keycode  46 = l L Right  Right  Right  Right
+keycode  43 = h H h H Left   Left   
+keycode  44 = j J j J Down   Down  
+keycode  45 = k K k K Up     Up   
+keycode  46 = l L l L Right  Right
 keycode  47 = semicolon colon ocircumflex quotedbl dollar dead_doubleacute
 keycode  48 = apostrophe quotedbl section exclam apostrophe ssharp
 keycode  49 = grave asciitilde semicolon dead_abovering grave asciitilde
@@ -52,7 +51,7 @@ keycode  58 = m M m M asciicircum masculine
 keycode  59 = comma less comma question less multiply
 keycode  60 = period greater period colon greater division
 keycode  61 = slash question minus underscore asterisk dead_abovedot
-keycode  62 = Shift_R NoSymbol Shift_R
+keycode  62 = Shift_R Shift_R Shift_R Shift_R Shift_R Shift_R Shift_R Shift_R Shift_R
 keycode  63 = KP_Multiply KP_Multiply KP_Multiply KP_Multiply KP_Multiply KP_Multiply XF86ClearGrab KP_Multiply KP_Multiply XF86ClearGrab
 keycode  64 = Alt_L Meta_L Alt_L Meta_L
 keycode  65 = space NoSymbol space space nobreakspace nobreakspace
@@ -82,7 +81,7 @@ keycode  88 = KP_Down KP_2 KP_Down KP_2
 keycode  89 = KP_Next KP_3 KP_Next KP_3
 keycode  90 = KP_Insert KP_0 KP_Insert KP_0
 keycode  91 = KP_Delete KP_Decimal KP_Delete KP_Decimal
-keycode  92 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
+!keycode  92 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
 keycode  93 =
 keycode  94 = less greater backslash bar bar brokenbar slash
 keycode  95 = F11 F11 F11 F11 F11 F11 XF86Switch_VT_11 F11 F11 XF86Switch_VT_11
@@ -95,11 +94,8 @@ keycode 101 = Hiragana_Katakana NoSymbol Hiragana_Katakana
 keycode 102 = Muhenkan NoSymbol Muhenkan
 keycode 103 =
 keycode 104 = KP_Enter NoSymbol KP_Enter
-keycode 105 = Menu NoSymbol Control_R
 keycode 106 = KP_Divide KP_Divide KP_Divide KP_Divide KP_Divide KP_Divide XF86Ungrab KP_Divide KP_Divide XF86Ungrab
 keycode 107 = Print Sys_Req Print Sys_Req
-keycode 108 = Mode_switch Mode_switch Mode_switch Mode_switch Mode_switch
-! keycode 108 = Alt_R Alt_R Alt_R Alt_R Alt_R
 keycode 109 = Linefeed NoSymbol Linefeed
 keycode 110 = Home NoSymbol Home
 keycode 111 = Up NoSymbol Up
@@ -194,7 +190,7 @@ keycode 199 = XF86TouchpadToggle NoSymbol XF86TouchpadToggle
 keycode 200 = XF86TouchpadOn NoSymbol XF86TouchpadOn
 keycode 201 = XF86TouchpadOff NoSymbol XF86TouchpadOff
 keycode 202 =
-keycode 203 = Mode_switch NoSymbol Mode_switch
+!keycode 203 = Mode_switch NoSymbol Mode_switch
 keycode 204 = NoSymbol Alt_L NoSymbol Alt_L
 keycode 205 = NoSymbol Meta_L NoSymbol Meta_L
 keycode 206 = NoSymbol Super_L NoSymbol Super_L
@@ -248,18 +244,35 @@ keycode 253 =
 keycode 254 =
 keycode 255 =
 
+keycode  10 = 1 exclam plus u f p t q
+keycode 108 = ISO_Level3_Shift ISO_Level3_Shift ISO_Level3_Shift Shift_L ISO_Level3_Shift
+
+!keycode 108 = Super_L Super_L Super_L Super_L 
+keycode 105 = Mode_switch NoSymbol NoSymbol NoSymbol Mode_switch
+
+clear control
+clear shift
+clear Mod1
+clear Mod2
+clear Mod3
+clear Mod4
+clear Mod5
 add shift = Shift_L 
 add shift = Shift_R 
 !add lock =      
 add control = Menu 
 add control = Control_L 
-add mod1 = Alt_L 
-add mod2 = Num_Lock 
-!add mod3 = Mode_switch 
-add mod4 = Super_R 
-add mod4 = Super_L
-add mod4 = Hyper_L 
-clear mod5
-add mod5 = Mode_switch 
-!add mod5 = ISO_Level3_Shift 
-
+add Mod1 = Alt_L 
+add Mod2 = Num_Lock 
+!add mod3 = Mode_switch
+add Mod4 = Hyper_L
+add Mod3 = Mode_switch
+add Mod5 = ISO_Level3_Shift
+! add Mod4 = ISO_Level3_Shift
+!add Mod4 = Hyper_L 
+! clear mod5
+!add Mod3 = Mode_switch 
+! clear ISO_Level3_Shift
+! add ISO_Level3_Shift = Alt_R
+!keycode 108 = Super_R Super_R Super_R Super_R Super_R
+!keycode 108 = Alt_R Alt_R Alt_R Alt_R Alt_R
