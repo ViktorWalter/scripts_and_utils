@@ -84,7 +84,7 @@ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros_workspace/src/mbzirc/gazebo_su
 export UAV_MASS=3.0
 
 export PATH=$PATH:/home/viktor/Matlab/Matlab/bin/glnxa64/
-alias mn='MATLAB -nodesktop'
+alias mn='MATLAB -nodesktop -nosplash'
 
 # OpenCV
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig

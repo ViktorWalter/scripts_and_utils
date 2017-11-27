@@ -414,6 +414,14 @@ mode "mouse" {
 }
 bindsym $mod+c mode "mouse"
 
+
+# bindkey mod2+h exec --no-startup-id "xdotool key Left; espeak /"left/""
+# bindkey mod2+j exec xdotool key Down
+# bindkey mod2+j exec --no-startup-id expeak "hey"
+# bindkey mod2+k exec --no-startup-id xdotool key Up
+# bindkey mod2+l exec --no-startup-id xdotool key Right
+
+
 #}
 # #control the mouse with keyboard
 # bindsym $mod2+h exec --no-startup-id xdotool mousemove_relative --sync -- -10 0
