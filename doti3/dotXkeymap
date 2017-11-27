@@ -1481,10 +1481,10 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group1]= [           Print,         Sys_Req ]
     };
     key <RALT> {
-        type[group1]= "TWO_LEVEL",
+        type[group1]= "THREE_LEVEL",
         type[group2]= "ONE_LEVEL",
-        symbols[Group1]= [ Menu ],
-        symbols[Group2]= [ ISO_Level3_Shift ]
+        symbols[Group1]= [ Menu, NoSymbol ],
+        symbols[Group2]= [ ISO_Next_Group, ISO_Level3_Shift ]
     };
     key <LNFD> {         [        Linefeed ] };
     key <HOME> {         [            Home ] };
