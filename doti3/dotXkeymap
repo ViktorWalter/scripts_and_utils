@@ -310,11 +310,22 @@ xkb_types "complete" {
         level_name[Level2]= "Shift";
     };
     type "ALPHABETIC" {
-        modifiers= Shift+Lock;
+        modifiers= Shift+Lock+LevelThree;
         map[Shift]= Level2;
         map[Lock]= Level2;
         level_name[Level1]= "Base";
         level_name[Level2]= "Caps";
+        
+    };
+    type "SPECIAL" {
+        modifiers= Shift+Lock+LevelThree;
+        map[LevelThree]= Level1;
+        map[Lock]= Level2;
+        map[LevelThree]= Level3;
+        map[Shift+LevelThree]= Level4;
+        level_name[Level1]= "Base";
+        level_name[Level2]= "Caps";
+        
     };
     type "KEYPAD" {
         modifiers= Shift+NumLock;
@@ -1103,7 +1114,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     };
     key <AE01> {
         type[group2]= "FOUR_LEVEL",
-        symbols[Group1]= [               1,          exclam ],
+        symbols[Group1]= [               1,          exclam,               Down,             downarrow ],
         symbols[Group2]= [            plus,               1,               f,               p ],
         symbols[Group3]= [               t,               q ]
     };
@@ -1118,9 +1129,10 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group2]= [          scaron,               3, dead_circumflex,        NoSymbol ]
     };
     key <AE04> {
+        type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL",
-        symbols[Group1]= [               4,          dollar ],
-        symbols[Group2]= [          ccaron,               4,          dollar,      dead_breve ]
+        symbols[Group1]= [               4,          dollar,          End,         End ],
+        symbols[Group2]= [          ccaron,               4,          End,         End ]
     };
     key <AE05> {
         type[group2]= "FOUR_LEVEL",
@@ -1148,9 +1160,10 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group2]= [          iacute,               9,       braceleft,      dead_acute ]
     };
     key <AE10> {
+        type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL",
-        symbols[Group1]= [               0,      parenright ],
-        symbols[Group2]= [          eacute,               0,      braceright, dead_doubleacute ]
+        symbols[Group1]= [               0,      parenright,      Home,       Home ],
+        symbols[Group2]= [          eacute,               0,      Home,       Home ]
     };
     key <AE11> {
         type[group2]= "FOUR_LEVEL",
@@ -1267,27 +1280,27 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group2]= [               g,               G,    bracketright,             ENG ]
     };
     key <AC06> {
-        type[group1]= "ALPHABETIC",
+        type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               h,               H ],
+        symbols[Group1]= [               h,               H,            Left,            Left ],
         symbols[Group2]= [               h,               H,            Left,            Left ]
     };
     key <AC07> {
-        type[group1]= "ALPHABETIC",
+        type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               j,               J ],
+        symbols[Group1]= [               j,               J,            Down,            Down ],
         symbols[Group2]= [               j,               J,            Down,            Down ]
     };
     key <AC08> {
-        type[group1]= "ALPHABETIC",
+        type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               k,               K ],
+        symbols[Group1]= [               k,               K,              Up,              Up ],
         symbols[Group2]= [               k,               K,              Up,              Up ]
     };
     key <AC09> {
-        type[group1]= "ALPHABETIC",
+        type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               l,               L ],
+        symbols[Group1]= [               l,               L,           Right,           Right ],
         symbols[Group2]= [               l,               L,           Right,           Right ]
     };
     key <AC10> {
@@ -1318,9 +1331,9 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group2]= [               z,               Z,          degree,            less ]
     };
     key <AB02> {
-        type[group1]= "ALPHABETIC",
+        type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               x,               X ],
+        symbols[Group1]= [               x,               X,      Delete,             BackSpace   ],
         symbols[Group2]= [               x,               X,      numbersign,         greater ]
     };
     key <AB03> {
