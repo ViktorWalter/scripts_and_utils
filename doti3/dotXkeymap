@@ -1100,7 +1100,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
 
     key  <ESC> {
         symbols[Group1]= [  Escape ],
-        symbols[Group2]= [  ISO_Prev_Group ]
+        symbols[Group2]= [  Escape ]
     };
     key <AE01> {
         type[Group2]= "FOUR_LEVEL",
@@ -1382,7 +1382,10 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group1]= [           space ],
         symbols[Group2]= [           space,           space,    nobreakspace,    nobreakspace ]
     };
-    key <CAPS> {         [          Escape ] };
+    key  <CAPS> {
+        symbols[Group1]= [  Escape ],
+        symbols[Group2]= [  ISO ]
+    };
     key <FK01> {
         type= "CTRL+ALT",
         symbols[Group1]= [              F1,              F1,              F1,              F1, XF86Switch_VT_1 ]
