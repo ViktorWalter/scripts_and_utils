@@ -1384,7 +1384,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     };
     key  <CAPS> {
         symbols[Group1]= [  Escape ],
-        symbols[Group2]= [  ISO ]
+        symbols[Group2]= [  ISO_Prev_Group ]
     };
     key <FK01> {
         type= "CTRL+ALT",
