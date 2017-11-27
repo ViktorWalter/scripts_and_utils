@@ -1,4 +1,5 @@
-xmodmap ~/.Xmodmap
+xkbcomp ~/.Xkeymap $DISPLAY
+# xmodmap ~/.Xmodmap
 # setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option "grp:sclk_toggle"
 # sleep 1
 # setxkbmap -option "caps:escape"

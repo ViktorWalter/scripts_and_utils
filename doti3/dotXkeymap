@@ -1104,7 +1104,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     key <AE01> {
         type[group2]= "FOUR_LEVEL",
         symbols[Group1]= [               1,          exclam ],
-        symbols[Group2]= [            plus,               u,               f,               p ],
+        symbols[Group2]= [            plus,               1,               f,               p ],
         symbols[Group3]= [               t,               q ]
     };
     key <AE02> {
