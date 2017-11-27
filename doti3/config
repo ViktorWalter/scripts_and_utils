@@ -25,6 +25,8 @@ exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
 set $mod Mod1
 set $mod2 Mod4
+set $mod3 Mod5
+set $mod4 Mod2
 
 font pango:lode ,FontAwesome 9
 
@@ -214,12 +216,8 @@ client.urgent           $inactive_background      $inactive_background  $inactiv
 #show popups belongign to current fullscreen window
 popup_during_fullscreen smart
 
-# Start plasma
 for_window [class="dock"] floating enable
 for_window [class="desktop"] floating enable
-for_window [class="plasma"] floating enable
-for_window [class="plasma-desktop"] floating enable
-for_window [class="Yakuake"] floating enable
 for_window [class="conky"] floating enable
 for_window [class="conky"] sticky enable
 for_window [class="conky"] no_focus
@@ -435,9 +433,10 @@ bindsym $mod+c mode "mouse"
 # bindsym $mod2+u exec --no-startup-id xdotool click 1
 # bindsym $mod2+i exec --no-startup-id  xdotool click 3
 # #Banish the mouse pointer to the corner of the current window - removes the distracting cursor or summons it closer for specific tasks
-bindsym $mod2+b exec --no-startup-id ~/.i3/banishMouse.sh
+bindsym $mod3+b exec --no-startup-id ~/.i3/banishMouse.sh
 
 
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
+bindsym $mod4+r exec ~/.i3/setKeyboard.sh

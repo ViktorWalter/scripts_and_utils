@@ -261,7 +261,6 @@ xkb_keycodes "evdev+aliases(qwerty)" {
     virtual indicator 13 = "Group 2";
     virtual indicator 14 = "Mouse Keys";
     alias <AC12> = <BKSL>;
-    alias <MENU> = <COMP>;
     alias <HZTG> = <TLDE>;
     alias <LMTA> = <LWIN>;
     alias <RMTA> = <RWIN>;
@@ -293,6 +292,7 @@ xkb_keycodes "evdev+aliases(qwerty)" {
     alias <LatB> = <AB05>;
     alias <LatN> = <AB06>;
     alias <LatM> = <AB07>;
+    alias <MENU> = <COMP>;
 };
 
 xkb_types "complete" {
@@ -313,16 +313,6 @@ xkb_types "complete" {
         modifiers= Shift+Lock+LevelThree;
         map[Shift]= Level2;
         map[Lock]= Level2;
-        level_name[Level1]= "Base";
-        level_name[Level2]= "Caps";
-        
-    };
-    type "SPECIAL" {
-        modifiers= Shift+Lock+LevelThree;
-        map[LevelThree]= Level1;
-        map[Lock]= Level2;
-        map[LevelThree]= Level3;
-        map[Shift+LevelThree]= Level4;
         level_name[Level1]= "Base";
         level_name[Level2]= "Caps";
         
@@ -1109,12 +1099,12 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     name[group2]="Slovak (qwerty)";
 
     key  <ESC> {
-        symbols[Group1]= [  ISO_Next_Group ],
+        symbols[Group1]= [  Escape ],
         symbols[Group2]= [  ISO_Prev_Group ]
     };
     key <AE01> {
-        type[group2]= "FOUR_LEVEL",
-        symbols[Group1]= [               1,          exclam,               Down,             downarrow ],
+        type[Group2]= "FOUR_LEVEL",
+        symbols[Group1]= [               1,          exclam],
         symbols[Group2]= [            plus,               1,               f,               p ],
         symbols[Group3]= [               t,               q ]
     };
@@ -1361,9 +1351,9 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group2]= [               n,               N,      braceright,               N ]
     };
     key <AB07> {
-        type[group1]= "ALPHABETIC",
+        type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
-        symbols[Group1]= [               m,               M ],
+        symbols[Group1]= [               m,               M,     Menu,              XF86MenuKB ],
         symbols[Group2]= [               m,               M,     asciicircum,       masculine ]
     };
     key <AB08> {
@@ -1478,7 +1468,10 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     key <HKTG> {         [ Hiragana_Katakana ] };
     key <MUHE> {         [        Muhenkan ] };
     key <KPEN> {         [        KP_Enter ] };
-    key <RCTL> {         [     Mode_switch ] };
+    key <RCTL> {      
+         type= "FOUR_LEVEL",
+         [     Mode_switch, Menu, Menu, XF86MenuKB]
+    };
     key <KPDV> {
         type= "CTRL+ALT",
         symbols[Group1]= [       KP_Divide,       KP_Divide,       KP_Divide,       KP_Divide,      XF86Ungrab ]
@@ -1490,9 +1483,8 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     key <RALT> {
         type[group1]= "TWO_LEVEL",
         type[group2]= "ONE_LEVEL",
-        symbols[Group1]= [ ISO_Level3_Shift, ISO_Level3_Shift ],
-        symbols[Group2]= [ ISO_Level3_Shift ],
-        symbols[Group3]= [ ISO_Level3_Shift ]
+        symbols[Group1]= [ Menu ],
+        symbols[Group2]= [ ISO_Level3_Shift ]
     };
     key <LNFD> {         [        Linefeed ] };
     key <HOME> {         [            Home ] };
@@ -1519,8 +1511,8 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     key <I129> {         [      KP_Decimal,      KP_Decimal ] };
     key <HNGL> {         [          Hangul ] };
     key <HJCV> {         [    Hangul_Hanja ] };
-    key <LWIN> {         [         Super_L ] };
-    key <RWIN> {         [         Super_R ] };
+    key <LWIN> {         [         ISO_Level3_Shift ] };
+    key <RWIN> {         [         Hyper_R ] };
     key <COMP> {         [            Menu ] };
     key <STOP> {         [          Cancel ] };
     key <AGAI> {         [            Redo ] };
@@ -1624,14 +1616,13 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     modifier_map Shift { <LFSH> };
     modifier_map Shift { <RTSH> };
     modifier_map Mod1 { <LALT> };
-    modifier_map Mod2 { <NMLK> };
+    modifier_map Mod2 { <RWIN> };
     modifier_map Mod5 { <LVL3> };
     modifier_map Mod3 { <RCTL> };
     modifier_map Mod5 { <RALT> };
-    modifier_map Control { <COMP> };
     modifier_map Mod3 { <MDSW> };
     modifier_map Mod1 { <ALT> };
-    modifier_map Mod4 { <HYPR> };
+    modifier_map Mod4 { <SUPR> };
 };
 
 xkb_geometry "pc(pc101)" {

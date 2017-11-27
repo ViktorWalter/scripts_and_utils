@@ -1,5 +1,6 @@
 xkbcomp ~/.Xkeymap $DISPLAY
-# xmodmap ~/.Xmodmap
+#xmodmap -e "keycode  66 = Escape NoSymbol Escape"
+# xmodmap ~/.i3/dotXmodmap
 # setxkbmap -model pc101 -layout us,sk -variant ,qwerty -option "grp:sclk_toggle"
 # sleep 1
 # setxkbmap -option "caps:escape"

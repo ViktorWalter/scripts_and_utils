@@ -1,6 +1,6 @@
 conky.config = {
 	alignment = 'bottom_middle',
-	background = true,
+	background = false,
 	border_width = 0,
 	--cpu_avg_samples = 2,
 	default_color = 'grey',
@@ -24,7 +24,7 @@ conky.config = {
   own_window_class = 'conky',
 	--own_window_argb_visual = true,
 	--own_window_argb_value = 100,
-	own_window_transparent = false,
+	own_window_transparent = true,
 	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager',
 	--stippled_borders = 0,
 	update_interval = 1.0,
