@@ -433,10 +433,23 @@ bindsym $mod+c mode "mouse"
 # bindsym $mod2+u exec --no-startup-id xdotool click 1
 # bindsym $mod2+i exec --no-startup-id  xdotool click 3
 # #Banish the mouse pointer to the corner of the current window - removes the distracting cursor or summons it closer for specific tasks
-bindsym $mod3+b exec --no-startup-id ~/.i3/banishMouse.sh
 
 
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
+bindsym $mod3+b exec --no-startup-id ~/.i3/banishMouse.sh
 bindsym $mod4+r exec ~/.i3/setKeyboard.sh
+
+bindsym mod3+Shift+m exec --no-startup-id xdotool mousedown 1; mode "longpress"
+
+bindsym $mod3+ctrl+shift+h exec --no-startup-id xdotool mousemove_relative --sync -- -10 0
+bindsym $mod3+Ctrl+shift+j exec --no-startup-id xdotool mousemove_relative --sync -- 0 10
+bindsym $mod3+Ctrl+shift+k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -10
+bindsym $mod3+Ctrl+shift+l exec --no-startup-id xdotool mousemove_relative --sync -- 10 0
+
+# fast move
+bindsym $mod3+Shift+h exec --no-startup-id xdotool mousemove_relative --sync -- -25 0
+bindsym $mod3+Shift+j exec --no-startup-id xdotool mousemove_relative --sync -- 0 25
+bindsym $mod3+Shift+k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -25
+bindsym $mod3+Shift+l exec --no-startup-id xdotool mousemove_relative --sync -- 25 0
