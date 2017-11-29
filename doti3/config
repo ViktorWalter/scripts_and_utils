@@ -453,3 +453,8 @@ bindsym $mod3+Shift+h exec --no-startup-id xdotool mousemove_relative --sync -- 
 bindsym $mod3+Shift+j exec --no-startup-id xdotool mousemove_relative --sync -- 0 25
 bindsym $mod3+Shift+k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -25
 bindsym $mod3+Shift+l exec --no-startup-id xdotool mousemove_relative --sync -- 25 0
+
+# bindsym $mod3+Shift+h+j exec --no-startup-id xdotool mousemove_relative --sync -- -20 20
+# bindsym $mod3+Shift+j+l exec --no-startup-id xdotool mousemove_relative --sync -- 20 20
+# bindsym $mod3+Shift+k+h exec --no-startup-id xdotool mousemove_relative --sync -- -20 -20
+# bindsym $mod3+Shift+l+k exec --no-startup-id xdotool mousemove_relative --sync -- 20 -20
