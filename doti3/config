@@ -457,3 +457,6 @@ bindsym $mod3+Shift+l exec --no-startup-id xdotool mousemove_relative --sync -- 
 bindsym $mod3+shift+z exec --no-startup-id xdotool click 1
 bindsym $mod3+shift+a exec --no-startup-id xdotool click 3
 bindsym $mod3+Shift+s exec --no-startup-id xdotool mousedown 1; mode "longpress"
+
+bindsym $mod3+u exec --no-startup-id xdotool click 5
+bindsym $mod3+i exec --no-startup-id xdotool click 4

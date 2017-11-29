@@ -1281,25 +1281,25 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         type[group1]= "THREE_LEVEL_ALTERNATE",
         type[group2]= "THREE_LEVEL_ALTERNATE",
         symbols[Group1]= [               h,               H,            Left],
-        symbols[Group2]= [               h,               H,            Left]
+        symbols[Group2]= [               h,               H,            Pointer_Left]
     };
     key <AC07> {
         type[group1]= "THREE_LEVEL_ALTERNATE",
         type[group2]= "THREE_LEVEL_ALTERNATE",
         symbols[Group1]= [               j,               J,            Down],
-        symbols[Group2]= [               j,               J,            Down]
+        symbols[Group2]= [               j,               J,            Pointer_Down]
     };
     key <AC08> {
         type[group1]= "THREE_LEVEL_ALTERNATE",
         type[group2]= "THREE_LEVEL_ALTERNATE",
         symbols[Group1]= [               k,               K,              Up],
-        symbols[Group2]= [               k,               K,              Up]
+        symbols[Group2]= [               k,               K,              Pointer_Up]
     };
     key <AC09> {
         type[group1]= "THREE_LEVEL_ALTERNATE",
         type[group2]= "THREE_LEVEL_ALTERNATE",
         symbols[Group1]= [               l,               L,           Right],
-        symbols[Group2]= [               l,               L,           Right]
+        symbols[Group2]= [               l,               L,           Pointer_Right]
     };
     key <AC10> {
         type[group2]= "FOUR_LEVEL",
