@@ -360,17 +360,18 @@ bindsym Print exec scrot -e 'mv $f ~/pictures/'
 mode "longpress" {
 
   # slow drag
-  bindsym h exec --no-startup-id xdotool mousemove_relative --sync -- -10 0
-  bindsym j exec --no-startup-id xdotool mousemove_relative --sync -- 0 10
-  bindsym k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -10
-  bindsym l exec --no-startup-id xdotool mousemove_relative --sync -- 10 0
+  bindsym ctrl+h exec --no-startup-id xdotool mousemove_relative --sync -- -10 0
+  bindsym ctrl+j exec --no-startup-id xdotool mousemove_relative --sync -- 0 10
+  bindsym ctrl+k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -10
+  bindsym ctrl+l exec --no-startup-id xdotool mousemove_relative --sync -- 10 0
   # fast drag
-  bindsym shift+h exec --no-startup-id xdotool mousemove_relative --sync -- -25 0
-  bindsym shift+j exec --no-startup-id xdotool mousemove_relative --sync -- 0 25
-  bindsym shift+k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -25
-  bindsym shift+l exec --no-startup-id xdotool mousemove_relative --sync -- 25 0
+  bindsym h exec --no-startup-id xdotool mousemove_relative --sync -- -25 0
+  bindsym j exec --no-startup-id xdotool mousemove_relative --sync -- 0 25
+  bindsym k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -25
+  bindsym l exec --no-startup-id xdotool mousemove_relative --sync -- 25 0
 
   bindsym r exec --no-startup-id xdotool mouseup 1; mode "mouse"
+  bindsym u exec --no-startup-id xdotool mouseup 1; mode "mouse"
   bindsym Escape mode "mouse"
 }
 
@@ -441,7 +442,6 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod3+b exec --no-startup-id ~/.i3/banishMouse.sh
 bindsym $mod4+r exec ~/.i3/setKeyboard.sh
 
-bindsym mod3+Shift+m exec --no-startup-id xdotool mousedown 1; mode "longpress"
 
 bindsym $mod3+ctrl+shift+h exec --no-startup-id xdotool mousemove_relative --sync -- -10 0
 bindsym $mod3+Ctrl+shift+j exec --no-startup-id xdotool mousemove_relative --sync -- 0 10
@@ -454,7 +454,6 @@ bindsym $mod3+Shift+j exec --no-startup-id xdotool mousemove_relative --sync -- 
 bindsym $mod3+Shift+k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -25
 bindsym $mod3+Shift+l exec --no-startup-id xdotool mousemove_relative --sync -- 25 0
 
-# bindsym $mod3+Shift+h+j exec --no-startup-id xdotool mousemove_relative --sync -- -20 20
-# bindsym $mod3+Shift+j+l exec --no-startup-id xdotool mousemove_relative --sync -- 20 20
-# bindsym $mod3+Shift+k+h exec --no-startup-id xdotool mousemove_relative --sync -- -20 -20
-# bindsym $mod3+Shift+l+k exec --no-startup-id xdotool mousemove_relative --sync -- 20 -20
+bindsym $mod3+shift+z exec --no-startup-id xdotool click 1
+bindsym $mod3+shift+a exec --no-startup-id xdotool click 3
+bindsym $mod3+Shift+s exec --no-startup-id xdotool mousedown 1; mode "longpress"
