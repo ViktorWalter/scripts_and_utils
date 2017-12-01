@@ -1,21 +1,20 @@
 defaults
-auth on
 # tls on
 # Same as sslcacertfile in ~/.offlineimaprc
 
 account fel
 host imap.feld.cvut.cz
 user waltevik
-tls_nocertcheck
+auth on
 tls on
-# tls_trust_file /etc/ssl/certs/ca-certificates.crt
 tls_starttls off
+tls_nocertcheck
+# tls_trust_file /etc/ssl/certs/ca-certificates.crt
 # The value of `from` is only used when you're not using sup.
 # But it is necssary if you're testing things out.
 # tls_trust_file /etc/ssl/certs/usenet.crt
 # tls_trust_file /home/viktor/.sup/usenet.crt
-tls off
-from Viktor Walter
+from waltevik@fel.cvut.cz
 passwordeval python -c "import keyring; print keyring.get_password('fel', 'personal')"
 port 465
 
