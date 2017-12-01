@@ -1,0 +1,79 @@
+[general]
+# List of accounts to be synced, separated by a comma.
+accounts = fel,outlook,gmail
+# accounts = outlook,gmail
+ui = ttyui
+
+[Account fel]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = fel-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = fel-remote
+
+
+[Repository fel-local]
+# OfflineIMAP supports Maildir, GmailMaildir, and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/mail/fel
+nametrans = lambda folder: {'inbox': 'INBOX',
+                            }.get(folder, folder)
+
+[Repository fel-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = IMAP
+remotehost = imap.feld.cvut.cz
+remoteuser = waltevik
+remotepasseval = keyring.get_password('fel', 'personal')
+nametrans = lambda folder: {'INBOX': 'inbox',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder == 'INBOX'
+
+[Account outlook]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = outlook-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = outlook-remote
+
+
+[Repository outlook-local]
+# OfflineIMAP supports Maildir, GmailMaildir, and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/mail/outlook
+
+[Repository outlook-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = IMAP
+remotehost = imap-mail.outlook.com
+remoteuser = viktor_walter@outlook.com
+remotepasseval = keyring.get_password('outlook', 'personal')
+
+[Account gmail]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = gmail-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = gmail-remote
+
+
+[Repository gmail-local]
+# OfflineIMAP supports Maildir, GmailMaildir, and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/mail/gmail
+nametrans = lambda folder: {'archive': '[Gmail].V&AWE-etky spr&AOE-vy',
+                            }.get(folder, folder)
+
+[Repository gmail-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = Gmail
+remotehost = imap.gmail.com
+remoteuser = CiernoBiely@gmail.com
+remotepasseval = keyring.get_password('gmail', 'personal')
+nametrans = lambda folder: {'[Gmail].V&AWE-etky spr&AOE-vy': 'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder == '[Gmail].V&AWE-etky spr&AOE-vy'
+

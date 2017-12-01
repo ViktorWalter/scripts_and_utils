@@ -1,0 +1,22 @@
+---
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/viktor/mail/fel/inbox
+  usual: true
+  archived: false
+  sync_back: true
+  id: 2
+  labels: []
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/viktor/mail/outlook/Inbox
+  usual: true
+  archived: false
+  sync_back: true
+  id: 2
+  labels: []
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/viktor/mail/gmail/archive
+  usual: true
+  archived: false
+  sync_back: true
+  id: 2
+  labels: []
