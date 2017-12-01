@@ -155,3 +155,5 @@ export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${ROBOTPKG_BASE}/lib/pkgconfig
 export PATH=${ROBOTPKG_BASE}/bin:${ROBOTPKG_BASE}/sbin:${ROBOTPKG_BASE}/lib:$PATH
 export ROS_PACKAGE_PATH=${ROBOTPKG_BASE}/share:${ROS_PACKAGE_PATH}
 export PYTHONPATH=$PYTHONPATH:${ROBOTPKG_BASE}/lib/python2.7/site-packages
+
+alias sup=sup-mail

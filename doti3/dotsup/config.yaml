@@ -31,7 +31,7 @@
     :alternates:
     - viktor_walter@outlook.com
     - ciernobiely@gmail.com
-    :sendmail: "/usr/sbin/sendmail -oem -ti"
+    :sendmail: msmtp -t --read-envelope-from
     :signature: "/home/viktor/.signature"
     :gpgkey: ''
 :time_mode: 24h

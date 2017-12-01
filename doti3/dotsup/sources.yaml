@@ -4,19 +4,19 @@
   usual: true
   archived: false
   sync_back: true
-  id: 2
-  labels: []
+  id: 1
+  labels: [F]
 - !supmua.org,2006-10-01/Redwood/Maildir
-  uri: maildir:/home/viktor/mail/outlook/Inbox
+  uri: maildir:/home/viktor/mail/outlook/inbox
   usual: true
   archived: false
   sync_back: true
   id: 2
-  labels: []
+  labels: [O]
 - !supmua.org,2006-10-01/Redwood/Maildir
-  uri: maildir:/home/viktor/mail/gmail/archive
+  uri: maildir:/home/viktor/mail/gmail/inbox
   usual: true
   archived: false
   sync_back: true
-  id: 2
-  labels: []
+  id: 3
+  labels: [G]
