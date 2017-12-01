@@ -1143,8 +1143,9 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group2]= [          zcaron,               6,     asciicircum,     dead_ogonek ]
     };
     key <AE07> {
+        type[group1]= "FOUR_LEVEL",
         type[group2]= "FOUR_LEVEL",
-        symbols[Group1]= [               7,       ampersand ],
+        symbols[Group1]= [               7,       ampersand,       End,            End ],
         symbols[Group2]= [          yacute,               7,       ampersand,      dead_grave ]
     };
     key <AE08> {
