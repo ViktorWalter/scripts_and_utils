@@ -202,7 +202,7 @@ set $background_color         #151515
 set $active_border            #005faf
 set $split_indicator          #B85335
 set $transparent              #000000dd
-exec_always --no-startup-id feh --bg-scale ~/pictures/web.jpg
+exec_always --no-startup-id feh --bg-fill ~/pictures/i3_cool.png
 for_window [class="^.*"] border pixel 1
 # }
 
