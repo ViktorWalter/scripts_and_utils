@@ -1111,14 +1111,16 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group2]= [  Escape ]
     };
     key <AE01> {
-        type[Group2]= "FOUR_LEVEL",
+        type[group1]= "FOUR_LEVEL",
+        type[group2]= "FOUR_LEVEL",
         symbols[Group1]= [               1,          exclam],
         symbols[Group2]= [            plus,               1,               f,               p ],
         symbols[Group3]= [               t,               q ]
     };
     key <AE02> {
+        type[group1]= "FOUR_LEVEL",
         type[group2]= "FOUR_LEVEL",
-        symbols[Group1]= [               2,              at ],
+        symbols[Group1]= [               2,              at,              F2,      F2 ],
         symbols[Group2]= [          lcaron,               2,              at,      dead_caron ]
     };
     key <AE03> {

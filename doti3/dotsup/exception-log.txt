@@ -1,7 +1,9 @@
---- RuntimeError from thread: main
-dirty threads remain
-/usr/lib/ruby/vendor_ruby/sup/modes/thread_index_mode.rb:551:in `cleanup'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:387:in `kill_buffer'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:369:in `kill_all_buffers_safely'
-/usr//bin/sup-mail:268:in `<module:Redwood>'
+--- Interrupt from thread: main
+
+/usr/lib/ruby/vendor_ruby/sup/modes/edit_message_mode.rb:533:in `popen'
+/usr/lib/ruby/vendor_ruby/sup/modes/edit_message_mode.rb:533:in `send_message'
+/usr/lib/ruby/vendor_ruby/sup/modes/reply_mode.rb:222:in `send_message'
+/usr/lib/ruby/vendor_ruby/sup/mode.rb:59:in `handle_input'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:222:in `handle_input'
+/usr//bin/sup-mail:255:in `<module:Redwood>'
 /usr//bin/sup-mail:74:in `<main>'
