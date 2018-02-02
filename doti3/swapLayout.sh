@@ -34,3 +34,6 @@ else
   fi
 fi
 xrandr --dpi 100
+
+sleep 2
+~/.i3/conky_start
