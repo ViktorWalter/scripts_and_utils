@@ -38,6 +38,9 @@ set path+=**
 set wildmenu
 unmap <S-J>
 unmap <S-K>
+set lazyredraw "makes scrooling faster
+set cursorline
+set cursorcolumn
 
 " Write into protected file without prior sudo
 cmap w!! w !sudo tee >dev/null %
@@ -53,6 +56,10 @@ let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_n
 let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
 au BufNewFile,BufRead *.m let &makeprg=b:matlabRun
 
+" let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
+" ")
+" let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
+" au BufNewFile,BufRead *.py let &makeprg=b:pythonRun
 " au BufNewFile,BufRead *.cpp let &makeprg="make 2>&1 | grep error"
 
 " which plugins should not be loaded outside of normal session (not in athame)
