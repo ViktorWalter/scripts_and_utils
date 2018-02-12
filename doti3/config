@@ -238,7 +238,7 @@ bar {
 
   status_command i3blocks -c ~/.i3/i3blocks.conf
     i3bar_command i3bar  
-    font pango:lode ,FontAwesome 10
+    font pango: lode, FontAwesome 10
     height 25
 
     # font pango:DejaVu Sans Mono, Awesome 8
