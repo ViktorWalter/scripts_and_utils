@@ -1,9 +1,11 @@
 ! EXTENSIONS are stored at /usr/lib/urxvt/perl
 
+! URxvt.font: xft:tight pixel:medium:size=10
 URxvt.font: xft:Terminus:medium:size=10
 ! URxvt.letterSpace: 0
 URxvt.lineSpace: 2
-URxvt.scrollBar: false
+URxvt.scrollBar: False
+URxvt*jumpScroll: False
 
 URxvt.saveLine: 10000
 

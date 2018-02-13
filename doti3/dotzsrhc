@@ -157,3 +157,5 @@ export ROS_PACKAGE_PATH=${ROBOTPKG_BASE}/share:${ROS_PACKAGE_PATH}
 export PYTHONPATH=$PYTHONPATH:${ROBOTPKG_BASE}/lib/python2.7/site-packages
 
 alias sup=sup-mail
+
+unset zle_bracketed_paste
