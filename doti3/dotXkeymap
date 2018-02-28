@@ -1483,8 +1483,10 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     key <MUHE> {         [        Muhenkan ] };
     key <KPEN> {         [        KP_Enter ] };
     key <RCTL> {      
-         type= "FOUR_LEVEL",
-         [     Mode_switch, Menu, Menu, XF86MenuKB]
+        type[group1]= "THREE_LEVEL",
+        type[group2]= "THREE_LEVEL",
+        symbols[Group1]= [ Menu, NoSymbol ],
+        symbols[Group2]= [ ISO_Next_Group, ISO_Level3_Shift ]
     };
     key <KPDV> {
         type= "CTRL+ALT",
@@ -1495,10 +1497,8 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         symbols[Group1]= [           Print,         Sys_Req ]
     };
     key <RALT> {
-        type[group1]= "THREE_LEVEL",
-        type[group2]= "ONE_LEVEL",
-        symbols[Group1]= [ Menu, NoSymbol ],
-        symbols[Group2]= [ ISO_Next_Group, ISO_Level3_Shift ]
+         type= "FOUR_LEVEL",
+         [     Mode_switch, Menu, Menu, XF86MenuKB]
     };
     key <LNFD> {         [        Linefeed ] };
     key <HOME> {         [            Home ] };
@@ -1632,7 +1632,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     modifier_map Mod1 { <LALT> };
     modifier_map Mod2 { <RWIN> };
     modifier_map Mod5 { <LVL3> };
-    modifier_map Mod3 { <RCTL> };
+    modifier_map Mod3 { <RALT> };
     modifier_map Mod3 { <MDSW> };
     modifier_map Mod1 { <ALT> };
     modifier_map Mod4 { <SUPR> };
