@@ -69,8 +69,8 @@ function MatlabSendCommand()
   if b:matlabPane == ""
     let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
   end
-  let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \"".substitute(escape(@m, '\\/.*$^~[]'), '\n','\" Enter \"', 'g')."\""
-  execute(":!".b:matlabSend)
+  let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \"".substitute(escape(@m, '\\/*$~'), '\n','\" Enter \"', 'g')."\" Enter"
+  silent execute(":!".b:matlabSend)
   redraw!
   echo b:matlabSend
 endfunction
@@ -80,7 +80,7 @@ map <Leader>s :call MatlabSendCommand()<CR>
 
 " let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
 " ")
-" let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
+" let b:matlabRun="tmux send-keys -t \".escape(b:matlabPane,'%')." \"run \".expand('%')."\" Enter"
 " au BufNewFile,BufRead *.py let &makeprg=b:pythonRun
 " au BufNewFile,BufRead *.cpp let &makeprg="make 2>&1 | grep error"
 
