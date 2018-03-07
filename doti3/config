@@ -75,6 +75,9 @@ bindsym $mod+Shift+l move right
 #bindsym $mod+Shift+Up move up
 #bindsym $mod+Shift+Right move right
 
+#wifi menu
+bindsym $mod3+w exec networkmanager_dmenu
+
 # move workspace to another monitor
 # TODO: think up better combination
 bindsym $mod+x move workspace to output right
