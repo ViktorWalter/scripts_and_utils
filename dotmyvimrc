@@ -1,4 +1,5 @@
 " colorscheme jellybeans
+map <Leader>d :redraw!<CR>
 map <Leader>m :w\|silent make\|redraw!\|cc<CR>
 ":w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
 " jump to build split
@@ -12,10 +13,10 @@ map <Leader>l :ccl<CR>
 
 " customize bookmarks in startify
 let g:startify_bookmarks = [
-            \ { 'b': '~/.bashrc' },
-            \ { 'v': '~/.vimrc' },
-            \ { 'p': '~/git/linux-setup/appconfig/vim/startify_quotes.txt' },
-            \ ]
+      \ { 'b': '~/.bashrc' },
+      \ { 'v': '~/.vimrc' },
+      \ { 'p': '~/git/linux-setup/appconfig/vim/startify_quotes.txt' },
+      \ ]
 
 if g:user_mode == "1"
   colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
@@ -90,20 +91,21 @@ if g:user_mode == "1"
   "OpenCL syntax
   Plug 'int3h/vim-opencl', {'for': 'cl'}
 
-python << EOS
+python3 << EOS
 try:
-     import rospkg
-     import vim
+   import rospkg
+   import vim
 except ImportError:
-     vim.command("let is_ros='N/A'")
+   vim.command("let is_ros='N/A'")
 if rospkg.get_package_name(vim.eval("expand('%:p')")):
-    vim.command("let is_ros='true'")
+   vim.command("let is_ros='true'")
+   vim.command("let &makeprg='catkin build "+rospkg.get_package_name(vim.eval("expand('%:p')"))+"'")
 else:
-    vim.command("let is_ros='false'")
+   vim.command("let is_ros='false'")
 EOS
-if is_ros == "true"
-  set efm=%f:%l:%c:\ error:%m
-endif
+  if is_ros == "true"
+     set efm=%f:%l:%c:\ error:%m
+  endif
 
 endif
 
