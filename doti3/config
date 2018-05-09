@@ -199,7 +199,7 @@ bindsym $mod+r mode "resize"
 # # }
 
 # JELLYBEANS COLOR_SCHEME ACTIVE {
-set $focused_ws_bg            #005faf
+set $focused_ws_bg            #00bffa
 set $active_text_color        #ffffff
 set $inactive_text_color      #eeeeee
 set $inactive_background      #333333
@@ -215,9 +215,9 @@ for_window [class="conky"] border none
 
 # window colors
 #                       border                    background            text                  indicator
-client.focused          $active_border            $active_background    $active_text_color    $split_indicator
+client.focused          $focused_ws_bg            $focused_ws_bg    $active_text_color    $split_indicator
 client.unfocused        $inactive_background      $inactive_background  $inactive_text_color  $split_indicator
-client.focused_inactive $active_background        $inactive_background  $inactive_text_color  $split_indicator
+client.focused_inactive $active_background        $active_background  $inactive_text_color  $split_indicator
 client.urgent           $inactive_background      $inactive_background  $inactive_text_color  $split_indicator
 
 #show popups belongign to current fullscreen window
@@ -232,8 +232,8 @@ for_window [class="conky"] no_focus
 
 # exec wmsystemtray --bgcolor grey --fgcolor white --non-wmaker
 
-for_window [class="lazarus"] floating enable
-for_window [class="Lazarus"] floating enable
+# for_window [class="lazarus"] floating enable
+# for_window [class="Lazarus"] floating enable
 for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
 # for_window [class="MATLAB R2015a" title="^Fig"] floating enable
 for_window [class="Gazeb"] move to workspace number 8
@@ -253,14 +253,15 @@ bar {
 
       statusline $text_color
         background $transparent
-        separator  $inactive_text_color
+        separator  $focused_ws_bg
+        separator  $focused_ws_bg
 
-#                  border             background           text
-        focused_workspace  $focused_ws_bg     $focused_ws_bg       $active_text_color
-        active_workspace   $transparent       $active_background   $active_text_color
-        inactive_workspace $transparent       $inactive_background $inactive_text_color
-        binding_mode       $transparent       $transparent         $active_text_color
-        urgent_workspace   $transparent       $transparent         #ff0000
+#                           border                background          text
+        focused_workspace   $focused_ws_bg        $focused_ws_bg      $transparent
+        active_workspace    $focused_ws_bg        $transparent        $focused_ws_bg
+        inactive_workspace  $inactive_background  $transparent        $inactive_text_color
+        binding_mode        $transparent          $transparent        $active_text_color
+        urgent_workspace    #ff0000               $transparent        #ff0000
     }
 
 # i3bar position
