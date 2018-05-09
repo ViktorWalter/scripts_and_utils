@@ -22,9 +22,9 @@ exec --no-startup-id cbatticon
 exec_always  --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py &
 exec_always  --no-startup-id "killall perl"
 exec_always  --no-startup-id "sleep 2; ~/.i3/conky_start"
-exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
+# exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
-exec --no-startup-id ~/mount_windata.sh
+# exec --no-startup-id ~/mount_windata.sh
 
 set $mod Mod1
 set $mod2 Mod4
@@ -209,7 +209,8 @@ set $active_border            #005faf
 set $split_indicator          #B85335
 set $transparent              #000000dd
 exec_always --no-startup-id feh --bg-fill ~/pictures/i3_cool.png
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
+for_window [class="conky"] border none
 # }
 
 # window colors
@@ -234,7 +235,7 @@ for_window [class="conky"] no_focus
 for_window [class="lazarus"] floating enable
 for_window [class="Lazarus"] floating enable
 for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
-for_window [class="MATLAB R2015a" title="^Fig"] floating enable
+# for_window [class="MATLAB R2015a" title="^Fig"] floating enable
 for_window [class="Gazeb"] move to workspace number 8
 
  # Start i3bar to display a workspace bar (plus the system information i3status
@@ -274,7 +275,7 @@ gaps inner 5
 gaps outer 1
 smart_gaps on
 
-# smart_borders on
+smart_borders on
 
 # kde runner
 # bindsym $mod+F2 exec krunner
@@ -351,7 +352,7 @@ bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi
 # \ -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Liberation Mono 18"
 
 # enables transparency
-exec --no-startup-id compton --config ~/.config/compton.conf -b
+# exec --no-startup-id compton --config ~/.config/compton.conf -b
 
 # show background wallpaper
 #exec_always --no-startup-id feh --bg-fill /usr/share/wallpapers/Next/contents/images/1920x1080.png

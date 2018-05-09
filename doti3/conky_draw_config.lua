@@ -6,7 +6,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'exec nvidia-smi --query-gpu="utilization.gpu" --format=csv,noheader,nounits',
-    from = {x = 6, y = 18},
+    from = {x = 6, y = 20},
     to = {x = 6, y = 0},
     background_thickness = 8,
     bar_thickness = 8,
@@ -16,7 +16,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'cpu cpu0',
-    from = {x = 14, y = 18},
+    from = {x = 14, y = 20},
     to = {x = 14, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -26,7 +26,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'cpu cpu1',
-    from = {x = 19, y = 18},
+    from = {x = 19, y = 20},
     to = {x = 19, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -36,7 +36,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'cpu cpu2',
-    from = {x = 24, y = 18},
+    from = {x = 24, y = 20},
     to = {x = 24, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -46,7 +46,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'cpu cpu3',
-    from = {x = 29, y = 18},
+    from = {x = 29, y = 20},
     to = {x = 29, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -56,7 +56,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'cpu cpu4',
-    from = {x = 34, y = 18},
+    from = {x = 34, y = 20},
     to = {x = 34, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -66,7 +66,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'cpu cpu5',
-    from = {x = 39, y = 18},
+    from = {x = 39, y = 20},
     to = {x = 39, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -76,7 +76,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'cpu cpu6',
-    from = {x = 44, y = 18},
+    from = {x = 44, y = 20},
     to = {x = 44, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -86,7 +86,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'cpu cpu7',
-    from = {x = 49, y = 18},
+    from = {x = 49, y = 20},
     to = {x = 49, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -96,7 +96,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'memperc',
-    from = {x = 57, y = 18},
+    from = {x = 57, y = 20},
     to = {x = 57, y = 0},
     background_thickness = 8,
     bar_thickness = 8,
@@ -106,7 +106,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'swapperc',
-    from = {x = 67, y = 18},
+    from = {x = 67, y = 20},
     to = {x = 67, y = 0},
     background_thickness = 8,
     bar_thickness = 8,
@@ -116,7 +116,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'exec iostat -dx /dev/sda | awk \'/^sda/ {print $14}\'',
-    from = {x = 75, y = 18},
+    from = {x = 75, y = 20},
     to = {x = 75, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
@@ -126,7 +126,7 @@ elements = {
 {
     kind = 'bar_graph',
     conky_value = 'exec iostat -dx /dev/sdb | awk \'/^sdb/ {print $14}\'',
-    from = {x = 80, y = 18},
+    from = {x = 80, y = 20},
     to = {x = 80, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
