@@ -52,6 +52,11 @@ call matchadd('ColorColumn', '\%81v',100)
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
 
+hi TabLineSel ctermbg=45
+" hi TabLineFill ctermbg=45
+hi TabLine ctermbg=0 ctermfg=45
+" hi Title ctermbg=45
+
 function PrepMatlab()
   let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
   if b:matlabPane == ""
@@ -109,4 +114,6 @@ EOS
 
 endif
 
-
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }

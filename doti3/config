@@ -228,6 +228,7 @@ for_window [class="desktop"] floating enable
 for_window [class="conky"] floating enable
 for_window [class="conky"] sticky enable
 for_window [class="conky"] no_focus
+for_window [class="conky"] move to output primary
 # exec "true /usr/lib/x86_64-linux-gnu/libexec/kf5/start_kdeinit_wrapper --kded && kwrapper5 /usr/bin/ksmserver"
 
 # exec wmsystemtray --bgcolor grey --fgcolor white --non-wmaker
