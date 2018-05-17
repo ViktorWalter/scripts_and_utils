@@ -1,4 +1,16 @@
---- RuntimeError from thread: main
-no Redwood::BufferManager instance defined in method call to sigwinch_happened!!
-/usr/lib/ruby/vendor_ruby/sup/util.rb:594:in `method_missing'
-/usr//bin/sup-mail:152:in `block (2 levels) in <module:Redwood>'
+--- NoMethodError from thread: main
+undefined method `has_label?' for nil:NilClass
+/usr/lib/ruby/vendor_ruby/sup/modes/thread_index_mode.rb:282:in `block in edit_message'
+/usr/lib/ruby/vendor_ruby/sup/thread.rb:70:in `block in each'
+/usr/lib/ruby/vendor_ruby/sup/thread.rb:178:in `block (2 levels) in each_with_stuff'
+/usr/lib/ruby/vendor_ruby/sup/thread.rb:176:in `each_with_stuff'
+/usr/lib/ruby/vendor_ruby/sup/thread.rb:178:in `block in each_with_stuff'
+/usr/lib/ruby/vendor_ruby/sup/thread.rb:177:in `each'
+/usr/lib/ruby/vendor_ruby/sup/thread.rb:177:in `each_with_stuff'
+/usr/lib/ruby/vendor_ruby/sup/thread.rb:69:in `each'
+/usr/lib/ruby/vendor_ruby/sup/modes/thread_index_mode.rb:282:in `find'
+/usr/lib/ruby/vendor_ruby/sup/modes/thread_index_mode.rb:282:in `edit_message'
+/usr/lib/ruby/vendor_ruby/sup/mode.rb:59:in `handle_input'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:222:in `handle_input'
+/usr//bin/sup-mail:255:in `<module:Redwood>'
+/usr//bin/sup-mail:74:in `<main>'

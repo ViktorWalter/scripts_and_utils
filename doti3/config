@@ -240,6 +240,8 @@ for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
 # for_window [class="MATLAB R2015a" title="^Fig"] floating enable
 for_window [class="Gazeb"] move to workspace number 8
 
+for_window [window_role="browser"] move to workspace number 5
+
  # Start i3bar to display a workspace bar (plus the system information i3status
  # finds out, if available)
 bar {
@@ -255,7 +257,7 @@ bar {
 
       statusline $text_color
         background $transparent
-        separator  $focused_ws_bg
+        separator  $active_background
         # separator  $focused_ws_bg
 
 #                           border                background          text
@@ -369,7 +371,7 @@ bindsym $mod+Ctrl+i exec urxvt -e ~/.i3/setColorScheme.sh
 
 
 #Printscreen
-bindsym Print exec scrot -e 'mv $f ~/pictures/'
+bindsym Print exec shutter --select
 #{ Control the mouse with keyboard
 
 mode "longpress" {

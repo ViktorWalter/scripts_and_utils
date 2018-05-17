@@ -164,3 +164,4 @@ alias sup=sup-mail
 unset zle_bracketed_paste
 
 unsetopt share_history
+zath=zathura

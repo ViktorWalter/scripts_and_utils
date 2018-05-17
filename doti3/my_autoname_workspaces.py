@@ -46,7 +46,6 @@ from util import *
 # xprop (https://linux.die.net/man/1/xprop). Run `xprop | grep WM_CLASS`
 # then click on the application you want to inspect.
 WINDOW_ICONS = {
-    'atom': fa.icons['code'],
     'cura': fa.icons['cube'],
     'darktable': fa.icons['picture-o'],
     'evince': fa.icons['file-pdf-o'],
