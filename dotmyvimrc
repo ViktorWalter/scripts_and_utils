@@ -1,102 +1,99 @@
-" colorscheme jellybeans
-map <Leader>d :redraw!<CR>
-map <Leader>m :w\|silent make\|redraw!\|cc<CR>
-":w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
-" jump to build split
-"map <Leader>M :call VimuxInspectRunner()<CR>
-" close the vimmux window
-map <Leader>l :ccl<CR>
-" building ctags
-"command! MakeTags :call VimuxRunCommand("generateTags; :q")<CR>
-"
-"""""""""""""""""""""""""""""""
-
-" customize bookmarks in startify
-let g:startify_bookmarks = [
-      \ { 'b': '~/.bashrc' },
-      \ { 'v': '~/.vimrc' },
-      \ { 'p': '~/git/linux-setup/appconfig/vim/startify_quotes.txt' },
-      \ ]
-
 if g:user_mode == "1"
-  colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
-  " colorscheme raggi " LIGHT COLOR_SCHEME 
-endif
+  " colorscheme jellybeans
+  map <Leader>d :redraw!<CR>
+  map <Leader>m :w\|silent make\|redraw!\|cc<CR>
+  ":w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
+  " jump to build split
+  "map <Leader>M :call VimuxInspectRunner()<CR>
+  " close the vimmux window
+  map <Leader>l :ccl<CR>
+  " building ctags
+  "command! MakeTags :call VimuxRunCommand("generateTags; :q")<CR>
+  "
+  """""""""""""""""""""""""""""""
 
-au BufNewFile,BufRead *.cl setlocal ft=c
+  " customize bookmarks in startify
+  let g:startify_bookmarks = [
+        \ { 'b': '~/.bashrc' },
+        \ { 'v': '~/.vimrc' },
+        \ { 'p': '~/git/linux-setup/appconfig/vim/startify_quotes.txt' },
+        \ ]
 
-au BufNewFile,BufRead *.tex map <Leader>m :w<CR>:VimtexCompile<CR>
-au BufNewFile,BufRead *.tex map <Leader>. :w<CR>:VimtexView<CR>
-au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
-au BufNewFile,BufRead *.tex setlocal wrap
-au BufNewFile,BufRead *.tex setlocal ft=tex
-let g:tex_comment_nospell= 1
-au BufNewFile,BufRead *.tex setlocal fdm=expr
-au BufNewFile,BufRead *.tex setlocal foldexpr=vimtex#fold#level(2)
-au BufNewFile,BufRead *.tex set lazyredraw
-set nowrap
+    colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
+    " colorscheme raggi " LIGHT COLOR_SCHEME 
 
-set path+=**
-set wildmenu
-unmap <S-J>
-unmap <S-K>
-" set lazyredraw "makes scrooling faster
-set cursorline
-set cursorcolumn
+  au BufNewFile,BufRead *.cl setlocal ft=c
 
-" Write into protected file without prior sudo
-cmap w!! w !sudo tee >dev/null %
-let @t = '!!toilet -f big'
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v',100)
-hi Normal guibg=NONE ctermbg=NONE
-hi NonText guibg=NONE ctermbg=NONE
+  au BufNewFile,BufRead *.tex map <Leader>m :w<CR>:VimtexCompile<CR>
+  au BufNewFile,BufRead *.tex map <Leader>. :w<CR>:VimtexView<CR>
+  au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us
+  au BufNewFile,BufRead *.tex setlocal wrap
+  au BufNewFile,BufRead *.tex setlocal ft=tex
+  let g:tex_comment_nospell= 1
+  au BufNewFile,BufRead *.tex setlocal fdm=expr
+  au BufNewFile,BufRead *.tex setlocal foldexpr=vimtex#fold#level(2)
+  au BufNewFile,BufRead *.tex set lazyredraw
+  set nowrap
 
-hi TabLineSel ctermbg=45
-" hi TabLineFill ctermbg=45
-hi TabLine ctermbg=0 ctermfg=45
-" hi Title ctermbg=45
+  set path+=**
+  set wildmenu
+  unmap <S-J>
+  unmap <S-K>
+  " set lazyredraw "makes scrooling faster
+  set cursorline
+  set cursorcolumn
 
-function PrepMatlab()
-  let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-  if b:matlabPane == ""
-    let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-    let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
-  else
-    let b:matlabRun=&makeprg
-  end
-  return b:matlabRun
-endfunction
-au BufNewFile,BufRead *.m let &makeprg=PrepMatlab()
+  " Write into protected file without prior sudo
+  cmap w!! w !sudo tee >dev/null %
+  let @t = '!!toilet -f big'
+  highlight ColorColumn ctermbg=magenta
+  call matchadd('ColorColumn', '\%81v',100)
+  hi Normal guibg=NONE ctermbg=NONE
+  hi NonText guibg=NONE ctermbg=NONE
 
-function MatlabSendCommand()
-  '<,'>y m
-  let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-  if b:matlabPane == ""
-    let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-  end
-  let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \"".substitute(escape(@m, '\\/*$~'), '\n','\" Enter \"', 'g')."\" Enter"
-  silent execute(":!".b:matlabSend)
-  redraw!
-  echo b:matlabSend
-endfunction
-map <Leader>s :call MatlabSendCommand()<CR>
+  hi TabLineSel ctermbg=45
+  " hi TabLineFill ctermbg=45
+  hi TabLine ctermbg=0 ctermfg=45
+  " hi Title ctermbg=45
+
+  function PrepMatlab()
+    let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
+    if b:matlabPane == ""
+      let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
+      let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
+    else
+      let b:matlabRun=&makeprg
+    end
+    return b:matlabRun
+  endfunction
+  au BufNewFile,BufRead *.m let &makeprg=PrepMatlab()
+
+  function MatlabSendCommand()
+    '<,'>y m
+    let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
+    if b:matlabPane == ""
+      let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
+    end
+    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \"".substitute(escape(@m, '\\/*$~'), '\n','\" Enter \"', 'g')."\" Enter"
+    silent execute(":!".b:matlabSend)
+    redraw!
+    echo b:matlabSend
+  endfunction
+  map <Leader>s :call MatlabSendCommand()<CR>
 
 
 
-" let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-" ")
-" let b:matlabRun="tmux send-keys -t \".escape(b:matlabPane,'%')." \"run \".expand('%')."\" Enter"
-" au BufNewFile,BufRead *.py let &makeprg=b:pythonRun
-" au BufNewFile,BufRead *.cpp let &makeprg="make 2>&1 | grep error"
+  " let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
+  " ")
+  " let b:matlabRun="tmux send-keys -t \".escape(b:matlabPane,'%')." \"run \".expand('%')."\" Enter"
+  " au BufNewFile,BufRead *.py let &makeprg=b:pythonRun
+  " au BufNewFile,BufRead *.cpp let &makeprg="make 2>&1 | grep error"
 
-" which plugins should not be loaded outside of normal session (not in athame)
-if g:user_mode == "1"
-
+  " which plugins should not be loaded outside of normal session (not in athame)
   "OpenCL syntax
   Plug 'int3h/vim-opencl', {'for': 'cl'}
 
-python3 << EOS
+  python3 << EOS
 try:
    import rospkg
    import vim
@@ -108,12 +105,13 @@ if rospkg.get_package_name(vim.eval("expand('%:p')")):
 else:
    vim.command("let is_ros='false'")
 EOS
+
   if is_ros == "true"
-     set efm=%f:%l:%c:\ error:%m
+    set efm=%f:%l:%c:\ error:%m
   endif
 
-endif
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+  let g:lightline = {
+        \ 'colorscheme': 'wombat',
+        \ }
+endif

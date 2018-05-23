@@ -1,3 +1,5 @@
+export RUN_TMUX=true
+export USE_ATHAME=true
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -9,6 +11,47 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="vrisk"
 
+runTmux() {
+
+  SESSION_NAME="T$PPID"
+
+  # try to find session with the correct session id (based on the zsh PID)
+  EXISTING_SESSION=`$TMUX_BIN ls 2> /dev/null | grep "$SESSION_NAME" | wc -l`
+
+  if [ "$EXISTING_SESSION" -gt "0" ]; then
+
+    # if such session exists, attach to it
+    $TMUX_BIN -2 attach-session -t "$SESSION_NAME"
+
+  else
+
+    # if such session does not exist, create it
+    $TMUX_BIN new-session -s "$SESSION_NAME"
+
+  fi
+
+  # hook after exitting the session
+  # when the session exists, find a file in /tmp with the name of the session
+  # and extract a path from it. Then cd to it.
+  FILENAME="/tmp/tmux_restore_path.txt"
+  if [ -f $FILENAME ]; then
+
+    MY_PATH=$(tail -n 1 $FILENAME)
+
+    rm /tmp/tmux_restore_path.txt
+
+    cd $MY_PATH
+
+  fi
+}
+# load tmux automatically
+if [ "$RUN_TMUX" = "true" ]; then
+  if command -v $TMUX_BIN>/dev/null; then
+    if [ ! -z "$PS1" ]; then # unless shell not loaded interactively, run tmux
+      [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && runTmux
+    fi
+  fi
+fi
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -105,8 +148,28 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64:/usr/local/lib
 set -o vi
 alias vimr='vim --remote-silent'
 
-# want to use athame?
-export USE_ATHAME=true
+# by default, athame should be off
+export ATHAME_ENABLED=0
+export ATHAME_SHOW_MODE=0
+export ATHAME_VIM_PERSIST=0
+
+# but if we are in tmux launched by the user/terminal (not tmuxinator)
+# and if user want to use athame, use it
+if [ -n "$TMUX" ]; then
+
+  if [ "$USE_ATHAME" = "true" ]; then
+
+    SESSION_NAME=`$TMUX_BIN display-message -p '#S'`
+
+    if [[ $SESSION_NAME =~ ^T[0-9]+$ ]]; then
+
+      export ATHAME_ENABLED=1
+      export ATHAME_SHOW_MODE=1
+      export ATHAME_VIM_PERSIST=1
+
+    fi
+  fi
+fi
 
 # do you use i3?
 export USE_I3=true
@@ -125,10 +188,6 @@ export CTAGS_ONCE_SOURCE_DIR="-R /opt/ros/kinetic/include"
 
 # path to the git root
 export GIT_PATH=/home/viktor/git
-
-if [ "$YAK" != "1" ]; then
-  RUN_TMUX=true
-fi
 
 
 alias vi=vim
@@ -164,4 +223,7 @@ alias sup=sup-mail
 unset zle_bracketed_paste
 
 unsetopt share_history
-zath=zathura
+alias zath=zathura
+
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
