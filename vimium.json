@@ -1,9 +1,9 @@
 {
 	"name": "Vimium++",
-	"time": 1504043440025,
+	"time": 1527272766243,
 	"environment": {
-		"chrome": 60,
-		"extension": "1.61",
+		"chrome": 59,
+		"extension": "1.64.0",
 		"platform": "linux"
 	},
 	"exclusionRules": [],
@@ -49,8 +49,7 @@
 		"# qw: https://www.qwant.com/?q=%s Qwant",
 		""
 	],
-	"searchUrl": "https://www.google.com/search?q=$s Google",
+	"searchUrl": "https://www.startpage.com/do/dsearch?query=$s&mypage.pl?prf=a0c3d06f03f52f58d9e9854519460a3a k",
 	"showAdvancedCommands": true,
-	"showAdvancedOptions": true,
-	"vomnibarPage": "chrome-extension://ekohaelnhhdhbccgefjmjpdjoijhojgd/vomnibar.html"
+	"showAdvancedOptions": true
 }

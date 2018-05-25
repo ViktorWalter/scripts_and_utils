@@ -114,4 +114,8 @@ EOS
   let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ }
+
+  hi StartifyHeader ctermfg=39 cterm=bold
+  hi StartifyFooter ctermfg=39 cterm=bold
+  hi Normal ctermfg=39
 endif
