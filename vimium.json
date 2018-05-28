@@ -1,6 +1,6 @@
 {
 	"name": "Vimium++",
-	"time": 1527272766243,
+	"time": 1527273359245,
 	"environment": {
 		"chrome": 59,
 		"extension": "1.64.0",
@@ -49,7 +49,7 @@
 		"# qw: https://www.qwant.com/?q=%s Qwant",
 		""
 	],
-	"searchUrl": "https://www.startpage.com/do/dsearch?query=$s&mypage.pl?prf=a0c3d06f03f52f58d9e9854519460a3a k",
+	"searchUrl": "https://www.startpage.com/do/dsearch?query=$s&mypage.pl?prf=df653d7d120690fdec5533a33f01678c k",
 	"showAdvancedCommands": true,
 	"showAdvancedOptions": true
 }
