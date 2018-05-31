@@ -246,7 +246,7 @@ xkb_keycodes "evdev+aliases(qwerty)" {
     <I251> = 251;
     <I252> = 252;
     <I253> = 253;
-    indicator 1 = "Caps Lock";
+    indicator 1 = "Group 2";
     indicator 2 = "Num Lock";
     indicator 3 = "Scroll Lock";
     indicator 4 = "Compose";
@@ -258,7 +258,7 @@ xkb_keycodes "evdev+aliases(qwerty)" {
     indicator 10 = "Mail";
     indicator 11 = "Charging";
     virtual indicator 12 = "Shift Lock";
-    virtual indicator 13 = "Group 2";
+    virtual indicator 13 = "Caps Lock";
     virtual indicator 14 = "Mouse Keys";
     alias <AC12> = <BKSL>;
     alias <HZTG> = <TLDE>;
@@ -1108,7 +1108,9 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
 
     key  <ESC> {
         symbols[Group1]= [  Escape ],
-        symbols[Group2]= [  Escape ]
+        symbols[Group2]= [  ISO_First_Group ],
+        symbols[Group3]= [  ISO_First_Group ],
+        symbols[Group4]= [  ISO_First_Group ]
     };
     key <AE01> {
         type[group1]= "FOUR_LEVEL",
@@ -1395,7 +1397,9 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     };
     key  <CAPS> {
         symbols[Group1]= [  Escape ],
-        symbols[Group2]= [  ISO_Prev_Group ]
+        symbols[Group2]= [  ISO_First_Group ],
+        symbols[Group3]= [  ISO_First_Group ],
+        symbols[Group4]= [  ISO_First_Group ]
     };
     key <FK01> {
         type= "CTRL+ALT",
@@ -1486,7 +1490,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         type[group1]= "THREE_LEVEL",
         type[group2]= "THREE_LEVEL",
         symbols[Group1]= [ Menu, NoSymbol ],
-        symbols[Group2]= [ ISO_Next_Group, ISO_Level3_Shift ]
+        symbols[Group2]= [ ISO_Last_Group, ISO_Level3_Shift ]
     };
     key <KPDV> {
         type= "CTRL+ALT",
