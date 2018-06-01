@@ -248,7 +248,7 @@ xkb_keycodes "evdev+aliases(qwerty)" {
     <I253> = 253;
     indicator 1 = "Group 2";
     indicator 2 = "Num Lock";
-    indicator 3 = "Scroll Lock";
+    indicator 3 = "Level 3";
     indicator 4 = "Compose";
     indicator 5 = "Kana";
     indicator 6 = "Sleep";
@@ -1099,6 +1099,11 @@ xkb_compatibility "complete" {
         indicatorDrivesKeyboard;
         controls= mouseKeys;
     };
+    indicator "Level 3" {
+        !allowExplicit;
+        whichModState= any;
+        modifiers= LevelThree;
+    };
 };
 
 xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)" {
@@ -1309,7 +1314,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
     key <AC10> {
         type[group2]= "FOUR_LEVEL",
         symbols[Group1]= [       semicolon,           colon ],
-        symbols[Group2]= [     ocircumflex,        quotedbl,          dollar, dead_doubleacute ]
+        symbols[Group2]= [     ocircumflex,        quotedbl,          uring, dead_doubleacute ]
     };
     key <AC11> {
         type[group2]= "FOUR_LEVEL",
@@ -1337,7 +1342,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         type[group1]= "FOUR_LEVEL_SEMIALPHABETIC",
         type[group2]= "FOUR_LEVEL_SEMIALPHABETIC",
         symbols[Group1]= [               x,               X,      Delete,             BackSpace   ],
-        symbols[Group2]= [               x,               X,      numbersign,         greater ]
+        symbols[Group2]= [               x,               X,      Delete,         greater ]
     };
     key <AB03> {
         type[group1]= "ALPHABETIC",
