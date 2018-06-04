@@ -1155,7 +1155,7 @@ xkb_symbols "pc+us+sk(qwerty):2+inet(evdev)+group(sclk_toggle)+capslock(escape)"
         type[group1]= "FOUR_LEVEL",
         type[group2]= "FOUR_LEVEL",
         symbols[Group1]= [               7,       ampersand,       End,            End ],
-        symbols[Group2]= [          yacute,               7,       ampersand,      dead_grave ]
+        symbols[Group2]= [          yacute,               7,       End,            End ]
     };
     key <AE08> {
         type[group2]= "FOUR_LEVEL",
