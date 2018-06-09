@@ -1,9 +1,9 @@
 {
 	"name": "Vimium++",
-	"time": 1527273359245,
+	"time": 1528526970081,
 	"environment": {
-		"chrome": 59,
-		"extension": "1.64.0",
+		"chrome": 64,
+		"extension": "1.67.0",
 		"platform": "linux"
 	},
 	"exclusionRules": [],
@@ -24,6 +24,7 @@
 		"map <a-F> LinkHints.activateModeWithQueue",
 		""
 	],
+	"newTabUrl": "pages/blank.html",
 	"nextPatterns": "next,more,newer,>,›,→,»,≫",
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪",
 	"searchEngines": [

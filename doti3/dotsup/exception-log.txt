@@ -1,11 +1,7 @@
 --- Interrupt from thread: main
 
-/usr/lib/ruby/vendor_ruby/sup/modes/edit_message_mode.rb:533:in `write'
-/usr/lib/ruby/vendor_ruby/sup/modes/edit_message_mode.rb:533:in `puts'
-/usr/lib/ruby/vendor_ruby/sup/modes/edit_message_mode.rb:533:in `block in send_message'
-/usr/lib/ruby/vendor_ruby/sup/modes/edit_message_mode.rb:533:in `popen'
-/usr/lib/ruby/vendor_ruby/sup/modes/edit_message_mode.rb:533:in `send_message'
-/usr/lib/ruby/vendor_ruby/sup/mode.rb:59:in `handle_input'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:222:in `handle_input'
-/usr//bin/sup-mail:255:in `<module:Redwood>'
+/usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:21:in `select'
+/usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:21:in `nonblocking_getwch'
+/usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:57:in `get'
+/usr//bin/sup-mail:228:in `<module:Redwood>'
 /usr//bin/sup-mail:74:in `<main>'
