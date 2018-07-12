@@ -1,7 +1,17 @@
---- Interrupt from thread: main
-
-/usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:21:in `select'
-/usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:21:in `nonblocking_getwch'
-/usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:57:in `get'
-/usr//bin/sup-mail:228:in `<module:Redwood>'
-/usr//bin/sup-mail:74:in `<main>'
+--- RuntimeError from thread: load threads for thread-index-mode
+unknown drawable object: nil in #<Redwood::InboxMode:0x000000016d2af8> for line 11
+/usr/lib/ruby/vendor_ruby/sup/modes/scroll_mode.rb:202:in `draw_line'
+/usr/lib/ruby/vendor_ruby/sup/modes/line_cursor_mode.rb:52:in `draw_line'
+/usr/lib/ruby/vendor_ruby/sup/modes/scroll_mode.rb:46:in `block in draw'
+/usr/lib/ruby/vendor_ruby/sup/modes/scroll_mode.rb:46:in `each'
+/usr/lib/ruby/vendor_ruby/sup/modes/scroll_mode.rb:46:in `draw'
+/usr/lib/ruby/vendor_ruby/sup/modes/line_cursor_mode.rb:37:in `draw'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:60:in `draw'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:44:in `redraw'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:284:in `draw_screen'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:728:in `clear'
+(eval):1:in `clear'
+/usr/lib/ruby/vendor_ruby/sup/modes/thread_index_mode.rb:699:in `load_n_threads'
+(eval):12:in `load_n_threads'
+/usr/lib/ruby/vendor_ruby/sup/modes/thread_index_mode.rb:670:in `block in load_n_threads_background'
+/usr/lib/ruby/vendor_ruby/sup.rb:87:in `block in reporting_thread'

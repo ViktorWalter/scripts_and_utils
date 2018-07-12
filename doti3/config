@@ -11,10 +11,11 @@
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 # exec --no-startup-id yakuake
 # exec "sleep 4; launchy"
+exec --no-startup-id ssh-agent
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id pulseaudio
-exec --no-startup-id cadence
+# exec --no-startup-id cadence
 exec --no-startup-id pa-applet
 # exec --no-startup-id redshift-gtk
 exec --no-startup-id cbatticon
