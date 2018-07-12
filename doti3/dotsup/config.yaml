@@ -32,6 +32,6 @@
     - viktor_walter@outlook.com
     - ciernobiely@gmail.com
     :sendmail: msmtp -t --read-envelope-from
-    :signature: "/home/viktor/.signature"
+    :signature: "/home/viktor/.sup/signature"
     :gpgkey: ''
 :time_mode: 24h

@@ -1,6 +1,7 @@
 if g:user_mode == "1"
   " colorscheme jellybeans
   map <Leader>d :redraw!<CR>
+  set mef="/tmp/vim##.err"
   map <Leader>m :w\|silent make\|redraw!\|cc<CR>
   ":w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
   " jump to build split
@@ -106,9 +107,9 @@ else:
    vim.command("let is_ros='false'")
 EOS
 
-  if is_ros == "true"
-    set efm=%f:%l:%c:\ error:%m
-  endif
+if is_ros == "true"
+  set efm=%f:%l:%c:\ error:%m
+endif
 
 
   let g:lightline = {
