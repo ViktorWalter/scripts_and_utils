@@ -1,6 +1,8 @@
 if has('nvim')
   :tnoremap <Esc> <C-\><C-n>
 endif
+
+"OpenCL syntax
 Plug 'int3h/vim-opencl', {'for': 'cl'}
 
 if g:user_mode == "1"
@@ -86,19 +88,8 @@ if g:user_mode == "1"
   endfunction
   map <Leader>s :call MatlabSendCommand()<CR>
 
-
-
-  " let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-  " ")
-  " let b:matlabRun="tmux send-keys -t \".escape(b:matlabPane,'%')." \"run \".expand('%')."\" Enter"
-  " au BufNewFile,BufRead *.py let &makeprg=b:pythonRun
-  " au BufNewFile,BufRead *.cpp let &makeprg="make 2>&1 | grep error"
-
-  " which plugins should not be loaded outside of normal session (not in athame)
-  "OpenCL syntax
-
   function PrepRos()
-  python3 << EOS
+    python3 << EOS
 try:
    import rospkg
    import vim
