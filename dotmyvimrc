@@ -1,6 +1,7 @@
 if has('nvim')
   :tnoremap <Esc> <C-\><C-n>
 endif
+Plug 'int3h/vim-opencl', {'for': 'cl'}
 
 if g:user_mode == "1"
   " colorscheme jellybeans
@@ -65,13 +66,12 @@ if g:user_mode == "1"
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     if b:matlabPane == ""
       let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-      let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
-    else
-      let b:matlabRun=&makeprg
     end
+    let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
+    " let b:matlabRun=&makeprg
     return b:matlabRun
   endfunction
-  au BufNewFile,BufRead *.m let &makeprg=PrepMatlab()
+  au BufNewFile,BufRead,BufEnter *.m let &makeprg=PrepMatlab()
 
   function MatlabSendCommand()
     '<,'>y m
@@ -96,25 +96,28 @@ if g:user_mode == "1"
 
   " which plugins should not be loaded outside of normal session (not in athame)
   "OpenCL syntax
-  Plug 'int3h/vim-opencl', {'for': 'cl'}
 
+  function PrepRos()
   python3 << EOS
 try:
    import rospkg
    import vim
 except ImportError:
    vim.command("let is_ros='N/A'")
-if rospkg.get_package_name(vim.eval("expand('%:p')")):
+pkgname = rospkg.get_package_name(vim.eval("expand('%:p')"))
+if pkgname:
+   r = rospkg.RosPack()
    vim.command("let is_ros='true'")
-   vim.command("let &makeprg='catkin build "+rospkg.get_package_name(vim.eval("expand('%:p')"))+"'")
+   vim.command("cd "+r.get_path(pkgname))
+   vim.command("let &makeprg='catkin build "+pkgname+"'")
 else:
    vim.command("let is_ros='false'")
 EOS
-
-if is_ros == "true"
-  set efm=%f:%l:%c:\ error:%m
-endif
-
+    if is_ros == "true"
+      set efm=%f:%l:%c:\ error:%m
+    endif
+  endfunction
+  au BufNewFile,BufRead,BufEnter *.cpp,*h,*hpp call PrepRos()
 
   let g:lightline = {
         \ 'colorscheme': 'wombat',
