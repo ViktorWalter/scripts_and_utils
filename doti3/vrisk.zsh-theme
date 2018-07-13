@@ -1,7 +1,7 @@
 #vrisk zsh theme
 local ret_status_prompt="%(?:%{$fg_bold[green]%}>:%{$fg_bold[red]%}>>%{$reset_color%})"
 local ret_status_separator="%(?:%{$fg_bold[green]%}${(r:15::=:::)}:%{$fg_bold[red]%}${(r:15::=:::)})%{$reset_color%}"
-local infobar="%{$fg_bold[blue]%}%3~%{$reset_color%} $(git_prompt_info)$(bzr_prompt_info)%{$fg[white]%}[%n@%m]%{$reset_color%}%{$fg[white]%}[%T]%{$reset_color%}"
+local infobar="%{$fg_bold[blue]%}%3~%{$reset_color%} %{$fg[white]%}[%n@%m]%{$reset_color%}%{$fg[white]%}[%T]%{$reset_color%}"
 # local top_line="%$COLUMNS<$infobar<$ret_status_separator%<<"
 
 PROMPT=$'$infobar

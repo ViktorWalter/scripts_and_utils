@@ -1,3 +1,7 @@
+if has('nvim')
+  :tnoremap <Esc> <C-\><C-n>
+endif
+
 if g:user_mode == "1"
   " colorscheme jellybeans
   map <Leader>d :redraw!<CR>

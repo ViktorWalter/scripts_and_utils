@@ -1,11 +1,28 @@
+# zmodload zsh/zprof
+# set -x
 # export EDITOR="/usr/bin/vim --servername spider --cmd 'let g:user_mode=1'"
 export EDITOR="/usr/bin/nvim --cmd 'let g:user_mode=1'"
 export TMUX_BIN=/usr/local/bin/tmux
-export RUN_TMUX=true
-export USE_ATHAME=true
+
+if [ -z "${VIM+x}" ]; then
+  export RUN_TMUX=true
+  export USE_ATHAME=true
+else
+  export RUN_TMUX=false
+  export USE_ATHAME=false
+  export ATHAME_ENABLED=0
+  export ATHAME_SHOW_MODE=0
+  export ATHAME_VIM_PERSIST=0
+fi
 
 unset zle_bracketed_paste
 unsetopt share_history
+
+# use the vi navigation keys in menu completion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 
 
 export ZSH=/home/viktor/.oh-my-zsh
@@ -144,14 +161,12 @@ if [ "$RUN_TMUX" = "true" ]; then
 fi
 
 ros() {
-  # echo "start"
   source /opt/ros/kinetic/setup.zsh
   source ~/workspace/devel/setup.zsh
   source /home/viktor/mrs_workspace/devel/setup.zsh
   source ~/gazebo_plugins/devel/setup.zsh
   source /usr/share/gazebo/setup.sh
   source ~/simulation/install/share/simulation/setup.sh
-  # echo "stop"
 }  
 
 export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros_workspace/src/mbzirc/gazebo_support/models:~/gazebo_plugins/models
@@ -229,3 +244,4 @@ export LESSOPEN='|~/.lessfilter %s'
 
 ros
 
+# set +x
