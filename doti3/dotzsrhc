@@ -18,17 +18,30 @@ fi
 unset zle_bracketed_paste
 unsetopt share_history
 
-# use the vi navigation keys in menu completion
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-
 
 export ZSH=/home/viktor/.oh-my-zsh
 ZSH_THEME="vrisk"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+
+killp () {
+
+  if [ $# -eq 0 ]; then
+    pes=$( cat ) 
+  else
+    pes=$1
+  fi
+  
+	for child in $(ps -o pid,ppid -ax | \
+   awk "{ if ( \$2 == $pes ) { print \$1 }}")
+  do
+    # echo "Killing child process $child because ppid = $pes"
+    killp $child
+  done
+        
+  # echo "killing $1"
+  kill -9 "$1" > /dev/null 2> /dev/null
+}
 
 zshexit() {
 
@@ -189,7 +202,13 @@ export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-8.0
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64:/usr/local/lib:/home/viktor/OpenCV/opencv_3_1/installed/lib
 
 set -o vi
+# use the vi navigation keys in menu completion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 alias vimr='vim --remote-silent'
+
 
 # do you use i3?
   export USE_I3=true
