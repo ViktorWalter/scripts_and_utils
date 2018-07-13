@@ -7,7 +7,7 @@ for pid in $(pidof -x "$0"); do
   fi
 done
 sleep 2;
-cd ~/.i3/
+cd ~/.i3/conky/
 conky -c dotconkyrc &>/dev/null &
 echo "conky running, now to prepare the focus protection"
 ./i3subscribe window | while read -r event; do
