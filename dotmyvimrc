@@ -1,15 +1,17 @@
+if g:user_mode == "1"
+
+  hi Normal ctermfg=39
 if has('nvim')
   :tnoremap <Esc> <C-\><C-n>
 endif
+  "OpenCL syntax
+  Plug 'int3h/vim-opencl', {'for': 'cl'}
 
-"OpenCL syntax
-Plug 'int3h/vim-opencl', {'for': 'cl'}
-
-if g:user_mode == "1"
+  set scrolloff=5                " ads cursor margin for the edge of the page
   " colorscheme jellybeans
   map <Leader>d :redraw!<CR>
   set mef="/tmp/vim##.err"
-  map <Leader>m :w\|silent make\|redraw!\|cc<CR>
+  map <Leader>m :w\|make\|redraw!\|cc<CR>
   ":w<CR>:call VimuxRunCommand("cd ~/ros_workspace; clear; catkin_make --pkg zedhack")<CR>
   " jump to build split
   "map <Leader>M :call VimuxInspectRunner()<CR>
@@ -89,7 +91,7 @@ if g:user_mode == "1"
   map <Leader>s :call MatlabSendCommand()<CR>
 
   function PrepRos()
-    python3 << EOS
+python3 << EOS
 try:
    import rospkg
    import vim
