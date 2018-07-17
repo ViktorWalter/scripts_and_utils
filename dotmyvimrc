@@ -5,6 +5,10 @@ if has('nvim')
 endif
 
 
+   map [[ ?{<CR>w99[{
+   map ][ /}<CR>b99]}
+   map ]] j0[[%/{<CR>
+   map [] k$][%?}<CR>
 
   set scrolloff=5                " ads cursor margin for the edge of the page
   map <Leader>d :redraw!<CR>
@@ -141,7 +145,7 @@ function! s:isolation_leave()
 endfunction
 au! User GoyoLeave nested call <SID>isolation_leave()
 
-nmap <leader><leader> :Goyo<CR>
+nmap <leader><leader> :Goyo 100-30<CR>
 
 call SetColors()
 endif
