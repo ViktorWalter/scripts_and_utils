@@ -1,14 +1,12 @@
 if g:user_mode == "1"
 
-  hi Normal ctermfg=39
 if has('nvim')
   :tnoremap <Esc> <C-\><C-n>
 endif
-  "OpenCL syntax
-  Plug 'int3h/vim-opencl', {'for': 'cl'}
+
+
 
   set scrolloff=5                " ads cursor margin for the edge of the page
-  " colorscheme jellybeans
   map <Leader>d :redraw!<CR>
   set mef="/tmp/vim##.err"
   map <Leader>m :w\|make\|redraw!\|cc<CR>
@@ -24,13 +22,12 @@ endif
 
   " customize bookmarks in startify
   let g:startify_bookmarks = [
-        \ { 'b': '~/.bashrc' },
+        \ { 'b': '~/.zshrc' },
         \ { 'v': '~/.vimrc' },
         \ { 'p': '~/git/linux-setup/appconfig/vim/startify_quotes.txt' },
         \ ]
 
-    colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
-    " colorscheme raggi " LIGHT COLOR_SCHEME 
+
 
   au BufNewFile,BufRead *.cl setlocal ft=c
 
@@ -56,17 +53,7 @@ endif
   " Write into protected file without prior sudo
   cmap w!! w !sudo tee >dev/null %
   let @t = '!!toilet -f big'
-  highlight ColorColumn ctermbg=magenta
-  call matchadd('ColorColumn', '\%81v',100)
-  hi Normal guibg=NONE ctermbg=NONE
-  hi NonText guibg=NONE ctermbg=NONE
-
-  hi TabLineSel ctermbg=45
-  " hi TabLineFill ctermbg=45
-  hi TabLine ctermbg=0 ctermfg=45
-  " hi Title ctermbg=45
-
-  function PrepMatlab()
+  function! PrepMatlab()
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     if b:matlabPane == ""
       let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
@@ -77,7 +64,7 @@ endif
   endfunction
   au BufNewFile,BufRead,BufEnter *.m let &makeprg=PrepMatlab()
 
-  function MatlabSendCommand()
+  function! MatlabSendCommand()
     '<,'>y m
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     if b:matlabPane == ""
@@ -90,7 +77,7 @@ endif
   endfunction
   map <Leader>s :call MatlabSendCommand()<CR>
 
-  function PrepRos()
+  function! PrepRos()
 python3 << EOS
 try:
    import rospkg
@@ -112,11 +99,43 @@ EOS
   endfunction
   au BufNewFile,BufRead,BufEnter *.cpp,*h,*hpp call PrepRos()
 
+function! SetColors()
   let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ }
+  colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
+  hi Normal guibg=NONE ctermbg=NONE
+  hi NonText guibg=NONE ctermbg=NONE
+
+  hi TabLineSel ctermbg=45
+  " hi TabLineFill ctermbg=45
+  hi TabLine ctermbg=0 ctermfg=45
+  " hi Title ctermbg=45
+
 
   hi StartifyHeader ctermfg=39 cterm=bold
   hi StartifyFooter ctermfg=39 cterm=bold
   hi Normal ctermfg=39
+  highlight ColorColumn ctermbg=magenta
+  call matchadd('ColorColumn', '\%81v',100)
+endfunction
+
+function! s:goyo_enter()
+ silent execute(":!tmux resize-pane -Z")
+ silent execute(":!tmux set status off")
+ silent execute(":!i3-msg fullscreen enable")
+endfunction
+au! User GoyoEnter nested call <SID>goyo_enter()
+
+function! s:goyo_leave()
+  call SetColors()
+ silent execute(":!tmux resize-pane -Z")
+ silent execute(":!tmux set status on")
+ silent execute(":!i3-msg fullscreen disable")
+endfunction
+au! User GoyoLeave nested call <SID>goyo_leave()
+
+nmap <leader><leader> :Goyo<CR>
+
+call SetColors()
 endif
