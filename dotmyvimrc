@@ -120,20 +120,26 @@ function! SetColors()
   call matchadd('ColorColumn', '\%81v',100)
 endfunction
 
-function! s:goyo_enter()
- silent execute(":!tmux resize-pane -Z")
+function! s:isolation_enter()
+ let b:isTmuxZoomed=system("tmux list-panes -F '\\#F' | grep Z")
+ if b:isTmuxZoomed == ""
+   silent execute(":!tmux resize-pane -Z")
+ endif
  silent execute(":!tmux set status off")
  silent execute(":!i3-msg fullscreen enable")
 endfunction
-au! User GoyoEnter nested call <SID>goyo_enter()
+au! User GoyoEnter nested call <SID>isolation_enter()
 
-function! s:goyo_leave()
+function! s:isolation_leave()
   call SetColors()
- silent execute(":!tmux resize-pane -Z")
+ let b:isTmuxZoomed=system("tmux list-panes -F '\\#F' | grep Z")
+ if !(b:isTmuxZoomed == "")
+   silent execute(":!tmux resize-pane -Z")
+ endif
  silent execute(":!tmux set status on")
  silent execute(":!i3-msg fullscreen disable")
 endfunction
-au! User GoyoLeave nested call <SID>goyo_leave()
+au! User GoyoLeave nested call <SID>isolation_leave()
 
 nmap <leader><leader> :Goyo<CR>
 
