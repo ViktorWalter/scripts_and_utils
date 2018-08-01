@@ -263,6 +263,11 @@ alias zath=zathura
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
+historyZsh(){
+  eval "print $*"
+}
+alias history=historyZsh
+
 ros
 
 # set +x

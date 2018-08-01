@@ -1,7 +1,7 @@
 if g:user_mode == "1"
 
 if has('nvim')
-  :tnoremap <Esc> <C-\><C-n>
+  tnoremap <Esc> <C-\><C-n>
 endif
 
 
@@ -108,8 +108,9 @@ function! SetColors()
         \ 'colorscheme': 'wombat',
         \ }
   colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
-  hi Normal guibg=NONE ctermbg=NONE
-  hi NonText guibg=NONE ctermbg=NONE
+  " colorscheme default " JELLYBEANS COLOR_SCHEME ACTIVE 
+  " hi Normal guibg=NONE ctermbg=NONE
+  " hi NonText guibg=NONE ctermbg=NONE
 
   hi TabLineSel ctermbg=45
   " hi TabLineFill ctermbg=45
@@ -120,17 +121,21 @@ function! SetColors()
   hi StartifyHeader ctermfg=39 cterm=bold
   hi StartifyFooter ctermfg=39 cterm=bold
   hi Normal ctermfg=39
-  highlight ColorColumn ctermbg=magenta
-  call matchadd('ColorColumn', '\%81v',100)
+  hi ColorColumn ctermbg=100
+  " call matchadd('ColorColumn', '\%81v',100)
 endfunction
 
 function! s:isolation_enter()
- let b:isTmuxZoomed=system("tmux list-panes -F '\\#F' | grep Z")
- if b:isTmuxZoomed == ""
+  let g:ycm_show_diagnostics_ui=0
+  silent YcmRestartServer
+  let b:isTmuxZoomed=system("tmux list-panes -F '\\#F' | grep Z")
+  if b:isTmuxZoomed == ""
    silent execute(":!tmux resize-pane -Z")
  endif
  silent execute(":!tmux set status off")
  silent execute(":!i3-msg fullscreen enable")
+  set nocursorline
+  set nocursorcolumn
 endfunction
 au! User GoyoEnter nested call <SID>isolation_enter()
 
@@ -142,10 +147,14 @@ function! s:isolation_leave()
  endif
  silent execute(":!tmux set status on")
  silent execute(":!i3-msg fullscreen disable")
+  set cursorline
+  set cursorcolumn
+  let g:ycm_show_diagnostics_ui=1
+  silent YcmRestartServer
 endfunction
 au! User GoyoLeave nested call <SID>isolation_leave()
 
-nmap <leader><leader> :Goyo 100-30<CR>
+nmap <leader><leader> :if exists('#goyo')==0<CR>Goyo 100-20<CR>else<CR>Goyo!<CR>endif<CR><CR>
 
 call SetColors()
 endif
