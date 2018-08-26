@@ -1,8 +1,8 @@
 {
 	"name": "Vimium++",
-	"time": 1529577584637,
+	"time": 1534158667160,
 	"environment": {
-		"chrome": 64,
+		"chrome": 66,
 		"extension": "1.67.0",
 		"platform": "linux"
 	},
@@ -25,7 +25,7 @@
 		"map D LinkHints.activateModeToDownloadLink",
 		""
 	],
-	"newTabUrl": "pages/blank.html",
+	"newTabUrl": "https://www.startpage.com/",
 	"nextPatterns": "next,more,newer,>,›,→,»,≫",
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪",
 	"searchEngines": [
@@ -33,10 +33,14 @@
 		"js\\:|Js: javascript:\\ $S; Javascript",
 		"w|wiki:\\",
 		"  https://en.wikipedia.org/w/index.php?search=$s Wikipedia",
+		"wa|wolfram:\\",
+		"  https://www.wolframalpha.com/input/?i=$s Wolfram Alpha",
 		"t|tr|translate:\\",
 		"  https://translate.google.com/?hl=en&tab=wT#auto/sk/$s Google Translate",
 		"te|tre|translateenglish:\\",
 		"  https://translate.google.com/?hl=en&tab=wT#auto/en/$s Google Translate En",
+		"m|map|mapy|maps:\\",
+		"  www.google.com/maps/search/$s Google Maps",
 		"",
 		"# More examples.",
 		"#",

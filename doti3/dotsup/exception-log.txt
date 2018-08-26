@@ -1,5 +1,5 @@
---- SignalException from thread: main
-SIGHUP
+--- Interrupt from thread: main
+
 /usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:21:in `select'
 /usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:21:in `nonblocking_getwch'
 /usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:57:in `get'
