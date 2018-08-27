@@ -19,9 +19,11 @@ echo "Prepare the focus protection and conky persistor;"
     echo "conky duped" >> /home/viktor/.i3/conky/errors.txt
     killall conky
     conky -c dotconkyrc &>/dev/null &
+    sleep 2;
   fi
   if [ -z "$conkyWin" ]; then
     conky -c dotconkyrc &>/dev/null &
+    sleep 2;
   fi;
   echo $conkyWin | grep `xdotool getwindowfocus`;
   if [ "$?" -eq "0" ]; then i3-msg focus mode_toggle; fi;
