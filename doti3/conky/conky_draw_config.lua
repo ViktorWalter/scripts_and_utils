@@ -20,7 +20,7 @@ elements = {
     to = {x = 14, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
-    bar_color = 0x0055FF,
+    bar_color = 0x00BFFA,
     background_color = 0x555555,
 },
 {
@@ -30,7 +30,7 @@ elements = {
     to = {x = 19, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
-    bar_color = 0x0055FF,
+    bar_color = 0x00BFFA,
     background_color = 0x555555,
 },
 {
@@ -40,7 +40,7 @@ elements = {
     to = {x = 24, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
-    bar_color = 0x0055FF,
+    bar_color = 0x00BFFA,
     background_color = 0x555555,
 },
 {
@@ -50,7 +50,7 @@ elements = {
     to = {x = 29, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
-    bar_color = 0x0055FF,
+    bar_color = 0x00BFFA,
     background_color = 0x555555,
 },
 {
@@ -60,7 +60,7 @@ elements = {
     to = {x = 34, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
-    bar_color = 0x0055FF,
+    bar_color = 0x00BFFA,
     background_color = 0x555555,
 },
 {
@@ -70,7 +70,7 @@ elements = {
     to = {x = 39, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
-    bar_color = 0x0055FF,
+    bar_color = 0x00BFFA,
     background_color = 0x555555,
 },
 {
@@ -80,7 +80,7 @@ elements = {
     to = {x = 44, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
-    bar_color = 0x0055FF,
+    bar_color = 0x00BFFA,
     background_color = 0x555555,
 },
 {
@@ -90,7 +90,7 @@ elements = {
     to = {x = 49, y = 0},
     background_thickness = 4,
     bar_thickness = 4,
-    bar_color = 0x0055FF,
+    bar_color = 0x00BFFA,
     background_color = 0x555555,
 },
 {

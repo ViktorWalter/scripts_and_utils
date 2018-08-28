@@ -17,11 +17,14 @@ echo "Prepare the focus protection and conky persistor;"
     i3-nagbar -m "conky duped"
     date >> /home/viktor/.i3/conky/errors.txt
     echo "conky duped" >> /home/viktor/.i3/conky/errors.txt
+    echo "conky duped"
     killall conky
     conky -c dotconkyrc &>/dev/null &
     sleep 2;
   fi
   if [ -z "$conkyWin" ]; then
+    echo "no conky found, starting new instance"
+    killall conky
     conky -c dotconkyrc &>/dev/null &
     sleep 2;
   fi;
