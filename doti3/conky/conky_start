@@ -14,7 +14,7 @@ echo "Prepare the focus protection and conky persistor;"
 ../i3subscribe window | while read -r event; do
   conkyWin=`xdotool search --class "conky"`;
   if [ "$(echo $conkyWin | wc -l)" -gt "1" ]; then
-    i3-nagbar -m "conky duped"
+    # i3-nagbar -m "conky duped"
     date >> /home/viktor/.i3/conky/errors.txt
     echo "conky duped" >> /home/viktor/.i3/conky/errors.txt
     echo "conky duped"
