@@ -46,6 +46,8 @@ endif
   au BufNewFile,BufRead *.tex set lazyredraw
   set nowrap
 
+  au BufNewFile,BufRead,BufEnter *.sk let &makeprg='./compile_sketch.sh %'
+
   set path+=**
   set wildmenu
   unmap <S-J>
