@@ -6184,32 +6184,32 @@ radio {
   min-width: 16px;
   min-height: 16px;
   margin-right: 3px; }
-  radio:insensitive {
-    -gtk-icon-source: url("../assets/radio-unchecked-insensitive.svg"); }
+  radio:disabled {
+    -gtk-icon-source: url("../assets/radio-unchecked-disabled.svg"); }
   radio:checked, radio:active {
     -gtk-icon-source: url("../assets/radio-checked.svg"); }
-    radio:checked:insensitive, radio:active:insensitive {
-      -gtk-icon-source: url("../assets/radio-checked-insensitive.svg"); }
+    radio:checked:disabled, radio:active:disabled {
+      -gtk-icon-source: url("../assets/radio-checked-disabled.svg"); }
   radio:indeterminate {
     -gtk-icon-source: url("../assets/radio-mixed.svg"); }
-    radio:indeterminate:insensitive {
-      -gtk-icon-source: url("../assets/radio-mixed-insensitive.svg"); }
+    radio:indeterminate:disabled {
+      -gtk-icon-source: url("../assets/radio-mixed-disabled.svg"); }
   menuitem radio, modelbutton radio {
     -gtk-icon-source: url("../assets/menuitem-radio-unchecked.svg"); }
     menuitem radio:disabled, modelbutton radio:disabled {
-      -gtk-icon-source: url("../assets/menuitem-radio-checked-insensitive.svg"); }
+      -gtk-icon-source: url("../assets/menuitem-radio-checked-disabled.svg"); }
     menuitem radio:checked, menuitem radio:active, modelbutton radio:checked, modelbutton radio:active {
       -gtk-icon-source: url("../assets/menuitem-radio-checked.svg"); }
       menuitem radio:checked:hover, menuitem radio:active:hover, modelbutton radio:checked:hover, modelbutton radio:active:hover {
         -gtk-icon-source: url("../assets/menuitem-radio-checked-hover.svg"); }
-      menuitem radio:checked:insensitive, menuitem radio:active:insensitive, modelbutton radio:checked:insensitive, modelbutton radio:active:insensitive {
-        -gtk-icon-source: url("../assets/menuitem-radio-checked-insensitive.svg"); }
+      menuitem radio:checked:disabled, menuitem radio:active:disabled, modelbutton radio:checked:disabled, modelbutton radio:active:disabled {
+        -gtk-icon-source: url("../assets/menuitem-radio-checked-disabled.svg"); }
     menuitem radio:indeterminate, modelbutton radio:indeterminate {
       -gtk-icon-source: url("../assets/menuitem-radio-mixed.svg"); }
       menuitem radio:indeterminate:hover, modelbutton radio:indeterminate:hover {
         -gtk-icon-source: url("../assets/menuitem-radio-mixed-hover.svg"); }
-      menuitem radio:indeterminate:insensitive, modelbutton radio:indeterminate:insensitive {
-        -gtk-icon-source: url("../assets/menuitem-radio-mixed-insensitive.svg"); }
+      menuitem radio:indeterminate:disabled, modelbutton radio:indeterminate:disabled {
+        -gtk-icon-source: url("../assets/menuitem-radio-mixed-disabled.svg"); }
 
 check {
   background-image: none;
@@ -6217,32 +6217,32 @@ check {
   min-width: 16px;
   min-height: 16px;
   margin-right: 3px; }
-  check:insensitive {
-    -gtk-icon-source: url("../assets/checkbox-unchecked-insensitive.svg"); }
+  check:disabled {
+    -gtk-icon-source: url("../assets/checkbox-unchecked-disabled.svg"); }
   check:checked, check:active {
     -gtk-icon-source: url("../assets/checkbox-checked.svg"); }
-    check:checked:insensitive, check:active:insensitive {
-      -gtk-icon-source: url("../assets/checkbox-checked-insensitive.svg"); }
+    check:checked:disabled, check:active:disabled {
+      -gtk-icon-source: url("../assets/checkbox-checked-disabled.svg"); }
   check:indeterminate {
     -gtk-icon-source: url("../assets/checkbox-mixed.svg"); }
-    check:indeterminate:insensitive {
-      -gtk-icon-source: url("../assets/checkbox-mixed-insensitive.svg"); }
+    check:indeterminate:disabled {
+      -gtk-icon-source: url("../assets/checkbox-mixed-disabled.svg"); }
   menuitem check, modelbutton check {
     -gtk-icon-source: url("../assets/menuitem-checkbox-unchecked.svg"); }
     menuitem check:disabled, modelbutton check:disabled {
-      -gtk-icon-source: url("../assets/menuitem-checkbox-checked-insensitive.svg"); }
+      -gtk-icon-source: url("../assets/menuitem-checkbox-checked-disabled.svg"); }
     menuitem check:checked, menuitem check:active, modelbutton check:checked, modelbutton check:active {
       -gtk-icon-source: url("../assets/menuitem-checkbox-checked.svg"); }
       menuitem check:checked:hover, menuitem check:active:hover, modelbutton check:checked:hover, modelbutton check:active:hover {
         -gtk-icon-source: url("../assets/menuitem-checkbox-checked-hover.svg"); }
-      menuitem check:checked:insensitive, menuitem check:active:insensitive, modelbutton check:checked:insensitive, modelbutton check:active:insensitive {
-        -gtk-icon-source: url("../assets/menuitem-checkbox-checked-insensitive.svg"); }
+      menuitem check:checked:disabled, menuitem check:active:disabled, modelbutton check:checked:disabled, modelbutton check:active:disabled {
+        -gtk-icon-source: url("../assets/menuitem-checkbox-checked-disabled.svg"); }
     menuitem check:indeterminate, modelbutton check:indeterminate {
       -gtk-icon-source: url("../assets/menuitem-checkbox-mixed.svg"); }
       menuitem check:indeterminate:hover, modelbutton check:indeterminate:hover {
         -gtk-icon-source: url("../assets/menuitem-checkbox-mixed-hover.svg"); }
-      menuitem check:indeterminate:insensitive, modelbutton check:indeterminate:insensitive {
-        -gtk-icon-source: url("../assets/menuitem-checkbox-mixed-insensitive.svg"); }
+      menuitem check:indeterminate:disabled, modelbutton check:indeterminate:disabled {
+        -gtk-icon-source: url("../assets/menuitem-checkbox-mixed-disabled.svg"); }
 
 radio:dir(rtl), check:dir(rtl) {
   margin-right: 0;
