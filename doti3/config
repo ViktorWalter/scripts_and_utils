@@ -209,8 +209,10 @@ set $background_color         #151515
 set $active_border            #005faf
 set $split_indicator          #B85335
 set $transparent              #000000dd
-# exec_always --no-startup-id feh --bg-fill ~/pictures/i3_cool.png
-exec_always --no-startup-id feh --bg-fill ~/pictures/zone_cool.jpg
+
+exec_always --no-startup-id ~/.i3/setWallpaper.sh
+
+
 for_window [class="^.*"] border pixel 2
 for_window [class="conky"] border none
 # }
@@ -465,3 +467,6 @@ bindsym $mod3+Shift+u exec --no-startup-id xdotool click 5
 bindsym $mod3+Shift+i exec --no-startup-id xdotool click 4
 bindsym $mod3+u exec --no-startup-id xdotool click 5
 bindsym $mod3+i exec --no-startup-id xdotool click 4
+
+# bindsym $mod2+q exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 0
+# bindsym $mod2+a exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 1
