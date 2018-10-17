@@ -59,10 +59,15 @@ endif
   " Write into protected file without prior sudo
   cmap w!! w !sudo tee >dev/null %
   let @t = '!!toilet -f big'
+
+  "MATLAB development ==================================
+
   function! PrepMatlab()
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     if b:matlabPane == ""
-      let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
+      set nolazyredraw
+      let b:matlabPane=system("sleep 2; tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'; tmux resize-pane -R")
+      " set lazyredraw
     end
     let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
     " let b:matlabRun=&makeprg
@@ -71,17 +76,20 @@ endif
   au BufNewFile,BufRead,BufEnter *.m let &makeprg=PrepMatlab()
 
   function! MatlabSendCommand()
-    '<,'>y m
+    y m
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     if b:matlabPane == ""
       let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     end
-    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \"".substitute(escape(@m, '\\/*$~'), '\n','\" Enter \"', 'g')."\" Enter"
+    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \"".substitute(escape(@m, '\\$~;'), '\n','', 'g')."\" Enter"
+    echo b:matlabSend
     silent execute(":!".b:matlabSend)
     redraw!
     echo b:matlabSend
   endfunction
   map <Leader>s :call MatlabSendCommand()<CR>
+
+  "~MATLAB development ==================================
 
   function! PrepRos()
 python3 << EOS
