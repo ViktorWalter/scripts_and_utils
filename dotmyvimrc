@@ -81,12 +81,12 @@ endif
     if b:matlabPane == ""
       let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     end
-    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \'".substitute(escape(@m, '$~'), '\n',' ', 'g')."\' Enter"
+    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \'".substitute(escape(@m, '$~''%'), '\n',' ', 'g')."\' Enter"
     " let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \'".substitute(substitute(@m, ";$","\\;",'g'), '\n','', 'g')."\'"
     " let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \'".substitute(@m, '\n','', 'g')."\'"
     " echo b:matlabSend
-    silent execute(":!".b:matlabSend)
-    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." Enter"
+    " silent execute(":!".b:matlabSend)
+    " let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." Enter"
     silent execute(":!".b:matlabSend)
     redraw!
     echo b:matlabSend
@@ -151,7 +151,9 @@ function! s:isolation_enter()
  silent execute(":!i3-msg fullscreen enable")
   set nocursorline
   set nocursorcolumn
+
 endfunction
+
 au! User GoyoEnter nested call <SID>isolation_enter()
 
 function! s:isolation_leave()
