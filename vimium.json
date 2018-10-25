@@ -1,9 +1,9 @@
 {
-	"name": "Vimium++",
-	"time": 1534158667160,
+	"name": "Vimium C",
+	"time": 1540391768536,
 	"environment": {
 		"chrome": 66,
-		"extension": "1.67.0",
+		"extension": "1.69.2",
 		"platform": "linux"
 	},
 	"exclusionRules": [],
@@ -25,7 +25,7 @@
 		"map D LinkHints.activateModeToDownloadLink",
 		""
 	],
-	"newTabUrl": "https://www.startpage.com/",
+	"newTabUrl": "https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9",
 	"nextPatterns": "next,more,newer,>,›,→,»,≫",
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪",
 	"searchEngines": [
@@ -55,7 +55,7 @@
 		"# qw: https://www.qwant.com/?q=%s Qwant",
 		""
 	],
-	"searchUrl": "https://www.startpage.com/do/dsearch?query=$s&mypage.pl?prf=df653d7d120690fdec5533a33f01678c k",
+	"searchUrl": "https://new.startpage.com/do/dsearch?query=$s&mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9",
 	"showAdvancedCommands": true,
 	"showAdvancedOptions": true
 }

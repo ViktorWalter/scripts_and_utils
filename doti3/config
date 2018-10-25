@@ -393,7 +393,7 @@ mode "longpress" {
 
   bindsym r exec --no-startup-id xdotool mouseup 1; mode "mouse"
   bindsym u exec --no-startup-id xdotool mouseup 1; mode "mouse"
-  bindsym Escape mode "mouse"
+  bindsym Escape mode "default"
 }
 
 # resize window (you can also use the mouse for that)
