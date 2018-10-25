@@ -3,6 +3,10 @@
 
 config_version: 2
 settings:
+  auto_save.session:
+    global: true
+  backend:
+    global: webengine
   bindings.commands:
     global:
       normal:
@@ -12,7 +16,18 @@ settings:
         T: set-cmd-text -s :buffer
         b: set-cmd-text -s :bookmark-load
         ge: set-cmd-text :open {url:pretty}
+        gi: hint inputs
         x: tab-close
+  content.plugins:
+    global: true
+  editor.command:
+    global:
+    - urxvt
+    - -e
+    - vim
+    - '{}'
+  hints.auto_follow:
+    global: always
   hints.next_regexes:
     global:
     - \bnext\b
@@ -22,3 +37,5 @@ settings:
     - \b(>>|»)\b
     - \bcontinue\b
     - \bnext page\b
+  hints.scatter:
+    global: true
