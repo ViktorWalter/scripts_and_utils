@@ -4,7 +4,7 @@
 #   qute://help/settings.html
 
 # Uncomment this to still load settings configured via autoconfig.yml
-# config.load_autoconfig()
+config.load_autoconfig()
 
 # Enable JavaScript.
 # Type: Bool
@@ -27,11 +27,15 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # used by prepending the search engine name to the search term, e.g.
 # `:open google qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://new.startpage.com/do/dsearch?query={}&mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9',
-                       'w': 'https://en.wikipedia.org/w/index.php?search={}'}
+c.url.searchengines = {'DEFAULT': 'https://new.startpage.com/do/dsearch?query={}',
+                       'w': 'https://en.wikipedia.org/w/index.php?search={}',
+                       'te': 'https://en.wikipedia.org/w/index.php?search={}',
+                       'g': 'https://www.google.com/search?q={}',
+                       'wa': 'https://www.wolframalpha.com/input/?i={}',
+                       'ts': 'https://translate.google.com/?hl=en&tab=wT#auto/sk/{}',
+                       't': 'https://translate.google.com/?hl=en&tab=wT#auto/en/{}',
+                       'y': 'https://www.youtube.com/results?search_query={}',
+                       'm': 'www.google.com/maps/search/{}'}
 
-# Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
-# for a blank page.
-# Type: FuzzyUrl
 c.url.default_page = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
 c.url.start_pages = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'

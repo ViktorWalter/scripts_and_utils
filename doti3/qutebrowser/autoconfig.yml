@@ -6,4 +6,19 @@ settings:
   bindings.commands:
     global:
       normal:
+        B: set-cmd-text -s :bookmark-load -t
+        J: tab-prev
+        K: tab-next
+        T: set-cmd-text -s :buffer
+        b: set-cmd-text -s :bookmark-load
+        ge: set-cmd-text :open {url:pretty}
         x: tab-close
+  hints.next_regexes:
+    global:
+    - \bnext\b
+    - \bmore\b
+    - \bnewer\b
+    - \b[>→≫]\b
+    - \b(>>|»)\b
+    - \bcontinue\b
+    - \bnext page\b
