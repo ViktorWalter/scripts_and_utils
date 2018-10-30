@@ -1,6 +1,6 @@
 {
 	"name": "Vimium C",
-	"time": 1540391768536,
+	"time": 1540834693671,
 	"environment": {
 		"chrome": 66,
 		"extension": "1.69.2",
@@ -35,9 +35,9 @@
 		"  https://en.wikipedia.org/w/index.php?search=$s Wikipedia",
 		"wa|wolfram:\\",
 		"  https://www.wolframalpha.com/input/?i=$s Wolfram Alpha",
-		"t|tr|translate:\\",
+		"ts|trs|translate:\\",
 		"  https://translate.google.com/?hl=en&tab=wT#auto/sk/$s Google Translate",
-		"te|tre|translateenglish:\\",
+		"t|tr|translateenglish:\\",
 		"  https://translate.google.com/?hl=en&tab=wT#auto/en/$s Google Translate En",
 		"m|map|mapy|maps:\\",
 		"  www.google.com/maps/search/$s Google Maps",

@@ -57,7 +57,7 @@ endif
   set cursorcolumn
 
   " Write into protected file without prior sudo
-  cmap w!! w !sudo tee >dev/null %
+  cmap w!! w suda://%
   let @t = '!!toilet -f big'
 
   "MATLAB development ==================================
