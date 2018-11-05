@@ -6,6 +6,31 @@
 # Uncomment this to still load settings configured via autoconfig.yml
 # config.load_autoconfig()
 
+# Comma-separated list of regular expressions to use for 'next' links.
+# Type: List of Regex
+c.hints.next_regexes = ['\\bnext\\b', '\\bmore\\b', '\\bnewer\\b', '\\b[>→≫]\\b', '\\b(>>|»)\\b', '\\bcontinue\\b', '\\bnext page\\b']
+
+# List of user stylesheet filenames to use.
+# Type: List of File, or File
+c.content.user_stylesheets = ['~/.i3/adblock.css', '~/.i3/dark_all.css']
+
+# Enable plugins in Web pages.
+# Type: Bool
+c.content.plugins = True
+
+# Editor (and arguments) to use for the `open-editor` command. The
+# following placeholders are defined: * `{file}`: Filename of the file
+# to be edited. * `{line}`: Line in which the caret is found in the
+# text. * `{column}`: Column in which the caret is found in the text. *
+# `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
+# Same as `{column}`, but starting from index 0.
+# Type: ShellCommand
+c.editor.command = ['urxvt', '-e', 'vim', '{}']
+
+# Page(s) to open at the start.
+# Type: List of FuzzyUrl, or FuzzyUrl
+c.url.start_pages = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
+
 # Backend to use to display websites. qutebrowser supports two different
 # web rendering engines / backends, QtWebKit and QtWebEngine. QtWebKit
 # was discontinued by the Qt project with Qt 5.6, but picked up as a
@@ -20,20 +45,22 @@
 #   - webkit: Use QtWebKit (based on WebKit, similar to Safari).
 c.backend = 'webengine'
 
-# Search engines which can be used via the address bar. Maps a search
-# engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
-# placeholder. The placeholder will be replaced by the search term, use
-# `{{` and `}}` for literal `{`/`}` signs. The search engine named
-# `DEFAULT` is used when `url.auto_search` is turned on and something
-# else than a URL was entered to be opened. Other search engines can be
-# used by prepending the search engine name to the search term, e.g.
-# `:open google qutebrowser`.
-# Type: Dict
-c.url.searchengines = {'g': 'https://www.google.com/search?q={}', 'ts': 'https://translate.google.com/?hl=en&tab=wT#auto/sk/{}', 'DEFAULT': 'https://new.startpage.com/do/dsearch?query={}', 'wa': 'https://www.wolframalpha.com/input/?i={}', 'te': 'https://en.wikipedia.org/w/index.php?search={}', 't': 'https://translate.google.com/?hl=en&tab=wT#auto/en/{}', 'y': 'https://www.youtube.com/results?search_query={}', 'w': 'https://en.wikipedia.org/w/index.php?search={}', 'm': 'www.google.com/maps/search/{}'}
+# Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
+# for a blank page.
+# Type: FuzzyUrl
+c.url.default_page = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
 
-# Always restore open sites when qutebrowser is reopened.
+# Enable JavaScript.
 # Type: Bool
-c.auto_save.session = True
+config.set('content.javascript.enabled', True, 'file://*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'chrome://*/*')
+
+# Enable JavaScript.
+# Type: Bool
+config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # When a hint can be automatically followed without pressing Enter.
 # Type: String
@@ -49,56 +76,30 @@ c.hints.auto_follow = 'always'
 # Type: Bool
 c.hints.scatter = True
 
-# Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
-# for a blank page.
-# Type: FuzzyUrl
-c.url.default_page = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
-
-# Page(s) to open at the start.
-# Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
-
-# List of user stylesheet filenames to use.
-# Type: List of File, or File
-c.content.user_stylesheets = ['~/.i3/adblock.css', '~/.i3/dark_all.css']
-
-# Comma-separated list of regular expressions to use for 'next' links.
-# Type: List of Regex
-c.hints.next_regexes = ['\\bnext\\b', '\\bmore\\b', '\\bnewer\\b', '\\b[>→≫]\\b', '\\b(>>|»)\\b', '\\bcontinue\\b', '\\bnext page\\b']
-
-# Enable plugins in Web pages.
-# Type: Bool
-c.content.plugins = True
-
-# Editor (and arguments) to use for the `open-editor` command. The
-# following placeholders are defined: * `{file}`: Filename of the file
-# to be edited. * `{line}`: Line in which the caret is found in the
-# text. * `{column}`: Column in which the caret is found in the text. *
-# `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
-# Same as `{column}`, but starting from index 0.
-# Type: ShellCommand
-c.editor.command = ['urxvt', '-e', 'vim', '{}']
+# Search engines which can be used via the address bar. Maps a search
+# engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
+# placeholder. The placeholder will be replaced by the search term, use
+# `{{` and `}}` for literal `{`/`}` signs. The search engine named
+# `DEFAULT` is used when `url.auto_search` is turned on and something
+# else than a URL was entered to be opened. Other search engines can be
+# used by prepending the search engine name to the search term, e.g.
+# `:open google qutebrowser`.
+# Type: Dict
+c.url.searchengines = {'te': 'https://en.wikipedia.org/w/index.php?search={}', 'DEFAULT': 'https://new.startpage.com/do/dsearch?query={}', 'ts': 'https://translate.google.com/?hl=en&tab=wT#auto/sk/{}', 'w': 'https://en.wikipedia.org/w/index.php?search={}', 't': 'https://translate.google.com/?hl=en&tab=wT#auto/en/{}', 'y': 'https://www.youtube.com/results?search_query={}', 'g': 'https://www.google.com/search?q={}', 'm': 'www.google.com/maps/search/{}', 'wa': 'https://www.wolframalpha.com/input/?i={}'}
 
 # Background color for webpages if unset (or empty to use the theme's
 # color).
 # Type: QtColor
 c.colors.webpage.bg = '#666666'
 
-# Enable JavaScript.
+# Always restore open sites when qutebrowser is reopened.
 # Type: Bool
-config.set('content.javascript.enabled', True, 'file://*')
-
-# Enable JavaScript.
-# Type: Bool
-config.set('content.javascript.enabled', True, 'chrome://*/*')
-
-# Enable JavaScript.
-# Type: Bool
-config.set('content.javascript.enabled', True, 'qute://*/*')
+c.auto_save.session = True
 
 # Bindings for normal mode
 config.bind('<Escape>', 'fake-key <esc> ;; fake-key --global <esc>')
 config.bind('B', 'set-cmd-text -s :bookmark-load -t')
+config.bind('F', 'hint all tab-bg')
 config.bind('J', 'tab-prev')
 config.bind('K', 'tab-next')
 config.bind('T', 'set-cmd-text -s :buffer')

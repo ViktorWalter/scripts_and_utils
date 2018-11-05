@@ -25,6 +25,8 @@ exec_always  --no-startup-id ~/.i3/conky/conky_start
 exec_always  --no-startup-id "unclutter -idle 3 &"
 exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
+exec_always  --no-startup-id "sleep 2; keynav"
+
 # exec --no-startup-id ~/mount_windata.sh
 
 set $mod Mod1
@@ -380,20 +382,18 @@ bindsym Print exec shutter --select
 
 mode "longpress" {
 
-  # slow drag
-  bindsym ctrl+h exec --no-startup-id xdotool mousemove_relative --sync -- -10 0
-  bindsym ctrl+j exec --no-startup-id xdotool mousemove_relative --sync -- 0 10
-  bindsym ctrl+k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -10
-  bindsym ctrl+l exec --no-startup-id xdotool mousemove_relative --sync -- 10 0
   # fast drag
-  bindsym h exec --no-startup-id xdotool mousemove_relative --sync -- -25 0
-  bindsym j exec --no-startup-id xdotool mousemove_relative --sync -- 0 25
-  bindsym k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -25
-  bindsym l exec --no-startup-id xdotool mousemove_relative --sync -- 25 0
+  bindsym ctrl+h exec --no-startup-id xdotool mousemove_relative --sync -- -$fast 0
+  bindsym ctrl+j exec --no-startup-id xdotool mousemove_relative --sync -- 0 $fast
+  bindsym ctrl+k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -$fast
+  bindsym ctrl+l exec --no-startup-id xdotool mousemove_relative --sync -- $fast 0
+  # slow drag
+  bindsym h exec --no-startup-id xdotool mousemove_relative --sync -- -$slow 0
+  bindsym j exec --no-startup-id xdotool mousemove_relative --sync -- 0 $slow
+  bindsym k exec --no-startup-id xdotool mousemove_relative --sync -- 0 -$slow
+  bindsym l exec --no-startup-id xdotool mousemove_relative --sync -- $slow 0
 
-  bindsym r exec --no-startup-id xdotool mouseup 1; mode "mouse"
-  bindsym u exec --no-startup-id xdotool mouseup 1; mode "mouse"
-  bindsym Escape mode "default"
+  bindsym Escape exec --no-startup-id xdotool mouseup 1; mode "default"
 }
 
 # resize window (you can also use the mouse for that)
@@ -470,3 +470,4 @@ bindsym $mod3+i exec --no-startup-id xdotool click 4
 
 # bindsym $mod2+q exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 0
 # bindsym $mod2+a exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 1
+

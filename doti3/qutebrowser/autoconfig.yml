@@ -3,5 +3,45 @@
 
 config_version: 2
 settings:
-  colors.webpage.bg:
-    global: '#666666'
+  bindings.commands:
+    global:
+      normal:
+        <Escape>: fake-key <esc> ;; fake-key --global <esc>
+        B: set-cmd-text -s :bookmark-load -t
+        F: hint all tab-bg
+        J: tab-prev
+        K: tab-next
+        T: set-cmd-text -s :buffer
+        _#_: jseval --quiet document.getSelection().anchorNode.parentNode.id=clickhere
+        _$_: click-element --force-event id clickhere
+        _%_: 'jseval --quiet function hasScroll(el, direction) { direction = (direction
+          === ''vertical'') ? ''scrollTop'' : ''scrollLeft''; var result = !! el[direction];
+          if (!result) { el[direction] = 1; result = !!el[direction]; el[direction]
+          = 0; } return result; } function elementInViewport2(el) { var el_top = el.offsetTop;
+          var el_left = el.offsetLeft; var el_width = el.offsetWidth; var el_height
+          = el.offsetHeight; while(el.offsetParent) { el = el.offsetParent; el_top
+          += el.offsetTop; el_left += el.offsetLeft; } return ( el_top < (window.pageYOffset
+          + window.innerHeight) && el_left < (window.pageXOffset + window.innerWidth)
+          && (el_top + el_height) > window.pageYOffset && (el_left + el_width) > window.pageXOffset);
+          } var pres = document.querySelectorAll(''div,pre,ul,ol,body''); var focusedAny=false;
+          for(var i=0; i<pres.length; i++) { if( pres[i].focused ){ focusedAny =true;
+          var focusedPrev =i; break; } } var focusedNext = 0; if (focusedAny){ focusedNext
+          = focusedPrev+1; if (focusedNext >= (pres.length)){ focusedNext=0; } } else
+          { var focusedPrev = pres.length-1; focusedNext = 0; } var foundAnyVisible=false;
+          for(var j=0; j<pres.length; j++){ if ((focusedNext==focusedPrev)&&(focusedAny)){
+          break; } if ((elementInViewport2(pres[focusedNext])) && (hasScroll(pres[focusedNext],''vertical'')
+          || hasScroll(pres[focusedNext],''horizontal'')) ){ /*window.alert(pres[focusedNext].tagName)*/;
+          foundAnyVisible =true; break; } focusedNext=focusedNext+1; if (focusedNext
+          >= (pres.length-1)){ focusedNext=0; } } if (foundAnyVisible){ pres[focusedPrev].focused=false;
+          pres[focusedPrev].style="border:1px solid White;"; pres[focusedPrev].id="";
+          pres[focusedNext].focused=true; pres[focusedNext].id="clickhere"; pres[focusedNext].style="border:2px
+          solid Tomato;"; } '
+        _^_: jseval --quiet var body_el = document.getElementsByTagName('body'); body_el.id="clickhere"
+        b: set-cmd-text -s :bookmark-load
+        g/: fake-key --global _#__$_
+        g<Escape>: fake-key <esc>
+        gP: fake-key --global _^__$_
+        ge: set-cmd-text :open {url:pretty}
+        gi: hint inputs
+        gp: fake-key --global _%__$_
+        x: tab-close
