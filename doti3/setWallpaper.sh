@@ -27,6 +27,7 @@ pics[23]="$HOME/pictures/dark_energy.jpg"
 pics[24]="$HOME/pictures/glow_wood.jpg"
 pics[25]="$HOME/pictures/drive_mastery.jpg"
 pics[26]="$HOME/pictures/nigh.jpg"
+pics[27]="$HOME/pictures/gnarl_spectrolite.png"
 
 rand=$[ $RANDOM % "${#pics[@]}" ]
 

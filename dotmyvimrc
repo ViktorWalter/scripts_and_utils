@@ -60,15 +60,20 @@ endif
   cmap w!! w suda://%
   let @t = '!!toilet -f big'
 
-  "MATLAB development ==================================
+  "ATLAB development ==================================
 
-  function! PrepMatlab()
+  function! GetMatlabPane()
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     if b:matlabPane == ""
       set nolazyredraw
       let b:matlabPane=system("sleep 2; tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'; tmux resize-pane -R")
-      " set lazyredraw
+      set lazyredraw
     end
+    return b:matlabPane
+  endfunction
+
+  function! PrepMatlab()
+    let b:matlabPane = call('GetMatlabPane',[])
     let b:matlabRun="tmux send-keys -t ".escape(b:matlabPane,'%')." \"run ".expand('%')."\" Enter"
     " let b:matlabRun=&makeprg
     return b:matlabRun
@@ -77,22 +82,33 @@ endif
 
   function! MatlabSendCommand()
     y m
-    let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-    if b:matlabPane == ""
-      let b:matlabPane=system(" tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";sleep 2; tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
-    end
-    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \'".substitute(escape(@m, '$~''%'), '\n',' ', 'g')."\' Enter"
-    " let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \'".substitute(substitute(@m, ";$","\\;",'g'), '\n','', 'g')."\'"
-    " let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." \'".substitute(@m, '\n','', 'g')."\'"
-    " echo b:matlabSend
-    " silent execute(":!".b:matlabSend)
-    " let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." Enter"
+    let b:matlabPane = call('GetMatlabPane',[])
+    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." ".substitute(shellescape(@m), '\n',' ', 'g')." Enter"
     silent execute(":!".b:matlabSend)
     redraw!
     echo b:matlabSend
   endfunction
   map <Leader>s :call MatlabSendCommand()<CR>
 
+  function! MatlabStopExecution()
+    y m
+    let b:matlabPane = call('GetMatlabPane',[])
+    let b:matlabSend="tmux send-keys -t ".escape(b:matlabPane,'%')." "."C-c"
+    silent execute(":!".b:matlabSend)
+    redraw!
+    echo b:matlabSend
+  endfunction
+  map <Leader>d :call MatlabStopExecution()<CR>
+
+  function! MatlabScrollUp()
+    y m
+    let b:matlabPane = call('GetMatlabPane',[])
+    let b:matlabSend="tmux copy-mode -t ".escape(b:matlabPane,'%')."\; tmux send-keys -t ".escape(b:matlabPane,'%')." "."C-u"
+    silent execute(":!".b:matlabSend)
+    redraw!
+    echo b:matlabSend
+  endfunction
+  map <C-u> :call MatlabScrollUp()<CR>
   "~MATLAB development ==================================
 
   function! PrepRos()
