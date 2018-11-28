@@ -446,6 +446,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod3+b exec --no-startup-id ~/.i3/banishMouse.sh
 bindsym $mod4+r exec ~/.i3/setKeyboard.sh
 bindsym $mod+t exec ~/.i3/startTickeys.sh
+bindsym $mod+g exec "~/.i3/startTickeys.sh stop"
 
 
 bindsym $mod3+ctrl+shift+h exec --no-startup-id xdotool mousemove_relative --sync -- -$fast 0
