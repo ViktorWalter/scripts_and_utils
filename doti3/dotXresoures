@@ -23,7 +23,7 @@ URxvt.perl-ext-common: default,clipboard
 ! to match gnome-terminal "Linux console" scheme
 ! foreground/background
 
-! JELLYBEANS COLOR_SCHEME ACTIVE {
+! JELLYBEANS COLOR_SCHEME ACTIVE jk^f{gci{{
  vim: ft=xdefaults
  ! URxvt.transparent: true
  URxvt.depth: 32
@@ -79,7 +79,7 @@ rofi.show-icons:        true
 rofi.drun-icon-theme: Papirus-Dark
 ! }
 
-! ! LIGHT COLOR_SCHEME {
+! ! LIGHT COLOR_SCHEME ACTIVE jk^f{gci{{
 
 ! ! PaperColour Theme
 ! URxvt.foreground: #000000

@@ -1,7 +1,14 @@
 --- Interrupt from thread: main
 
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:242:in `block in completely_redraw_screen'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:242:in `synchronize'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:242:in `completely_redraw_screen'
-/usr//bin/sup-mail:350:in `<module:Redwood>'
+/usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:112:in `present?'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:555:in `ask'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:437:in `ask_many_emails_with_completions'
+(eval):1:in `ask_many_emails_with_completions'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:518:in `ask_for_contacts'
+(eval):1:in `ask_for_contacts'
+/usr/lib/ruby/vendor_ruby/sup/modes/forward_mode.rb:44:in `spawn_nicely'
+/usr/lib/ruby/vendor_ruby/sup/modes/thread_view_mode.rb:253:in `forward'
+/usr/lib/ruby/vendor_ruby/sup/mode.rb:59:in `handle_input'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:222:in `handle_input'
+/usr//bin/sup-mail:255:in `<module:Redwood>'
 /usr//bin/sup-mail:74:in `<main>'

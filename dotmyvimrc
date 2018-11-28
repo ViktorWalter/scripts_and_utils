@@ -168,6 +168,8 @@ function! s:isolation_enter()
   set nocursorline
   set nocursorcolumn
 
+  set wrap
+
 endfunction
 
 au! User GoyoEnter nested call <SID>isolation_enter()

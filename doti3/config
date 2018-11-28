@@ -22,7 +22,7 @@ exec --no-startup-id cbatticon
 # exec --no-startup-id ~/mount_windata.sh
 exec_always  --no-startup-id python3.5 ~/.i3/my_autoname_workspaces.py &
 exec_always  --no-startup-id ~/.i3/conky/conky_start
-exec_always  --no-startup-id "unclutter -idle 3 &"
+exec_always  --no-startup-id "unclutter --timeout 3 -b"
 exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
 exec_always  --no-startup-id "sleep 2; keynav"
@@ -187,7 +187,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-# LIGHT COLOR_SCHEME {
+# LIGHT COLOR_SCHEME ACTIVE jk^f{gci{{
 # set $inactive_text_color         #1d2021
 # set $active_text_color           #1d2021
 # set $active_border               #aaaaaa
@@ -201,7 +201,7 @@ bindsym $mod+r mode "resize"
 # for_window [class="^.*"] border pixel 1
 # # }
 
-# JELLYBEANS COLOR_SCHEME ACTIVE {
+# JELLYBEANS COLOR_SCHEME ACTIVE jk^f{gci{{
 set $focused_ws_bg            #00bffa
 set $active_text_color        #ffffff
 set $inactive_text_color      #eeeeee
@@ -374,7 +374,8 @@ bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi
 
 #Invert screen color
 # bindsym $mod+Ctrl+i exec ~/.i3/invertOutputs.sh 
-bindsym $mod+Ctrl+i exec urxvt -e ~/.i3/setColorScheme.sh 
+# bindsym $mod+Ctrl+i exec urxvt -e ~/.i3/setColorScheme.sh 
+bindsym $mod+Ctrl+i exec ~/git/xrandr-invert-colors/xrandr-invert-colors.bin
 
 
 #Printscreen
@@ -444,6 +445,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 bindsym $mod3+b exec --no-startup-id ~/.i3/banishMouse.sh
 bindsym $mod4+r exec ~/.i3/setKeyboard.sh
+bindsym $mod+t exec ~/.i3/startTickeys.sh
 
 
 bindsym $mod3+ctrl+shift+h exec --no-startup-id xdotool mousemove_relative --sync -- -$fast 0
