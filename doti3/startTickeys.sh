@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -z $1 ]; then
-  gksudo -S tickeys
+  sudo -H tickeys
 else
-  gksudo "killall -9 tickeys"
+  sudo killall -9 tickeys
 fi
