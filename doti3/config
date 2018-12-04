@@ -36,6 +36,8 @@ set $mod4 Mod2
 
 font pango:Terminus Bold, FontAwesome 9
 
+exec --no-startup-id ~/.i3/vpnconnect.sh
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
