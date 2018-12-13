@@ -37,5 +37,6 @@ else
 fi
 xrandr --dpi 100
 
+~/.i3/setWallpaper.sh
 sleep 2
 ~/.i3/conky_start
