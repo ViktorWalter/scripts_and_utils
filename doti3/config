@@ -330,8 +330,7 @@ bindsym $mod+F4 exec xbacklight -set 100 # INCREASE Screen brightness
 exec --no-startup-id ~/.i3/swapLayout.sh
 #~/.screenlayout/Single.sh
 bindsym $mod+Shift+p exec ~/.i3/swapLayout.sh
-
-bindsym $mod+Shift+o exec ~/.i3/rotateScreen.sh
+bindsym $mod+Shift+o exec ~/externOnly.sh
 
 
 
@@ -475,4 +474,24 @@ bindsym $mod3+i exec --no-startup-id xdotool click 4
 
 # bindsym $mod2+q exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 0
 # bindsym $mod2+a exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 1
+
+# These lines are here merely for me to test out my new UHK.
+# That is, the Ultimate Hacking Keyboard.
+# So far, it stands up to its name. 
+# The Cherry MX Clears I ordered it with are great, if a bit heavey, but they prevent bottoming out nicely.
+# I still have to get used to them, as well as the ergonomic tilt between the two halves, which causes me to occasionally press right Ctrl instead of Shift.
+# The clears seem to break in a little over a short time. It may just be me acclimatizing to them.
+# The sound has definitely changed to more crisp.
+# The actuation point (or at least where the tactility implies it is) appears to be somewhat deeper than with the browns.
+# This makes sense, as the profile of the clear sliders has more of a slope.
+# This means that while the stiffness of the sp. This means that while the stiffness of the springs does indeed prevent bottoming out, the bottom is only about 1.5 mm below the tactile point.
+# I still don't quite get what is meant by switches being more "smooth" if lubed.
+# They don't feel too scratchy as they are, but if they were smoother, I imagine that the tactility will be less pronounced.
+# Some experiments in this direction are in order.
+# It is interesting that in this case making experiments is congruous with documenting them - efficient.
+# The mouse control is well implemented. I set the directions to vim-like hjkl, but maybe the t-layout is better for diagonal directions.
+# Going to sleep right now.
+# The sound improves greatly when the keyboard is placed on a soft surface for some reason.
+# 
+#
 

@@ -31,7 +31,6 @@
     :alternates:
     - viktor_walter@outlook.com
     - ciernobiely@gmail.com
-    - viktor.walter@laas.fr
     :sendmail: msmtp -t --read-envelope-from
     :signature: "/home/viktor/.sup/signature"
     :gpgkey: ''

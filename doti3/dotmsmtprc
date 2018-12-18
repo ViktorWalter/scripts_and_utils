@@ -47,20 +47,20 @@ from Viktor Walter
 passwordeval python -c "import keyring; print keyring.get_password('gmail', 'personal')"
 port 587
 
-account laas
-host mail.laas.fr
-user vwalter
-auth on
-tls on
-tls_starttls off
-tls_nocertcheck
-# tls_trust_file /etc/ssl/certs/ca-certificates.crt
-# The value of `from` is only used when you're not using sup.
-# But it is necssary if you're testing things out.
-# tls_trust_file /etc/ssl/certs/usenet.crt
-# tls_trust_file /home/viktor/.sup/usenet.crt
-from viktor.walter@laas.fr
-passwordeval python -c "import keyring; print keyring.get_password('laas', 'personal')"
-port 465
+# account laas
+# host mail.laas.fr
+# user vwalter
+# auth on
+# tls on
+# tls_starttls off
+# tls_nocertcheck
+# # tls_trust_file /etc/ssl/certs/ca-certificates.crt
+# # The value of `from` is only used when you're not using sup.
+# # But it is necssary if you're testing things out.
+# # tls_trust_file /etc/ssl/certs/usenet.crt
+# # tls_trust_file /home/viktor/.sup/usenet.crt
+# from viktor.walter@laas.fr
+# passwordeval python -c "import keyring; print keyring.get_password('laas', 'personal')"
+# port 465
 
 account default : fel

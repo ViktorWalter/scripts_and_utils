@@ -133,7 +133,8 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 40
+                  "scancode": 40,
+                  "secondaryRoleAction": "mouse"
                 },
                 {
                   "keyActionType": "keystroke",
@@ -722,7 +723,11 @@
                 null,
                 null,
                 null,
-                null,
+                {
+                  "keyActionType": "keystroke",
+                  "type": "media",
+                  "scancode": 226
+                },
                 {
                   "keyActionType": "keystroke",
                   "type": "media",
@@ -738,11 +743,7 @@
                 null,
                 null,
                 null,
-                {
-                  "keyActionType": "switchLayer",
-                  "layer": "fn",
-                  "switchLayerMode": "holdAndDoubleTapToggle"
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -1114,7 +1115,8 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 40
+                  "scancode": 40,
+                  "secondaryRoleAction": "mouse"
                 },
                 {
                   "keyActionType": "keystroke",
@@ -1703,7 +1705,11 @@
                 null,
                 null,
                 null,
-                null,
+                {
+                  "keyActionType": "keystroke",
+                  "type": "media",
+                  "scancode": 226
+                },
                 {
                   "keyActionType": "keystroke",
                   "type": "media",
@@ -1719,11 +1725,7 @@
                 null,
                 null,
                 null,
-                {
-                  "keyActionType": "switchLayer",
-                  "layer": "fn",
-                  "switchLayerMode": "holdAndDoubleTapToggle"
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -2092,7 +2094,8 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 40
+                  "scancode": 40,
+                  "secondaryRoleAction": "mouse"
                 },
                 {
                   "keyActionType": "keystroke",
@@ -2686,7 +2689,11 @@
                   "scancode": 182
                 },
                 null,
-                null,
+                {
+                  "keyActionType": "keystroke",
+                  "type": "media",
+                  "scancode": 226
+                },
                 {
                   "keyActionType": "keystroke",
                   "type": "media",
@@ -2706,11 +2713,7 @@
                   "scancode": 205
                 },
                 null,
-                {
-                  "keyActionType": "switchLayer",
-                  "layer": "fn",
-                  "switchLayerMode": "holdAndDoubleTapToggle"
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -3081,7 +3084,8 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 40
+                  "scancode": 40,
+                  "secondaryRoleAction": "mouse"
                 },
                 {
                   "keyActionType": "keystroke",
@@ -3677,7 +3681,11 @@
                   "scancode": 182
                 },
                 null,
-                null,
+                {
+                  "keyActionType": "keystroke",
+                  "type": "media",
+                  "scancode": 226
+                },
                 {
                   "keyActionType": "keystroke",
                   "type": "media",
@@ -3701,11 +3709,7 @@
                   "scancode": 205
                 },
                 null,
-                {
-                  "keyActionType": "switchLayer",
-                  "layer": "fn",
-                  "switchLayerMode": "holdAndDoubleTapToggle"
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
@@ -4070,7 +4074,8 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 87
+                  "scancode": 40,
+                  "secondaryRoleAction": "mouse"
                 },
                 {
                   "keyActionType": "keystroke",
@@ -4650,7 +4655,11 @@
                 null,
                 null,
                 null,
-                null,
+                {
+                  "keyActionType": "keystroke",
+                  "type": "media",
+                  "scancode": 226
+                },
                 {
                   "keyActionType": "keystroke",
                   "type": "media",
@@ -5028,7 +5037,8 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 40
+                  "scancode": 40,
+                  "secondaryRoleAction": "mouse"
                 },
                 {
                   "keyActionType": "keystroke",
@@ -5618,7 +5628,11 @@
                   "scancode": 182
                 },
                 null,
-                null,
+                {
+                  "keyActionType": "keystroke",
+                  "type": "media",
+                  "scancode": 226
+                },
                 {
                   "keyActionType": "keystroke",
                   "type": "media",
@@ -5638,11 +5652,7 @@
                   "scancode": 205
                 },
                 null,
-                {
-                  "keyActionType": "switchLayer",
-                  "layer": "fn",
-                  "switchLayerMode": "holdAndDoubleTapToggle"
-                },
+                null,
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",

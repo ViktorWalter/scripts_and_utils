@@ -1,7 +1,7 @@
 [general]
 pythonfile = ~/.offlineimap.py
 # List of accounts to be synced, separated by a comma.
-accounts = fel,outlook,gmail,laas
+accounts = fel,outlook,gmail
 # accounts = outlook,gmail
 ui = ttyui
 
@@ -84,22 +84,22 @@ nametrans = lambda folder: {'INBOX': 'inbox',
 folderfilter = lambda folder: folder == 'INBOX'
 
 
-[Account laas]
-localrepository = laas-local
-remoterepository = laas-remote
+# [Account laas]
+# localrepository = laas-local
+# remoterepository = laas-remote
 
-[Repository laas-local]
-type = Maildir
-localfolders = ~/mail/laas
-nametrans = lambda folder: {'inbox': 'INBOX',
-                            }.get(folder, folder)
+# [Repository laas-local]
+# type = Maildir
+# localfolders = ~/mail/laas
+# nametrans = lambda folder: {'inbox': 'INBOX',
+#                             }.get(folder, folder)
 
-[Repository laas-remote]
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-type = IMAP
-remotehost = imap.laas.fr
-remoteuser = vwalter
-remotepasseval = keyring.get_password('laas', 'personal')
-nametrans = lambda folder: {'INBOX': 'inbox',
-                            }.get(folder, folder)
-folderfilter = lambda folder: folder == 'INBOX'
+# [Repository laas-remote]
+# sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# type = IMAP
+# remotehost = imap.laas.fr
+# remoteuser = vwalter
+# remotepasseval = keyring.get_password('laas', 'personal')
+# nametrans = lambda folder: {'INBOX': 'inbox',
+#                             }.get(folder, folder)
+# folderfilter = lambda folder: folder == 'INBOX'
