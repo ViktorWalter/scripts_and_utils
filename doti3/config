@@ -492,6 +492,7 @@ bindsym $mod3+i exec --no-startup-id xdotool click 4
 # The mouse control is well implemented. I set the directions to vim-like hjkl, but maybe the t-layout is better for diagonal directions.
 # Going to sleep right now.
 # The sound improves greatly when the keyboard is placed on a soft surface for some reason.
+# The tactility also seems to have improved somewhat. Or, I have just gotten used to the feel and the proper amount of fource to apply to it.
 # 
 #
 

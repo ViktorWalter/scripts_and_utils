@@ -2136,7 +2136,8 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 44
+                  "scancode": 44,
+                  "secondaryRoleAction": "mouse"
                 },
                 {
                   "keyActionType": "switchLayer",
@@ -2850,7 +2851,10 @@
                 },
                 null,
                 null,
-                null,
+                {
+                  "keyActionType": "mouse",
+                  "mouseAction": "leftClick"
+                },
                 {
                   "keyActionType": "mouse",
                   "mouseAction": "moveLeft"
@@ -2867,9 +2871,8 @@
                 null,
                 null,
                 {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "modifierMask": 32
+                  "keyActionType": "mouse",
+                  "mouseAction": "rightClick"
                 },
                 null,
                 {
