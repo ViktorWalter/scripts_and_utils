@@ -5268,9 +5268,9 @@
                   "modifierMask": 4
                 },
                 {
-                  "keyActionType": "keystroke",
-                  "type": "basic",
-                  "scancode": 44
+                  "keyActionType": "switchLayer",
+                  "layer": "mod",
+                  "switchLayerMode": "holdAndDoubleTapToggle"
                 },
                 {
                   "keyActionType": "keystroke",
@@ -5568,7 +5568,11 @@
                   "modifierMask": 4
                 },
                 null,
-                null,
+                {
+                  "keyActionType": "switchLayer",
+                  "layer": "mod",
+                  "switchLayerMode": "holdAndDoubleTapToggle"
+                },
                 null,
                 null
               ]

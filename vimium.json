@@ -1,11 +1,13 @@
 {
 	"name": "Vimium C",
-	"time": 1540834693671,
+	"@time": "1/2/2019, 12:40:38 PM",
+	"time": 1546429238189,
 	"environment": {
-		"chrome": 66,
-		"extension": "1.69.2",
-		"platform": "linux"
+		"extension": "1.71",
+		"platform": "linux",
+		"chrome": 66
 	},
+	"deepHints": true,
 	"exclusionRules": [],
 	"extWhiteList": [
 		"# modified { Vomnibar Page, X New Tab, PDF Viewer }",
@@ -15,17 +17,22 @@
 		"lcopgfbpbmionefhhgbamgmejggljpbb",
 		""
 	],
+	"findCSS": [
+		"::selection { background: #ff9632 !important; }",
+		"*{cursor:default;font:12px/14px \"Helvetica Neue\",Helvetica,Arial,sans-serif!important;\nheight:14px;margin:0;overflow:hidden;vertical-align:top;white-space:nowrap}\nbody{cursor:text;display:inline-block;max-width:215px;min-width:7px;padding:0 3px 0 1px}\nbody *{all:inherit!important;display:inline!important}html>count{float:right}"
+	],
 	"grabBackFocus": true,
 	"hideHud": true,
 	"keyMappings": [
 		"# Insert your preferred key mappings here.",
 		"map <c-e> Vomnibar.activate",
 		"map <a-F> LinkHints.activateModeWithQueue",
-		"map s LinkHints.activateModeToHover",
+		"map s LinkHints.activateModeTokj",
 		"map D LinkHints.activateModeToDownloadLink",
+		"map I LinkHints.activateModeToOpenImage",
 		""
 	],
-	"newTabUrl": "https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9",
+	"newTabUrl": "https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad1aad15df09559e9916d6cb79090545dc5101095f718d49386b63a5146635b4c9",
 	"nextPatterns": "next,more,newer,>,›,→,»,≫",
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪",
 	"searchEngines": [
@@ -55,7 +62,7 @@
 		"# qw: https://www.qwant.com/?q=%s Qwant",
 		""
 	],
-	"searchUrl": "https://new.startpage.com/do/dsearch?query=$s&mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9",
+	"searchUrl": "https://new.startpage.com/do/dsearch?query=$s&mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad1aad15df09559e9916d6cb79090545dc5101095f718d49386b63a5146635b4c9",
 	"showAdvancedCommands": true,
 	"showAdvancedOptions": true
 }

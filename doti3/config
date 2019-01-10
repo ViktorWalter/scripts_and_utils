@@ -27,6 +27,10 @@ exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
 exec_always  --no-startup-id "sleep 2; keynav"
 
+exec --no-startup-id "frakkin-xkb ~/.i3/setKeyboard.sh &"
+
+exec --no-startup-id "alsactl restore"
+
 # exec --no-startup-id ~/mount_windata.sh
 
 set $mod Mod1
@@ -309,7 +313,9 @@ for_window [class="gnome-calendar"] floating enable
 bindsym Ctrl+Escape exec ksysguard
 
 # rofi launcher
-bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -font 'Terminus Bold 15' -show-icons True"
+bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -font 'Terminus Bold 15'"
+# # bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -font 'Terminus Bold 15' "
+# bindsym $mod+d exec "rofi drun -show drun -location 2 -terminal urxvt -font 'Terminus Bold 15' "
 
 # Pulse Audio controls
 bindsym $mod+F6 exec --no-startup-id pactl -- set-sink-volume 0 +10% #increase sound volume
@@ -493,6 +499,22 @@ bindsym $mod3+i exec --no-startup-id xdotool click 4
 # Going to sleep right now.
 # The sound improves greatly when the keyboard is placed on a soft surface for some reason.
 # The tactility also seems to have improved somewhat. Or, I have just gotten used to the feel and the proper amount of fource to apply to it.
+#
+# After over a week I must attest that the keys feel incredibly natural.
+# The tactile fedback is striking, and I feel no fatigue to speak of, even after semi-prolongued sessions.
+# In randomized online competitions, I typically score ~55 wpm, and end up ~2nd.
+#
+# Nothing new today.
+# Considering the relative merits of various profiles for the caps. 
+# The UHK has OEM profile caps, which are nicely low for portability, but their edges are rather sharp.
+# The "Pulse" SA-profile caps are really nice, but also unavailable, expensive and tall.
+# Additionally, they would go against the unprinted paradigm of my UHK.
+# But the main justification for that is that I customized the layout extensively, compared to the factory layout, and I didn't want to have them labeled incorrectly.
+# Also, I want to telegraph that I can touch-type, because of vanity.
+#
+# Strangely enough, my previous keyboard with browns now feels really light and at least the wire-balanced spacebar feels like it was broken.
+#
+# 
 # 
 #
 

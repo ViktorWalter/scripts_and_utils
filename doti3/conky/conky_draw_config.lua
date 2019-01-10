@@ -115,7 +115,7 @@ elements = {
 },
 {
     kind = 'bar_graph',
-    conky_value = 'exec iostat -dx /dev/sda | awk \'/^sda/ {print $14}\'',
+    conky_value = 'exec iostat -dx /dev/sda | awk \'/^sda/ {print $16}\'',
     from = {x = 75, y = 20},
     to = {x = 75, y = 0},
     background_thickness = 4,
@@ -125,7 +125,7 @@ elements = {
 },
 {
     kind = 'bar_graph',
-    conky_value = 'exec iostat -dx /dev/sdb | awk \'/^sdb/ {print $14}\'',
+    conky_value = 'exec iostat -dx /dev/sdb | awk \'/^sdb/ {print $16}\'',
     from = {x = 80, y = 20},
     to = {x = 80, y = 0},
     background_thickness = 4,
