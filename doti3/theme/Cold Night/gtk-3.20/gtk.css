@@ -4477,7 +4477,7 @@ progressbar.osd {
   progressbar.osd progress {
     border-style: none;
     border-radius: 0;
-    background-color: #87CEFA;
+    background-color: #00BFFA;
     background-image: none; }
 
 .osd,
@@ -4838,7 +4838,7 @@ progressbar.osd {
   .osd trough, .osd.trough,
   #XfceNotifyWindow trough,
   #XfceNotifyWindow.trough {
-    background-color: rgba(0, 191, 250, 0.3); }
+    background-color: rgba(0, 0, 0, 1.0); }
   .osd progressbar, .osd.progressbar,
   #XfceNotifyWindow progressbar,
   #XfceNotifyWindow.progressbar {
@@ -5725,7 +5725,7 @@ progressbar {
     background-image: none;
     border-radius: 0px; }
   progressbar progress {
-    background-color: #87CEFA;
+    background-color: #00BFFA;
     background-image: none;
     border-radius: 0; }
     progressbar progress.left {
