@@ -50,7 +50,7 @@ endif
 
   set path+=**
   set wildmenu
-  unmap <S-J>
+  " unmap <S-J>
   unmap <S-K>
   " set lazyredraw "makes scrooling faster
   set cursorline

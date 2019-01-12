@@ -64,8 +64,10 @@ runTmux() {
 
   SESSION_NAME="T$PPID"
 
+
   # try to find session with the correct session id (based on the zsh PID)
   EXISTING_SESSION=`$TMUX_BIN ls 2> /dev/null | grep "$SESSION_NAME" | wc -l` 
+
 
   echo $EXISTING_SESSION
 
@@ -198,10 +200,10 @@ export PKG_CONFIG_PATH
 alias ei='vim /home/viktor/.i3/config'
 alias ..='cd ..'
 
-export CUDA_BIN_PATH=/usr/local/cuda-8.0
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-8.0/bin:/home/viktor
-export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-8.0
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-8.0/lib64:/usr/local/lib:/home/viktor/OpenCV/opencv_3_1/installed/lib
+export CUDA_BIN_PATH=/usr/local/cuda-10.0
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-10.0/bin:/home/viktor
+export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-10.0
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64:/usr/local/lib:/home/viktor/OpenCV/opencv_3_1/installed/lib
 
 set -o vi
 # use the vi navigation keys in menu completion
@@ -255,7 +257,7 @@ export ROS_PACKAGE_PATH=${ROBOTPKG_BASE}/share:${ROS_PACKAGE_PATH}
 #
 alias :q=exit
 
-alias sup=sup-mail
+# alias sup=sup-mail
 
 
 alias zath=zathura
@@ -278,6 +280,73 @@ export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-TERM=xterm-256color
+# TERM=xterm-256color
 
 alias cdphone='. ~/cdphone'
+
+# export RUBYOPT="-W0"; rails server
+#
+export NO_AT_BRIDGE=1
+
+export PROFILES_ADDITIONS=""
+export PROFILES_DELETIONS=""
+export PROFILES_BOTH="VIKTOR_BIGBOX"
+
+
+# upgrades the "git pull" to allow dotfiles profiling on linux-setup
+# Other "git" features should not be changed
+git() {
+
+    case $* in pull*|checkout*|"reset --hard")
+
+    # give me the path to root of the repo we are in
+    ROOT_DIR=`git rev-parse --show-toplevel` 2> /dev/null
+
+    if [[ "$?" == "0" ]]; then
+
+      # if we are in the 'linux-setup' repo, use the Profile manager
+      if [[ "$ROOT_DIR" == "$GIT_PATH/linux-setup-clean" ]]; then
+
+        PROFILE_MANAGER="$GIT_PATH/linux-setup/submodules/profile_manager/profile_manager.sh"
+
+        bash -c "$PROFILE_MANAGER backup /home/viktor/.i3/file_lists.txt"
+
+        command git "$@"
+
+        case $* in pull*|checkout*)
+          echo "Updating git submodules"
+          command git submodule update --init --recursive
+        esac
+
+        if [[ "$?" == "0" ]]; then
+
+          bash -c "$PROFILE_MANAGER deploy /home/viktor/.i3/file_lists.txt"
+
+        fi
+
+      else
+        command git "$@"
+        case $* in pull*|checkout*)
+          echo "Updating git submodules"
+          command git submodule update --init --recursive
+        esac
+      fi
+
+    else
+      command git "$@"
+      case $* in pull*|checkout*)
+        echo "Updating git submodules"
+        command git submodule update --init --recursive
+      esac
+    fi
+
+    ;;
+  *)
+    command git "$@"
+    ;;
+
+  esac
+}
+
+export GOPATH=~/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

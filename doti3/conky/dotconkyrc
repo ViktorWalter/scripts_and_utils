@@ -13,7 +13,7 @@ conky.config = {
 	--use_xft = true,
 	--font = 'Bitstream Vera Sans Mono:size=10',
 	gap_x = 400,
-	gap_y = 0,
+	gap_y = -5,
   minimum_width = 75,
   minimum_height = 20,
 	--net_avg_samples = 2,

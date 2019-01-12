@@ -32,6 +32,8 @@ exec --no-startup-id "frakkin-xkb ~/.i3/setKeyboard.sh &"
 exec --no-startup-id "alsactl restore"
 
 # exec --no-startup-id ~/mount_windata.sh
+#
+exec --no-startup-id "pulseeffects --gapplication-service"
 
 set $mod Mod1
 set $mod2 Mod4

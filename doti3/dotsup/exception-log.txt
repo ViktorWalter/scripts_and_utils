@@ -1,14 +1,14 @@
---- Interrupt from thread: main
-
-/usr/lib/ruby/vendor_ruby/sup/util/ncurses.rb:112:in `present?'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:555:in `ask'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:437:in `ask_many_emails_with_completions'
-(eval):1:in `ask_many_emails_with_completions'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:518:in `ask_for_contacts'
-(eval):1:in `ask_for_contacts'
-/usr/lib/ruby/vendor_ruby/sup/modes/forward_mode.rb:44:in `spawn_nicely'
-/usr/lib/ruby/vendor_ruby/sup/modes/thread_view_mode.rb:253:in `forward'
-/usr/lib/ruby/vendor_ruby/sup/mode.rb:59:in `handle_input'
-/usr/lib/ruby/vendor_ruby/sup/buffer.rb:222:in `handle_input'
-/usr//bin/sup-mail:255:in `<module:Redwood>'
-/usr//bin/sup-mail:74:in `<main>'
+--- ThreadError from thread: poll after loading inbox
+deadlock; recursive locking
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:268:in `lock'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:268:in `draw_screen'
+/usr/lib/ruby/vendor_ruby/sup/buffer.rb:712:in `flash'
+(eval):1:in `flash'
+/usr/lib/ruby/vendor_ruby/sup/hook.rb:103:in `rescue in run'
+/usr/lib/ruby/vendor_ruby/sup/hook.rb:97:in `run'
+(eval):1:in `run'
+/usr/lib/ruby/vendor_ruby/sup/poll.rb:53:in `poll_with_sources'
+/usr/lib/ruby/vendor_ruby/sup/poll.rb:94:in `poll'
+/usr/lib/ruby/vendor_ruby/sup/util.rb:610:in `method_missing'
+/usr/bin/sup-mail:207:in `block (2 levels) in <module:Redwood>'
+/usr/lib/ruby/vendor_ruby/sup.rb:87:in `block in reporting_thread'
