@@ -134,7 +134,7 @@ runVim() {
 # alias tmux=runTmux
 alias vim=runVim
 
-alias vimdiff="vim -d"
+alias vimdiff="nvim -d"
 
 kzsh() {
   for i in `ps aux | grep "\-[z]sh" | awk '{print $2}'`; do   
@@ -178,17 +178,31 @@ if [ "$RUN_TMUX" = "true" ]; then
 fi
 
 ros() {
-  source /opt/ros/kinetic/setup.zsh
-  source ~/workspace/devel/setup.zsh
+  source /opt/ros/melodic/setup.zsh
   source /home/viktor/mrs_workspace/devel/setup.zsh
-  source ~/gazebo_plugins/devel/setup.zsh
   source /usr/share/gazebo/setup.sh
   source ~/simulation/install/share/simulation/setup.sh
-}  
+  # source ~/gazebo_plugins/devel/setup.zsh
+  # source ~/workspace/devel/setup.zsh
 
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros_workspace/src/mbzirc/gazebo_support/models:~/gazebo_plugins/models
+export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/mrs_workspace/src/mbzirc/gazebo_support/models:~/git/simulation/gazebo_files/models
+# export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/mrs_workspace/src/mbzirc/gazebo_support/models:~/gazebo_plugins/models
 export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/gazebo_local_plugins
 export UAV_MASS=3.0
+
+# path to ros workspace
+export ROS_WORKSPACE="~/mrs_workspace"
+# ~/mrs_workspace ~/ros_workspace"
+# where should ctags look for sources to parse?
+  # -R dir1 -R dir2 ...
+  export CTAGS_SOURCE_DIR="-R ~/mrs_workspace"
+
+# where should ctags look for sources to parse?
+  # CTAGS FROM THOSE FILE WILL BE CREATED ONLY ONCE
+  # -R dir1 -R dir2 ...
+  export CTAGS_ONCE_SOURCE_DIR="-R /opt/ros/melodic/include"
+}  
+
 
 export PATH=$PATH:/home/viktor/Matlab/Matlab/bin/glnxa64/
 alias mn='MATLAB -nodesktop -nosplash -nojvm'
@@ -200,10 +214,10 @@ export PKG_CONFIG_PATH
 alias ei='vim /home/viktor/.i3/config'
 alias ..='cd ..'
 
-export CUDA_BIN_PATH=/usr/local/cuda-10.0
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-10.0/bin:/home/viktor
-export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-10.0
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64:/usr/local/lib:/home/viktor/OpenCV/opencv_3_1/installed/lib
+export CUDA_BIN_PATH=/usr/local/cuda-9.2
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin
+export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-9.2
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64:/usr/local/lib:/home/viktor/OpenCV/opencv_3_1/installed/lib
 
 set -o vi
 # use the vi navigation keys in menu completion
@@ -217,18 +231,7 @@ alias vimr='vim --remote-silent'
 # do you use i3?
   export USE_I3=true
 
-# path to ros workspace
-export ROS_WORKSPACE="~/workspace
-# ~/mrs_workspace ~/ros_workspace"
 
-# where should ctags look for sources to parse?
-  # -R dir1 -R dir2 ...
-  export CTAGS_SOURCE_DIR="-R ~/mrs_workspace"
-
-# where should ctags look for sources to parse?
-  # CTAGS FROM THOSE FILE WILL BE CREATED ONLY ONCE
-  # -R dir1 -R dir2 ...
-  export CTAGS_ONCE_SOURCE_DIR="-R /opt/ros/kinetic/include"
 
 # path to the git root
 export GIT_PATH=/home/viktor/git
@@ -248,12 +251,12 @@ alias vi=vim
 
 # export PATH=${PATH}:${HOME}/toulouse/openrobots/sbin
 
-############### Robot Package stuff
-export ROBOTPKG_BASE=${HOME}/uvdd-research/openrobots
-export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${ROBOTPKG_BASE}/lib/pkgconfig
-export PATH=${ROBOTPKG_BASE}/bin:${ROBOTPKG_BASE}/sbin:${ROBOTPKG_BASE}/lib:$PATH
-export ROS_PACKAGE_PATH=${ROBOTPKG_BASE}/share:${ROS_PACKAGE_PATH}
-# export PYTHONPATH=$PYTHONPATH:${ROBOTPKG_BASE}/lib/python2.7/site-packages
+# ############### Robot Package stuff
+# export ROBOTPKG_BASE=${HOME}/uvdd-research/openrobots
+# export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:${ROBOTPKG_BASE}/lib/pkgconfig
+# export PATH=${ROBOTPKG_BASE}/bin:${ROBOTPKG_BASE}/sbin:${ROBOTPKG_BASE}/lib:$PATH
+# export ROS_PACKAGE_PATH=${ROBOTPKG_BASE}/share:${ROS_PACKAGE_PATH}
+# # export PYTHONPATH=$PYTHONPATH:${ROBOTPKG_BASE}/lib/python2.7/site-packages
 #
 alias :q=exit
 
@@ -350,3 +353,10 @@ git() {
 
 export GOPATH=~/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+export PATH=$PATH:/home/viktor/localpath/
+
+source ~/git/linux-setup/appconfig/shell/commons.sh
+ros
+
+

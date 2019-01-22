@@ -6,34 +6,35 @@
 #
 
 # i3 config file (v4)
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+# exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 # exec --no-startup-id yakuake
 # exec "sleep 4; launchy"
 exec --no-startup-id ssh-agent
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id pulseaudio
+exec --no-startup-id pulseaudio --start
 # exec --no-startup-id cadence
-exec --no-startup-id pa-applet
+exec --no-startup-id "sleep 2; pa-applet"
 # exec --no-startup-id redshift-gtk
 exec --no-startup-id cbatticon
 # exec --no-startup-id ~/mount_windata.sh
 exec_always  --no-startup-id  ~/.i3/my_autoname_workspaces.py &
 exec_always  --no-startup-id ~/.i3/conky/conky_start
-exec_always  --no-startup-id "unclutter --timeout 3 -b"
+exec_always  --no-startup-id "unclutter -idle 3"
 exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
 exec_always  --no-startup-id "sleep 2; keynav"
 
-exec --no-startup-id "frakkin-xkb ~/.i3/setKeyboard.sh &"
+exec --no-startup-id "sleep 1; frakkin-xkb ~/.i3/setKeyboard.sh &"
 
-exec --no-startup-id "alsactl restore"
+# exec --no-startup-id "alsactl restore"
 
 # exec --no-startup-id ~/mount_windata.sh
 #
-exec --no-startup-id "pulseeffects --gapplication-service"
+# exec --no-startup-id "sleep 4; pulseeffects --gapplication-service"
 
 set $mod Mod1
 set $mod2 Mod4
@@ -42,7 +43,7 @@ set $mod4 Mod2
 
 font pango:Terminus Bold, FontAwesome 9
 
-exec --no-startup-id ~/.i3/vpnconnect.sh
+exec --no-startup-id "sleep 5; ~/.i3/vpnconnect.sh"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -252,7 +253,7 @@ for_window [class="conky"] move to output primary
 for_window [class="MATLAB R2015a" title="^Fig"] no_focus
 for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
 # for_window [class="MATLAB R2015a" title="^Fig"] floating enable
-for_window [class="Gazeb"] move to workspace number 8
+for_window [class="gazebo"] move to workspace number 3
 
 for_window [window_role="browser"] move to workspace number 5
 
@@ -320,9 +321,12 @@ bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location
 # bindsym $mod+d exec "rofi drun -show drun -location 2 -terminal urxvt -font 'Terminus Bold 15' "
 
 # Pulse Audio controls
-bindsym $mod+F6 exec --no-startup-id pactl -- set-sink-volume 0 +10% #increase sound volume
-bindsym $mod+F5 exec --no-startup-id pactl -- set-sink-volume 0 -10% #decrease sound volume
-bindsym $mod+F7 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# bindsym $mod+F6 exec --no-startup-id pactl -- set-sink-volume 0 +10% #increase sound volume
+# bindsym $mod+F5 exec --no-startup-id pactl -- set-sink-volume 0 -10% #decrease sound volume
+# bindsym $mod+F7 exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume +10%
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume -10%
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Sreen brightness controls
 bindsym $mod+F1 exec xbacklight -dec 10 # decrease screen brightness

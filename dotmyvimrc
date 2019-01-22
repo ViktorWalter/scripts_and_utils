@@ -122,7 +122,7 @@ pkgname = rospkg.get_package_name(vim.eval("expand('%:p')"))
 if pkgname:
    r = rospkg.RosPack()
    vim.command("let is_ros='true'")
-   vim.command("cd "+r.get_path(pkgname))
+   vim.command("cd "+r.get_path(pkgname).split('src/',1)[0])
    vim.command("let &makeprg='catkin build "+pkgname+"'")
 else:
    vim.command("let is_ros='false'")

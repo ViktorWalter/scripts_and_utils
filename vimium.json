@@ -1,9 +1,9 @@
 {
 	"name": "Vimium C",
-	"@time": "1/2/2019, 12:40:38 PM",
-	"time": 1546429238189,
+	"@time": "1/20/2019, 8:32:32 AM",
+	"time": 1547969552235,
 	"environment": {
-		"extension": "1.71",
+		"extension": "1.71.2",
 		"platform": "linux",
 		"chrome": 66
 	},
@@ -18,8 +18,8 @@
 		""
 	],
 	"findCSS": [
-		"::selection { background: #ff9632 !important; }",
-		"*{cursor:default;font:12px/14px \"Helvetica Neue\",Helvetica,Arial,sans-serif!important;\nheight:14px;margin:0;overflow:hidden;vertical-align:top;white-space:nowrap}\nbody{cursor:text;display:inline-block;max-width:215px;min-width:7px;padding:0 3px 0 1px}\nbody *{all:inherit!important;display:inline!important}html>count{float:right}"
+		"",
+		"\"::selection { background: #ff9632 !important; },*{cursor:default;font:12px/14px \\\"Helvetica Neue\\\",Helvetica,Arial,sans-serif!important;\\nheight:14px;margin:0;overflow:hidden;vertical-align:top;white-space:nowrap}\\nbody{cursor:text;display:inline-block;max-width:215px;min-width:7px;padding:0 3px 0 1px}\\nbody *{all:inherit!important;display:inline!important}html>count{float:right}\""
 	],
 	"grabBackFocus": true,
 	"hideHud": true,
@@ -27,7 +27,7 @@
 		"# Insert your preferred key mappings here.",
 		"map <c-e> Vomnibar.activate",
 		"map <a-F> LinkHints.activateModeWithQueue",
-		"map s LinkHints.activateModeTokj",
+		"map s LinkHints.activateModeToHover",
 		"map D LinkHints.activateModeToDownloadLink",
 		"map I LinkHints.activateModeToOpenImage",
 		""
@@ -36,6 +36,8 @@
 	"nextPatterns": "next,more,newer,>,›,→,»,≫",
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪",
 	"searchEngines": [
+		"s|c|settings|chrome: chrome://$s",
+		"gh https://github.com/search?utf8=%E2%9C%93&q=$s&type=",
 		"g|go|gg|google: https://www.google.com/search?q=$s Google",
 		"js\\:|Js: javascript:\\ $S; Javascript",
 		"w|wiki:\\",
@@ -60,9 +62,11 @@
 		"# d: https://duckduckgo.com/?q=%s DuckDuckGo",
 		"# az: https://www.amazon.com/s/?field-keywords=%s Amazon",
 		"# qw: https://www.qwant.com/?q=%s Qwant",
+		"vimium: chrome-extension://hfjbmagddngcpeloejdejnfgbamkjaeg/pages/options.html",
 		""
 	],
 	"searchUrl": "https://new.startpage.com/do/dsearch?query=$s&mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad1aad15df09559e9916d6cb79090545dc5101095f718d49386b63a5146635b4c9",
 	"showAdvancedCommands": true,
-	"showAdvancedOptions": true
+	"showAdvancedOptions": true,
+	"smoothScroll": false
 }
