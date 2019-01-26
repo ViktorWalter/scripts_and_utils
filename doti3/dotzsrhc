@@ -1,7 +1,7 @@
 # zmodload zsh/zprof
 # set -x
 # export EDITOR="/usr/bin/vim --servername spider --cmd 'let g:user_mode=1'"
-export EDITOR="/usr/bin/nvim --cmd 'let g:user_mode=1'"
+export EDITOR="/usr/bin/vim --cmd 'let g:user_mode=1'"
 export TMUX_BIN=/usr/bin/tmux
 
 if [ -z "${VIM+x}" ]; then
@@ -269,9 +269,10 @@ export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
 historyZsh(){
-  eval "print $*"
+
+  eval 'print $@'
 }
-alias history=historyZsh
+alias history='historyZsh'
 
 # ros
 

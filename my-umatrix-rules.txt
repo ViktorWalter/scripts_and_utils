@@ -1,0 +1,55 @@
+https-strict: behind-the-scene false
+matrix-off: about-scheme true
+matrix-off: behind-the-scene true
+matrix-off: chrome-extension-scheme true
+matrix-off: chrome-scheme true
+matrix-off: moz-extension-scheme true
+matrix-off: opera-scheme true
+matrix-off: vivaldi-scheme true
+matrix-off: wyciwyg-scheme true
+noscript-spoof: * true
+referrer-spoof: * true
+referrer-spoof: behind-the-scene false
+* * * block
+* * css allow
+* * frame block
+* * image allow
+* 1st-party * allow
+* 1st-party frame allow
+4channel.org 4cdn.org * allow
+facebook.com fbcdn.net * allow
+fandom.com nocookie.net * allow
+kimcartoon.to accounts.google.com * block
+kimcartoon.to apis.google.com * block
+kimcartoon.to code.jquery.com * block
+kimcartoon.to code.jquery.com script allow
+kimcartoon.to facebook.com * block
+kimcartoon.to fd1e6b4692e967.com * block
+kimcartoon.to ghosthis.review * block
+kimcartoon.to google.com * block
+kimcartoon.to gstatic.com * block
+kimcartoon.to jquery.com * block
+kimcartoon.to playercdn.net * allow
+kimcartoon.to rapidvideo.com * allow
+kimcartoon.to sendmepush.com script allow
+kimcartoon.to ssl.gstatic.com * block
+kimcartoon.to www.facebook.com * block
+kimcartoon.to www.rapidvideo.com * allow
+kimcartoon.to www.rapidvideo.com frame allow
+podbay.fm media.adknit.com * allow
+podbay.fm podcasts.turner.com * allow
+podbay.fm turner.com * allow
+rapidvideo.com playercdn.net * allow
+reddit.com redd.it * allow
+reddit.com redditmedia.com * allow
+reddit.com redditstatic.com * allow
+slack.com slack-edge.com script allow
+slack.com slack.com * allow
+stevenuniver.se vidyagam.es * allow
+twitch.tv ttvnw.net * allow
+twitch.tv twitchcdn.net * allow
+twitter.com twimg.com * allow
+youtube.com 1st-party frame inherit
+youtube.com googlevideo.com * allow
+youtube.com www.youtube.com script allow
+youtube.com ytimg.com * allow

@@ -6,30 +6,9 @@
 # Uncomment this to still load settings configured via autoconfig.yml
 # config.load_autoconfig()
 
-# Comma-separated list of regular expressions to use for 'next' links.
-# Type: List of Regex
-c.hints.next_regexes = ['\\bnext\\b', '\\bmore\\b', '\\bnewer\\b', '\\b[>→≫]\\b', '\\b(>>|»)\\b', '\\bcontinue\\b', '\\bnext page\\b']
-
-# List of user stylesheet filenames to use.
-# Type: List of File, or File
-c.content.user_stylesheets = ['~/.i3/adblock.css', '~/.i3/dark_all.css']
-
-# Enable plugins in Web pages.
+# Load a restored tab as soon as it takes focus.
 # Type: Bool
-c.content.plugins = True
-
-# Editor (and arguments) to use for the `open-editor` command. The
-# following placeholders are defined: * `{file}`: Filename of the file
-# to be edited. * `{line}`: Line in which the caret is found in the
-# text. * `{column}`: Column in which the caret is found in the text. *
-# `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
-# Same as `{column}`, but starting from index 0.
-# Type: ShellCommand
-c.editor.command = ['urxvt', '-e', 'vim', '{}']
-
-# Page(s) to open at the start.
-# Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
+c.session.lazy_restore = True
 
 # Backend to use to display websites. qutebrowser supports two different
 # web rendering engines / backends, QtWebKit and QtWebEngine. QtWebKit
@@ -45,10 +24,27 @@ c.url.start_pages = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d3
 #   - webkit: Use QtWebKit (based on WebKit, similar to Safari).
 c.backend = 'webengine'
 
-# Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
-# for a blank page.
-# Type: FuzzyUrl
-c.url.default_page = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
+# Which Chromium process model to use. Alternative process models use
+# less resources, but decrease security and robustness. See the
+# following pages for more details:    -
+# https://www.chromium.org/developers/design-documents/process-models
+# - https://doc.qt.io/qt-5/qtwebengine-features.html#process-models
+# Type: String
+# Valid values:
+#   - process-per-site-instance: Pages from separate sites are put into separate processes and separate visits to the same site are also isolated.
+#   - process-per-site: Pages from separate sites are put into separate processes. Unlike Process per Site Instance, all visits to the same site will share an OS process. The benefit of this model is reduced memory consumption, because more web pages will share processes. The drawbacks include reduced security, robustness, and responsiveness.
+#   - single-process: Run all tabs in a single process. This should be used for debugging purposes only, and it disables `:open --private`.
+c.qt.process_model = 'process-per-site'
+
+# Always restore open sites when qutebrowser is reopened.
+# Type: Bool
+c.auto_save.session = True
+
+# Value to send in the `DNT` header. When this is set to true,
+# qutebrowser asks websites to not track your identity. If set to null,
+# the DNT header is not sent at all.
+# Type: Bool
+c.content.headers.do_not_track = None
 
 # Enable JavaScript.
 # Type: Bool
@@ -62,6 +58,23 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
+# Enable plugins in Web pages.
+# Type: Bool
+c.content.plugins = True
+
+# List of user stylesheet filenames to use.
+# Type: List of File, or File
+c.content.user_stylesheets = ['~/.i3/adblock.css', '~/.i3/dark_all.css']
+
+# Editor (and arguments) to use for the `open-editor` command. The
+# following placeholders are defined: * `{file}`: Filename of the file
+# to be edited. * `{line}`: Line in which the caret is found in the
+# text. * `{column}`: Column in which the caret is found in the text. *
+# `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
+# Same as `{column}`, but starting from index 0.
+# Type: ShellCommand
+c.editor.command = ['urxvt', '-e', 'vim', '{}']
+
 # When a hint can be automatically followed without pressing Enter.
 # Type: String
 # Valid values:
@@ -71,10 +84,31 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 #   - never: The user will always need to press Enter to follow a hint.
 c.hints.auto_follow = 'always'
 
+# Which implementation to use to find elements to hint.
+# Type: String
+# Valid values:
+#   - javascript: Better but slower
+#   - python: Slightly worse but faster
+c.hints.find_implementation = 'python'
+
+# Comma-separated list of regular expressions to use for 'next' links.
+# Type: List of Regex
+c.hints.next_regexes = ['\\bnext\\b', '\\bmore\\b', '\\bnewer\\b', '\\b[>→≫]\\b', '\\b(>>|»)\\b', '\\bcontinue\\b', '\\bnext page\\b']
+
 # Scatter hint key chains (like Vimium) or not (like dwb). Ignored for
 # number hints.
 # Type: Bool
 c.hints.scatter = True
+
+# Time (in milliseconds) from pressing a key to seeing the keyhint
+# dialog.
+# Type: Int
+c.keyhint.delay = 100
+
+# Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
+# for a blank page.
+# Type: FuzzyUrl
+c.url.default_page = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
 
 # Search engines which can be used via the address bar. Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -87,14 +121,14 @@ c.hints.scatter = True
 # Type: Dict
 c.url.searchengines = {'te': 'https://en.wikipedia.org/w/index.php?search={}', 'DEFAULT': 'https://new.startpage.com/do/dsearch?query={}', 'ts': 'https://translate.google.com/?hl=en&tab=wT#auto/sk/{}', 'w': 'https://en.wikipedia.org/w/index.php?search={}', 't': 'https://translate.google.com/?hl=en&tab=wT#auto/en/{}', 'y': 'https://www.youtube.com/results?search_query={}', 'g': 'https://www.google.com/search?q={}', 'm': 'www.google.com/maps/search/{}', 'wa': 'https://www.wolframalpha.com/input/?i={}'}
 
+# Page(s) to open at the start.
+# Type: List of FuzzyUrl, or FuzzyUrl
+c.url.start_pages = 'https://new.startpage.com/do/mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a16d6cb79090545dc5065027ac0acf3046b63a5146635b4c9'
+
 # Background color for webpages if unset (or empty to use the theme's
 # color).
 # Type: QtColor
 c.colors.webpage.bg = '#666666'
-
-# Always restore open sites when qutebrowser is reopened.
-# Type: Bool
-c.auto_save.session = True
 
 # Bindings for normal mode
 config.bind('<Escape>', 'fake-key <esc> ;; fake-key --global <esc>')
