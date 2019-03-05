@@ -1,7 +1,7 @@
 # zmodload zsh/zprof
 # set -x
 # export EDITOR="/usr/bin/vim --servername spider --cmd 'let g:user_mode=1'"
-export EDITOR="/usr/bin/vim --cmd 'let g:user_mode=1'"
+export EDITOR="/usr/bin/nvim --cmd 'let g:user_mode=1'"
 export TMUX_BIN=/usr/bin/tmux
 
 if [ -z "${VIM+x}" ]; then
@@ -21,7 +21,7 @@ unsetopt share_history
 
 export ZSH=/home/viktor/.oh-my-zsh
 ZSH_THEME="vrisk"
-plugins=(git)
+plugins=(git ros-completion)
 source $ZSH/oh-my-zsh.sh
 
 killp () {
@@ -360,4 +360,4 @@ export PATH=$PATH:/home/viktor/localpath/
 source ~/git/linux-setup/appconfig/shell/commons.sh
 ros
 
-
+alias vpn=nordvpn

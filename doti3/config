@@ -15,9 +15,9 @@ exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id ssh-agent
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id pulseaudio --start
+exec --no-startup-id "sleep 2;  pulseaudio --start"
 # exec --no-startup-id cadence
-exec --no-startup-id "sleep 2; pa-applet"
+exec --no-startup-id "sleep 3; pa-applet"
 # exec --no-startup-id redshift-gtk
 exec --no-startup-id cbatticon
 # exec --no-startup-id ~/mount_windata.sh
@@ -28,7 +28,9 @@ exec_always  --no-startup-id "sleep 2; ~/.i3/border_control"
 
 exec_always  --no-startup-id "sleep 2; keynav"
 
-exec --no-startup-id "sleep 1; frakkin-xkb ~/.i3/setKeyboard.sh &"
+exec --no-startup-id "sleep 4; frakkin-xkb ~/.i3/setKeyboard.sh &"
+
+exec --no-startup-id "sleep 5; ~/.i3/vpnconnect.sh"
 
 # exec --no-startup-id "alsactl restore"
 
@@ -43,7 +45,6 @@ set $mod4 Mod2
 
 font pango:Terminus Bold, FontAwesome 9
 
-exec --no-startup-id "sleep 5; ~/.i3/vpnconnect.sh"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -254,6 +255,7 @@ for_window [class="MATLAB R2015a" title="^Fig"] no_focus
 for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
 # for_window [class="MATLAB R2015a" title="^Fig"] floating enable
 for_window [class="gazebo"] move to workspace number 3
+for_window [class="rviz"] move to workspace number 3
 
 for_window [window_role="browser"] move to workspace number 5
 
@@ -342,7 +344,7 @@ bindsym $mod+F4 exec xbacklight -set 100 # INCREASE Screen brightness
 exec --no-startup-id ~/.i3/swapLayout.sh
 #~/.screenlayout/Single.sh
 bindsym $mod+Shift+p exec ~/.i3/swapLayout.sh
-bindsym $mod+Shift+o exec ~/externOnly.sh
+bindsym $mod+Shift+o exec ~/.i3/externOnly.sh
 
 
 
@@ -360,7 +362,7 @@ exec_always --no-startup-id ~/.i3/setKeyboard.sh
 # find the class name by running "xprop" in bash and then click on th window
 # copy the last item in the classname list
 #jassign [class="Google-chrome"] $workspace5
-assign [class="Rviz"] $workspace4
+# assign [class="Rviz"] $workspace4
 
 # name = File Operation Progress == float
 # for_window [class="^Thunar$"] floating enable
@@ -369,10 +371,12 @@ for_window [class="^Tk$"] floating enable
 # imshow windows to window n.8
 for_window [title="OCV_*"] move to scratchpad
 # for_window [title="cv_*"] floating disable
-for_window [title="cv_*"] border none
-for_window [title="cv_*"] fullscreen enable
-for_window [title="cv_fl_*"] floating enable
-for_window [title="cv_fl_*"] fullscreen disable
+# for_window [title="cv_*"] border none
+# for_window [title="cv_*"] fullscreen enable
+for_window [title="ocv_fl_*"] floating enable
+for_window [title="ocv_fl_*"] fullscreen disable
+for_window [title="ocv_*"] move to workspace number 3
+# for_window [title="cv_*"] no_focus
 
 # lock session
 bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi
