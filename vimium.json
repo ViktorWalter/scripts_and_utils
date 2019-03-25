@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "1/20/2019, 8:32:32 AM",
-	"time": 1547969552235,
+	"@time": "3/25/2019, 10:18:59 AM",
+	"time": 1553505539817,
 	"environment": {
-		"extension": "1.71.2",
+		"extension": "1.71.3",
 		"platform": "linux",
-		"chrome": 66
+		"chrome": 71
 	},
 	"deepHints": true,
 	"exclusionRules": [],
@@ -19,7 +19,7 @@
 	],
 	"findCSS": [
 		"",
-		"\"::selection { background: #ff9632 !important; },*{cursor:default;font:12px/14px \\\"Helvetica Neue\\\",Helvetica,Arial,sans-serif!important;\\nheight:14px;margin:0;overflow:hidden;vertical-align:top;white-space:nowrap}\\nbody{cursor:text;display:inline-block;max-width:215px;min-width:7px;padding:0 3px 0 1px}\\nbody *{all:inherit!important;display:inline!important}html>count{float:right}\""
+		"[\"\",\"\\\"::selection { background: #ff9632 !important; },*{cursor:default;font:12px/14px \\\\\\\"Helvetica Neue\\\\\\\",Helvetica,Arial,sans-serif!important;\\\\nheight:14px;margin:0;overflow:hidden;vertical-align:top;white-space:nowrap}\\\\nbody{cursor:text;display:inline-block;max-width:215px;min-width:7px;padding:0 3px 0 1px}\\\\nbody *{all:inherit!important;display:inline!important}html>count{float:right}\\\"\"]"
 	],
 	"grabBackFocus": true,
 	"hideHud": true,
@@ -50,6 +50,9 @@
 		"  https://translate.google.com/?hl=en&tab=wT#auto/en/$s Google Translate En",
 		"m|map|mapy|maps:\\",
 		"  www.google.com/maps/search/$s Google Maps",
+		"e|ext|extension:\\",
+		"https://clients2.google.com/service/update2/crx?response=redirect&acceptformat=crx2,crx3&prodversion=71.0&x=id%3D$s%26installsource%3Dondemand%26uc",
+		"",
 		"",
 		"# More examples.",
 		"#",
