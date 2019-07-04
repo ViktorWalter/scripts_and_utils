@@ -28,7 +28,9 @@ URxvt.perl-ext-common: default,clipboard
  ! URxvt.transparent: true
  URxvt.depth: 32
  URxvt.shading: 10
-URxvt.background: rgba:0000/0000/0000/cccc
+! URxvt.background: rgba:2000/2000/2000/cccc
+URxvt.background: rgba:2000/2000/2000/cccc
+! URxvt.background: rgba:0000/0000/0000/cccc
 ! URxvt.background: #000000
 !
 ! URxvt.background: #001010
@@ -57,7 +59,7 @@ URxvt.color6: #668799
 URxvt.color14: #8FBFDC
 ! white
 URxvt.color7: #888888
-URxvt.color15: #E8E8D3
+URxvt.color15: #FFFFFF
 
 !! URxvt COLORS --------------------------------------------------------
 URxvt*depth                   : 32

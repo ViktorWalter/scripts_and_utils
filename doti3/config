@@ -30,13 +30,15 @@ exec_always  --no-startup-id "sleep 2; keynav"
 
 exec --no-startup-id "sleep 4; frakkin-xkb ~/.i3/setKeyboard.sh &"
 
-exec --no-startup-id "sleep 5; ~/.i3/vpnconnect.sh"
+# exec --no-startup-id "sleep 5; ~/.i3/vpnconnect.sh"
 
 # exec --no-startup-id "alsactl restore"
 
 # exec --no-startup-id ~/mount_windata.sh
 #
 # exec --no-startup-id "sleep 4; pulseeffects --gapplication-service"
+#
+exec_always  --no-startup-id "sleep 4; xrdb ~/.Xresources"
 
 set $mod Mod1
 set $mod2 Mod4
@@ -255,7 +257,7 @@ for_window [class="MATLAB R2015a" title="^Fig"] no_focus
 for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
 # for_window [class="MATLAB R2015a" title="^Fig"] floating enable
 for_window [class="gazebo"] move to workspace number 3
-for_window [class="rviz"] move to workspace number 3
+for_window [class="rviz"] move to workspace number 8
 
 for_window [window_role="browser"] move to workspace number 5
 
@@ -375,7 +377,7 @@ for_window [title="OCV_*"] move to scratchpad
 # for_window [title="cv_*"] fullscreen enable
 for_window [title="ocv_fl_*"] floating enable
 for_window [title="ocv_fl_*"] fullscreen disable
-for_window [title="ocv_*"] move to workspace number 3
+for_window [title="ocv_*"] move to workspace number 4
 # for_window [title="cv_*"] no_focus
 
 # lock session
@@ -391,7 +393,7 @@ bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi
 
 #Invert screen color
 # bindsym $mod+Ctrl+i exec ~/.i3/invertOutputs.sh 
-# bindsym $mod+Ctrl+i exec urxvt -e ~/.i3/setColorScheme.sh 
+bindsym $mod3+c exec ~/git/linux-setup/scripts/set_colorscheme.sh
 bindsym $mod+Ctrl+i exec ~/git/xrandr-invert-colors/xrandr-invert-colors.bin
 
 

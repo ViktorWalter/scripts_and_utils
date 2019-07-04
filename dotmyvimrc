@@ -136,23 +136,24 @@ function! SetColors()
   let g:lightline = {
         \ 'colorscheme': 'wombat',
         \ }
+  " colorscheme raggi 
   colorscheme jellybeans " JELLYBEANS COLOR_SCHEME ACTIVE 
-  " colorscheme default " JELLYBEANS COLOR_SCHEME ACTIVE 
-  " hi NonText guibg=NONE ctermbg=NONE
+  hi NonText guibg=NONE ctermbg=NONE
 
   hi TabLineSel ctermbg=45
-  " hi TabLineFill ctermbg=45
+  hi TabLineFill ctermbg=45
   hi TabLine ctermbg=0 ctermfg=45
-  " hi Title ctermbg=45
+  hi Title ctermbg=45
 
 
   hi StartifyHeader ctermfg=39 cterm=bold
   hi StartifyFooter ctermfg=39 cterm=bold
   hi Normal ctermfg=39
+  
   hi Normal guibg=NONE ctermbg=NONE
   hi NonText guibg=NONE ctermbg=NONE
   hi ColorColumn ctermbg=100
-  " call matchadd('ColorColumn', '\%81v',100)
+  call matchadd('ColorColumn', '\%81v',100)
 endfunction
 
 function! s:isolation_enter()

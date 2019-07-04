@@ -21,7 +21,7 @@ unsetopt share_history
 
 export ZSH=/home/viktor/.oh-my-zsh
 ZSH_THEME="vrisk"
-plugins=(git ros-completion)
+plugins=(git ros)
 source $ZSH/oh-my-zsh.sh
 
 killp () {
@@ -45,20 +45,10 @@ killp () {
 
 zshexit() {
 
-  echo "T$PPID"
+  pwd >> /tmp/tmux_restore_path.txt
 
-  pids=`tmux list-panes -s -t "T$PPID" -F "#{pane_pid} #{pane_current_command}" | grep -v tmux | awk '{print $1}'`
-
-  echo $pids
-
-  for pid in "$pids"
-  do
-    killp "$pid"
-    echo "killing $pid"
-  done
-
-  $TMUX_BIN kill-session -t "T$PPID"
-}                                                       
+  forceKillTmuxSession "T$PPID"
+}
 
 runTmux() {
 
@@ -179,25 +169,23 @@ fi
 
 ros() {
   source /opt/ros/melodic/setup.zsh
-  source /home/viktor/mrs_workspace/devel/setup.zsh
+  # source /home/viktor/workspace/devel/setup.zsh
   source /usr/share/gazebo/setup.sh
   source ~/simulation/install/share/simulation/setup.sh
   # source ~/gazebo_plugins/devel/setup.zsh
-  # source ~/workspace/devel/setup.zsh
+  # source ~/balloon_workspace/devel/setup.zsh
 
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/mrs_workspace/src/mbzirc/gazebo_support/models:~/git/simulation/gazebo_files/models
-# export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/mrs_workspace/src/mbzirc/gazebo_support/models:~/gazebo_plugins/models
-export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/gazebo_local_plugins
-export UAV_MASS=3.0
-
-# path to ros workspace
-export ROS_WORKSPACE="~/mrs_workspace"
-# ~/mrs_workspace ~/ros_workspace"
-# where should ctags look for sources to parse?
+  # export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/mrs_workspace/src/mbzirc/gazebo_support/models
+  # export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/mrs_workspace/src/mbzirc/gazebo_support/models:~/gazebo_plugins/models
+  # export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/simulation/install/lib/
+  export UAV_MASS=3.0
+  # path to ros workspace
+  export ROS_WORKSPACE="~/workspace"
+  # ~/mrs_workspace ~/ros_workspace"
+  # where should ctags look for sources to parse?
   # -R dir1 -R dir2 ...
-  export CTAGS_SOURCE_DIR="-R ~/mrs_workspace"
-
-# where should ctags look for sources to parse?
+  export CTAGS_SOURCE_DIR="-R ~/workspace"
+  # where should ctags look for sources to parse?
   # CTAGS FROM THOSE FILE WILL BE CREATED ONLY ONCE
   # -R dir1 -R dir2 ...
   export CTAGS_ONCE_SOURCE_DIR="-R /opt/ros/melodic/include"
@@ -205,7 +193,7 @@ export ROS_WORKSPACE="~/mrs_workspace"
 
 
 export PATH=$PATH:/home/viktor/Matlab/Matlab/bin/glnxa64/
-alias mn='MATLAB -nodesktop -nosplash -nojvm'
+alias mn='MATLAB -nodesktop -nosplash'
 
 # OpenCV
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
@@ -286,7 +274,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # TERM=xterm-256color
 
-alias cdphone='. ~/cdphone'
+# alias cdphone='. ~/cdphone'
 
 # export RUBYOPT="-W0"; rails server
 #
@@ -294,7 +282,7 @@ export NO_AT_BRIDGE=1
 
 export PROFILES_ADDITIONS=""
 export PROFILES_DELETIONS=""
-export PROFILES_BOTH="VIKTOR_BIGBOX"
+export PROFILES_BOTH="VIKTOR_BIGBOX COLORSCHEME_DARK"
 
 
 # upgrades the "git pull" to allow dotfiles profiling on linux-setup
@@ -361,3 +349,10 @@ source ~/git/linux-setup/appconfig/shell/commons.sh
 ros
 
 alias vpn=nordvpn
+alias sup='RUBYOPT="-W0" sup'
+
+export BLUEFOX_UV=25002534
+
+# export ROS_MASTER_URI=http://192.168.0.103:11311/
+# export ROS_IP=192.168.0.103
+export UAV_NAME=uav3
