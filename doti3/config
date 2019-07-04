@@ -92,6 +92,8 @@ bindsym $mod+Shift+l move right
 
 #wifi menu
 bindsym $mod3+w exec networkmanager_dmenu
+#audio sink menu
+bindsym $mod3+n exec "~/.i3/setSink.sh"
 
 # move workspace to another monitor
 # TODO: think up better combination
