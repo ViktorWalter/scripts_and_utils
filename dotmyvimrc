@@ -175,7 +175,7 @@ endfunction
 au! User GoyoEnter nested call <SID>isolation_enter()
 
 function! s:isolation_leave()
-  call SetColors()
+  " call SetColors()
  let b:isTmuxZoomed=system("tmux list-panes -F '\\#F' | grep Z")
  if !(b:isTmuxZoomed == "")
    silent execute(":!tmux resize-pane -Z")
@@ -191,5 +191,5 @@ au! User GoyoLeave nested call <SID>isolation_leave()
 
 nmap <leader><leader> :if exists('#goyo')==0<CR>Goyo 100-20<CR>else<CR>Goyo!<CR>endif<CR><CR>
 
-call SetColors()
+" call SetColors()
 endif

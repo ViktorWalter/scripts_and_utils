@@ -10,10 +10,9 @@ sudo apt install --install-recommends winehq-staging
 sudo gem install rake ncurses-ruby sup gpgme optimist
 
 systemctl --user start xfce4-notifyd
-ln -s ~/.i3/dotXresoures ~/.Xresources
 ln -s ~/.i3/dotzsrhc ~/.zshrc
 ln -s ~/.i3/dotsup ~/.sup
-ln -s ~/.i3/dotXresoures ~/.Xresources
+# ln -s ~/.i3/dotXresoures ~/.Xresources
 ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/.i3/dotofflineimaprc ~/.offlineimaprc
 ln -s ~/.i3/dotofflineimap.py ~/.offlineimap.py
@@ -23,15 +22,17 @@ ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/git/my-linux-setup/linux_setup/dottmux.conf ~/.my.tmux.conf
 sudo ln -s ~/git/networkmanager-dmenu/networkmanager_dmenu /usr/bin/
 ln -s ~/.i3/nmdmenuconfig.ini ~/.config/networkmanager-dmenu/config.ini
+ln -s ~/.i3/icons ~/.i3/icons ~/.icons
+ln -s ~/.i3/icons ~/.i3/theme ~/.themes
 mkdir ~/.config/networkmanager-dmenu
 touch ~/.myzshrc
-vim -e  .vimrc <<-SCRIPT
-g/airline/s/^/"
-g/tmuxline/s/^/"
-g/tmuxline/normal!o Plug 'itchyny/lightline.vim'
-/airline/normal!o Plug 'itchyny/lightline.vim'
-x
-SCRIPT
+# vim -e  .vimrc <<-SCRIPT
+# g/airline/s/^/"
+# g/tmuxline/s/^/"
+# g/tmuxline/normal!o Plug 'itchyny/lightline.vim'
+# /airline/normal!o Plug 'itchyny/lightline.vim'
+# x
+# SCRIPT
 
 sudo touch /etc/lightdm/lightdm.conf
 sudo echo "

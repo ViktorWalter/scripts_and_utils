@@ -170,6 +170,7 @@ fi
 ros() {
   source /opt/ros/melodic/setup.zsh
   # source /home/viktor/workspace/devel/setup.zsh
+  source /home/viktor/mrs_workspace/devel/setup.zsh
   source /usr/share/gazebo/setup.sh
   source ~/simulation/install/share/simulation/setup.sh
   # source ~/gazebo_plugins/devel/setup.zsh
@@ -180,11 +181,11 @@ ros() {
   # export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/simulation/install/lib/
   export UAV_MASS=3.0
   # path to ros workspace
-  export ROS_WORKSPACE="~/workspace"
+  export ROS_WORKSPACE="~/workspace ~/mrs_workspace"
   # ~/mrs_workspace ~/ros_workspace"
   # where should ctags look for sources to parse?
   # -R dir1 -R dir2 ...
-  export CTAGS_SOURCE_DIR="-R ~/workspace"
+  export CTAGS_SOURCE_DIR="-R ~/workspace -R ~/mrs_workspace"
   # where should ctags look for sources to parse?
   # CTAGS FROM THOSE FILE WILL BE CREATED ONLY ONCE
   # -R dir1 -R dir2 ...
@@ -356,3 +357,9 @@ export BLUEFOX_UV=25002534
 # export ROS_MASTER_URI=http://192.168.0.103:11311/
 # export ROS_IP=192.168.0.103
 export UAV_NAME=uav3
+export pdftk='java -jar ~/git/pdftk/build/jar/pdftk.jar --help'
+alias hamachi="sudo hamachi"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
