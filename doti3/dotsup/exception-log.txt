@@ -1,0 +1,11 @@
+--- SignalException from thread: main
+SIGHUP
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `initialize'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `exception'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `get_wch'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `nonblocking_getwch'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:57:in `get'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:228:in `<module:Redwood>'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:74:in `<top (required)>'
+/usr/local/bin/sup:23:in `load'
+/usr/local/bin/sup:23:in `<main>'

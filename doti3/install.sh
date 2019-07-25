@@ -5,7 +5,7 @@ ubuntu-report -f send no
 sudo apt remove dunst popularity-contest -y
 sudo apt purge ubuntu-report popularity-contest apport whoopsie -y
 sudo killall dunst
-sudo apt install neovim xfce4-notifyd conky-all fatrace iotop libfftw3-dev mpg123 debtree npm gnome-tweak-tool uuid-dev ruby-full rubygems rake krita inkscape python3-tk golang mesa-utils unclutter mpv -y
+sudo apt install neovim xfce4-notifyd conky-all fatrace iotop libfftw3-dev mpg123 debtree npm gnome-tweak-tool uuid-dev ruby-full rubygems rake krita inkscape python3-tk golang mesa-utils unclutter mpv lxpolkit -y
 sudo apt install --install-recommends winehq-staging
 sudo gem install rake ncurses-ruby sup gpgme optimist
 sudo dpkg -r --force-depends gnome-icon-theme

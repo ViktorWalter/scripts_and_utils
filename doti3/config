@@ -40,6 +40,8 @@ exec --no-startup-id "sleep 4; frakkin-xkb ~/.i3/setKeyboard.sh &"
 #
 exec_always  --no-startup-id "sleep 4; xrdb ~/.Xresources"
 
+exec_always  --no-startup-id "sleep 5; lxpolkit"
+
 set $mod Mod1
 set $mod2 Mod4
 set $mod3 Mod5
