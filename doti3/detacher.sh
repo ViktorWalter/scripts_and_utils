@@ -1,0 +1,1 @@
+/home/viktor/git/linux-setup/appconfig/i3/doti3/detacher.sh
