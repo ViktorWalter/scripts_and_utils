@@ -109,14 +109,18 @@ fi
 typeset -A menu
 
 # Use a custom lock script
-LOCKSCRIPT="sleep 3 && i3lock -de --color=000000"
+# LOCKSCRIPT="sleep 3 && i3lock -de --color=000000"
+# IMGSCRIPT="scrot /tmp/s.png && convert /tmp/s.png -radial-blur 3 -blur 0x4 -segment 1.5x1.5 /tmp/s.png"
+IMGSCRIPT="scrot /tmp/s.png && convert -gravity center /tmp/s.png -blur 0x4 -paint 3 \( ~/.i3/ohhellno.png -resize 500x500 -geometry -400+0 \)  -composite /tmp/s.png"
+# LOCKSCRIPT="sleep 3 && ${IMGSCRIPT} && i3lock -de --color=000000"
+LOCKSCRIPT="sleep 3 && ${IMGSCRIPT} && i3lock -de -i /tmp/s.png"
 
 # Menu with keys/commands
 menu=(
   [Shutdown]="systemctl poweroff"
   [Reboot]="systemctl reboot"
   [Hibernate]="systemctl hibernate"
-  [Suspend]="systemctl suspend"
+  [Suspend]="${LOCKSCRIPT} & sleep 4 && systemctl suspend"
   [Halt]="systemctl halt"
   [Lock]="${LOCKSCRIPT}"
   # [Lock]="sleep 1 && ${LOCKSCRIPT}:-i3lock -de  --color=${BG_COLOR#\"#\"}}"
