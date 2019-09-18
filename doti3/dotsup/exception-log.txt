@@ -1,7 +1,5 @@
---- SignalException from thread: main
-SIGHUP
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `initialize'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `exception'
+--- Lockfile::StolenLockError from thread: main
+Lockfile::StolenLockError
 /var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `get_wch'
 /var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `nonblocking_getwch'
 /var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:57:in `get'

@@ -353,6 +353,7 @@ alias vpn=nordvpn
 alias sup='RUBYOPT="-W0" sup'
 
 export BLUEFOX_UV=25002534
+export BLUEFOX=26805883;
 
 # export ROS_MASTER_URI=http://192.168.0.103:11311/
 # export ROS_IP=192.168.0.103
@@ -360,9 +361,15 @@ export UAV_NAME=uav3
 export pdftk='java -jar ~/git/pdftk/build/jar/pdftk.jar --help'
 alias hamachi="sudo hamachi"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias ssh-add="source ssh-add-identity.sh"
 ssh-add > /dev/null 2&>1
+
+gitcd() {
+  cd ~/git/$1
+}
+
+export TEST=true

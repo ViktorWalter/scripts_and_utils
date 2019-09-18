@@ -268,6 +268,11 @@ for_window [window_role="browser"] move to workspace number 5
 for_window [ title="^pdfpc - presentation" ] move to number 8
 for_window [ title="^pdfpc - presentation" ] border none floating enable
 
+for_window [ class="resolve" title="DaVinci*" ] border none floating disable
+for_window [ class="resolve" title="DaVinci*" ] move to workspace number 8
+for_window [ class="resolve" title="Secondary Screen" ] border none floating disable
+for_window [ class="resolve" title="Secondary Screen" ] move to workspace number 7
+
  # Start i3bar to display a workspace bar (plus the system information i3status
  # finds out, if available)
 bar {
@@ -382,7 +387,8 @@ for_window [title="OCV_*"] move to scratchpad
 for_window [title="ocv_fl_*"] floating enable
 for_window [title="ocv_fl_*"] fullscreen disable
 for_window [title="ocv_*"] move to workspace number 4
-# for_window [title="cv_*"] no_focus
+for_window [title="ocv2_*"] move to workspace number 7
+for_window [title="ocv_*"] no_focus
 
 # lock session
 bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi
@@ -402,7 +408,7 @@ bindsym $mod+Ctrl+i exec ~/git/xrandr-invert-colors/xrandr-invert-colors.bin
 
 
 #Printscreen
-bindsym Print exec shutter --select
+bindsym Print exec shutter --select --disable_systray
 
 mode "longpress" {
 
