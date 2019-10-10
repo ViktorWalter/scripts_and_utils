@@ -347,17 +347,22 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:/home/viktor/localpath/
 
 source ~/git/linux-setup/appconfig/shell/commons.sh
+source ~/mrs_workspace/src/uav_core/miscellaneous/shell_additions/shell_additions.sh
 ros
 
 alias vpn=nordvpn
 alias sup='RUBYOPT="-W0" sup'
 
-export BLUEFOX_UV=25002534
+export BLUEFOX_UV=25003650
 export BLUEFOX=26805883;
+
+export BLUEFOX_UV_LEFT=25003678
+export BLUEFOX_UV_RIGHT=25003649
 
 # export ROS_MASTER_URI=http://192.168.0.103:11311/
 # export ROS_IP=192.168.0.103
-export UAV_NAME=uav3
+export UAV_NAME=uav45
+export NATO_NAME=papa
 export pdftk='java -jar ~/git/pdftk/build/jar/pdftk.jar --help'
 alias hamachi="sudo hamachi"
 
@@ -373,3 +378,13 @@ gitcd() {
 }
 
 export TEST=true
+export UAV_MASS="3.0" # [kg], used only with real UAV
+export RUN_TYPE="simulation" # {simulation, uav}
+export UAV_TYPE="f550" # {f550, f450, t650, eagle, naki}
+export PROPULSION_TYPE="default" # {default, new_esc, ...}
+export ODOMETRY_TYPE="gps" # {gps, optflow, hector, vio, ...}
+export INITIAL_DISTURBANCE_X="0.0" # [N], external disturbance in the body frame
+export INITIAL_DISTURBANCE_Y="0.0" # [N], external disturbance in the body frame
+export STANDALONE="false" # disables the core nodelete manager
+export SWAP_GARMINS="false" # swap up/down garmins
+export SENSORS="" # {garmin_down, garmin_up, rplidar, realsense_front, teraranger, bluefox_optflow}

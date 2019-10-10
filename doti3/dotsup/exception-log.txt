@@ -1,9 +1,14 @@
---- Lockfile::StolenLockError from thread: main
-Lockfile::StolenLockError
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `get_wch'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `nonblocking_getwch'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:57:in `get'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:228:in `<module:Redwood>'
+--- Interrupt from thread: main
+
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:112:in `present?'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/buffer.rb:555:in `ask'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/buffer.rb:419:in `ask_many_with_completions'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/buffer.rb:494:in `ask_for_labels'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util.rb:610:in `method_missing'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/modes/thread_index_mode.rb:591:in `edit_labels'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/mode.rb:59:in `handle_input'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/buffer.rb:222:in `handle_input'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:255:in `<module:Redwood>'
 /var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:74:in `<top (required)>'
 /usr/local/bin/sup:23:in `load'
 /usr/local/bin/sup:23:in `<main>'
