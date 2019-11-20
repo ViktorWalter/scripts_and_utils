@@ -155,7 +155,7 @@ bindsym $mod+5 workspace number 5
 bindsym $mod+6 workspace number 6
 bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
-# ; exec ~/.i3/send2secondary.sh 
+# exec ~/.i3/send2secondary.sh 
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
@@ -386,7 +386,7 @@ for_window [title="OCV_*"] move to scratchpad
 # for_window [title="cv_*"] fullscreen enable
 for_window [title="ocv_fl_*"] floating enable
 for_window [title="ocv_fl_*"] fullscreen disable
-for_window [title="ocv_*"] move to workspace number 8
+for_window [title="ocv_*"] move to workspace number 3
 for_window [title="ocv2_*"] move to workspace number 7
 for_window [title="ocv_*"] no_focus
 

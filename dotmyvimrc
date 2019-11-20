@@ -119,12 +119,15 @@ try:
 except ImportError:
    vim.command("let is_ros='N/A'")
 pkgname = rospkg.get_package_name(vim.eval("expand('%:p')"))
-if pkgname:
-   r = rospkg.RosPack()
-   vim.command("let is_ros='true'")
-   vim.command("let &makeprg='cd "+r.get_path(pkgname).split('src/',1)[0]+"; catkin build "+pkgname+"'")
-else:
-   vim.command("let is_ros='false'")
+try:
+  if pkgname:
+    r = rospkg.RosPack()
+    vim.command("let is_ros='true'")
+    vim.command("let &makeprg='cd "+r.get_path(pkgname).split('src/',1)[0]+"; catkin build "+pkgname+"'")
+  else:
+    vim.command("let is_ros='false'")
+except:
+    vim.command("let is_ros='N/A'")
 EOS
     if is_ros == "true"
       set efm=%f:%l:%c:\ error:%m

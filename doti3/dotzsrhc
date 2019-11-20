@@ -169,8 +169,8 @@ fi
 
 ros() {
   source /opt/ros/melodic/setup.zsh
-  # source /home/viktor/workspace/devel/setup.zsh
-  source /home/viktor/mrs_workspace/devel/setup.zsh
+  source /home/viktor/workspace/devel/setup.zsh
+  # source /home/viktor/mrs_workspace/devel/setup.zsh
   source /usr/share/gazebo/setup.sh
   source ~/simulation/install/share/simulation/setup.sh
   # source ~/gazebo_plugins/devel/setup.zsh
@@ -353,16 +353,47 @@ ros
 alias vpn=nordvpn
 alias sup='RUBYOPT="-W0" sup'
 
-export BLUEFOX_UV=25003650
-export BLUEFOX=26805883;
+export BLUEFOX_UV=25003661
+# export BLUEFOX=26805883;
 
-export BLUEFOX_UV_LEFT=25003678
-export BLUEFOX_UV_RIGHT=25003649
+# export BLUEFOX_UV_RIGHT=25003660
+# export BLUEFOX_UV_LEFT=25003661
 
-# export ROS_MASTER_URI=http://192.168.0.103:11311/
-# export ROS_IP=192.168.0.103
-export UAV_NAME=uav45
-export NATO_NAME=papa
+# export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
+# export BLUEFOX_UV_LEFT_EXPOSE_US=2000
+
+export UAV_NAME=uav47
+export NATO_NAME=quebec
+
+# export BLUEFOX_UV_RIGHT=25003618
+# export BLUEFOX_UV_LEFT=25003633
+
+# export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
+# export BLUEFOX_UV_LEFT_EXPOSE_US=2000
+
+# export UAV_NAME=uav46
+# export NATO_NAME=sierra
+
+# export BLUEFOX_UV_RIGHT=25003678
+# export BLUEFOX_UV_LEFT=25003649
+
+# export BLUEFOX_UV_RIGHT_EXPOSE_US=2000
+# export BLUEFOX_UV_LEFT_EXPOSE_US=2000
+
+# export UAV_NAME=uav45
+# export NATO_NAME=papa
+
+# export BLUEFOX_UV_RIGHT=25003654
+# export BLUEFOX_UV_LEFT=25003657
+
+# export BLUEFOX_UV_RIGHT_EXPOSE_US=3000
+# export BLUEFOX_UV_LEFT_EXPOSE_US=3000
+
+# export UAV_NAME=uav49
+# export NATO_NAME=romeo
+
+export ROS_MASTER_URI=http://localhost:11311
+# export ROS_IP=192.168.0.100
 export pdftk='java -jar ~/git/pdftk/build/jar/pdftk.jar --help'
 alias hamachi="sudo hamachi"
 
@@ -380,11 +411,11 @@ gitcd() {
 export TEST=true
 export UAV_MASS="3.0" # [kg], used only with real UAV
 export RUN_TYPE="simulation" # {simulation, uav}
-export UAV_TYPE="f550" # {f550, f450, t650, eagle, naki}
+export UAV_TYPE="f450" # {f550, f450, t650, eagle, naki}
 export PROPULSION_TYPE="default" # {default, new_esc, ...}
-export ODOMETRY_TYPE="gps" # {gps, optflow, hector, vio, ...}
+export ODOMETRY_TYPE="hector" # {gps, optflow, hector, vio, ...}
 export INITIAL_DISTURBANCE_X="0.0" # [N], external disturbance in the body frame
 export INITIAL_DISTURBANCE_Y="0.0" # [N], external disturbance in the body frame
 export STANDALONE="false" # disables the core nodelete manager
 export SWAP_GARMINS="false" # swap up/down garmins
-export SENSORS="" # {garmin_down, garmin_up, rplidar, realsense_front, teraranger, bluefox_optflow}
+export SENSORS="rplidar" # {garmin_down, garmin_up, rplidar, realsense_front, teraranger, bluefox_optflow}
