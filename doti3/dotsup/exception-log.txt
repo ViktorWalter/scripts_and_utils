@@ -1,9 +1,11 @@
---- Lockfile::StolenLockError from thread: main
-Lockfile::StolenLockError
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:21:in `select'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:21:in `nonblocking_getwch'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:57:in `get'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:228:in `<module:Redwood>'
+--- IOError from thread: main
+DatabaseLockError: Unable to get write lock on /home/viktor/.sup/xapian: already locked
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/index.rb:120:in `initialize'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/index.rb:120:in `new'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/index.rb:120:in `load_index'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/index.rb:103:in `load'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util.rb:610:in `method_missing'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:144:in `<module:Redwood>'
 /var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:74:in `<top (required)>'
 /usr/local/bin/sup:23:in `load'
 /usr/local/bin/sup:23:in `<main>'

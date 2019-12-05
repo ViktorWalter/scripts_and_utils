@@ -353,8 +353,8 @@ ros
 alias vpn=nordvpn
 alias sup='RUBYOPT="-W0" sup'
 
-export BLUEFOX_UV=25003661
-# export BLUEFOX=26805883;
+export BLUEFOX_UV=25002534
+export BLUEFOX=26805883
 
 # export BLUEFOX_UV_RIGHT=25003660
 # export BLUEFOX_UV_LEFT=25003661
@@ -362,7 +362,7 @@ export BLUEFOX_UV=25003661
 # export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
 # export BLUEFOX_UV_LEFT_EXPOSE_US=2000
 
-export UAV_NAME=uav47
+export UAV_NAME=uav3
 export NATO_NAME=quebec
 
 # export BLUEFOX_UV_RIGHT=25003618
@@ -392,8 +392,9 @@ export NATO_NAME=quebec
 # export UAV_NAME=uav49
 # export NATO_NAME=romeo
 
-export ROS_MASTER_URI=http://localhost:11311
-# export ROS_IP=192.168.0.100
+# export ROS_MASTER_URI=http://localhost:11311
+# export ROS_MASTER_URI=http://192.168.0.103:11311
+# export ROS_IP=192.168.0.103
 export pdftk='java -jar ~/git/pdftk/build/jar/pdftk.jar --help'
 alias hamachi="sudo hamachi"
 
@@ -419,3 +420,9 @@ export INITIAL_DISTURBANCE_Y="0.0" # [N], external disturbance in the body frame
 export STANDALONE="false" # disables the core nodelete manager
 export SWAP_GARMINS="false" # swap up/down garmins
 export SENSORS="rplidar" # {garmin_down, garmin_up, rplidar, realsense_front, teraranger, bluefox_optflow}
+
+
+echo "TODO:"
+cat ~/todo.txt | grep -v "#"
+
+export ca='--color=always'

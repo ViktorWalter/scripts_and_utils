@@ -1,13 +1,12 @@
 {
 	"name": "Vimium C",
-	"@time": "3/25/2019, 10:18:59 AM",
-	"time": 1553505539817,
+	"@time": "12/5/2019, 11:47:09 AM",
+	"time": 1575542829712,
 	"environment": {
-		"extension": "1.71.3",
-		"platform": "linux",
-		"chrome": 71
+		"extension": "1.78.7",
+		"platform": "linux"
 	},
-	"deepHints": true,
+	"deepHints": "true",
 	"exclusionRules": [],
 	"extWhiteList": [
 		"# modified { Vomnibar Page, X New Tab, PDF Viewer }",
@@ -17,16 +16,12 @@
 		"lcopgfbpbmionefhhgbamgmejggljpbb",
 		""
 	],
-	"findCSS": [
-		"",
-		"[\"\",\"\\\"::selection { background: #ff9632 !important; },*{cursor:default;font:12px/14px \\\\\\\"Helvetica Neue\\\\\\\",Helvetica,Arial,sans-serif!important;\\\\nheight:14px;margin:0;overflow:hidden;vertical-align:top;white-space:nowrap}\\\\nbody{cursor:text;display:inline-block;max-width:215px;min-width:7px;padding:0 3px 0 1px}\\\\nbody *{all:inherit!important;display:inline!important}html>count{float:right}\\\"\"]"
-	],
 	"grabBackFocus": true,
 	"hideHud": true,
 	"keyMappings": [
 		"# Insert your preferred key mappings here.",
 		"map <c-e> Vomnibar.activate",
-		"map <a-F> LinkHints.activateModeWithQueue",
+		"map <a-s-f> LinkHints.activateModeWithQueue",
 		"map s LinkHints.activateModeToHover",
 		"map D LinkHints.activateModeToDownloadLink",
 		"map I LinkHints.activateModeToOpenImage",
@@ -68,7 +63,7 @@
 		"vimium: chrome-extension://hfjbmagddngcpeloejdejnfgbamkjaeg/pages/options.html",
 		""
 	],
-	"searchUrl": "https://new.startpage.com/do/dsearch?query=$s&mypage.pl?prfe=36c84513558a2d34bf0d89ea505333ad1aad15df09559e9916d6cb79090545dc5101095f718d49386b63a5146635b4c9",
+	"searchUrl": "https://searx.info/?preferences=eJx9VU_v2zYM_TTzxUixtoedfBi29Q8woEN_6a4CI9EOZ0l0KTmJ--lHJXaiFEUPSSCKj-R7FBkLGQcWwtQNGFHANx7iMMOAHcbdl5fGswVfDg3MmS2HyWPGzs12LJ-BGwrqbSbhy9LtZcYmYD6y697_tW8S9JgQxB67X5t8xIAdJwvSCKbZ52Q4mohnk-HQvQOfsHFMRi_Zn1A6Bj2-YhmaK2qX8qK1eB7IssPTzoGMjaMEB4_OYBwoFibMg8d28rC0YU5kjbn-_PLmj6crPilvY07kkJNe9gIBPB0EjaGsBrBD4rnyyDwunDkdeYRY2XnCKDixRuvJYzEJOkfZFHapCrUVQpevM9nRmFV2NY16hpQePnEKayFbsKvUJZwjm79xxBrfC2KbuM9nEGwdCdrMsqwhVL8obcoy2zxL4Z0sYbRYEi0Aj7Q9CHMd-NbAonhbvtaAvRMm9yDsZoexhi1wfI6DeQkcPT2X_Z2mWxXODa3DniJl4phqRKmGTthSeqZPcSSwlUqbbIktgW8DOoKCn8Y2kAjLSmWgQV8QpFzHowhVh-0somottcdjBtpbyir1EQ4C5WtNEZaAQbvRZoGYvI6dq0PdOnBHfz1DfCpmez6b2GuP1sd1Q99rReEzPYU_UD5ooZjXau5PbYt3YviBTmvSe1n19MA0VfjA_yGOP2nr92PxcBwoezishb1--_a3S0XlxmwDJ_wWIdTgMq2gqhZLen4PC0SHl9ry-lJxuUvwaLG1u3yqDHNMSjUdawWUZaZwbXVuMP5o8dxTPjbT5Gf1SN0dsRk-6eIwt11odDDG-0I8aA8TSlmMJe9eQNsn5svnv9VdNxeKWq_o361F5fHnp496cxbKZaI_7Pf_vFTnF_S9-Rh7lgDXebrayiCVhPb2L7CYhF6Xht6pa5k81CUh7It4_1LYeRrRHDmPuKT_ARwxWIc=&q=$s",
 	"showAdvancedCommands": true,
 	"showAdvancedOptions": true,
 	"smoothScroll": false
