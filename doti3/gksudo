@@ -1,0 +1,2 @@
+pw=$(zenity --entry --title="Password needed" --text="Enter password:" --hide-text)
+echo $pw | sudo -S $1
