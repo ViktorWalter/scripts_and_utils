@@ -1,0 +1,31 @@
+#/usr/bin/zsh
+connect() {
+  echo $rootpass | sudo -S expect -c "set timeout 20; spawn openvpn --management 127.0.0.1 6001 --config $1; expect \"Enter Auth Username:\"; send \"viktor_walter@outlook.com\r\"; expect \"Enter Auth Password:\"; send \"$password\r\"; expect_before timeout {exit 1}; expect \"Initialization Sequence Completed\"; return 0"
+  if test $? -eq 0; then
+    echo "Attempt with file $1 succeeded"
+    exit
+  else
+    echo "Attempt with file $1 failed"
+    echo $rootpass | sudo -S pkill -f openvpn > /dev/null
+  fi
+}
+
+echo "Enter root password: "
+stty -echo
+read rootpass
+stty echo
+echo "Got root password!"
+echo $rootpass | sudo -S pkill -f openvpn
+if [ "$1" = "disconnect" ]; then
+  exit
+fi
+res=-1
+password=`python -c "import keyring,sys; sys.stdout.write(keyring.get_password('vpn','personal'))"`
+bestserver="$(curl --silent 'https://nordvpn.com/wp-admin/admin-ajax.php?action=servers_recommendations' | jq --raw-output '.[0].hostname' | awk -F. '{print $1}')"
+bestserver_id=`echo $bestserver | cut -d'.' -f1`
+connect "/home/viktor/downloads/ovpn_servers/ovpn_${1:-udp}/${bestserver_id}.nordvpn.com.${1:-udp}.ovpn"
+servers=`ls ~/downloads/ovpn_servers/ovpn_${1:-udp} | grep cy`
+for f in $servers
+  connect "/home/viktor/downloads/ovpn_servers/ovpn_${1:-udp}/$f"
+do
+done
