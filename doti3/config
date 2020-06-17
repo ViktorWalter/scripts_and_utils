@@ -92,6 +92,8 @@ bindsym $mod+Shift+l move right
 #bindsym $mod+Shift+Up move up
 #bindsym $mod+Shift+Right move right
 
+#pause gazebo
+bindsym $mod3+p exec "gz world --pause=1"
 #wifi menu
 bindsym $mod3+w exec networkmanager_dmenu
 #audio sink menu
@@ -261,9 +263,11 @@ for_window [class="MATLAB R2015a" title="^Fig"] no_focus
 for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
 # for_window [class="MATLAB R2015a" title="^Fig"] floating enable
 for_window [class="gazebo"] move to workspace number 8
-for_window [class="rviz"] move to workspace number 7
+for_window [class="rviz"] move to workspace number 8
 
-for_window [window_role="browser"] move to workspace number 5
+for_window [class="Firefox"] move to workspace number 5
+# for_window [window_role="browser"] move to workspace number 5
+for_window [class="Google-chrome"] move to workspace number 7
 
 for_window [ title="^pdfpc - presentation" ] move to number 8
 for_window [ title="^pdfpc - presentation" ] border none floating enable
@@ -380,15 +384,17 @@ exec_always --no-startup-id ~/.i3/setKeyboard.sh
 for_window [class="^Tk$"] floating enable
 
 # imshow windows to window n.8
-for_window [title="OCV_*"] move to scratchpad
-# for_window [title="cv_*"] floating disable
-# for_window [title="cv_*"] border none
-# for_window [title="cv_*"] fullscreen enable
-for_window [title="ocv_fl_*"] floating enable
-for_window [title="ocv_fl_*"] fullscreen disable
-for_window [title="ocv_*"] move to workspace number 3
-for_window [title="ocv2_*"] move to workspace number 7
-for_window [title="ocv_*"] no_focus
+for_window [title="^OCV_*"] move to scratchpad
+# for_window [title="^cv_*"] floating disable
+# for_window [title="^cv_*"] border none
+# for_window [title="^cv_*"] fullscreen enable
+for_window [title="^ocv_fl_*"] floating enable
+for_window [title="^ocv_fl_*"] fullscreen disable
+for_window [title="^ocv_*"] move to workspace number 3
+for_window [title="^ocv2_*"] move to workspace number 7
+for_window [title="^ocv_*"] no_focus
+
+# for_window [title="rqt_image_view"] move to workspace number 3
 
 # lock session
 bindsym $mod+Shift+x exec ~/.i3/shutdown_menu -p rofi

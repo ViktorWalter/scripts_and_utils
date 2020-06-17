@@ -51,7 +51,7 @@ endif
   set path+=**
   set wildmenu
   " unmap <S-J>
-  unmap <S-K>
+  " unmap <S-K>
   " set lazyredraw "makes scrooling faster
   set cursorline
   set cursorcolumn
@@ -123,7 +123,7 @@ try:
   if pkgname:
     r = rospkg.RosPack()
     vim.command("let is_ros='true'")
-    vim.command("let &makeprg='cd "+r.get_path(pkgname).split('src/',1)[0]+"; catkin build "+pkgname+"'")
+    vim.command("let &makeprg='cd "+r.get_path(pkgname).split('src/',1)[0]+"; tmux split-window -h \"source ~/.zshrc; cbl "+pkgname+"\"; tmux resize-pane -R'")
   else:
     vim.command("let is_ros='false'")
 except:
@@ -196,5 +196,15 @@ nmap <leader><leader> :if exists('#goyo')==0<CR>Goyo 100-20<CR>else<CR>Goyo!<CR>
 
 au FileType qf call AdjustWindowHeight(3, 10)
 
-" call SetColors()
+" fun! ShowFuncName()
+"   let lnum = line(".")
+"   let col = col(".")
+"   echohl ModeMsg
+"   echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+"   echohl None
+"   call search("\\%" . lnum . "l" . "\\%" . col . "c")
+" endfun
+" map f :call ShowFuncName() <CR>
+
+call SetColors()
 endif

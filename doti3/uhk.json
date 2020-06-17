@@ -12,11 +12,11 @@
   "mouseMoveDeceleratedSpeed": 8,
   "mouseMoveBaseSpeed": 32,
   "mouseMoveAcceleratedSpeed": 64,
-  "mouseScrollInitialSpeed": 20,
-  "mouseScrollAcceleration": 20,
+  "mouseScrollInitialSpeed": 36,
+  "mouseScrollAcceleration": 58,
   "mouseScrollDeceleratedSpeed": 10,
   "mouseScrollBaseSpeed": 20,
-  "mouseScrollAcceleratedSpeed": 50,
+  "mouseScrollAcceleratedSpeed": 87,
   "moduleConfigurations": [],
   "keymaps": [
     {
@@ -1983,7 +1983,7 @@
     {
       "isDefault": true,
       "abbreviation": "VIM",
-      "name": "QWERTY for VIM MR",
+      "name": "QWERTY for VIM",
       "description": "QWERTY is the mother of all layouts. VIM is the father of all editors.",
       "layers": [
         {
@@ -2399,7 +2399,7 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 76
+                  "scancode": 70
                 },
                 {
                   "keyActionType": "keystroke",
@@ -5348,7 +5348,7 @@
                 {
                   "keyActionType": "keystroke",
                   "type": "basic",
-                  "scancode": 76
+                  "scancode": 70
                 },
                 {
                   "keyActionType": "keystroke",

@@ -1,11 +1,10 @@
---- IOError from thread: main
-DatabaseLockError: Unable to get write lock on /home/viktor/.sup/xapian: already locked
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/index.rb:120:in `initialize'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/index.rb:120:in `new'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/index.rb:120:in `load_index'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/index.rb:103:in `load'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util.rb:610:in `method_missing'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:144:in `<module:Redwood>'
+--- NoMethodError from thread: main
+undefined method `content_type' for #<Redwood::Chunk::Text:0x00005558ad8f9d40>
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/modes/thread_view_mode.rb:1024:in `view'
+/home/viktor/.sup/hooks/startup.rb:4:in `view_browser'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/mode.rb:59:in `handle_input'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/buffer.rb:222:in `handle_input'
+/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:255:in `<module:Redwood>'
 /var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:74:in `<top (required)>'
 /usr/local/bin/sup:23:in `load'
 /usr/local/bin/sup:23:in `<main>'

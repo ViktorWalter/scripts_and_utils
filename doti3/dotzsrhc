@@ -1,8 +1,8 @@
-# zmodload zsh/zprof
+zmodload zsh/zprof
 # set -x
 # export EDITOR="/usr/bin/vim --servername spider --cmd 'let g:user_mode=1'"
 export EDITOR="/usr/bin/nvim --cmd 'let g:user_mode=1'"
-export TMUX_BIN=/usr/bin/tmux
+export TMUX_BIN=/usr/local/bin/tmux
 
 if [ -z "${VIM+x}" ]; then
   export RUN_TMUX=true
@@ -17,7 +17,6 @@ fi
 
 unset zle_bracketed_paste
 unsetopt share_history
-
 
 export ZSH=/home/viktor/.oh-my-zsh
 ZSH_THEME="vrisk"
@@ -169,16 +168,17 @@ fi
 
 ros() {
   source /opt/ros/melodic/setup.zsh
-  source /home/viktor/workspace/devel/setup.zsh
+  # source /home/viktor/workspace/devel/setup.zsh
+  source /home/viktor/swarm_workspace/devel/setup.zsh
   # source /home/viktor/mrs_workspace/devel/setup.zsh
   source /usr/share/gazebo/setup.sh
-  source ~/simulation/install/share/simulation/setup.sh
+  # source ~/simulation/install/share/simulation/setup.sh
   # source ~/gazebo_plugins/devel/setup.zsh
   # source ~/balloon_workspace/devel/setup.zsh
 
   # export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/mrs_workspace/src/mbzirc/gazebo_support/models
   # export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/mrs_workspace/src/mbzirc/gazebo_support/models:~/gazebo_plugins/models
-  # export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/simulation/install/lib/
+  export GAZEBO_PLUGIN_PATH=$GAZEBO_PLUGIN_PATH:~/gazebo_local_plugins
   export UAV_MASS=3.0
   # path to ros workspace
   export ROS_WORKSPACE="~/workspace ~/mrs_workspace"
@@ -190,7 +190,14 @@ ros() {
   # CTAGS FROM THOSE FILE WILL BE CREATED ONLY ONCE
   # -R dir1 -R dir2 ...
   export CTAGS_ONCE_SOURCE_DIR="-R /opt/ros/melodic/include"
+
+
 }  
+
+ros_path(){
+_ros_decode_path $1 forceeval
+echo ${rosvals[2]}
+}
 
 
 export PATH=$PATH:/home/viktor/Matlab/Matlab/bin/glnxa64/
@@ -362,8 +369,8 @@ export BLUEFOX=26805883
 # export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
 # export BLUEFOX_UV_LEFT_EXPOSE_US=2000
 
-export UAV_NAME=uav3
-export NATO_NAME=quebec
+# export UAV_NAME=uav1
+# export NATO_NAME=quebec
 
 # export BLUEFOX_UV_RIGHT=25003618
 # export BLUEFOX_UV_LEFT=25003633
@@ -371,8 +378,20 @@ export NATO_NAME=quebec
 # export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
 # export BLUEFOX_UV_LEFT_EXPOSE_US=2000
 
-# export UAV_NAME=uav46
-# export NATO_NAME=sierra
+export UAV_NAME=uav50
+export NATO_NAME=sierra
+export BLUEFOX_UV_LEFT=25003696
+export BLUEFOX_UV_RIGHT=25003668
+
+# export UAV_NAME=uav42
+# export NATO_NAME=uniform
+# export BLUEFOX_UV_LEFT=25003653
+# export BLUEFOX_UV_RIGHT=25003655
+
+# export UAV_NAME=uav51
+# export NATO_NAME=tango
+# export BLUEFOX_UV_LEFT=25003689
+# export BLUEFOX_UV_RIGHT=25003671
 
 # export BLUEFOX_UV_RIGHT=25003678
 # export BLUEFOX_UV_LEFT=25003649
@@ -386,15 +405,29 @@ export NATO_NAME=quebec
 # export BLUEFOX_UV_RIGHT=25003654
 # export BLUEFOX_UV_LEFT=25003657
 
-# export BLUEFOX_UV_RIGHT_EXPOSE_US=3000
-# export BLUEFOX_UV_LEFT_EXPOSE_US=3000
+export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
+export BLUEFOX_UV_LEFT_EXPOSE_US=1000
 
 # export UAV_NAME=uav49
 # export NATO_NAME=romeo
 
+export ROS_MATER_URI=http://localhost:11311
 # export ROS_MASTER_URI=http://localhost:11311
-# export ROS_MASTER_URI=http://192.168.0.103:11311
-# export ROS_IP=192.168.0.103
+# export ROS_MASTER_URI=http://192.168.69.166:11311
+# export ROS_MASTER_URI=http://192.168.69.142:11311
+# export ROS_MASTER_URI=http://quebec:11311
+# export ROS_MASTER_URI=http://oscar:11311
+# export ROS_MASTER_URI=http://papa:11311
+# export ROS_MASTER_URI=http://victor:11311
+# export ROS_MASTER_URI=http://romeo:11311
+# export ROS_MASTER_URI=http://10.201.1.166:11311
+# export ROS_MASTER_URI=http://10.201.1.167:11311
+# export ROS_MASTER_URI=http://uav50:11311
+# export ROS_MASTER_URI=http://10.201.1.171:11311
+# export ROS_MASTER_URI=http://10.201.1.168:11311
+# export ROS_MASTER_URI=http://10.201.1.166:11311
+# export ROS_IP=10.10.20.188
+# export ROS_IP=192.168.69.7
 export pdftk='java -jar ~/git/pdftk/build/jar/pdftk.jar --help'
 alias hamachi="sudo hamachi"
 
@@ -403,7 +436,7 @@ alias hamachi="sudo hamachi"
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias ssh-add="source ssh-add-identity.sh"
-ssh-add > /dev/null 2&>1
+ssh-add > /dev/null 2>&1
 
 gitcd() {
   cd ~/git/$1
@@ -414,15 +447,38 @@ export UAV_MASS="3.0" # [kg], used only with real UAV
 export RUN_TYPE="simulation" # {simulation, uav}
 export UAV_TYPE="f450" # {f550, f450, t650, eagle, naki}
 export PROPULSION_TYPE="default" # {default, new_esc, ...}
-export ODOMETRY_TYPE="hector" # {gps, optflow, hector, vio, ...}
+export ODOMETRY_TYPE="gps" # {gps, optflow, hector, vio, ...}
 export INITIAL_DISTURBANCE_X="0.0" # [N], external disturbance in the body frame
 export INITIAL_DISTURBANCE_Y="0.0" # [N], external disturbance in the body frame
 export STANDALONE="false" # disables the core nodelete manager
 export SWAP_GARMINS="false" # swap up/down garmins
-export SENSORS="rplidar" # {garmin_down, garmin_up, rplidar, realsense_front, teraranger, bluefox_optflow}
-
+export SENSORS="trinocular_thermal" # {garmin_down, garmin_up, rplidar, realsense_front, teraranger, bluefox_optflow}
+export WORLD_NAME="simulation"
+export PIXGARM="false" # true if Garmin lidar is connected throught Pixhawk
+export MRS_STATUS="readme" # {readme, dynamics, balloon, avoidance, control_error, gripper}
+export LOGGER_DEBUG="false" # sets the ros console output level to debug
 
 echo "TODO:"
 cat ~/todo.txt | grep -v "#"
 
 export ca='--color=always'
+
+shit() {
+  n=$(( `tput cols` / 30 ))
+  echo $n
+  shitstring=""
+  for i in {1..$n}; do
+    shitstrings="${shitstrings}SHIT "
+  done
+  yes $shitstrings | toilet --gay -f big -t
+}
+
+cbl() {
+  if [ $# -eq 0 ]; then
+    package=--this
+  else
+    cd ~/mrs_workspace
+    package=$1
+  fi
+  catkin build $package --force-color 2>&1 | less -r
+}
