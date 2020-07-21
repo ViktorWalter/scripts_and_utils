@@ -12,7 +12,7 @@ if [ -z "$scr" ]; then
   i3-nagbar -m 'No screen defined' -t warning;
 else
   for i in "${!scr[@]}"; do
-    if [[ "${scr[$i]}" == *LVDS* ]]; then
+    if [[ "${scr[$i]}" == *eDP* ]]; then
       previousMonitor=${scr[$i]}
       xrandr --output ${scr[$i]} --auto --primary --pos 0x0 --rotate normal 
       wid=$((wid + $( echo ${res[$i]} | awk -F'x' '{print $1}' )));
@@ -20,14 +20,14 @@ else
   done;
   if [ "${#active[@]}" -eq "${#scr[@]}" ]; then
     for i in "${!scr[@]}"; do
-      if [[ "${scr[$i]}" != *LVDS* ]]; then
+      if [[ "${scr[$i]}" != *eDP* ]]; then
         xrandr --output ${scr[$i]} --off
       fi;
     done;
     # pacmd set-default-sink `pactl list short sinks | grep 1b | tr '\t' ' ' | cut -d' ' -f2`
   else
     for i in "${!scr[@]}"; do
-      if [[ "${scr[$i]}" != *LVDS* ]]; then
+      if [[ "${scr[$i]}" != *eDP* ]]; then
         xrandr --output ${scr[$i]} --auto --right-of $previousMonitor
         previousMonitor=${scr[$i]}
       fi;

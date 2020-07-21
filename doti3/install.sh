@@ -5,10 +5,49 @@ ubuntu-report -f send no
 sudo apt remove dunst popularity-contest -y
 sudo apt purge ubuntu-report popularity-contest apport whoopsie -y
 sudo killall dunst
-sudo apt install neovim xfce4-notifyd conky-all fatrace iotop libfftw3-dev mpg123 debtree npm gnome-tweak-tool uuid-dev ruby-full rubygems rake krita inkscape python3-tk golang mesa-utils unclutter mpv lxpolkit -y
+sudo apt install neovim xfce4-notifyd conky-all fatrace iotop libfftw3-dev mpg123 debtree npm gnome-tweak-tool uuid-dev ruby-full rubygems rake krita inkscape python3-tk golang mesa-utils unclutter mpv lxpolkit tlp \
+libgtk-3-dev \
+libmirclient-dev \
+libxkbcommon-dev \
+libegl1-mesa-dev \
+libwayland-dev \
+libpulse-dev \
+libnotify-dev \
+scrot\
+i3lock\
+-y
+
 sudo apt install --install-recommends winehq-staging
 sudo gem install rake ncurses-ruby sup gpgme optimist
-sudo dpkg -r --force-depends gnome-icon-theme
+# sudo dpkg -r --force-depends gnome-icon-theme
+
+wget https://www.vpn.net/installers/logmein-hamachi_2.1.0.203-1_amd64.deb
+sudo dpkg -i logmein-hamachi_2.1.0.203-1_amd64.deb
+
+cd ~/git
+cd bitmap-fonts
+git clone https://github.com/Tecate/bitmap-fonts.git
+sudo cp -avr bitmap/ /usr/share/fonts
+xset fp+ /usr/share/fonts/bitmap
+fc-cache -fv
+cd /etc/fonts/conf.d
+sudo rm 70-no-bitmaps.conf && sudo ln -s ../conf.avail/70-yes-bitmaps.conf .
+sudo dpkg-reconfigure fontconfig
+cd ~/
+
+cd ~/git
+git clone https://github.com/ironss/pa-applet.git
+cd pa-applet
+./autogen.sh
+./configure
+make
+sudo make install
+
+cd ~/git
+git clone https://github.com/valr/cbatticon.git
+cd cbatticon
+make
+sudo make install
 
 systemctl --user start xfce4-notifyd
 ln -s ~/.i3/dotzsrhc ~/.zshrc
