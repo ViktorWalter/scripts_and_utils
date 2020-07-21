@@ -14,7 +14,7 @@ tls_nocertcheck
 # But it is necssary if you're testing things out.
 # tls_trust_file /etc/ssl/certs/usenet.crt
 # tls_trust_file /home/viktor/.sup/usenet.crt
-from waltevik@fel.cvut.cz
+from viktor.walter@fel.cvut.cz
 passwordeval python -c "import keyring; print keyring.get_password('fel', 'personal')"
 port 465
 

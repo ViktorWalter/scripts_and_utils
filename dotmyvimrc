@@ -60,7 +60,7 @@ endif
   cmap w!! w suda://%
   let @t = '!!toilet -f big'
 
-  "ATLAB development ==================================
+  "MATLAB development ==================================
 
   function! GetMatlabPane()
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")

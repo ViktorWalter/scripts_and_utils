@@ -168,8 +168,8 @@ fi
 
 ros() {
   source /opt/ros/melodic/setup.zsh
-  # source /home/viktor/workspace/devel/setup.zsh
-  source /home/viktor/swarm_workspace/devel/setup.zsh
+  source /home/viktor/workspace/devel/setup.zsh
+  # source /home/viktor/swarm_workspace/devel/setup.zsh
   # source /home/viktor/mrs_workspace/devel/setup.zsh
   source /usr/share/gazebo/setup.sh
   # source ~/simulation/install/share/simulation/setup.sh
