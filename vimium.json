@@ -1,14 +1,14 @@
 {
 	"name": "Vimium C",
-	"@time": "12/5/2019, 11:47:09 AM",
-	"time": 1575542829712,
+	"@time": "7/22/2020, 11:31:17 AM",
+	"time": 1595410277388,
 	"environment": {
-		"extension": "1.78.7",
+		"extension": "1.84.1",
 		"platform": "linux"
 	},
 	"deepHints": "true",
 	"exclusionRules": [],
-	"extWhiteList": [
+	"extAllowList": [
 		"# modified { Vomnibar Page, X New Tab, PDF Viewer }",
 		"ekohaelnhhdhbccgefjmjpdjoijhojgd",
 		"hdnehngglnbnehkfcidabjckinphnief",
