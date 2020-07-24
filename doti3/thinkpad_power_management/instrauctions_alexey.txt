@@ -1,0 +1,69 @@
+Yes. I win.
+I install new systemd service with timer for power off NVidia after startup.
+
+Problem:
+New laptop Lenovo S540 (2020-made) + Ubuntu 18.04 LTS with NVidia 435 driver eats battery for 2-3 hours.
+
+Result:
+12 hours on battery.
+
+Before that the actions from comment #43 have been taken (thank, tom (tombuntus))
+(I don't install nvidia-prime. I use nvidia-prime, installed with nvidia-driver-435)
+
+$sudo apt install bbswitch-dkms
+
+add "bbswitch" to /etc/modules
+
+add "options bbswitch load_state=0" to /etc/modprobe.d/bbswitch.conf
+
+And i have don't change kernel parameter nouveau.modeset
+
+Steps for make service:
+
+1 - create file /ets/systemd/system/nvidia-off.service
+##########################
+[Unit]
+Description=OFF unused NVidia chip (20W->5W)
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/nvidia-off-on-start
+
+[Install]
+WantedBy=multi-user.target
+##########################
+
+2 - create file /ets/systemd/system/nvidia-off.timer
+##########################
+[Unit]
+Description=OFF unused NVidia chip (20W->5W)
+
+[Timer]
+OnStartupSec=1min
+
+[Install]
+WantedBy=multi-user.target
+##########################
+
+3 - create executable file /usr/local/bin/nvidia-off-on-start
+##########################
+#!/bin/sh
+modprobe bbswitch
+echo "OFF" > /proc/acpi/bbswitch
+date >> nvidia-off-on-start.log
+cat /proc/acpi/bbswith >> nvidia-off-on-start.log
+#########################
+
+4 - enable and start service
+$systemctl enable nvidia-off.timer
+$systemctl status nvidia-off.timer
+
+RESULT:
+
+- Power of NVidia adapter stay OFF after reboot and login to any user.
+- $ sudo tlp-stat -b | grep power_now
+   shows 4000-6000 milliWatts
+- On-Battery time is up to 10-12 hours
+- Bonus: all coolers stay off.
+
+If i select NVidia in Prime-Select (GUI) and reboot, execute "echo "OFF" > /proc/acpi/bbswitch" no have "off" effect and NVidia ready for gaming.
