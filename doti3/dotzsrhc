@@ -10,9 +10,6 @@ if [ -z "${VIM+x}" ]; then
 else
   export RUN_TMUX=false
   export USE_ATHAME=false
-  export ATHAME_ENABLED=0
-  export ATHAME_SHOW_MODE=0
-  export ATHAME_VIM_PERSIST=0
 fi
 
 unset zle_bracketed_paste
@@ -139,23 +136,14 @@ export ATHAME_ENABLED=0
 export ATHAME_SHOW_MODE=0
 export ATHAME_VIM_PERSIST=0
 
-# but if we are in tmux launched by the user/terminal (not tmuxinator)
-  # and if user want to use athame, use it
-    if [ -n "$TMUX" ]; then
+if [ "$USE_ATHAME" = "true" ]; then
 
-      if [ "$USE_ATHAME" = "true" ]; then
+  SESSION_NAME=`$TMUX_BIN display-message -p '#S'`
 
-        SESSION_NAME=`$TMUX_BIN display-message -p '#S'`
-
-        if [[ $SESSION_NAME =~ ^T[0-9]+$ ]]; then
-
-          export ATHAME_ENABLED=1
-          export ATHAME_SHOW_MODE=1
-          export ATHAME_VIM_PERSIST=1
-
-        fi
-      fi
-    fi
+  export ATHAME_ENABLED=1
+  export ATHAME_SHOW_MODE=1
+  export ATHAME_VIM_PERSIST=0
+fi
 
 # load tmux automatically                                                                             
 if [ "$RUN_TMUX" = "true" ]; then
@@ -483,4 +471,4 @@ cbl() {
   catkin build $package --force-color 2>&1 | less -r
 }
 export GOPATH=~/go
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/bin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/bin

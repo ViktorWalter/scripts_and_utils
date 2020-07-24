@@ -1,9 +1,16 @@
---- Lockfile::StolenLockError from thread: main
-Lockfile::StolenLockError
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `get_wch'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:19:in `nonblocking_getwch'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/lib/sup/util/ncurses.rb:57:in `get'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:228:in `<module:Redwood>'
-/var/lib/gems/2.5.0/gems/sup-0.22.1/bin/sup:74:in `<top (required)>'
-/usr/local/bin/sup:23:in `load'
-/usr/local/bin/sup:23:in `<main>'
+--- Redwood::OutOfSyncSourceError from thread: load messages for thread-view-mode
+Redwood::OutOfSyncSourceError
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/message.rb:245:in `location'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/message.rb:762:in `warn_with_location'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/message.rb:272:in `rescue in load_from_source!'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/message.rb:259:in `load_from_source!'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:117:in `block (3 levels) in select'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/thread.rb:70:in `block in each'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/thread.rb:176:in `each_with_stuff'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/thread.rb:69:in `each'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:114:in `each_with_index'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:114:in `block (2 levels) in select'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/buffer.rb:700:in `say'
+(eval):1:in `say'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:113:in `block in select'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup.rb:87:in `block in reporting_thread'

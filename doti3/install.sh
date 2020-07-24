@@ -15,6 +15,10 @@ libpulse-dev \
 libnotify-dev \
 scrot\
 i3lock\
+w3m\
+w3m-img\
+offlineimap\
+msmtp\
 -y
 
 sudo apt install --install-recommends winehq-staging
