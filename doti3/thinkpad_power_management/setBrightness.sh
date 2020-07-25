@@ -5,7 +5,7 @@ fi
 
 current=`cat /sys/class/backlight/intel_backlight/actual_brightness`
 max=`cat /sys/class/backlight/intel_backlight/max_brightness`
-let step=max/5
+let step=$current/2
 case $1 in
   "+")
     let val=$current+$step
