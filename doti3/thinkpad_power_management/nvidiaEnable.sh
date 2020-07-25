@@ -1,3 +1,5 @@
 #!/bin/bash
-sudo rm /etc/modprobe.d/nvidia-drm.conf
-sudo reboot
+if [ `prime-select query` = "intel" ]; then
+  sudo rm blacklist-nvidia.conf
+  sudo modprobe nvidia
+fi
