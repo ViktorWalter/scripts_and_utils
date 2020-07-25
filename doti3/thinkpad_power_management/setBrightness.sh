@@ -18,7 +18,11 @@ case $1 in
     ;;
 esac
 
-if [ $val -lt 0  ]; then
+if [ $current -lt 1  ]; then
+  val=100
+fi
+
+if [ $val -lt 1  ]; then
   val=0
 elif [ $val -gt $max  ]; then
   val=$max
