@@ -358,7 +358,12 @@ bindsym XF86MonBrightnessDown exec "sudo ~/.i3/thinkpad_power_management/setBrig
 
 bindsym XF86Display exec "arandr"
 
-bindsym XF86Bluetooth exec "bluetooth toggle"
+bindsym XF86Bluetooth exec "if (rfkill list bluetooth | grep Soft | grep no); then; rfkill block bluetooth; else; rfkill unblock bluetooth; fi"
+
+bindsym XF86WLAN exec "if [ `nmcli radio wifi` = 'enabled' ]; then; nmcli radio wifi off; else; nmcli radio wifi on; fi"
+
+bindsym XF86Tools exec "urxvt -e zsh -c 'vim ~/.i3/config'"
+
 # Startup programs
 # exec --no-startup-id nm-applet
 #exec google-chrome
