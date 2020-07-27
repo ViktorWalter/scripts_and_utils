@@ -1,1 +1,1 @@
-ps -aux | sort -nrk 3 | head -n5
+ps -aux | sort -nrk 3 | head -n"${1:-5}"

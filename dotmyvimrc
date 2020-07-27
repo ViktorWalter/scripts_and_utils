@@ -194,7 +194,7 @@ au! User GoyoLeave nested call <SID>isolation_leave()
 
 nmap <leader><leader> :if exists('#goyo')==0<CR>Goyo 100-20<CR>else<CR>Goyo!<CR>endif<CR><CR>
 
-au FileType qf call AdjustWindowHeight(3, 10)
+" au FileType qf call AdjustWindowHeight(3, 10)
 
 " fun! ShowFuncName()
 "   let lnum = line(".")

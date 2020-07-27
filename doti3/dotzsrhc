@@ -461,14 +461,14 @@ shit() {
   yes $shitstrings | toilet --gay -f big -t
 }
 
-cbl() {
-  if [ $# -eq 0 ]; then
-    package=--this
-  else
-    cd ~/mrs_workspace
-    package=$1
-  fi
-  catkin build $package --force-color 2>&1 | less -r
-}
+# cbl() {
+#   if [ $# -eq 0 ]; then
+#     package=--this
+#   else
+#     cd ~/mrs_workspace
+#     package=$1
+#   fi
+#   catkin build $package --force-color 2>&1 | less -r
+# }
 export GOPATH=~/go
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/bin

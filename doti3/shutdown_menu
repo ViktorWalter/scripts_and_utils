@@ -127,6 +127,8 @@ menu=(
   [Logout]="i3-msg exit"
   [Cancel]=""
   [Windows]="gksudo windows"
+  [Nvidia GPU]="gksudo 'prime-select nvidia' && systemctl reboot"
+  [Intel GPU]="gksudo 'prime-select intel' && systemctl reboot"
 )
 menu_nrows=${#menu[@]}
 
