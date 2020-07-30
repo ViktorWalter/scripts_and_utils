@@ -4,7 +4,7 @@ let -a res
 # let -a rot
 # let -a wid
 wid=0
-scr=($( xrandr -q | awk '/ connected/ {print $1}' ))
+scr=($( xrandr -q | awk '/ connected/ {print $1}' | tac ))
 res=($( xrandr -q | awk '/ connected/ {getline; print $1}' ))
 # rot=($( xrandr -q --verbose | awk '/ connected/ {print $5}' ))
 active=($( xrandr | grep -E " connected (primary )?[1-9]+" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/" ))
@@ -24,7 +24,7 @@ else
         xrandr --output ${scr[$i]} --off
       fi;
     done;
-    # pacmd set-default-sink `pactl list short sinks | grep 1b | tr '\t' ' ' | cut -d' ' -f2`
+    pacmd set-default-sink `pactl list short sinks | grep pci | tr '\t' ' ' | cut -d' ' -f2`
   else
     for i in "${!scr[@]}"; do
       if [[ "${scr[$i]}" != *eDP* ]]; then
@@ -32,7 +32,7 @@ else
         previousMonitor=${scr[$i]}
       fi;
     done;
-    pacmd set-default-sink `pactl list short sinks | grep hdmi | tr '\t' ' ' | cut -d' ' -f2`
+    pacmd set-default-sink `pactl list short sinks | grep Dock | tr '\t' ' ' | cut -d' ' -f2`
   fi
 fi
 xrandr --dpi 100

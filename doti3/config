@@ -30,7 +30,7 @@ exec_always  --no-startup-id "sleep 2; keynav"
 
 exec --no-startup-id "sleep 4; frakkin-xkb ~/.i3/setKeyboard.sh &"
 
-exec_always  --no-startup-id "sleep 1; ~/.i3/thinkpad_power_management/nvidiaEnable.sh"
+exec_always  --no-startup-id "sleep 1; sudo ~/.i3/thinkpad_power_management/nvidiaEnable.sh"
 
 # exec --no-startup-id "sleep 5; ~/.i3/vpnconnect.sh"
 
@@ -265,7 +265,7 @@ for_window [class="MATLAB R2015a" title="^Fig"] no_focus
 for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
 # for_window [class="MATLAB R2015a" title="^Fig"] floating enable
 for_window [class="gazebo"] move to workspace number 8
-for_window [class="rviz"] move to workspace number 8
+for_window [class="rviz"] move to workspace number 2
 
 for_window [class="Firefox"] move to workspace number 5
 # for_window [window_role="browser"] move to workspace number 5
