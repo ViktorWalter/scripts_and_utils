@@ -16,11 +16,19 @@
   labels:
   - O
 - !supmua.org,2006-10-01/Redwood/Maildir
-  uri: maildir:/home/viktor/mail/gmail/inbox
+  uri: maildir:/home/viktor/mail/outlook/inbox_oj
   usual: true
   archived: false
   sync_back: true
   id: 3
+  labels:
+  - Oj
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/viktor/mail/gmail/inbox
+  usual: true
+  archived: false
+  sync_back: true
+  id: 4
   labels:
   - G
 - !supmua.org,2006-10-01/Redwood/Maildir
@@ -28,7 +36,7 @@
   usual: true
   archived: false
   sync_back: true
-  id: 4
+  id: 5
   labels:
   - L
 - !supmua.org,2006-10-01/Redwood/SentLoader {}

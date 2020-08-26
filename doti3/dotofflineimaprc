@@ -43,8 +43,9 @@ remoterepository = outlook-remote
 type = Maildir
 # Where should the mail be placed?
 localfolders = ~/mail/outlook
-nametrans = lambda folder: {'inbox': 'Inbox',
-                            }.get(folder, folder)
+nametrans = lambda foldername: re.sub('inbox', 'Inbox',
+                               re.sub('inbox_oj','Junk',
+                               foldername))
 
 [Repository outlook-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
@@ -53,9 +54,10 @@ type = IMAP
 remotehost = imap-mail.outlook.com
 remoteuser = viktor_walter@outlook.com
 remotepasseval = keyring.get_password('outlook', 'personal')
-nametrans = lambda folder: {'Inbox': 'inbox',
-                            }.get(folder, folder)
-folderfilter = lambda folder: folder == 'Inbox'
+nametrans = lambda foldername: re.sub('Inbox', 'inbox',
+                               re.sub('Junk','inbox_oj',
+                               foldername))
+folderfilter = lambda foldername: foldername in ['Inbox', 'Junk']
 
 [Account gmail]
 # Identifier for the local repository; e.g. the maildir to be synced via IMAP.
