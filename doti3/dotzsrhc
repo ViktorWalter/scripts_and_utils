@@ -366,10 +366,10 @@ export BLUEFOX=26805883
 # export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
 # export BLUEFOX_UV_LEFT_EXPOSE_US=2000
 
-export UAV_NAME=uav50
-export NATO_NAME=sierra
-export BLUEFOX_UV_LEFT=25003696
-export BLUEFOX_UV_RIGHT=25003668
+# export UAV_NAME=uav50
+# export NATO_NAME=sierra
+# export BLUEFOX_UV_LEFT=25003696
+# export BLUEFOX_UV_RIGHT=25003668
 
 # export UAV_NAME=uav42
 # export NATO_NAME=uniform
@@ -393,16 +393,23 @@ export BLUEFOX_UV_RIGHT=25003668
 # export BLUEFOX_UV_RIGHT=25003654
 # export BLUEFOX_UV_LEFT=25003657
 
+# export BLUEFOX_UV_RIGHT=25003654
+export BLUEFOX_UV_LEFT=25003650
+#
 export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
-export BLUEFOX_UV_LEFT_EXPOSE_US=1000
+export BLUEFOX_UV_LEFT_EXPOSE_US=500
 
 # export UAV_NAME=uav49
 # export NATO_NAME=romeo
 
-export ROS_MATER_URI=http://localhost:11311
-# export ROS_MASTER_URI=http://localhost:11311
-# export ROS_MASTER_URI=http://192.168.69.166:11311
+# export ROS_MATER_URI=http://localhost:11311
+export ROS_MASTER_URI=http://localhost:11311
+# export ROS_MASTER_URI=http://192.168.69.166:11311 #golf
 # export ROS_MASTER_URI=http://192.168.69.142:11311
+# export ROS_MASTER_URI=http://192.168.69.142:11311 #uniform
+# export ROS_MASTER_URI=http://192.168.69.151:11311 #tango
+# export ROS_MASTER_URI=http://192.168.69.150:11311 #sierra
+# export ROS_MASTER_URI=http://192.168.69.147:11311 #quebec
 # export ROS_MASTER_URI=http://quebec:11311
 # export ROS_MASTER_URI=http://oscar:11311
 # export ROS_MASTER_URI=http://papa:11311

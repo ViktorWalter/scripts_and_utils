@@ -65,7 +65,8 @@ overshoot = 20
 # 'noncurses' is for systems that does not suport ncurses.
 # 'raw' is a 16 bit data stream of the bar heights that can be used to send to other applications.
 # 'raw' defaults to 200 bars, which can be adjusted in the 'bars' option above.
-; method = ncurses
+method = ncurses
+# method = noncurses
 
 # Visual channels. Can be 'stereo' or 'mono'.
 # 'stereo' mirrors both channels with low frequencies in center.
@@ -79,7 +80,7 @@ channels = mono
 ; data_format = binary
 
 # Binary bit format, can be '8bit' (0-255) or '16bit' (0-65530).
-; bit_format = 16bit
+bit_format = 16bit
 
 # Ascii max value. In 'ascii' mode range will run from 0 to value specified here
 ; ascii_max_range = 1000
@@ -98,14 +99,17 @@ channels = mono
 # terminal that can change color definitions such as Gnome-terminal or rxvt.
 background = '#000000'
 foreground = '#00bffa'
+# background = black
+# foreground = white
 
 # Gradient mode, only hex defined colors are supported, background must also be defined in hex
 # or remain commented out. 1 = on, 0 = off. Warning: for certain terminal emulators cava will
 # not able to restore color definitions on exit, simply restart your terminal to restore colors.
-; gradient = 0
-; gradient_count = 2
-; gradient_color_1 = '#0099ff'
-; gradient_color_2 = '#ff3399'
+gradient = 0
+gradient_count = 2
+# gradient_color_1 = '#00bffa'
+gradient_color_1 = '#ffffff'
+gradient_color_2 = '#ffffff'
 
 
 

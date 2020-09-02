@@ -20,7 +20,12 @@ w3m-img\
 offlineimap\
 msmtp\
 neofetch\
+gstreamer1.0-{good,bad,ugly,libav}\
+firefox-geckodriver\
+html2text\
 -y
+
+sudo pip3 install webdriver
 
 sudo apt install --install-recommends winehq-staging
 sudo gem install rake ncurses-ruby sup gpgme optimist
@@ -54,6 +59,8 @@ cd cbatticon
 make
 sudo make install
 
+mkdir ~/localpath 
+
 systemctl --user start xfce4-notifyd
 ln -s ~/.i3/dotzsrhc ~/.zshrc
 ln -s ~/.i3/dotsup ~/.sup
@@ -69,6 +76,7 @@ sudo ln -s ~/git/networkmanager-dmenu/networkmanager_dmenu /usr/bin/
 ln -s ~/.i3/nmdmenuconfig.ini ~/.config/networkmanager-dmenu/config.ini
 ln -s ~/.i3/icons ~/.i3/icons ~/.icons
 ln -s ~/.i3/icons ~/.i3/theme ~/.themes
+ln -s ~/.i3/dump_site.sh ~/localpath/
 mkdir ~/.config/networkmanager-dmenu
 touch ~/.myzshrc
 # vim -e  .vimrc <<-SCRIPT

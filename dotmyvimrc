@@ -32,6 +32,8 @@ endif
         \ ]
 
 
+  set cursorline
+  set cursorcolumn
 
   au BufNewFile,BufRead *.cl setlocal ft=c
 
@@ -44,6 +46,8 @@ endif
   au BufNewFile,BufRead *.tex setlocal fdm=expr
   au BufNewFile,BufRead *.tex setlocal foldexpr=vimtex#fold#level(2)
   au BufNewFile,BufRead *.tex set lazyredraw
+  au BufNewFile,BufRead *.tex set nocursorline
+  au BufNewFile,BufRead *.tex set nocursorcolumn
   set nowrap
 
   au BufNewFile,BufRead,BufEnter *.sk let &makeprg='./compile_sketch.sh %'
@@ -53,8 +57,6 @@ endif
   " unmap <S-J>
   " unmap <S-K>
   " set lazyredraw "makes scrooling faster
-  set cursorline
-  set cursorcolumn
 
   " Write into protected file without prior sudo
   cmap w!! w suda://%

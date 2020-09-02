@@ -1,8 +1,10 @@
---- Interrupt from thread: main
-
-/var/lib/gems/2.5.0/gems/ncursesw-1.4.10/lib/ncurses_sugar.rb:62:in `method_missing'
-/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/buffer.rb:239:in `completely_redraw_screen'
-/var/lib/gems/2.5.0/gems/sup-1.0/bin/sup:352:in `<module:Redwood>'
+--- NoMethodError from thread: main
+undefined method `content_type' for #<Redwood::Message:0x00007fd27403ff68>
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/modes/thread_view_mode.rb:1027:in `view'
+/home/viktor/.sup/hooks/startup.rb:4:in `view_browser'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/mode.rb:59:in `handle_input'
+/var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/buffer.rb:222:in `handle_input'
+/var/lib/gems/2.5.0/gems/sup-1.0/bin/sup:257:in `<module:Redwood>'
 /var/lib/gems/2.5.0/gems/sup-1.0/bin/sup:76:in `<top (required)>'
 /usr/local/bin/sup:23:in `load'
 /usr/local/bin/sup:23:in `<main>'

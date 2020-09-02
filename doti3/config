@@ -263,7 +263,10 @@ for_window [class="conky"] move to output primary
 # for_window [class="Lazarus"] floating enable
 for_window [class="MATLAB R2015a" title="^Fig"] no_focus
 for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
+# for_window [class="matplotlib" title="^Fig"] move to workspace number 3
 # for_window [class="MATLAB R2015a" title="^Fig"] floating enable
+for_window [class="matplotlib"] floating enable
+for_window [class="Matplotlib"] floating enable
 for_window [class="gazebo"] move to workspace number 8
 for_window [class="rviz"] move to workspace number 2
 
