@@ -33,7 +33,7 @@ endif
 
 
   set cursorline
-  set cursorcolumn
+  " set cursorcolumn
 
   au BufNewFile,BufRead *.cl setlocal ft=c
 
@@ -68,7 +68,7 @@ endif
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     if b:matlabPane == ""
       set nolazyredraw
-      let b:matlabPane=system("sleep 2; tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";tmux last-pane; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'; tmux resize-pane -R")
+      let b:matlabPane=system("sleep 2; tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";tmux last-pane; sleep 2; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'; tmux resize-pane -R")
       set lazyredraw
     end
     return b:matlabPane
@@ -147,13 +147,21 @@ function! SetColors()
 
   hi TabLineSel ctermbg=45
   hi TabLineFill ctermbg=45
-  hi TabLine ctermbg=0 ctermfg=45
-  hi Title ctermbg=45
+  " hi TabLine ctermbg=0 ctermfg=45
+  " hi Title ctermbg=45
 
 
   hi StartifyHeader ctermfg=39 cterm=bold
   hi StartifyFooter ctermfg=39 cterm=bold
   hi Normal ctermfg=39
+
+  hi TabLine ctermbg=0 ctermfg=129
+  hi Title ctermbg=129
+
+
+  " hi StartifyHeader ctermfg=129 cterm=bold
+  " hi StartifyFooter ctermfg=129 cterm=bold
+  " hi Normal ctermfg=129
   
   hi Normal guibg=NONE ctermbg=NONE
   hi NonText guibg=NONE ctermbg=NONE

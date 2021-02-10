@@ -1,5 +1,5 @@
 --- NoMethodError from thread: main
-undefined method `content_type' for #<Redwood::Message:0x00007fd27403ff68>
+undefined method `content_type' for #<Redwood::Chunk::Text:0x00007fc720825cc8>
 /var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/modes/thread_view_mode.rb:1027:in `view'
 /home/viktor/.sup/hooks/startup.rb:4:in `view_browser'
 /var/lib/gems/2.5.0/gems/sup-1.0/lib/sup/mode.rb:59:in `handle_input'

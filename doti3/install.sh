@@ -20,7 +20,7 @@ w3m-img\
 offlineimap\
 msmtp\
 neofetch\
-gstreamer1.0-{good,bad,ugly,libav}\
+gstreamer1.0-{plugins-good,plugins-bad,plugins-ugly,libav}\
 firefox-geckodriver\
 html2text\
 -y

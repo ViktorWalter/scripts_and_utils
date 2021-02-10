@@ -99,6 +99,7 @@ bit_format = 16bit
 # terminal that can change color definitions such as Gnome-terminal or rxvt.
 background = '#000000'
 foreground = '#00bffa'
+# foreground = '#cc00ff
 # background = black
 # foreground = white
 

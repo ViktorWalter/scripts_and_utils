@@ -95,7 +95,7 @@ bindsym $mod+Shift+l move right
 #bindsym $mod+Shift+Right move right
 
 #pause gazebo
-bindsym $mod3+p exec "gz world --pause=1"
+# bindsym $mod3+p exec "gz world --pause=1"
 #wifi menu
 bindsym $mod3+w exec networkmanager_dmenu
 #audio sink menu
@@ -223,12 +223,14 @@ bindsym $mod+r mode "resize"
 
 # JELLYBEANS COLOR_SCHEME ACTIVE jk^f{gci{{
 set $focused_ws_bg            #00bffa
+# set $focused_ws_bg            #af00ff
 set $active_text_color        #ffffff
 set $inactive_text_color      #eeeeee
 set $inactive_background      #333333
 set $active_background        #005faf
 set $background_color         #151515
-set $active_border            #005faf
+# set $active_border            #005faf
+set $active_border            #af00ff
 set $split_indicator          #B85335
 set $transparent              #000000dd
 
@@ -268,7 +270,7 @@ for_window [class="MATLAB R2015a" title="^Fig"] move to workspace number 3
 for_window [class="matplotlib"] floating enable
 for_window [class="Matplotlib"] floating enable
 for_window [class="gazebo"] move to workspace number 8
-for_window [class="rviz"] move to workspace number 2
+for_window [class="rviz"] move to workspace number 4
 
 for_window [class="Firefox"] move to workspace number 5
 # for_window [window_role="browser"] move to workspace number 5
@@ -520,9 +522,12 @@ bindsym $mod3+Shift+s exec --no-startup-id xdotool mousedown 1; mode "longpress"
 
 bindsym $mod3+Shift+u exec --no-startup-id xdotool click 5
 bindsym $mod3+Shift+i exec --no-startup-id xdotool click 4
-bindsym $mod3+u exec --no-startup-id xdotool click 5
-bindsym $mod3+i exec --no-startup-id xdotool click 4
+# bindsym $mod3+u exec --no-startup-id xdotool click 5
+# bindsym $mod3+i exec --no-startup-id xdotool click 4
 
+bindsym $mod3+p exec --no-startup-id gz world -p 1
+bindsym $mod3+u exec --no-startup-id gz world -p 0
+bindsym $mod3+i exec --no-startup-id gz world -m 100
 # bindsym $mod2+q exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 0
 # bindsym $mod2+a exec --no-startup-id xinput set-prop $touchpad "Device Enabled" 1
 

@@ -26,7 +26,8 @@
 # pics[23]="$HOME/Pictures/dark_energy.jpg"
 # pics[24]="$HOME/Pictures/glow_wood.jpg"
 # pics[25]="$HOME/Pictures/drive_mastery.jpg"
-pics[0]="$HOME/Pictures/drive_mastery.jpg"
+# pics[0]="$HOME/Pictures/drive_mastery.jpg"
+pics[0]="$HOME/Pictures/purple_chip.png"
 # pics[26]="$HOME/Pictures/nigh.jpg"
 # pics[27]="$HOME/Pictures/gnarl_spectrolite.png"
 
