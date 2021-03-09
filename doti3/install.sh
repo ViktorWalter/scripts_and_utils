@@ -12,6 +12,7 @@ libxkbcommon-dev \
 libegl1-mesa-dev \
 libwayland-dev \
 libpulse-dev \
+pulseaudio \
 libnotify-dev \
 scrot \
 i3lock \
@@ -24,6 +25,8 @@ gstreamer1.0-{plugins-good,plugins-bad,plugins-ugly,libav} \
 firefox-geckodriver \
 html2text \
 -y
+
+~/.i3/install/pa_applet.sh
 
 sudo pip3 install webdriver
 
