@@ -1,10 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 149.99998 150">
- <defs>
-  <clipPath>
-   <rect y="1040.22" x="505" height="150" width="150" opacity="0.2" fill-rule="evenodd" color="#00BFFA" rx="42"/>
-  </clipPath>
- </defs>
- <g transform="translate(-505.00002,-1040.2193)">
-  <rect width="150" height="4" x="505" y="1186.22" rx="2" fill="#00BFFA" fill-rule="evenodd"/>
- </g>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:3f3111cbaa38f93290be113e3df0f019943cff1e0a546446feeda5cf45f98a89
+size 410

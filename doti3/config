@@ -289,7 +289,7 @@ for_window [ class="resolve" title="Secondary Screen" ] move to workspace number
 exec_always  --no-startup-id  "if ( xrandr --query | grep eDP-1-1 ); then; xrandr --output eDP-1-1 --primary; else xrandr --output eDP-1 --primary; fi"
 bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
-    font pango: lode, FontAwesome 10
+    font pango:Terminus (TTF), FontAwesome Bold 13 
     height 25
 
     # font pango:DejaVu Sans Mono, Awesome 8

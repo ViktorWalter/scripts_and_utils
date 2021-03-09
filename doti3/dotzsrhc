@@ -155,7 +155,7 @@ if [ "$RUN_TMUX" = "true" ]; then
 fi
 
 ros() {
-  source /opt/ros/melodic/setup.zsh
+  source /opt/ros/noetic/setup.zsh
   source /home/viktor/workspace/devel/setup.zsh
   # source /home/viktor/swarm_workspace/devel/setup.zsh
   # source /home/viktor/mrs_workspace/devel/setup.zsh
@@ -177,7 +177,7 @@ ros() {
   # where should ctags look for sources to parse?
   # CTAGS FROM THOSE FILE WILL BE CREATED ONLY ONCE
   # -R dir1 -R dir2 ...
-  export CTAGS_ONCE_SOURCE_DIR="-R /opt/ros/melodic/include"
+  export CTAGS_ONCE_SOURCE_DIR="-R /opt/ros/noetic/include"
 
 
 }  
@@ -224,7 +224,6 @@ export GIT_PATH=/home/viktor/git
 alias vi=vim
 #  For a full list of active aliases, run `alias`.
   #
-  source ~/.myzshrc
   alias -s cpp=vim
 
   function w3g { w3m "google.com/search?q=$1" ;}
@@ -486,3 +485,5 @@ export UAV_NAME="uav1"
 export NATO_NAME="" # lower-case name of the UAV frame {alpha, bravo, charlie, ...}
 
 alias ffs='sudo !!'
+export GOPATH=~/go
+export PATH=/opt/ros/noetic/bin:/home/viktor/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/home/viktor/go/bin:/home/viktor/localpath/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/bin:/bin:/home/viktor/go/bin
