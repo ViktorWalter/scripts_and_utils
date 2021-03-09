@@ -46,7 +46,6 @@ scrot \
 i3lock \
 w3m \
 w3m-img \
-offlineimap \
 msmtp \
 neofetch \
 gstreamer1.0-{plugins-good,plugins-bad,plugins-ugly,libav} \
@@ -141,4 +140,5 @@ sudo cp ~/.i3/thinkpad_power_management/15-brightness.conf /etc/sudoers.d/
 ~/.i3/install/pa_applet.sh
 ~/.i3/install/cbatticon.sh
 ~/.i3/install/nordvpn.sh
+~/.i3/install/offlineimap3.sh
 
