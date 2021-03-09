@@ -24,9 +24,11 @@ neofetch \
 gstreamer1.0-{plugins-good,plugins-bad,plugins-ugly,libav} \
 firefox-geckodriver \
 html2text \
+deluge \
+audacity \
 -y
 
-sudo pip3 install webdriver
+sudo pip3 install webdriver selenium
 
 sudo apt install --install-recommends winehq-staging
 sudo gem install rake ncurses-ruby sup gpgme optimist
@@ -76,10 +78,31 @@ ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/git/my-linux-setup/linux_setup/dottmux.conf ~/.my.tmux.conf
 sudo ln -s ~/git/networkmanager-dmenu/networkmanager_dmenu /usr/bin/
 ln -s ~/.i3/nmdmenuconfig.ini ~/.config/networkmanager-dmenu/config.ini
+
 # mkdir ~/.icons ~/.themes
 ln -s ~/.i3/icons ~/.icons
 ln -s ~/.i3/theme ~/.themes
+rm ~/.gtkrc-2.0
+ln -s ~/.i3/dotgtkrc ~/.gtkrc-2.0
+gtk-update-icon-cache
+gsettings set org.gnome.desktop.interface gtk-theme "Cold Night"
+gsettings set org.gnome.desktop.interface icon-theme "Cold-Night"
+
+
 ln -s ~/.i3/dump_site.sh ~/localpath/
+ln -s ~/.i3/windows ~/localpath/
+ln -s ~/.i3/playMusic.sh ~/localpath/
+ln -s ~/.i3/playStudyMusic.sh ~/localpath/
+ln -s ~/.i3/playSong.sh ~/localpath/
+ln -s ~/.i3/imdisp.sh ~/localpath/
+ln -s ~/.i3/reinstpak.sh ~/localpath/
+ln -s ~/.i3/gksudo ~/localpath/
+ln -s ~/.i3/deptree.sh ~/localpath/
+ln -s ~/.i3/ssh-add-identity.sh ~/localpath/
+ln -s ~/.i3/flashMount.sh ~/localpath/
+ln -s ~/.i3/flashUmount.sh ~/localpath/
+sudo mkdir /mnt/flash
+
 mkdir ~/.config/networkmanager-dmenu
 touch ~/.myzshrc
 # vim -e  .vimrc <<-SCRIPT
@@ -111,4 +134,5 @@ sudo cp ~/.i3/thinkpad_power_management/15-brightness.conf /etc/sudoers.d/
 
 ~/.i3/install/pa_applet.sh
 ~/.i3/install/cbatticon.sh
+~/.i3/install/nordvpn.sh
 

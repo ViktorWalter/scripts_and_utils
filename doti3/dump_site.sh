@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
 
-profile_path = "/home/viktor/.mozilla/firefox/uxgdb4wv.headless"
+profile_path = "/home/viktor/.mozilla/firefox/ldz317sx.headless"
 # url = "https://store.steampowered.com/account/history/"
 url = sys.argv[1]
 from selenium.webdriver.firefox.options import Options
