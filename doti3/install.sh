@@ -102,3 +102,6 @@ echo "export GOPATH=~/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin" >> ~/.zshrc
 go get -u github.com/erroneousboat/slack-term ; cd $GOPATH/src/github.com/erroneousboat/slack-term ; go install .
 ln -s ~/.i3/dotslackterm ~/.slack-term
+
+
+sudo cp ~/.i3/thinkpad_power_management/15-brightness.conf /etc/sudoers.d/
