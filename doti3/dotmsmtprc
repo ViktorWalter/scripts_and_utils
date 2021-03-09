@@ -15,7 +15,7 @@ tls_nocertcheck
 # tls_trust_file /etc/ssl/certs/usenet.crt
 # tls_trust_file /home/viktor/.sup/usenet.crt
 from viktor.walter@fel.cvut.cz
-passwordeval python3 -c "import keyring; print keyring.get_password('fel', 'personal')"
+passwordeval python3 -c "import keyring; print(keyring.get_password('fel', 'personal'))"
 port 465
 
 account outlook
@@ -29,7 +29,7 @@ tls_nocertcheck
 # The value of `from` is only used when you're not using sup.
 # But it is necessary if you're testing things out.
 from viktor_walter@outlook.com
-passwordeval python3 -c "import keyring; print keyring.get_password('outlook', 'personal')"
+passwordeval python3 -c "import keyring; print(keyring.get_password('outlook', 'personal'))"
 port 587
 
 account gmail
@@ -44,7 +44,7 @@ tls_nocertcheck
 # The value of `from` is only used when you're not using sup.
 # But it is necessary if you're testing things out.
 from Viktor Walter
-passwordeval python3 -c "import keyring; print keyring.get_password('gmail', 'personal')"
+passwordeval python3 -c "import keyring; print(keyring.get_password('gmail', 'personal'))"
 port 587
 
 # account laas
@@ -60,7 +60,7 @@ port 587
 # # tls_trust_file /etc/ssl/certs/usenet.crt
 # # tls_trust_file /home/viktor/.sup/usenet.crt
 # from viktor.walter@laas.fr
-# passwordeval python3 -c "import keyring; print keyring.get_password('laas', 'personal')"
+# passwordeval python3 -c "import keyring; print(keyring.get_password('laas', 'personal')"
 # port 465
 
 account default : fel

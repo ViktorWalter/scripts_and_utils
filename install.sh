@@ -85,7 +85,7 @@ ln -s ~/.i3/dotsup ~/.sup
 ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/.i3/dotofflineimaprc ~/.offlineimaprc
 ln -s ~/.i3/dotofflineimap.py ~/.offlineimap.py
-cp ~/.i3/dotmsmtprc ~/.msmtprc
+ln -s ~/.i3/dotmsmtprc ~/.msmtprc
 ln -s ~/.i3/dotsup ~/.sup
 ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/git/my-linux-setup/linux_setup/dottmux.conf ~/.my.tmux.conf
@@ -141,4 +141,7 @@ sudo cp ~/.i3/thinkpad_power_management/15-brightness.conf /etc/sudoers.d/
 ~/.i3/install/cbatticon.sh
 ~/.i3/install/nordvpn.sh
 ~/.i3/install/offlineimap3.sh
+
+sudo ln -s /etc/apparmor.d/usr.bin.msmtp /etc/apparmor.d/disable/
+sudo apparmor_parser -R /etc/apparmor.d/usr.bin.msmtp 
 
