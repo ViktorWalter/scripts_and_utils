@@ -26,8 +26,6 @@ firefox-geckodriver \
 html2text \
 -y
 
-~/.i3/install/pa_applet.sh
-
 sudo pip3 install webdriver
 
 sudo apt install --install-recommends winehq-staging
@@ -78,8 +76,9 @@ ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/git/my-linux-setup/linux_setup/dottmux.conf ~/.my.tmux.conf
 sudo ln -s ~/git/networkmanager-dmenu/networkmanager_dmenu /usr/bin/
 ln -s ~/.i3/nmdmenuconfig.ini ~/.config/networkmanager-dmenu/config.ini
-ln -s ~/.i3/icons ~/.i3/icons ~/.icons
-ln -s ~/.i3/icons ~/.i3/theme ~/.themes
+# mkdir ~/.icons ~/.themes
+ln -s ~/.i3/icons ~/.icons
+ln -s ~/.i3/theme ~/.themes
 ln -s ~/.i3/dump_site.sh ~/localpath/
 mkdir ~/.config/networkmanager-dmenu
 touch ~/.myzshrc
@@ -108,3 +107,8 @@ ln -s ~/.i3/dotslackterm ~/.slack-term
 
 
 sudo cp ~/.i3/thinkpad_power_management/15-brightness.conf /etc/sudoers.d/
+
+
+~/.i3/install/pa_applet.sh
+~/.i3/install/cbatticon.sh
+
