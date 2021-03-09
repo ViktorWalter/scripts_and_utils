@@ -49,7 +49,7 @@ set $mod2 Mod4
 set $mod3 Mod5
 set $mod4 Mod2
 
-font pango:Terminus Bold, FontAwesome 9
+font pango:Terminus (TTF), FontAwesome 9
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -341,7 +341,7 @@ for_window [class="gnome-calendar"] floating enable
 bindsym Ctrl+Escape exec ksysguard
 
 # rofi launcher
-bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -font 'Terminus Bold 15'"
+bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -font 'Terminus (TTF) Bold 15'"
 # # bindsym $mod+d exec "rofi -combi-modi drun,run -show combi -modi combi -location 2 -terminal urxvt -font 'Terminus Bold 15' "
 # bindsym $mod+d exec "rofi drun -show drun -location 2 -terminal urxvt -font 'Terminus Bold 15' "
 
