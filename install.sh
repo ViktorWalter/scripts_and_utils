@@ -54,6 +54,7 @@ firefox-geckodriver \
 html2text \
 deluge \
 audacity \
+fonts-terminus \
 -y
 
 sudo pip3 install webdriver selenium
@@ -65,7 +66,6 @@ sudo gem install rake ncurses-ruby sup gpgme optimist
 wget https://www.vpn.net/installers/logmein-hamachi_2.1.0.203-1_amd64.deb
 sudo dpkg -i logmein-hamachi_2.1.0.203-1_amd64.deb
 
-sudo apt install fonts-terminus
 cd ~/git
 cd bitmap-fonts
 git clone https://github.com/Tecate/bitmap-fonts.git
@@ -76,20 +76,6 @@ cd /etc/fonts/conf.d
 sudo rm 70-no-bitmaps.conf && sudo ln -s ../conf.avail/70-yes-bitmaps.conf .
 sudo dpkg-reconfigure fontconfig
 cd ~/
-
-cd ~/git
-git clone https://github.com/ironss/pa-applet.git
-cd pa-applet
-./autogen.sh
-./configure
-make
-sudo make install
-
-cd ~/git
-git clone https://github.com/valr/cbatticon.git
-cd cbatticon
-make
-sudo make install
 
 mkdir ~/localpath 
 
