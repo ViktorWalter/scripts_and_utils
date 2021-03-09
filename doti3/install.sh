@@ -79,20 +79,7 @@ ln -s ~/git/my-linux-setup/linux_setup/dottmux.conf ~/.my.tmux.conf
 sudo ln -s ~/git/networkmanager-dmenu/networkmanager_dmenu /usr/bin/
 ln -s ~/.i3/nmdmenuconfig.ini ~/.config/networkmanager-dmenu/config.ini
 
-# mkdir ~/.icons ~/.themes
-ln -s ~/.i3/icons ~/.icons
-ln -s ~/.i3/theme ~/.themes
-rm ~/.gtkrc-2.0
-ln -s ~/.i3/dotgtkrc ~/.gtkrc-2.0
-gtk-update-icon-cache
-gsettings set org.gnome.desktop.interface gtk-theme ''
-sleep 1
-gsettings set org.gnome.desktop.interface icon-theme ''
-sleep 1
-gsettings set org.gnome.desktop.interface gtk-theme "Cold Night"
-sleep 1
-gsettings set org.gnome.desktop.interface icon-theme "Cold Night"
-
+~/.i3/install/theme.sh
 
 ln -s ~/.i3/dump_site.sh ~/localpath/
 ln -s ~/.i3/windows ~/localpath/
