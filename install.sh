@@ -1,7 +1,26 @@
-
 toilet "Let's go"
 
-#first, replace Tomas' i3 config
+#Set the profile
+if [ -z ${PROFILES_BOTH} ];
+then  echo "export PROFILES_BOTH=\"VIKTOR_BIGBOX\"" >> ~/.bashrc
+fi
+export PROFILES_BOTH="VIKTOR_BIGBOX"
+
+#Install mrs_uav_system and Tomas' setup
+cd /tmp
+echo '
+GIT_PATH=~/git
+mkdir -p $GIT_PATH
+cd $GIT_PATH
+sudo apt-get -y install git
+git clone https://github.com/ctu-mrs/mrs_uav_system
+cd mrs_uav_system
+git checkout master
+git pull
+./install.sh -g $GIT_PATH
+source ~/.bashrc' > clone.sh && source clone.sh
+
+#Now, replace Tomas' i3 config
 
 rm ~/.i3
 cd `dirname "$0"`
