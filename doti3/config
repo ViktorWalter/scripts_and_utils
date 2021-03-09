@@ -30,7 +30,7 @@ exec_always  --no-startup-id "sleep 2; keynav"
 
 exec --no-startup-id "sleep 4; frakkin-xkb ~/.i3/setKeyboard.sh &"
 
-exec_always  --no-startup-id "sleep 1; sudo ~/.i3/thinkpad_power_management/nvidiaEnable.sh"
+# exec_always  --no-startup-id "sleep 1; sudo ~/.i3/thinkpad_power_management/nvidiaEnable.sh"
 
 # exec --no-startup-id "sleep 5; ~/.i3/vpnconnect.sh"
 

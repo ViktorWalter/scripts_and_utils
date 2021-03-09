@@ -13,16 +13,16 @@ libegl1-mesa-dev \
 libwayland-dev \
 libpulse-dev \
 libnotify-dev \
-scrot\
-i3lock\
-w3m\
-w3m-img\
-offlineimap\
-msmtp\
-neofetch\
-gstreamer1.0-{plugins-good,plugins-bad,plugins-ugly,libav}\
-firefox-geckodriver\
-html2text\
+scrot \
+i3lock \
+w3m \
+w3m-img \
+offlineimap \
+msmtp \
+neofetch \
+gstreamer1.0-{plugins-good,plugins-bad,plugins-ugly,libav} \
+firefox-geckodriver \
+html2text \
 -y
 
 sudo pip3 install webdriver
