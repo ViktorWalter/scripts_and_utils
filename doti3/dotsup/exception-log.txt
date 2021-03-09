@@ -1,18 +1,15 @@
 --- NoMethodError from thread: poll after loading inbox
-undefined method `resize' for nil:NilClass
-Did you mean?  rescue
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:283:in `draw_screen'
-(eval):1:in `draw_screen'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:201:in `handle_added_update'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/update.rb:26:in `block in relay'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/update.rb:26:in `each'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/update.rb:26:in `relay'
+undefined method `relay' for nil:NilClass
 (eval):1:in `relay'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/poll.rb:228:in `block in poll_from'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/maildir.rb:161:in `block in poll'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/maildir.rb:160:in `each'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/maildir.rb:160:in `each_with_index'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/maildir.rb:160:in `poll'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/message.rb:317:in `block in sync_back'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/message.rb:316:in `any?'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/message.rb:316:in `sync_back'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/index.rb:699:in `sync_message'
+(eval):1:in `sync_message'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/poll.rb:215:in `block in poll_from'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/draft.rb:55:in `block in poll'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/draft.rb:52:in `each'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/draft.rb:52:in `poll'
 /var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/poll.rb:201:in `poll_from'
 /var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/poll.rb:146:in `block (2 levels) in do_poll'
 /var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/poll.rb:136:in `each'

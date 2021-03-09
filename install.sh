@@ -85,7 +85,7 @@ ln -s ~/.i3/dotsup ~/.sup
 ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/.i3/dotofflineimaprc ~/.offlineimaprc
 ln -s ~/.i3/dotofflineimap.py ~/.offlineimap.py
-ln -s ~/.i3/dotmsmtprc ~/.msmtprc
+cp ~/.i3/dotmsmtprc ~/.msmtprc
 ln -s ~/.i3/dotsup ~/.sup
 ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/git/my-linux-setup/linux_setup/dottmux.conf ~/.my.tmux.conf
