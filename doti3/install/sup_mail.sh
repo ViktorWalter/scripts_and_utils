@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo apt install ruby-full rubygems rake
-sudo gem install rake ncurses-ruby sup gpgme optimist
+sudo gem install rake ncurses-ruby sup gpgme optimist uri -v 0.10.0
+sudo gem uninstall -v 0.10.1
 ln -s ~/.i3/dotsup ~/.sup
 
 ~/.i3/install/offlineimap3.sh
