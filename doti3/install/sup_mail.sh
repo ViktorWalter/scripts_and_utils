@@ -1,4 +1,5 @@
-
+#!/bin/bash
+sudo apt install ruby-full rubygems rake
 sudo gem install rake ncurses-ruby sup gpgme optimist
 ln -s ~/.i3/dotsup ~/.sup
 

@@ -33,7 +33,7 @@ ubuntu-report -f send no
 sudo apt remove dunst popularity-contest unattended-upgrades -y
 sudo apt purge ubuntu-report popularity-contest apport whoopsie -y
 sudo killall dunst
-sudo apt install neovim xfce4-notifyd conky-all fatrace iotop libfftw3-dev mpg123 debtree npm gnome-tweak-tool uuid-dev ruby-full rubygems rake krita inkscape python3-tk golang mesa-utils unclutter mpv lxpolkit tlp \
+sudo apt install neovim xfce4-notifyd conky-all fatrace iotop libfftw3-dev mpg123 debtree npm gnome-tweak-tool uuid-dev krita inkscape python3-tk golang mesa-utils unclutter mpv lxpolkit tlp \
 libgtk-3-dev \
 libmirclient-dev \
 libxkbcommon-dev \
