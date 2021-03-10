@@ -46,7 +46,6 @@ scrot \
 i3lock \
 w3m \
 w3m-img \
-msmtp \
 neofetch \
 gstreamer1.0-{plugins-good,plugins-bad,plugins-ugly,libav} \
 firefox-geckodriver \
@@ -59,8 +58,6 @@ fonts-terminus \
 sudo pip3 install webdriver selenium
 
 sudo apt install --install-recommends winehq-staging
-sudo gem install rake ncurses-ruby sup gpgme optimist
-# sudo dpkg -r --force-depends gnome-icon-theme
 
 wget https://www.vpn.net/installers/logmein-hamachi_2.1.0.203-1_amd64.deb
 sudo dpkg -i logmein-hamachi_2.1.0.203-1_amd64.deb
@@ -80,13 +77,8 @@ mkdir ~/localpath
 
 systemctl --user start xfce4-notifyd
 ln -s ~/.i3/dotzsrhc ~/.zshrc
-ln -s ~/.i3/dotsup ~/.sup
 # ln -s ~/.i3/dotXresoures ~/.Xresources
 ln -s ~/.i3/dotXkeymap ~/.Xkeymap
-ln -s ~/.i3/dotofflineimaprc ~/.offlineimaprc
-ln -s ~/.i3/dotofflineimap.py ~/.offlineimap.py
-ln -s ~/.i3/dotmsmtprc ~/.msmtprc
-ln -s ~/.i3/dotsup ~/.sup
 ln -s ~/.i3/dotXkeymap ~/.Xkeymap
 ln -s ~/git/my-linux-setup/linux_setup/dottmux.conf ~/.my.tmux.conf
 sudo ln -s ~/git/networkmanager-dmenu/networkmanager_dmenu /usr/bin/
@@ -140,8 +132,4 @@ sudo cp ~/.i3/thinkpad_power_management/15-brightness.conf /etc/sudoers.d/
 ~/.i3/install/pa_applet.sh
 ~/.i3/install/cbatticon.sh
 ~/.i3/install/nordvpn.sh
-~/.i3/install/offlineimap3.sh
-
-sudo ln -s /etc/apparmor.d/usr.bin.msmtp /etc/apparmor.d/disable/
-sudo apparmor_parser -R /etc/apparmor.d/usr.bin.msmtp 
-
+~/.i3/install/sup_mail.sh
