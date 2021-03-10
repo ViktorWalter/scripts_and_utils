@@ -277,7 +277,7 @@ export NO_AT_BRIDGE=1
 
 export PROFILES_ADDITIONS=""
 export PROFILES_DELETIONS=""
-export PROFILES_BOTH="VIKTOR_BIGBOX COLORSCHEME_DARK"
+export PROFILES_BOTH="VIKTOR_THINKPAD COLORSCHEME_DARK"
 
 
 # upgrades the "git pull" to allow dotfiles profiling on linux-setup
