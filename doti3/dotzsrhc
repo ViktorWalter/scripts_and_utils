@@ -344,7 +344,7 @@ source ~/git/linux-setup/appconfig/shell/commons.sh
 source ~/mrs_workspace/src/uav_core/miscellaneous/shell_additions/shell_additions.sh
 ros
 
-alias vpn=nordvpn
+alias vpn="echo Obfuscating; ~/.i3/obfuscate.sh"
 alias sup='RUBYOPT="-W0" sup'
 
 export BLUEFOX_UV=25002534
@@ -479,8 +479,7 @@ shit() {
 # }
 export GOPATH=~/go
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/bin
-alias matlab='~/MATLAB/bin/matlab'
-alias MATLAB='~/MATLAB/bin/matlab'
+alias MATLAB='~/MATLAB/R2018b/bin/matlab'
 export UAV_NAME="uav1" 
 export NATO_NAME="" # lower-case name of the UAV frame {alpha, bravo, charlie, ...}
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-conn=`nordvpn status | grep Status: | cut -d" " -f2`
+conn=`nordvpn status | grep Status: | cut -d" " -f6`
 
 if [ "$conn" == "Connected" ]; then
   nordvpn status | grep Country: | cut -d" " -f2-
