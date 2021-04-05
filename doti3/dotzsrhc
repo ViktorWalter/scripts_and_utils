@@ -188,8 +188,7 @@ echo ${rosvals[2]}
 }
 
 
-export PATH=$PATH:/home/viktor/Matlab/Matlab/bin/glnxa64/
-alias mn='MATLAB -nodesktop -nosplash'
+# export PATH=$PATH:/home/viktor/Matlab/Matlab/bin/glnxa64/
 
 # OpenCV
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
@@ -201,7 +200,7 @@ alias ..='cd ..'
 export CUDA_BIN_PATH=/usr/local/cuda-9.2
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin
 export CUDA_HOME=$CUDA_HOME:/usr/local/cuda-9.2
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64:/usr/local/lib:/home/viktor/OpenCV/opencv_3_1/installed/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.2/lib64:/usr/local/lib
 
 set -o vi
 # use the vi navigation keys in menu completion
@@ -402,6 +401,8 @@ export BLUEFOX_UV_LEFT_EXPOSE_US=500
 # export NATO_NAME=romeo
 
 export ROS_MATER_URI=http://localhost:11311
+# export ROS_MASTER_URI=http://192.168.69.105:11311 #eric
+# export ROS_MASTER_URI=http://192.168.69.142:11311
 # export ROS_MASTER_URI=http://localhost:11311
 # export ROS_MASTER_URI=http://192.168.69.166:11311 #golf
 # export ROS_MASTER_URI=http://192.168.69.142:11311
@@ -478,11 +479,12 @@ shit() {
 #   catkin build $package --force-color 2>&1 | less -r
 # }
 export GOPATH=~/go
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/bin
-alias MATLAB='~/MATLAB/R2018b/bin/matlab'
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-9.2/bin
+alias MATLAB='~/MATLAB/bin/matlab'
+alias mn='MATLAB -nodesktop -nosplash'
 export UAV_NAME="uav1" 
 export NATO_NAME="" # lower-case name of the UAV frame {alpha, bravo, charlie, ...}
 
 alias ffs='sudo !!'
-export GOPATH=~/go
-export PATH=/opt/ros/noetic/bin:/home/viktor/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/home/viktor/go/bin:/home/viktor/localpath/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/home/viktor/Matlab/Matlab/bin/glnxa64/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-9.2/bin:/bin:/bin:/bin:/home/viktor/go/bin
+
+xsetwacom set "Wacom Intuos S Pen stylus" Mode Relative

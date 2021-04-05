@@ -68,7 +68,7 @@ endif
     let b:matlabPane=system("tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'")
     if b:matlabPane == ""
       set nolazyredraw
-      let b:matlabPane=system("sleep 2; tmux split-window -h \"cd `pwd`; MATLAB -nodesktop -nosplash\";tmux last-pane; sleep 2; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'; tmux resize-pane -R")
+      let b:matlabPane=system("sleep 2; tmux split-window -h \"cd `pwd`; /home/viktor/MATLAB/bin/matlab -nodesktop -nosplash\";tmux last-pane; sleep 2; tmux list-panes -F '#{pane_current_command} #{session_name} #{window_index} #{pane_id}' |awk '/MATLAB/ {printf \"%s\:%s.%s\",$2,$3,$4}'; tmux resize-pane -R")
       set lazyredraw
     end
     return b:matlabPane
