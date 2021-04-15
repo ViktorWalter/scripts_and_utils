@@ -128,6 +128,7 @@ ln -s ~/.i3/dotslackterm ~/.slack-term
 
 sudo cp ~/.i3/thinkpad_power_management/15-brightness.conf /etc/sudoers.d/
 
+ln -s ~/.i3/thinkpad_power_management/nvidiaRun.sh ~/localpath/
 
 ~/.i3/install/pa_applet.sh
 ~/.i3/install/cbatticon.sh

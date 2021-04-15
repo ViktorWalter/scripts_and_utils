@@ -6,4 +6,5 @@ trap cleanup INT
 tmux split-window -v "TERM=xterm-256color; cava -p ~/.i3/cavaconfig"
 tmux last-pane;
  tmux resize-pane -R;
-gdb --args mpg123 -ZCvb 2048 --cpu x86-64 ~/Music/youtube/*;
+# gdb --args mpg123 -ZCvb 2048 --cpu x86-64 ~/Music/youtube/*;
+mpg123 -ZCvb 2048 --cpu x86-64 ~/Music/youtube/*;

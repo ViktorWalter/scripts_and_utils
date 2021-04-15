@@ -400,8 +400,8 @@ export BLUEFOX_UV_LEFT_EXPOSE_US=500
 # export UAV_NAME=uav49
 # export NATO_NAME=romeo
 
-export ROS_MATER_URI=http://localhost:11311
-# export ROS_MASTER_URI=http://192.168.69.105:11311 #eric
+# export ROS_MASTER_URI=http://localhost:11311
+export ROS_MASTER_URI=http://192.168.69.108:11311 #eric
 # export ROS_MASTER_URI=http://192.168.69.142:11311
 # export ROS_MASTER_URI=http://localhost:11311
 # export ROS_MASTER_URI=http://192.168.69.166:11311 #golf
@@ -487,4 +487,4 @@ export NATO_NAME="" # lower-case name of the UAV frame {alpha, bravo, charlie, .
 
 alias ffs='sudo !!'
 
-xsetwacom set "Wacom Intuos S Pen stylus" Mode Relative
+# xsetwacom set "Wacom Intuos S Pen stylus" Mode Relative
