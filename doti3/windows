@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo grub-reboot 3
+sudo grub-reboot 2
 sudo shutdown -hr now

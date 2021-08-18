@@ -156,9 +156,9 @@ fi
 
 ros() {
   source /opt/ros/noetic/setup.zsh
-  # source /home/viktor/workspace/devel/setup.zsh
+  source /home/viktor/workspace/devel/setup.zsh
   # source /home/viktor/swarm_workspace/devel/setup.zsh
-  source /home/viktor/mrs_workspace/devel/setup.zsh
+  # source /home/viktor/mrs_workspace/devel/setup.zsh
   source /usr/share/gazebo/setup.sh
   # source ~/simulation/install/share/simulation/setup.sh
   # source ~/gazebo_plugins/devel/setup.zsh
@@ -346,12 +346,20 @@ ros
 alias vpn="echo Obfuscating; ~/.i3/obfuscate.sh"
 alias sup='RUBYOPT="-W0" sup'
 
-export BLUEFOX_UV=25002534
-export BLUEFOX=26805883
+# export BLUEFOX_UV=25002534
+# export BLUEFOX=26805883
 
-# export BLUEFOX_UV_RIGHT=25003660
-# export BLUEFOX_UV_LEFT=25003661
+# export BLUEFOX_UV_RIGHT=25003902
+# export BLUEFOX_UV_LEFT=25003875
+# export BLUEFOX_UV_BACK=25003892
 
+# export UAV_NAME=uav9
+
+export UAV_NAME=laptop
+
+export BLUEFOX_UV_LEFT=25003919
+
+#
 # export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
 # export BLUEFOX_UV_LEFT_EXPOSE_US=2000
 
@@ -392,16 +400,17 @@ export BLUEFOX=26805883
 # export BLUEFOX_UV_LEFT=25003657
 
 # export BLUEFOX_UV_RIGHT=25003654
-export BLUEFOX_UV_LEFT=25003650
+# export BLUEFOX_UV_LEFT=25003650
 #
-export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
-export BLUEFOX_UV_LEFT_EXPOSE_US=500
+# export BLUEFOX_UV_RIGHT_EXPOSE_US=1000
+# export BLUEFOX_UV_LEFT_EXPOSE_US=500
 
 # export UAV_NAME=uav49
 # export NATO_NAME=romeo
 
-# export ROS_MASTER_URI=http://localhost:11311
-export ROS_MASTER_URI=http://192.168.69.108:11311 #eric
+export ROS_MASTER_URI=http://localhost:11311
+# export ROS_MASTER_URI=http://192.168.69.109:11311 #eric
+# export ROS_MASTER_URI=http://192.168.69.106:11311 #eric
 # export ROS_MASTER_URI=http://192.168.69.142:11311
 # export ROS_MASTER_URI=http://localhost:11311
 # export ROS_MASTER_URI=http://192.168.69.166:11311 #golf
@@ -482,9 +491,15 @@ export GOPATH=~/go
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda-9.2/bin
 alias MATLAB='~/MATLAB/bin/matlab'
 alias mn='MATLAB -nodesktop -nosplash'
-export UAV_NAME="uav1" 
+# export UAV_NAME="uav1" 
 export NATO_NAME="" # lower-case name of the UAV frame {alpha, bravo, charlie, ...}
 
 alias ffs='sudo !!'
 
 # xsetwacom set "Wacom Intuos S Pen stylus" Mode Relative
+#
+source /opt/pylon/bin/pylon-setup-env.sh /opt/pylon
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

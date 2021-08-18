@@ -32,12 +32,12 @@ else
       ~/.screenlayout/three_monitor_lab.sh
     fi
 
-    # for i in "${!scr[@]}"; do
-    #   if [[ "${scr[$i]}" != *eDP* ]]; then
-    #     xrandr --output ${scr[$i]} --auto --right-of $previousMonitor
-    #     previousMonitor=${scr[$i]}
-    #   fi;
-    # done;
+    for i in "${!scr[@]}"; do
+      if [[ "${scr[$i]}" != *eDP* ]]; then
+        xrandr --output ${scr[$i]} --auto --right-of $previousMonitor
+        previousMonitor=${scr[$i]}
+      fi;
+    done;
     pacmd set-default-sink `pactl list short sinks | grep Dock | tr '\t' ' ' | cut -d' ' -f2`
   fi
 fi

@@ -1,10 +1,9 @@
---- NoMethodError from thread: main
-undefined method `content_type' for #<Redwood::Message:0x00007fd6309bc568>
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_view_mode.rb:1027:in `view'
-/home/viktor/.sup/hooks/startup.rb:4:in `view_browser'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/mode.rb:59:in `handle_input'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:222:in `handle_input'
-/var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:257:in `<module:Redwood>'
+--- Lockfile::StolenLockError from thread: main
+Lockfile::StolenLockError
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/util/ncurses.rb:21:in `select'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/util/ncurses.rb:21:in `nonblocking_getwch'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/util/ncurses.rb:57:in `get'
+/var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:230:in `<module:Redwood>'
 /var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:76:in `<top (required)>'
 /usr/local/bin/sup:23:in `load'
 /usr/local/bin/sup:23:in `<main>'

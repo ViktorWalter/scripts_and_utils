@@ -1,6 +1,8 @@
 #!/bin/bash
 rand=$[ $RANDOM % "6" ]
 
+rm /tmp/s.png
+rm /tmp/s.jpg
 case $rand in
   0)
   scrot /tmp/s.png && convert -gravity center -fill "#00bffa" /tmp/s.png -brightness-contrast -10x0 -tint 80 -blur 0x2 -paint 3 \( ~/.i3/ohhellno_shadow.png -resize 700x700 -geometry -400+0 \)  -composite /tmp/s.png
