@@ -20,7 +20,7 @@ non_random_words=`cat $ALL_NON_RANDOM_WORDS | wc -l`
  
 # while loop to generate random words  
 # number of random generated words depends on supplied argument 
-while [ "$X" -lt "\$1" ] 
+while [ "$X" -lt "$1" ] 
 do 
 random_number=`od -N3 -An -i /dev/urandom | 
 awk -v f=0 -v r="$non_random_words" '{printf "%i\n", f + r * \$1 / 16777216}'` 
