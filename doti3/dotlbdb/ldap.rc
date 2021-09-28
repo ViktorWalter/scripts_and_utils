@@ -2,8 +2,8 @@
   'cvut'   => ['ldap.feld.cvut.cz:389',
            'ou=People,o=feld.cvut.cz',
            'givenname sn cn mail',
-           'givenname sn cn mail telephonenumber',
-           '${mail}', '${cn}', '${telephonenumber}']
+           'givenname sn cn mail telephonenumber roomnumber',
+           '${mail}', 'name: ${cn}', 'tel.: ${telephonenumber}    room: ${roomnumber}']
 );
 
 # hostname of your ldap server
@@ -13,7 +13,7 @@ $ldap_search_fields    = 'givenname sn cn mail';
 $ldap_expected_answers = 'givenname sn cn mail';
 $ldap_result_email     = '${mail}';
 $ldap_result_realname  = '${givenname}';
-$ldap_result_comment   = '${telephonenumber}';
+$ldap_result_comment   = 'tel.: ${telephonenumber}    room: ${roomnumber}';
 $ignorant = 0;
 $ldap_bind_dn = '';
 $ldap_bind_password = '';
