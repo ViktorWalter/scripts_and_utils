@@ -503,3 +503,6 @@ source /opt/pylon/bin/pylon-setup-env.sh /opt/pylon
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export MMA_COMMAND="/home/viktor/Mathematica/Executables/math -mathlink"
+export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist

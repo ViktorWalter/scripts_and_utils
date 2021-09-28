@@ -1,9 +1,9 @@
---- Lockfile::StolenLockError from thread: main
-Lockfile::StolenLockError
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/util/ncurses.rb:21:in `select'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/util/ncurses.rb:21:in `nonblocking_getwch'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/util/ncurses.rb:57:in `get'
-/var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:230:in `<module:Redwood>'
+--- RuntimeError from thread: main
+dirty threads remain
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:551:in `cleanup'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:387:in `kill_buffer'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:369:in `kill_all_buffers_safely'
+/var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:270:in `<module:Redwood>'
 /var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:76:in `<top (required)>'
 /usr/local/bin/sup:23:in `load'
 /usr/local/bin/sup:23:in `<main>'

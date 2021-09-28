@@ -13,4 +13,5 @@ ln -s ~/.i3/dotmsmtprc ~/.msmtprc
 sudo ln -s /etc/apparmor.d/usr.bin.msmtp /etc/apparmor.d/disable/
 sudo apparmor_parser -R /etc/apparmor.d/usr.bin.msmtp 
 
-
+sudo apt install lbdb libnet-ldap-perl
+ln -s ~/.i3/dotlbdb ~/.lbdb
