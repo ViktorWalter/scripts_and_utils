@@ -31,12 +31,4 @@
   id: 4
   labels:
   - G
-- !supmua.org,2006-10-01/Redwood/Maildir
-  uri: maildir:/home/viktor/mail/laas/inbox
-  usual: true
-  archived: false
-  sync_back: true
-  id: 5
-  labels:
-  - L
 - !supmua.org,2006-10-01/Redwood/SentLoader {}
