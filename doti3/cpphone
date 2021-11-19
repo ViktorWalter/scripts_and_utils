@@ -1,0 +1,2 @@
+#!/bin/bash
+adb pull "/storage/emulated/0/$1" .

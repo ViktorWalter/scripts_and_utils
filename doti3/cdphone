@@ -1,0 +1,2 @@
+#!/bin/bash
+cd `mount | grep 'gvfsd-fuse' | cut -d" " -f3`'/mtp'* 
