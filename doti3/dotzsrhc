@@ -506,3 +506,9 @@ export NVM_DIR="$HOME/.nvm"
 
 export MMA_COMMAND="/home/viktor/Mathematica/Executables/math -mathlink"
 export NVM_NODEJS_ORG_MIRROR=https://nodejs.org/dist
+
+alias rviz="nvidiaRun.sh rviz"
+alias gzclient="nvidiaRun.sh gzclient"
+alias gazebo="nvidiaRun.sh gazebo"
+alias roslaunch="nvidiaRun.sh roslaunch"
+alias rosrun="nvidiaRun.sh rosrun"

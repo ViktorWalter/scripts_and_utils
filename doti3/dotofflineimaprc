@@ -86,6 +86,33 @@ nametrans = lambda folder: {'INBOX': 'inbox',
 folderfilter = lambda folder: folder == 'INBOX'
 
 
+[Account disroot]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = disroot-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = disroot-remote
+
+
+[Repository disroot-local]
+# OfflineIMAP supports Maildir, GmailMaildir, and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/mail/disroot
+nametrans = lambda folder: {'inbox': 'INBOX',
+                            'junk': 'Junk',
+                            }.get(folder, folder)
+
+[Repository disroot-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+type = Maildir
+remotehost = disroot.org
+remoteuser = viktor.walter@disroot.org
+remotepasseval = keyring.get_password('disroot', 'personal')
+nametrans = lambda foldername: re.sub('INBOX', 'inbox',
+                               re.sub('Junk','junk',
+                               foldername))
+folderfilter = lambda foldername: foldername in ['INBOX','Junk']
 # [Account laas]
 # localrepository = laas-local
 # remoterepository = laas-remote
