@@ -1,7 +1,7 @@
 [general]
 pythonfile = ~/.offlineimap.py
 # List of accounts to be synced, separated by a comma.
-accounts = fel,outlook,gmail
+accounts = fel,outlook,gmail,disroot
 # accounts = outlook,gmail
 ui = ttyui
 
@@ -105,9 +105,9 @@ nametrans = lambda folder: {'inbox': 'INBOX',
 [Repository disroot-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-type = Maildir
+type = IMAP
 remotehost = disroot.org
-remoteuser = viktor.walter@disroot.org
+remoteuser = viktor.walter
 remotepasseval = keyring.get_password('disroot', 'personal')
 nametrans = lambda foldername: re.sub('INBOX', 'inbox',
                                re.sub('Junk','junk',

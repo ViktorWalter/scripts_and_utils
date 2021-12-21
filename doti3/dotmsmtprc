@@ -49,7 +49,7 @@ port 587
 
 account disroot
 host disroot.org
-user viktor.walter@disroot.org
+user viktor.walter
 auth on
 tls on
 tls_starttls on

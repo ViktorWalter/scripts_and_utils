@@ -1,14 +1,14 @@
 {
 	"name": "Vimium C",
-	"@time": "12/5/2019, 11:47:09 AM",
-	"time": 1575542829712,
+	"@time": "12/21/2021, 3:59:04 PM",
+	"time": 1640098744327,
 	"environment": {
-		"extension": "1.78.7",
+		"extension": "1.80.3",
 		"platform": "linux"
 	},
 	"deepHints": "true",
 	"exclusionRules": [],
-	"extWhiteList": [
+	"extAllowList": [
 		"# modified { Vomnibar Page, X New Tab, PDF Viewer }",
 		"ekohaelnhhdhbccgefjmjpdjoijhojgd",
 		"hdnehngglnbnehkfcidabjckinphnief",
@@ -18,6 +18,7 @@
 	],
 	"grabBackFocus": true,
 	"hideHud": true,
+	"ignoreKeyboardLayout": true,
 	"keyMappings": [
 		"# Insert your preferred key mappings here.",
 		"map <c-e> Vomnibar.activate",
@@ -63,7 +64,7 @@
 		"vimium: chrome-extension://hfjbmagddngcpeloejdejnfgbamkjaeg/pages/options.html",
 		""
 	],
-	"searchUrl": "https://searx.info/?preferences=eJx9VU_v2zYM_TTzxUixtoedfBi29Q8woEN_6a4CI9EOZ0l0KTmJ--lHJXaiFEUPSSCKj-R7FBkLGQcWwtQNGFHANx7iMMOAHcbdl5fGswVfDg3MmS2HyWPGzs12LJ-BGwrqbSbhy9LtZcYmYD6y697_tW8S9JgQxB67X5t8xIAdJwvSCKbZ52Q4mohnk-HQvQOfsHFMRi_Zn1A6Bj2-YhmaK2qX8qK1eB7IssPTzoGMjaMEB4_OYBwoFibMg8d28rC0YU5kjbn-_PLmj6crPilvY07kkJNe9gIBPB0EjaGsBrBD4rnyyDwunDkdeYRY2XnCKDixRuvJYzEJOkfZFHapCrUVQpevM9nRmFV2NY16hpQePnEKayFbsKvUJZwjm79xxBrfC2KbuM9nEGwdCdrMsqwhVL8obcoy2zxL4Z0sYbRYEi0Aj7Q9CHMd-NbAonhbvtaAvRMm9yDsZoexhi1wfI6DeQkcPT2X_Z2mWxXODa3DniJl4phqRKmGTthSeqZPcSSwlUqbbIktgW8DOoKCn8Y2kAjLSmWgQV8QpFzHowhVh-0somottcdjBtpbyir1EQ4C5WtNEZaAQbvRZoGYvI6dq0PdOnBHfz1DfCpmez6b2GuP1sd1Q99rReEzPYU_UD5ooZjXau5PbYt3YviBTmvSe1n19MA0VfjA_yGOP2nr92PxcBwoezishb1--_a3S0XlxmwDJ_wWIdTgMq2gqhZLen4PC0SHl9ry-lJxuUvwaLG1u3yqDHNMSjUdawWUZaZwbXVuMP5o8dxTPjbT5Gf1SN0dsRk-6eIwt11odDDG-0I8aA8TSlmMJe9eQNsn5svnv9VdNxeKWq_o361F5fHnp496cxbKZaI_7Pf_vFTnF_S9-Rh7lgDXebrayiCVhPb2L7CYhF6Xht6pa5k81CUh7It4_1LYeRrRHDmPuKT_ARwxWIc=&q=$s",
+	"searchUrl": "http://apps.disroot.org/?preferences=eJxtVU2z2zYM_DXVReNM0xx60iHTr2SmM8nkOb1yIBKWEJGEAlL2U399Qdvyo15zkS2Q2AWWS8hCxoGFMHUDRhTwP_3yGwUYMOmfiJfykyxhtNh4iMOiSx3Gw9enxrMFX14aWDJbDrPHjF1zTTez8PPaHWXBJmAe2XV__XFsEpwwIYgdu5-bPGLArkfMwpwbwbT4nAxHo8QmQ9_9CT5h45iMLrI_o3RazGFc-jf50nCyIIeUV63C80CWHZ4bcGfQap2581xLcJSg9xrEOFDUbgWdo2zMvcWS2qMMxlDWV0-9gKxt0SRRMuZFnLgCGBOWRLZIgwFiJtsmO7IHMeYulq5lnlbOnEaeIBpzJodcuC40UaF9kN8gT-TxttyvNSHmNXD0mlJHB8QpU8B0r7iA9szTrtaBefDYzh7WFuY5vZAE_qYA9d6TILaJT_kCgq0jQZtZ1jt8UZLO2O61WIdB9wjGXJevdXEE2TUR53BH2oT_McpDpInsBClVkZNQnAis4mz-XGLS3tJYhWqw7ZAGyh76jX8JaoQK96b-7nQSL2J3cr86yw15ayaxJfBtQEeg4bfPVUXODa3DE0Uquuz0o6i0xEuqDMWe3L2DtFNV5ZdEeSdrT7lf7IT53tzbd-9-fa6aqQj-r-yG7blPGd_IZiVr7SGfqwyYpzaQCMtL0k21R5Olvu8L551oCf-NEPaRYqRy2dryuBNiZvY7YXjGKDhzVWXt5cBnwronFL6Q29sZApRrvJGcnHDZsuG5xWHcWRRU4Dpw1ZzXMszqO0WDThJIOwvL0q8Dhk3BV255XLo1YNA71WaBmLyOXrd3A_zomF577aH5CDqkyqOwNhj3A-5l5M1-0VDqPsarCVFHlLAvjJ9UZvPeWlSe3z991CF7Ed3wwNoyn67HVgazvX0vVh2uXgeEYhwF1IBivn75W_P1ZFA0-uF4_Py04en7PxQOniY0I-cJ11L-E_qT0ZpYAlxvRkkrl_nG2qiIqNz_AePzgEs=&q=$s",
 	"showAdvancedCommands": true,
 	"showAdvancedOptions": true,
 	"smoothScroll": false

@@ -31,4 +31,20 @@
   id: 4
   labels:
   - G
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/viktor/mail/disroot/inbox
+  usual: true
+  archived: false
+  sync_back: true
+  id: 5
+  labels:
+  - D
+- !supmua.org,2006-10-01/Redwood/Maildir
+  uri: maildir:/home/viktor/mail/disroot/junk
+  usual: true
+  archived: false
+  sync_back: true
+  id: 6
+  labels:
+  - Dj
 - !supmua.org,2006-10-01/Redwood/SentLoader {}
