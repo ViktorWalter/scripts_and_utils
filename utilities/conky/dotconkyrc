@@ -32,7 +32,7 @@ conky.config = {
 	--use_spacer = 'none',
 	show_graph_scale = false,
 	show_graph_range = false,
-	lua_load = 'conky_draw.lua',
+	lua_load = 'conky-draw/conky_draw.lua',
 	lua_draw_hook_pre = 'main',
   double_buffer = true,
 };
