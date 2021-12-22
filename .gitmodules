@@ -8,7 +8,7 @@
 	path = doti3/i3_kde_NVI
 	url = git@github.com:ViktorWalter/i3_kde_NVI.git
 [submodule "doti3/i3scripts"]
-	path = doti3/i3scripts
+	path = scripts/i3scripts
 	url = git@github.com:justbuchanan/i3scripts.git
 [submodule "doti3/conky-draw"]
 	path = doti3/conky-draw
