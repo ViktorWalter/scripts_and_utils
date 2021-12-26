@@ -1,9 +1,6 @@
 [submodule "doti3/i3"]
 	path = doti3/i3
 	url = git@github.com:sLite/i3.git
-[submodule "doti3/i3scripts"]
-	path = scripts/i3scripts
-	url = git@github.com:justbuchanan/i3scripts.git
 [submodule "doti3/conky-draw"]
 	path = doti3/conky-draw
 	url = https://github.com/fisadev/conky-draw.git
