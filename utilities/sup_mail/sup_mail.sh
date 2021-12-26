@@ -18,3 +18,5 @@ sudo apparmor_parser -R /etc/apparmor.d/usr.bin.msmtp
 
 sudo apt install lbdb libnet-ldap-perl
 ln -s ${script_path}/lbdb/dotlbdb ~/.lbdb
+
+${script_path}/set_mail_passwords.sh
