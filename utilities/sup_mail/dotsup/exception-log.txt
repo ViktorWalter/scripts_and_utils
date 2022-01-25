@@ -1,9 +1,16 @@
---- RuntimeError from thread: main
-dirty threads remain
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:551:in `cleanup'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:387:in `kill_buffer'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:369:in `kill_all_buffers_safely'
-/var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:270:in `<module:Redwood>'
+--- NoMethodError from thread: main
+undefined method `has_label?' for nil:NilClass
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:282:in `block in edit_message'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:83:in `block (2 levels) in each'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:176:in `each_with_stuff'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:80:in `block in each'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:77:in `each'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:77:in `each'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:282:in `find'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:282:in `edit_message'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/mode.rb:59:in `handle_input'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:222:in `handle_input'
+/var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:257:in `<module:Redwood>'
 /var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:76:in `<top (required)>'
 /usr/local/bin/sup:23:in `load'
 /usr/local/bin/sup:23:in `<main>'
