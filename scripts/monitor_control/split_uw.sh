@@ -44,3 +44,5 @@ left_pixel_x_offset=$display_pixel_x_offset
 right_pixel_x_offset=$(($left_pixel_x_offset+$left_pixel_width))
 
 xrandr --setmonitor ${display_id}-1 ${left_pixel_width}/${left_physical_width}x${display_pixel_height}/${display_physical_height}+${left_pixel_x_offset}+${display_pixel_y_offset} ${display_id}; xrandr --setmonitor ${display_id}-2 ${right_pixel_width}/${right_physical_width}x${display_pixel_height}/${display_physical_height}+${right_pixel_x_offset}+${display_pixel_y_offset} none
+
+i3-msg reload
