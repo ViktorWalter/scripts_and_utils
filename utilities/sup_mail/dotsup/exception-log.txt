@@ -1,13 +1,7 @@
 --- NoMethodError from thread: main
-undefined method `has_label?' for nil:NilClass
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:282:in `block in edit_message'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:83:in `block (2 levels) in each'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:176:in `each_with_stuff'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:80:in `block in each'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:77:in `each'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/thread.rb:77:in `each'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:282:in `find'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_index_mode.rb:282:in `edit_message'
+undefined method `content_type' for #<Redwood::Chunk::Signature:0x00007fa2d0601e48>
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_view_mode.rb:1027:in `view'
+/home/viktor/.sup/hooks/startup.rb:4:in `view_browser'
 /var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/mode.rb:59:in `handle_input'
 /var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:222:in `handle_input'
 /var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:257:in `<module:Redwood>'
