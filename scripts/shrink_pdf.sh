@@ -14,7 +14,9 @@ if [ "${extension,,}" != "pdf" ]; then #converted to lowercase
   echo "The provided file is not a PDF."
   exit 1
 fi
-echo $filename
-echo $extension
+# echo $filename
+# echo $extension
+# echo $pdf_source
 
-ps2pdf -dPDFSETTINGS=/ebook $pdf_source ${filename}_s.pdf
+gs -sDEVICE=pdfwrite -dPDFA=true -dPDFACompatibilityPolicy=1 -dCompatibilityLevel=1.4 -dPrinted=false -dPreserveAnnots=true -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -o ${filename}_s.pdf ${pdf_source}
+# gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -o wtf_s.pdf ${pdf_source}
