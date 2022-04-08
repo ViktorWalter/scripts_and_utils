@@ -7,10 +7,10 @@ unset HOST_NUM
 
 while getopts vt:rn: o; do
   case $o in
-    (t) TARGET_HOST=$OPTARG; echo "T" ;;
-    (n) HOST_NUM=$OPTARG; echo "N="${OPTARG};;
-    (r) NET_ROOT=1; echo "R" ;;
-    (v) DEBUG=1; echo "D" ;;
+    (t) TARGET_HOST=$OPTARG;;
+    (n) HOST_NUM=$OPTARG;;
+    (r) NET_ROOT=1;;
+    (v) DEBUG=1;;
     (:) echo "Option: ${OPTARG} reguires and argument"; exit 1 ;;
   esac
 done
