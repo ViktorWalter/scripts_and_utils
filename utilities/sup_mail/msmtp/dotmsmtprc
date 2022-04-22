@@ -18,6 +18,22 @@ from viktor.walter@fel.cvut.cz
 passwordeval python3 -c "import keyring; print(keyring.get_password('fel', 'personal'))"
 port 465
 
+account fel_x
+host outlook.office365.com
+user Viktor.Walter@cvut.cz
+auth on
+tls on
+tls_starttls off
+tls_nocertcheck
+# tls_trust_file /etc/ssl/certs/ca-certificates.crt
+# The value of `from` is only used when you're not using sup.
+# But it is necssary if you're testing things out.
+# tls_trust_file /etc/ssl/certs/usenet.crt
+# tls_trust_file /home/viktor/.sup/usenet.crt
+from Viktor.Walter@cvut.cz
+passwordeval python3 -c "import keyring; print(keyring.get_password('fel_x', 'personal'))"
+port 587
+
 account outlook
 host smtp-mail.outlook.com
 user viktor_walter@outlook.com

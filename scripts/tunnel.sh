@@ -18,6 +18,7 @@ done
 if [ -z "${HOST_NUM+x}" ]; then echo "Please provide local host number with -n."; exit 1; fi
 
 if [ -z "${TARGET_HOST+x}" ] && [ -z "${NET_ROOT+x}" ]; then echo "Please provide target host with -t or set the current host as root with -r."; exit 1; fi
+if [ -n "${TARGET_HOST}" ] && [ -n "${NET_ROOT}" ]; then echo "This host is set as root with -r, the target host will not be used. "; fi
 
 # TARGET_HOST=$1
 # HOST_NUM=$2
