@@ -1,2 +1,2 @@
 #!/bin/bash
-xset r rate 280 40
+xset r rate 350 55 2> /dev/null

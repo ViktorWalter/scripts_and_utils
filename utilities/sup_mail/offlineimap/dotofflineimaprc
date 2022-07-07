@@ -1,7 +1,7 @@
 [general]
 pythonfile = ~/.offlineimap.py
 # List of accounts to be synced, separated by a comma.
-accounts = fel,outlook,gmail,disroot
+accounts = fel,fel_x,outlook,gmail,disroot
 # accounts = outlook,gmail
 ui = ttyui
 
