@@ -18,5 +18,7 @@ fi
 # echo $extension
 # echo $pdf_source
 
-gs -sDEVICE=pdfwrite -dPDFA=true -dPDFACompatibilityPolicy=1 -dCompatibilityLevel=1.4 -dPrinted=false -dPreserveAnnots=true -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -o ${filename}_s.pdf ${pdf_source}
-# gs -sDEVICE=pdfwrite -dPDFSETTINGS=/ebook -o wtf_s.pdf ${pdf_source}
+# gs -sDEVICE=pdfwrite -dPDFA=true -dPDFACompatibilityPolicy=1 -dCompatibilityLevel=1.4 -dPrinted=false -dPreserveAnnots=true -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -o ${filename}_s.pdf ${pdf_source}
+# gs -sDEVICE=pdfwrite -dPDFSETTINGS=/printer -r150 -o ${filename}_s.pdf ${pdf_source}
+gs -sDEVICE=pdfwrite -dDownsampleColorImages=true -dColorImageResolution=300 -o ${filename}_s.pdf ${pdf_source}
+
