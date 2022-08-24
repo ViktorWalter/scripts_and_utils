@@ -27,12 +27,27 @@
 :accounts:
   :default:
     :name: Viktor Walter
-    :email: waltevik@fel.cvut.cz
-    :alternates:
-    - viktor_walter@outlook.com
-    - ciernobiely@gmail.com
-    - viktor.walter@disroot.org
-    :sendmail: msmtp -t --read-envelope-from
+    :email: viktor.walter@fel.cvut.cz
+    :sendmail: msmtp -t --account=work --read-envelope-from
     :signature: "/home/viktor/.sup/signature"
     :gpgkey: ''
+  :personal:
+    :name: Viktor Walter
+    :email: viktor.walter@disroot.org
+    :sendmail: msmtp -t --account=personal --read-envelope-from
+    :signature: ""
+    :gpgkey: ''
+  :outlook:
+    :name: Viktor Walter
+    :email: viktor_walter@outlook.com
+    :sendmail: msmtp -t --account=outlook --read-envelope-from
+    :signature: ""
+    :gpgkey: ''
+  :frivolous:
+    :name: Viktor Walter
+    :email: ciernobiely@gmail.com
+    :sendmail: msmtp -t --account=frivolous --read-envelope-from
+    :signature: ""
+    :gpgkey: ''
+
 :time_mode: 24h
