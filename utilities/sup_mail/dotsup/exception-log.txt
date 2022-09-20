@@ -1,11 +1,10 @@
 --- NoMethodError from thread: main
-undefined method `[]' for nil:NilClass
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/account.rb:48:in `add_account'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/account.rb:38:in `initialize'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/util.rb:609:in `new'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/util.rb:609:in `init'
-/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup.rb:173:in `start'
-/var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:145:in `<module:Redwood>'
+undefined method `content_type' for #<Redwood::Chunk::Text:0x00007f0b941dce18>
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/modes/thread_view_mode.rb:1027:in `view'
+/home/viktor/.sup/hooks/startup.rb:4:in `view_browser'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/mode.rb:59:in `handle_input'
+/var/lib/gems/2.7.0/gems/sup-1.0/lib/sup/buffer.rb:222:in `handle_input'
+/var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:257:in `<module:Redwood>'
 /var/lib/gems/2.7.0/gems/sup-1.0/bin/sup:76:in `<top (required)>'
 /usr/local/bin/sup:23:in `load'
 /usr/local/bin/sup:23:in `<main>'

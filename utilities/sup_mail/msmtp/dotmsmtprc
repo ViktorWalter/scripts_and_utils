@@ -60,7 +60,7 @@ tls_nocertcheck
 # The value of `from` is only used when you're not using sup.
 # The value of `from` is only used when you're not using sup.
 # But it is necessary if you're testing things out.
-from Viktor Walter
+from ciernobiely@gmail.com
 passwordeval python3 -c "import keyring; print(keyring.get_password('gmail', 'personal'))"
 port 587
 
@@ -74,7 +74,7 @@ tls_nocertcheck
 # tls_trust_file /etc/ssl/certs/ca-certificates.crt
 # The value of `from` is only used when you're not using sup.
 # But it is necessary if you're testing things out.
-from Viktor Walter
+from viktor.viktor@disroot.org
 passwordeval python3 -c "import keyring; print(keyring.get_password('disroot', 'personal'))"
 port 587
 
