@@ -5,6 +5,11 @@ script_path=`dirname "$0"`
 sudo apt install ruby-full rubygems rake
 sudo gem install rake ncurses-ruby sup gpgme optimist uri -v 0.10.0
 sudo gem uninstall -v 0.10.1
+
+git clone https://github.com/ViktorWalter/gmail-oauth2-tools.git ${script_path}
+cd ${script_path}/gmail-oauth2-tools
+python python/oauth2.py --generate_oauth2_token --client_secret=$(cat ../api_key.txt) 
+
 ln -s ${script_path}/dotsup ~/.sup
 
 ${script_path}/offlineimap3.sh

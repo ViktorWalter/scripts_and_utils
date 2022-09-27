@@ -1,6 +1,12 @@
 #!/bin/bash
 gmail_password=`pass Email/gmail | head -n1`
 python3 -c "import keyring; keyring.set_password('gmail', 'personal', '${gmail_password}')"
+gmail_ci=`pass Email/gmail_o | head -n1`
+python3 -c "import keyring; keyring.set_password('gmail_client_id', 'personal', '${gmail_ci}')"
+gmail_ci=`pass Email/gmail_o | head -n2 | tail -n1`
+python3 -c "import keyring; keyring.set_password('gmail_client_secret', 'personal', '${gmail_ci}')"
+gmail_ci=`pass Email/gmail_o | tail -n1`
+python3 -c "import keyring; keyring.set_password('gmail_refresh_token', 'personal', '${gmail_ci}')"
 
 outlook_password=`pass Email/outlook | head -n1`
 python3 -c "import keyring; keyring.set_password('outlook', 'personal', '${outlook_password}')"
