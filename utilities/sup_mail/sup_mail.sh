@@ -6,9 +6,17 @@ sudo apt install ruby-full rubygems rake
 sudo gem install rake ncurses-ruby sup gpgme optimist uri -v 0.10.0
 sudo gem uninstall -v 0.10.1
 
+#for GMail OAUTH2
 git clone https://github.com/ViktorWalter/gmail-oauth2-tools.git ${script_path}
 cd ${script_path}/gmail-oauth2-tools
 python python/oauth2.py --generate_oauth2_token --client_secret=$(cat ../api_key.txt) 
+
+#for Office365 OAUTH2
+git clone https://github.com/UvA-FNWI/M365-IMAP ${script_path}
+cd ${script_path}/M365-IMAP
+pip3 install msal
+# add the client ID and secret from step 1 to config.py 
+# python3 get_token.py
 
 ln -s ${script_path}/dotsup ~/.sup
 
