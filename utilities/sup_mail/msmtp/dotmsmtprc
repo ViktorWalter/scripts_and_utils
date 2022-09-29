@@ -20,8 +20,8 @@ passwordeval python3 -c "import keyring; print(keyring.get_password('fel', 'pers
 port 465
 
 account fel_x
-host outlook.office365.com
-user Viktor.Walter@cvut.cz
+host 587
+user waltevik@cvut.cz
 auth on
 tls on
 tls_starttls off
@@ -50,6 +50,7 @@ passwordeval python3 -c "import keyring; print(keyring.get_password('outlook', '
 port 587
 
 account frivolous
+auth oauthbearer
 host smtp.gmail.com
 user ciernobiely@gmail.com
 # tls_starttls off
@@ -61,7 +62,7 @@ tls_nocertcheck
 # The value of `from` is only used when you're not using sup.
 # But it is necessary if you're testing things out.
 from ciernobiely@gmail.com
-passwordeval python3 -c "import keyring; print(keyring.get_password('gmail', 'personal'))"
+passwordeval python3 -c "import keyring; print(keyring.get_password('gmail_refresh_token', 'personal'))" #UNTESTED
 port 587
 
 account personal
