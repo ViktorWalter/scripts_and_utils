@@ -1,6 +1,8 @@
-F
-O
-Oj
-G
 D
 Dj
+F
+Fx
+G
+O
+Oj
+SENT

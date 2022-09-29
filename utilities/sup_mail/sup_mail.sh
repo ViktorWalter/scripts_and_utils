@@ -2,9 +2,10 @@
 
 script_path=`dirname "$0"`
 
+sudo apt remove ruby-xapian
 sudo apt install ruby-full rubygems rake
-sudo gem install rake ncurses-ruby sup gpgme optimist uri -v 0.10.0
-sudo gem uninstall -v 0.10.1
+sudo gem install rake ncurses-ruby sup gpgme optimist uri:0.10.0 xapian-ruby
+sudo gem uninstall uri:0.10.1
 
 #for GMail OAUTH2
 git clone https://github.com/ViktorWalter/gmail-oauth2-tools.git ${script_path}
