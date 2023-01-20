@@ -47,23 +47,24 @@ nametrans = lambda folder: {'inbox': 'INBOX',
                             }.get(folder, folder)
 
 [Repository fel_x-remote]
-# auth_mechanisms = XOAUTH2
-# ssl_version = tls1_2
+auth_mechanisms = XOAUTH2
+ssl_version = tls1_2
 
 #From Thunderbird (https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm)
-# oauth2_client_id = 08162f7c-0fd2-4200-a84a-f25a4db0b584 
-# oauth2_client_secret = TxRBilcHdC6WGBee]fs?QR:SJ8nI[g82
-# oauth2_refresh_token_eval = keyring.get_password('o365_rt', 'personal')
+oauth2_client_id = 08162f7c-0fd2-4200-a84a-f25a4db0b584 
+oauth2_client_secret = TxRBilcHdC6WGBee]fs?QR:SJ8nI[g82
+oauth2_refresh_token_eval = keyring.get_password('o365_rt', 'personal')
 
 oauth2_request_url = https://login.microsoftonline.com/common/oauth2/v2.0/token
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 type = IMAP
 remoteport=993
-remotehost = mail.cvut.cz
+remotehost = outlook.office365.com
 remoteuser = waltevik@cvut.cz
 remotepasseval = keyring.get_password('fel_x', 'personal')
 nametrans = lambda folder: {'INBOX': 'inbox',
                             }.get(folder, folder)
+# ssl = yes
 folderfilter = lambda folder: folder == 'INBOX'
 
 [Account outlook]
