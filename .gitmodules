@@ -4,3 +4,6 @@
 [submodule "doti3/conky-draw"]
 	path = doti3/conky-draw
 	url = https://github.com/fisadev/conky-draw.git
+[submodule "utilities/gmail-oauth2-tools"]
+	path = utilities/gmail-oauth2-tools
+	url = git@github.com:ViktorWalter/gmail-oauth2-tools.git
