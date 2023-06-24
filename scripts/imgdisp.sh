@@ -11,6 +11,15 @@ FONTW=8  # Size of one terminal column
 COLUMNS=`tput cols`
 LINES=`tput lines`
 
+if [ "$#" -ne 3 ]; then
+	xoff=0
+	yoff=0
+else
+	xoff=$2
+	yoff=$3
+fi
+
+
 read width height <<< `echo -e "5;$FILENAME" | $W3MIMGDISPLAY`
 
 max_width=$(($FONTW * $COLUMNS))
@@ -25,7 +34,7 @@ width=$(($width * $max_height / $height))
 height=$max_height
 fi
 
-w3m_command="0;1;0;0;$width;$height;;;;;$FILENAME\n4;\n3;"
+w3m_command="0;1;$xoff;$yoff;$width;$height;;;;;$FILENAME\n4;\n3;"
 
 tput cup $(($height/$FONTH)) 0
 echo -e $w3m_command|$W3MIMGDISPLAY
