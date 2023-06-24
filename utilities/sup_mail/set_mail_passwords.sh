@@ -5,7 +5,8 @@ gmail_ci=`pass Email/gmail_o | head -n1`
 python3 -c "import keyring; keyring.set_password('gmail_client_id', 'personal', '${gmail_ci}')"
 gmail_cs=`pass Email/gmail_o | head -n2 | tail -n1`
 python3 -c "import keyring; keyring.set_password('gmail_client_secret', 'personal', '${gmail_cs}')"
-gmail_rt=`pass Email/gmail_o | tail -n1`
+gmail_rt=`pass Email/gmail_o_rt`
+#echo $gmail_rt
 python3 -c "import keyring; keyring.set_password('gmail_refresh_token', 'personal', '${gmail_rt}')"
 
 outlook_password=`pass Email/outlook | head -n1`
