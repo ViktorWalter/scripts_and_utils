@@ -75,7 +75,7 @@ tls_nocertcheck
 # tls_trust_file /etc/ssl/certs/ca-certificates.crt
 # The value of `from` is only used when you're not using sup.
 # But it is necessary if you're testing things out.
-from viktor.viktor@disroot.org
+from viktor.walter@disroot.org
 passwordeval python3 -c "import keyring; print(keyring.get_password('disroot', 'personal'))"
 port 587
 
