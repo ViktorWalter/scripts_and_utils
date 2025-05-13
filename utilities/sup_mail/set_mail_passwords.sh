@@ -11,6 +11,9 @@ python3 -c "import keyring; keyring.set_password('gmail_refresh_token', 'persona
 
 outlook_password=`pass Email/outlook | head -n1`
 python3 -c "import keyring; keyring.set_password('outlook', 'personal', '${outlook_password}')"
+outlook_rt=`pass Email/outlook_rt`
+#echo $gmail_rt
+python3 -c "import keyring; keyring.set_password('outlook_refresh_token', 'personal', '${outlook_rt}')"
 
 fel_password=`pass Email/fel | head -n1`
 python3 -c "import keyring; keyring.set_password('fel', 'personal', '${fel_password}')"
@@ -22,3 +25,6 @@ python3 -c "import keyring; keyring.set_password('o365_rt', 'personal', '${o365_
 
 disroot_password=`pass Email/disroot | head -n1`
 python3 -c "import keyring; keyring.set_password('disroot', 'personal', '${disroot_password}')"
+
+andrew_password=`pass Work/CMU_Andrew | head -n1`
+python3 -c "import keyring; keyring.set_password('cmu', 'personal', '${andrew_password}')"
