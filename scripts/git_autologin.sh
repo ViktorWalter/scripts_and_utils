@@ -17,6 +17,9 @@ else
   exit 1
 fi
 
+echo $command
+
 # expect -c " spawn $command; expect \"Username for \"; send \"$login\r\"; expect \"Password for \"; send \"$password\r\"; interact"
 expect -c " spawn $command; expect \"Password for \"; send \"$password\r\"; interact"
+# expect -c " spawn $command;   interact"
 exit 0

@@ -14,7 +14,7 @@ else
   for i in "${!scr[@]}"; do
     if [[ "${scr[$i]}" == *eDP* ]]; then
       previousMonitor=${scr[$i]}
-      xrandr --output ${scr[$i]} --auto --primary --pos 0x0 --rotate normal 
+      xrandr --output ${scr[$i]} --auto --primary --pos 0x0 --rotate normal --dpi 120
       wid=$((wid + $( echo ${res[$i]} | awk -F'x' '{print $1}' )));
     fi
   done;
@@ -26,23 +26,25 @@ else
     done;
     pacmd set-default-sink `pactl list short sinks | grep pci | tr '\t' ' ' | cut -d' ' -f2`
   else
-    if [ `prime-select query` == "intel" ]; then
-      ~/.screenlayout/three_monitor_lab_intel.sh
-    else
-      ~/.screenlayout/three_monitor_lab.sh
-    fi
+    # if [ `prime-select query` == "intel" ]; then
+    #   ~/.screenlayout/three_monitor_lab_intel.sh
+    # else
+    #   ~/.screenlayout/three_monitor_lab.sh
+    # fi
 
-    for i in "${!scr[@]}"; do
-      if [[ "${scr[$i]}" != *eDP* ]]; then
-        xrandr --output ${scr[$i]} --auto --right-of $previousMonitor
-        previousMonitor=${scr[$i]}
-      fi;
-    done;
+    # for i in "${!scr[@]}"; do
+    #   if [[ "${scr[$i]}" != *eDP* ]]; then
+    #     xrandr --output ${scr[$i]} --auto --right-of $previousMonitor --dpi 120
+    #     previousMonitor=${scr[$i]}
+    #   fi;
+    # done;
+    # ~/.screenlayout/three_monitor_cmu.sh
+    ~/.screenlayout/two_monitor_temp_hq.sh
     pacmd set-default-sink `pactl list short sinks | grep Dock | tr '\t' ' ' | cut -d' ' -f2`
   fi
 fi
-xrandr --dpi 100
 
 ~/.i3/setWallpaper.sh
 sleep 2
 ~/.i3/conky_start
+i3-msg restart

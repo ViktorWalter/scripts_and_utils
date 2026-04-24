@@ -1,7 +1,8 @@
 [general]
 pythonfile = ~/.offlineimap.py
 # List of accounts to be synced, separated by a comma.
-accounts = fel,fel_x,outlook,gmail,disroot
+accounts = fel,disroot,gmail
+# accounts = outlook,disroot
 # accounts = outlook,gmail
 ui = ttyui
 
@@ -50,8 +51,8 @@ nametrans = lambda folder: {'inbox': 'INBOX',
 auth_mechanisms = XOAUTH2
 ssl_version = tls1_2
 
-#From Thunderbird (https://hg.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.jsm)
-oauth2_client_id = 08162f7c-0fd2-4200-a84a-f25a4db0b584 
+#From Thunderbird (https://hg-edge.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.sys.mjs)
+oauth2_client_id = 9e5f94bc-e8a4-4e73-b8be-63364c29d753 
 oauth2_client_secret = TxRBilcHdC6WGBee]fs?QR:SJ8nI[g82
 oauth2_refresh_token_eval = keyring.get_password('o365_rt', 'personal')
 
@@ -85,11 +86,19 @@ nametrans = lambda foldername: re.sub('inbox', 'Inbox',
 
 [Repository outlook-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 type = IMAP
-remotehost = imap-mail.outlook.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotehost = outlook.office365.com
 remoteuser = viktor_walter@outlook.com
+auth_mechanisms = XOAUTH2
+oauth2_request_url = https://login.microsoftonline.com/common/oauth2/v2.0/token
+#From Thunderbird (https://hg-edge.mozilla.org/comm-central/file/tip/mailnews/base/src/OAuth2Providers.sys.mjs)
+oauth2_client_id = 9e5f94bc-e8a4-4e73-b8be-63364c29d753
+oauth2_client_secret = TxRBilcHdC6WGBee]fs?QR:SJ8nI[g82
 remotepasseval = keyring.get_password('outlook', 'personal')
+oauth2_refresh_token_eval = keyring.get_password('outlook_refresh_token', 'personal')
+
+
 nametrans = lambda foldername: re.sub('Inbox', 'inbox',
                                re.sub('Junk','inbox_oj',
                                foldername))
@@ -149,6 +158,7 @@ nametrans = lambda folder: {'inbox': 'INBOX',
 [Repository disroot-remote]
 # Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl_version = tls1_2
 type = IMAP
 remotehost = disroot.org
 remoteuser = viktor.walter
@@ -157,22 +167,40 @@ nametrans = lambda foldername: re.sub('INBOX', 'inbox',
                                re.sub('Junk','junk',
                                foldername))
 folderfilter = lambda foldername: foldername in ['INBOX','Junk']
-# [Account laas]
-# localrepository = laas-local
-# remoterepository = laas-remote
 
-# [Repository laas-local]
-# type = Maildir
-# localfolders = ~/mail/laas
-# nametrans = lambda folder: {'inbox': 'INBOX',
-#                             }.get(folder, folder)
+[Account cmu]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = cmu-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = cmu-remote
 
-# [Repository laas-remote]
-# sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-# type = IMAP
-# remotehost = imap.laas.fr
-# remoteuser = vwalter
-# remotepasseval = keyring.get_password('laas', 'personal')
-# nametrans = lambda folder: {'INBOX': 'inbox',
-#                             }.get(folder, folder)
-# folderfilter = lambda folder: folder == 'INBOX'
+
+[Repository cmu-local]
+# OfflineIMAP supports Maildir, cmu, and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/mail/cmu
+nametrans = lambda folder: {'inbox': 'INBOX',
+                            }.get(folder, folder)
+
+[Repository cmu-remote]
+# auth_mechanisms = XOAUTH2
+# oauth2_client_id_eval = keyring.get_password('cmu', 'personal')
+# oauth2_client_secret_eval = keyring.get_password('cmu', 'personal')
+# oauth2_request_url = https://accounts.google.com/o/oauth2/token
+# oauth2_refresh_token_eval = keyring.get_password('cmu', 'personal')
+# get_refresh_token("CiernoBiely@cmu.com")
+# Remote repos can be IMAP or cmu, the latter being a preconfigured IMAP.
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# Necessary to work around https://github.com/OfflineIMAP/offlineimap/issues/573 (versions 7.0.12, 7.2.1)
+ssl_version = tls1_2
+type = Gmail
+# remotehost = imap.gmail.com
+ 
+remoteuser = vwalter@andrew.cmu.edu
+remotepasseval = keyring.get_password('cmu', 'personal')
+nametrans = lambda folder: {'INBOX': 'inbox',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder == 'INBOX'
+
+
