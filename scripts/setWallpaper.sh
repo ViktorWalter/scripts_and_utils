@@ -1,36 +1,4 @@
 #!/bin/bash
-# pics[0]="$HOME/Pictures/i3_cool.png"
-# pics[1]="$HOME/Pictures/zone_cool.jpg"
-# pics[2]="$HOME/Pictures/subspace.png"
-# pics[3]="$HOME/Pictures/morphoflowers.jpg"
-# pics[4]="$HOME/Pictures/gnarls.png"
-# pics[5]="$HOME/Pictures/aurelius.jpg"
-# pics[6]="$HOME/Pictures/deepsea_mermaid.jpg"
-# pics[7]="$HOME/Pictures/web.jpg"
-# pics[8]="$HOME/Pictures/pale.jpg"
-# pics[8]="$HOME/Pictures/incipisphere.jpg"
-# pics[9]="$HOME/Pictures/fallen_city.png"
-# pics[10]="$HOME/Pictures/arcify.png"
-# pics[11]="$HOME/Pictures/i3_red.png"
-# pics[12]="$HOME/Pictures/i3wm_wallpaper.jpg"
-# pics[13]="$HOME/Pictures/blue_wave.jpg"
-# pics[14]="$HOME/Pictures/owl.jpg"
-# pics[15]="$HOME/Pictures/antscape.jpg"
-# pics[16]="$HOME/Pictures/fractal_1.jpg"
-# pics[17]="$HOME/Pictures/debian.jpg"
-# pics[18]="$HOME/Pictures/scratch_blue.jpg"
-# pics[19]="$HOME/Pictures/eyes.jpg"
-# pics[20]="$HOME/Pictures/blue_edges.jpg"
-# pics[21]="$HOME/Pictures/heaven_and_hell.jpg"
-# pics[22]="$HOME/Pictures/carbon.jpg"
-# pics[23]="$HOME/Pictures/dark_energy.jpg"
-# pics[24]="$HOME/Pictures/glow_wood.jpg"
-# pics[25]="$HOME/Pictures/drive_mastery.jpg"
-# pics[0]="$HOME/Pictures/drive_mastery.jpg"
-pics[0]="$HOME/Pictures/purple_chip.png"
-# pics[26]="$HOME/Pictures/nigh.jpg"
-# pics[27]="$HOME/Pictures/gnarl_spectrolite.png"
 
-rand=$[ $RANDOM % "${#pics[@]}" ]
-
-feh --bg-fill ${pics[$rand]}
+wpFile=`find ${HOME}/Pictures/wallpapers -type f | shuf -n 1`
+feh --bg-fill ${wpFile}
